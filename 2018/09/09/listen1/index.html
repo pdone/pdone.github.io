@@ -9,10 +9,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -24,13 +20,14 @@
 
   <!-- 页面元数据 -->
   
-  <title>皮蛋的博客</title>
+  <title>Listen 1 – One for all free music in China - 皮蛋的博客</title>
   
-    <meta name="keywords" content="Blog,Hexo,pdone,博客,皮蛋">
+    <meta name="keywords" content="Share">
   
 
   
-    <meta name="description" content="Only Peace & Love Here">
+    <meta name="description" content="Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。
+截图">
   
 
   <!-- feed -->
@@ -105,7 +102,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -562,7 +559,7 @@
   
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量-->
@@ -571,10 +568,10 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">Listen 1 – One for all free music in China</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink"></div>
+  <div id="pjax-permalink">https://pdone.gitee.io/2018/09/09/listen1/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -585,16 +582,16 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("blog" == "none") { // 移除封面
+  if ("none" == "none") { // 移除封面
     document.getElementsByClassName('cover')[0].style.display = "none";
     document.getElementsByClassName('l_body')[0].classList.add("nocover");
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("blog" == "blog") { // 半屏
+    if ("none" == "blog") { // 半屏
       document.getElementsByClassName('cover')[0].classList.remove("full");
       document.getElementsByClassName('cover')[0].classList.add("half");
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("blog" == "docs") { // 全屏
+    } else if ("none" == "docs") { // 全屏
       document.getElementsByClassName('cover')[0].classList.remove("half");
       document.getElementsByClassName('cover')[0].classList.add("full");
       document.getElementsByClassName('scroll-down')[0].style.display = "";
@@ -610,41 +607,10 @@
 
 <div class='l_main'>
   
-  <section class="post-list ">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow blur reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow blur article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -654,530 +620,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/07/01/test/">
-      测试页面
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://pdoner.cn" target="_blank" rel="nofollow noopener">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg">
-    <p>pdone</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Default/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Default</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2020-07-01</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/07/01/test/" class="leancloud_visitors" data-flag-title="测试页面">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/07/01/test/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/07/01/test/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文仅用于测试</p>
-<h2 id="1-测试"><a href="#1-测试" class="headerlink" title="1.测试"></a>1.测试</h2><h3 id="第一项测试"><a href="#第一项测试" class="headerlink" title="第一项测试"></a>第一项测试</h3>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/07/01/test/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow blur reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/04/15/net-loading/">
-      WinForm加载中窗体
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://pdoner.cn" target="_blank" rel="nofollow noopener">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg">
-    <p>pdone</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Default/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Default</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2020-04-15</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/04/15/net-loading/" class="leancloud_visitors" data-flag-title="WinForm加载中窗体">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/04/15/net-loading/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/04/15/net-loading/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近项目中用有用到，就简单整了个，只有几行代码。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/04/15/net-loading/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow blur reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2019/02/17/msi-b450m-mortar/">
-      微星B450M MORTAR主板PCI_E3接口无法识别硬件解决方法
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://pdoner.cn" target="_blank" rel="nofollow noopener">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg">
-    <p>pdone</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Default/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Default</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2019-02-17</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2019/02/17/msi-b450m-mortar/" class="leancloud_visitors" data-flag-title="微星B450M MORTAR主板PCI_E3接口无法识别硬件解决方法">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2019/02/17/msi-b450m-mortar/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2019/02/17/msi-b450m-mortar/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>博主购买的微星B450M MORTAR主板，由于安装显卡后会挡住PCI_E2接口，所以无线网卡(Intel 9260AC)只能插PCI_E3接口上，但是一直无法识别出来，在微星社区咨询后发现已经有人反馈过这个问题了，帖子中官方人员回复：</p>
-<blockquote>
-<ol>
-<li>主板的PCIE 插槽必须有共享LANES的状况</li>
-<li>PCIE CARD 本身没有依照规范将Prsnt 1(A1)#和Prsnt 2＃(B17)短接。</li>
-</ol>
-</blockquote>
-<p>随后官方发布了B450M MORTAR新BIOS固件，版本号7B89v14，更新到最新BIOS后，进<kbd>BIOS</kbd> &raquo; <kbd>setting</kbd> &raquo; <kbd>advanced</kbd> &raquo; <kbd>PCI SUBsystem setting</kbd>, 找到<kbd>PCIe x1 slot switch</kbd> 改成<kbd>PCIE_3</kbd> (默认为<kbd>PCIE_2</kbd> )，然后插在PCI-E_E3上的无线网卡就可以正常被识别出来啦。B450M MORTAR Titanium版本的主板也同样适用该方法。</p>
-<p>微星社区：<a href="http://forum-sc.msi.com/index.php?topic=5308.14" target="_blank" rel="noopener">http://forum-sc.msi.com/index.php?topic=5308.14</a></p>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow blur reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2018/09/15/openssl-csr/">
-      OpenSSL生成多域名CSR
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://pdoner.cn" target="_blank" rel="nofollow noopener">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg">
-    <p>pdone</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Default/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Default</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2018-09-15</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2018/09/15/openssl-csr/" class="leancloud_visitors" data-flag-title="OpenSSL生成多域名CSR">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2018/09/15/openssl-csr/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2018/09/15/openssl-csr/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先要选择证书颁发机构(CA)，各大著名的证书颁发机构的<strong>多域名</strong><sup>[1]</sup>、泛域名证书大多是需要收费的。目前发现<a href="https://www.trustasia.com/" target="_blank" rel="noopener">亚洲诚信(TrustAsia)</a>的免费证书支持双域名，而<a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>的免费证书既支持多域名，同时也支持泛域名。</p>
-<p>申请证书需要用到<strong>CSR</strong><sup>[2]</sup>，直接在搜索引擎搜索CSR在线生成就可以很方便的生成，然后会得到一个CSR和一个KEY，前者是提交给证书颁发机构申请证书用的，后者是给服务器安装证书的时候用到的。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2018/09/15/openssl-csr/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow blur reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
+  <h1 class="title">
     <a href="/2018/09/09/listen1/">
       Listen 1 – One for all free music in China
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -1224,42 +671,6 @@
 
             
           
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2018/09/09/listen1/" class="leancloud_visitors" data-flag-title="Listen 1 – One for all free music in China">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2018/09/09/listen1/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2018/09/09/listen1/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
         </div>
         
           <hr>
@@ -1269,35 +680,244 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。</p>
 <h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><img src='https://cdn.jsdelivr.net/gh/pdone/static/img/article/Listen1_1_compressed.jpg' alt='音乐平台歌单推荐界面' style='width:460px'>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2018/09/09/listen1/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
+<a id="more"></a>
+<img src='https://cdn.jsdelivr.net/gh/pdone/static/img/article/Listen1_2_compressed.jpg' alt='从网易云音乐、QQ音乐等平台导入自己的歌单到Listen1' style='width:460px'>
+<img src='https://cdn.jsdelivr.net/gh/pdone/static/img/article/Listen1_3_compressed.jpg' alt='搜索界面' style='width:460px'>
+<img src='https://cdn.jsdelivr.net/gh/pdone/static/img/article/Listen1_4_compressed.jpg' alt='歌词界面' style='width:460px'>
 
-          </div>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Chrome插件版"><a href="#Chrome插件版" class="headerlink" title="Chrome插件版"></a>Chrome插件版</h3><ol>
+<li>下载Chrome插件版压缩包，并解压缩</li>
+<li>打开 Chrome 扩展页面，勾选右上角「开发者模式」</li>
+<li>选择「加载已解压的扩展程序…」，选择刚刚解压缩的文件夹</li>
+<li>开始使用</li>
+</ol>
+<h3 id="Firefox插件版"><a href="#Firefox插件版" class="headerlink" title="Firefox插件版"></a>Firefox插件版</h3><ol>
+<li>下载Firefox插件版，并解压缩</li>
+<li>打开 about:config 页面，xpinstall.signatures.required 设置为 false</li>
+<li>选择「附加组件」，齿轮图标，选择从文件安装附加组件，选择下载的xpi文件</li>
+<li>开始使用</li>
+</ol>
+<h3 id="Windows桌面版"><a href="#Windows桌面版" class="headerlink" title="Windows桌面版"></a>Windows桌面版</h3><ol>
+<li>下载Windows压缩包，根据系统选择32位或64位版本</li>
+<li>解压缩，运行 Listen1.exe</li>
+</ol>
+<h3 id="Mac桌面版"><a href="#Mac桌面版" class="headerlink" title="Mac桌面版"></a>Mac桌面版</h3><ol>
+<li>下载并运行dmg，在打开的安装窗口把Listen 1图标拖动到右侧</li>
+<li>点击Listen 1图标运行</li>
+</ol>
+<h3 id="Linux桌面版"><a href="#Linux桌面版" class="headerlink" title="Linux桌面版"></a>Linux桌面版</h3><ol>
+<li>下载deb安装包，根据系统选择32位或64位版本</li>
+<li>点击deb，在安装界面点击Install</li>
+</ol>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><ul>
+<li><a href="https://github.com/listen1/listen1_chrome_extension/archive/v1.8.0.zip" target="_blank" rel="noopener">Chrome 插件版</a></li>
+<li><a href="https://addons.mozilla.org/zh-CN/firefox/addon/listen-1/" target="_blank" rel="noopener">Firefox插件页面</a></li>
+<li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_win32.exe" target="_blank" rel="noopener">Windows 32位桌面版</a></li>
+<li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_win64.exe" target="_blank" rel="noopener">Windows 64位桌面版</a></li>
+<li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_mac.dmg" target="_blank" rel="noopener">Mac 桌面版</a></li>
+<li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_linuxia32.tar.gz" target="_blank" rel="noopener">Linux 32位桌面版</a></li>
+<li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_linuxx64.tar.gz" target="_blank" rel="noopener">Linux 64位桌面版</a></li>
+</ul>
+<h2 id="Listen-1背后的开源项目"><a href="#Listen-1背后的开源项目" class="headerlink" title="Listen 1背后的开源项目"></a>Listen 1背后的开源项目</h2><p><a href="https://github.com/listen1/listen1" target="_blank" rel="noopener"><strong><em>listen1/listen1</em></strong></a><br>最初的网页版播放器，使用Python开发Web服务器。可以直接在服务器运行，也可使用打包的Windows版和Mac版在本地运行Web服务器</p>
+<p><a href="https://github.com/listen1/listen1_chrome_extension" target="_blank" rel="noopener"><strong><em>listen1/listen1_chrome_extension</em></strong></a><br>Chrome和Firefox插件版</p>
+<p><a href="https://github.com/listen1/listen1_desktop" target="_blank" rel="noopener"><strong><em>listen1/listen1_desktop</em></strong></a><br>Windows，Mac，Linux桌面版。使用Electron框架，基于Listen 1 Chrome插件版JS库开发</p>
+<h2 id="Listen-1联系方式"><a href="#Listen-1联系方式" class="headerlink" title="Listen 1联系方式"></a>Listen 1联系方式</h2><ul>
+<li>Github 主页：<a href="https://github.com/listen1" target="_blank" rel="noopener">https://github.com/listen1</a></li>
+<li>中国镜像主页：<a href="http://githublisten1.coding.me/listen1/" target="_blank" rel="noopener">http://githublisten1.coding.me/listen1/</a></li>
+<li>中国下载镜像仓库：<a href="https://coding.net/u/githublisten1" target="_blank" rel="noopener">https://coding.net/u/githublisten1</a></li>
+<li>Twitter：<a href="https://twitter.com/githublisten1" target="_blank" rel="noopener">https://twitter.com/githublisten1</a></li>
+<li>联系邮箱：<a href="githublisten1@gmail.com">githublisten1@gmail.com</a></li>
+</ul>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>感谢该项目的所有代码贡献者。</p>
+<p>如果觉得不错，不妨推荐给你身边喜欢音乐的朋友。</p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      
+        
+          <p>转载请注明出处并遵守 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+
+        
+      
+        
+          <p>本文链接：<a href=https://pdone.gitee.io/2018/09/09/listen1/>https://pdone.gitee.io/2018/09/09/listen1/</a></p>
         
       
     
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+  </div>
+</section>
 
   
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-03T16:20:54+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>Last Update 2020-08-03</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Share/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>Share</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdone.gitee.io/2018/09/09/listen1/&title=Listen 1 – One for all free music in China - 皮蛋的博客&summary=Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。
+截图"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdone.gitee.io/2018/09/09/listen1/&title=Listen 1 – One for all free music in China - 皮蛋的博客&summary=Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。
+截图"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://pdone.gitee.io/2018/09/09/listen1/&title=Listen 1 – One for all free music in China - 皮蛋的博客&summary=Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。
+截图"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC/0lEQVR42u3aSXLDMAwEQP//08kDEpcwAOUYTvNmlcWldZkC+Pgyfh0PBGDAgAEDBswamEdz/Jjw4nn1/eq61efxvGDAgAEDBgyYdTDlAHTx/y7QFPbUecCAAQMGDBgwe2HSA6RBK50nPfB4H2DAgAEDBgyYfweTvj8tfJ3eDxgwYMCAAQPm/8J0G2bVgDeFAwMGDBgwYMB8Psy0EJQ25qYg6bov60SCAQMGDBgwYF4Gczqo/fXv9nnAgAEDBgwYMGtgpqMa5KYFqWmQK58HDBgwYMCAAbMGphuQThWy0nW6F5PK+wcDBgwYMGDArIHpNsDuCl7dAln6IS4bbmDAgAEDBgyYtTB3bbwLmx642qCLAx4YMGDAgAED5m1g0gbYtCHXhTgV+C4hwYABAwYMGDDrYbpB6womLVRNA2YcAMGAAQMGDBgwa2GqB5kWou66AJQWrMCAAQMGDBgw+2G6ja1p4617oGrwi+cBAwYMGDBgwKyBOd04mwav7oHTAtfT9cCAAQMGDBgwa2BOXbhJAVOAaaGrvF8wYMCAAQMGzDqYtMF16sJRClgNmO1GHxgwYMCAAQNmDcxdF32mha9uUJs2AMGAAQMGDBgw+2CmF3vSCzunnqdAYMCAAQMGDJjPgUknSANgtwFX/VBp8LucFwwYMGDAgAGzDmZa8OlCTi8QdRt68Y0qMGDAgAEDBszbw0wv5nQLR92DdRt7T9cBAwYMGDBgwKyFiRtUzULRqULYKRAwYMCAAQMGzH6YbjA7FexS6NOBEQwYMGDAgAGzB2Y67io4TRt97YIbGDBgwIABA2YNzOkA1g1k1YOfer9cqAIDBgwYMGDAvD3M9CLO3e+1G2jphwEDBgwYMGDArIXpBqgpcDegdYMpGDBgwIABAwbM6ULT9H/pBwADBgwYMGDAgJkWlNKDxMGtWtgCAwYMGDBgwKyF6W6822irNuLSddOgCAYMGDBgwIDZCzNtXH01R3WdtOHX/gBgwIABAwYMmDUwBhgwYMCAAQNm2fgG0FBljr7wyO8AAAAASUVORK5CYII=">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2018/09/15/openssl-csr/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>OpenSSL生成多域名CSR</p>
+                <p class='content'>首先要选择证书颁发机构(CA)，各大著名的证书颁发机构的多域名[1]、泛域名证书大多是需要收费的。目前发现亚洲诚信(TrustAsia)的免费证书支持双域名，而Let’s Encrypt的免费证...</p>
+              </a>
+            
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  <article class="post white-box reveal comments shadow blur">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 讨论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
 
 </div>
@@ -1307,139 +927,73 @@
     
     
 
-<section class="widget blogger shadow blur desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>pdone</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:admin@pdoner.cn"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/pdone"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=55174435"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
     
-    
-
-<section class="widget shadow blur desktop">
-  
   <header>
     
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>Information</span>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>5 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2019/09/01'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-        
-          
-<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
-
-          
-<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/locale/zh-cn.min.js"></script>
-
-        
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Mon Aug 03 2020 16:44:16 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2020-08-03 日</div>
-          
-        </div>
-        
-        <script>
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = moment(new Date(lastUpDate)).fromNow();
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2020-08-03 日';
-          }
-        </script>
-        
-      
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#截图"><span class="toc-text">截图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Chrome插件版"><span class="toc-text">Chrome插件版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Firefox插件版"><span class="toc-text">Firefox插件版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows桌面版"><span class="toc-text">Windows桌面版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mac桌面版"><span class="toc-text">Mac桌面版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux桌面版"><span class="toc-text">Linux桌面版</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Listen-1背后的开源项目"><span class="toc-text">Listen 1背后的开源项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Listen-1联系方式"><span class="toc-text">Listen 1联系方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#致谢"><span class="toc-text">致谢</span></a></li></ol>
     </div>
-  </div>
-</section>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow blur desktop">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/Default/" href="/categories/Default/"
+            id="categoriesDefault"
+            ><div class='name'>Default</div><div class='badge'>(5)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow blur desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/NET/" style="font-size: 14px; color: #999">.NET</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C#</a> <a href="/tags/SSL/" style="font-size: 14px; color: #999">SSL</a> <a href="/tags/Share/" style="font-size: 24px; color: #555">Share</a>
+    </div>
+  </section>
+
 
   
 
