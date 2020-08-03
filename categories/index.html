@@ -2,7 +2,7 @@
 <html>
 <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
 <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-<script type="text/javascript" src="/custom/script.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/pdone/static/js/fireworks.js"></script>
 
 <head hexo-theme='https://volantis.js.org/#3.0-beta2'>
   <meta charset="utf-8">
@@ -56,7 +56,7 @@
   <!-- import link -->
   
   
-  <link rel="stylesheet" type="text/css" href="/custom/style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/pdone/static/css/blog.css" />
   
 
   
@@ -144,8 +144,6 @@
         
         <a class="title flat-box" target="_self" href='/'>
           
-          
-            <i class='/images/logo.png'></i>
           
           
             Pdone's Blog
@@ -299,7 +297,7 @@
                       
             
               <li class='header'>
-                <img src="/images/wx-qrcode.jpg">
+                <img src="https://cdn.jsdelivr.net/gh/pdone/static/wx-qrcode.jpg">
               </li>
             
           
@@ -325,7 +323,7 @@
                       
             
               <li class='header'>
-                <img src="/images/wxapp-qrcode.jpg">
+                <img src="https://cdn.jsdelivr.net/gh/pdone/static/wxapp-qrcode.jpg">
               </li>
             
           
@@ -501,7 +499,7 @@
                       
             
               <li class='header'>
-                <img src="/images/wx-qrcode.jpg">
+                <img src="https://cdn.jsdelivr.net/gh/pdone/static/wx-qrcode.jpg">
               </li>
             
           
@@ -527,7 +525,7 @@
                       
             
               <li class='header'>
-                <img src="/images/wxapp-qrcode.jpg">
+                <img src="https://cdn.jsdelivr.net/gh/pdone/static/wxapp-qrcode.jpg">
               </li>
             
           
@@ -716,10 +714,10 @@
     <meting-js
       theme='#99CCFF'
       autoplay='true'
-      volume='0.7'
+      volume='0.5'
       loop='all'
       order='random'
-      fixed='true'
+      fixed='false'
       list-max-height='340px'
       server='netease'
       type='playlist'
@@ -778,7 +776,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://pdone.gitee.io">Copyright © 2017-2020 pdone</a></p>
+        <p><a href="https://pdoner.cn" target="_blank" rel="noopener">Copyright © 2017-2020 pdone</a></p>
 
         </div>
       
@@ -848,14 +846,14 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/pdone/static
         
         
         
         
-          id="https:volantisjsorgfaqs"
+          id="https:githubcompdonestatic"
         >
-        <i class='fa fa-question fa-fw'></i> 常见问题
+        <i class='fa fa-cog fa-spin fa-fw'></i> 静态资源
       </a>
     </li>
   
@@ -864,50 +862,14 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/pdone/pdone.github.io
         
         
         
         
-          id="https:volantisjsorgexamples"
+          id="https:githubcompdonepdonegithubio"
         >
-        <i class='fa fa-rss fa-fw'></i> 示例博客
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
-        
-        
-        
-        
-          id="https:volantisjsorgcontributors"
-        >
-        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
-      </a>
-    </li>
-  
-        
-      
-        
-          <hr>
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
-        
-        
-        
-        
-          id="https:githubcomvolantis-xvolantis-docs"
-        >
-        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+        <i class='fa fa-code fa-fw'></i> 本站源码
       </a>
     </li>
   
@@ -923,7 +885,7 @@
         
           id="https:githubcomvolantis-xhexo-theme-volantis"
         >
-        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+        <i class='fa fa-code fa-fw'></i> 主题源码
       </a>
     </li>
   
@@ -931,6 +893,22 @@
       
         
           <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=mailto:admin@pdoner.cn
+        
+        
+        
+        
+          id="mailto:admin@pdonercn"
+        >
+        <i class='fa fa-envelope fa-fw'></i> 发送邮件
+      </a>
+    </li>
+  
         
       
         
@@ -1081,7 +1059,7 @@
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["/images/wallpaper/18.jpg", "/images/wallpaper/17.jpg", "/images/wallpaper/15.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/pdone/static/wallpaper/18.jpg", "https://cdn.jsdelivr.net/gh/pdone/static/wallpaper/15.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -1100,14 +1078,14 @@
             imgs,
           {
             duration: "20000",
-            fade: "2500"
+            fade: "1500"
           });
         } else {
           $.backstretch(
             imgs,
           {
             duration: "20000",
-            fade: "2500"
+            fade: "1500"
           });
         }
       });
@@ -1119,7 +1097,7 @@
   <script>
     let APlayerController = new Object();
     APlayerController.id = '5156176329';  // 设定全局音乐播放ID
-    APlayerController.volume = '0.7';
+    APlayerController.volume = '0.5';
   </script>
   
     

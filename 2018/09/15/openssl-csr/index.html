@@ -2,7 +2,7 @@
 <html>
 <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
 <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-<script type="text/javascript" src="/custom/script.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/pdone/static/js/fireworks.js"></script>
 
 <head hexo-theme='https://volantis.js.org/#3.0-beta2'>
   <meta charset="utf-8">
@@ -61,7 +61,7 @@
   <!-- import link -->
   
   
-  <link rel="stylesheet" type="text/css" href="/custom/style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/pdone/static/css/blog.css" />
   
 
   
@@ -149,8 +149,6 @@
         
         <a class="title flat-box" target="_self" href='/'>
           
-          
-            <i class='/images/logo.png'></i>
           
           
             Pdone's Blog
@@ -304,7 +302,7 @@
                       
             
               <li class='header'>
-                <img src="/images/wx-qrcode.jpg">
+                <img src="https://cdn.jsdelivr.net/gh/pdone/static/wx-qrcode.jpg">
               </li>
             
           
@@ -330,7 +328,7 @@
                       
             
               <li class='header'>
-                <img src="/images/wxapp-qrcode.jpg">
+                <img src="https://cdn.jsdelivr.net/gh/pdone/static/wxapp-qrcode.jpg">
               </li>
             
           
@@ -506,7 +504,7 @@
                       
             
               <li class='header'>
-                <img src="/images/wx-qrcode.jpg">
+                <img src="https://cdn.jsdelivr.net/gh/pdone/static/wx-qrcode.jpg">
               </li>
             
           
@@ -532,7 +530,7 @@
                       
             
               <li class='header'>
-                <img src="/images/wxapp-qrcode.jpg">
+                <img src="https://cdn.jsdelivr.net/gh/pdone/static/wxapp-qrcode.jpg">
               </li>
             
           
@@ -638,7 +636,7 @@
               
 <div class='new-meta-item author'>
   <a class='author' href="https://pdone.gitee.io" rel="nofollow">
-    <img no-lazy src="/images/avatar.jpg">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/pdone/static/avatar.jpg">
     <p>pdone</p>
   </a>
 </div>
@@ -693,25 +691,23 @@
 <p>在实践过程中发现，网上大多数 CSR 生成工具都不支持填多个域名，熟悉OpenSSL的同学应该很容易就搞定了，但是对于像博主一样的小白来说，能有个工具再好不过了，这里分享一个支持多域名CSR的在线生成网站：<a href="https://certificatetools.com/newui/" target="_blank" rel="noopener">https://certificatetools.com/newui/</a></p>
 <p>CSR也可以使用<a href="https://www.openssl.org/" target="_blank" rel="noopener">OpenSSL</a>生成，动手能力强的同学可以自己用工具离线生成。</p>
 <h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><pre><code>[ req ]
-default_md &#x3D; sha256  
-prompt &#x3D; no  
-req_extensions &#x3D; req_ext  
-distinguished_name &#x3D; req_distinguished_name
+default_md = sha256  
+prompt = no  
+req_extensions = req_ext  
+distinguished_name = req_distinguished_name
 [ req_distinguished_name ]
-0.commonName &#x3D; pdoner.cn
-1.commonName &#x3D; *.pdoner.cn
-countryName &#x3D; CN
-stateOrProvinceName &#x3D; Henan
-localityName &#x3D; Zhengzhou
-organizationName &#x3D; Pdone Technology
+0.commonName = pdoner.cn
+1.commonName = *.pdoner.cn
+countryName = CN
+stateOrProvinceName = Henan
+localityName = Zhengzhou
+organizationName = Pdone Technology
 [ req_ext ]
-keyUsage&#x3D;critical,digitalSignature,keyEncipherment
-extendedKeyUsage&#x3D;critical,serverAuth,clientAuth
-subjectAltName &#x3D; @alt_names
+keyUsage=critical,digitalSignature,keyEncipherment
+extendedKeyUsage=critical,serverAuth,clientAuth
+subjectAltName = @alt_names
 [ alt_names ]
-DNS.0 &#x3D; pdoner.cn</code></pre>
-
-<p><strong>[1]</strong>多域名证书，一说为SAN certificater(SubjectAltName Certificater)，一说为Unified Communications Certificater(这个是微软的说法)，已经迅速成为一种深受大家欢迎的证书，通过这种证书，可以方便部署Exchange， OCS 等经常有多个服务名的应用系统，此外也便于企业的网络管理人员对证书管理。</p>
+DNS.0 = pdoner.cn</code></pre><p><strong>[1]</strong>多域名证书，一说为SAN certificater(SubjectAltName Certificater)，一说为Unified Communications Certificater(这个是微软的说法)，已经迅速成为一种深受大家欢迎的证书，通过这种证书，可以方便部署Exchange， OCS 等经常有多个服务名的应用系统，此外也便于企业的网络管理人员对证书管理。</p>
 <p><strong>[2]</strong>CSR是Certificate Signing Request的英文缩写，即证书请求文件，也就是证书申请者在申请数字证书时由CSP(加密服务提供者)在生成私钥的同时也生成证书请求文件，证书申请者只要把CSR文件提交给证书颁发机构后，证书颁发机构使用其根证书私钥签名就生成了证书公钥文件，也就是颁发给用户的证书。</p>
 <h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><ul>
 <li>OpenSSL下载:<a href="http://gnuwin32.sourceforge.net/packages/openssl.htm" target="_blank" rel="noopener">http://gnuwin32.sourceforge.net/packages/openssl.htm</a></li>
@@ -775,7 +771,7 @@ DNS.0 &#x3D; pdoner.cn</code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-03T09:24:26+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-03T12:46:22+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>Last Update 2020-08-03</p>
@@ -1012,10 +1008,10 @@ DNS.0 &#x3D; pdoner.cn</code></pre>
     <meting-js
       theme='#99CCFF'
       autoplay='true'
-      volume='0.7'
+      volume='0.5'
       loop='all'
       order='random'
-      fixed='true'
+      fixed='false'
       list-max-height='340px'
       server='netease'
       type='playlist'
@@ -1074,7 +1070,7 @@ DNS.0 &#x3D; pdoner.cn</code></pre>
     
       
         <div class='copyright'>
-        <p><a href="https://pdone.gitee.io">Copyright © 2017-2020 pdone</a></p>
+        <p><a href="https://pdoner.cn" target="_blank" rel="noopener">Copyright © 2017-2020 pdone</a></p>
 
         </div>
       
@@ -1144,14 +1140,14 @@ DNS.0 &#x3D; pdoner.cn</code></pre>
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/pdone/static
         
         
         
         
-          id="https:volantisjsorgfaqs"
+          id="https:githubcompdonestatic"
         >
-        <i class='fa fa-question fa-fw'></i> 常见问题
+        <i class='fa fa-cog fa-spin fa-fw'></i> 静态资源
       </a>
     </li>
   
@@ -1160,50 +1156,14 @@ DNS.0 &#x3D; pdoner.cn</code></pre>
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/pdone/pdone.github.io
         
         
         
         
-          id="https:volantisjsorgexamples"
+          id="https:githubcompdonepdonegithubio"
         >
-        <i class='fa fa-rss fa-fw'></i> 示例博客
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
-        
-        
-        
-        
-          id="https:volantisjsorgcontributors"
-        >
-        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
-      </a>
-    </li>
-  
-        
-      
-        
-          <hr>
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
-        
-        
-        
-        
-          id="https:githubcomvolantis-xvolantis-docs"
-        >
-        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+        <i class='fa fa-code fa-fw'></i> 本站源码
       </a>
     </li>
   
@@ -1219,7 +1179,7 @@ DNS.0 &#x3D; pdoner.cn</code></pre>
         
           id="https:githubcomvolantis-xhexo-theme-volantis"
         >
-        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+        <i class='fa fa-code fa-fw'></i> 主题源码
       </a>
     </li>
   
@@ -1227,6 +1187,22 @@ DNS.0 &#x3D; pdoner.cn</code></pre>
       
         
           <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=mailto:admin@pdoner.cn
+        
+        
+        
+        
+          id="mailto:admin@pdonercn"
+        >
+        <i class='fa fa-envelope fa-fw'></i> 发送邮件
+      </a>
+    </li>
+  
         
       
         
@@ -1377,7 +1353,7 @@ DNS.0 &#x3D; pdoner.cn</code></pre>
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["/images/wallpaper/18.jpg", "/images/wallpaper/17.jpg", "/images/wallpaper/15.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/pdone/static/wallpaper/18.jpg", "https://cdn.jsdelivr.net/gh/pdone/static/wallpaper/15.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -1396,14 +1372,14 @@ DNS.0 &#x3D; pdoner.cn</code></pre>
             imgs,
           {
             duration: "20000",
-            fade: "2500"
+            fade: "1500"
           });
         } else {
           $.backstretch(
             imgs,
           {
             duration: "20000",
-            fade: "2500"
+            fade: "1500"
           });
         }
       });
@@ -1415,7 +1391,7 @@ DNS.0 &#x3D; pdoner.cn</code></pre>
   <script>
     let APlayerController = new Object();
     APlayerController.id = '5156176329';  // 设定全局音乐播放ID
-    APlayerController.volume = '0.7';
+    APlayerController.volume = '0.5';
   </script>
   
     
