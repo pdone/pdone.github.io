@@ -9,8 +9,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -22,9 +20,14 @@
 
   <!-- 页面元数据 -->
   
-  <title>Tag: C# - 皮蛋的博客</title>
+  <title>OpenSSL生成多域名CSR - 皮蛋的博客</title>
+  
+    <meta name="keywords" content="SSL">
   
 
+  
+    <meta name="description" content="首先要选择证书颁发机构(CA)，各大著名的证书颁发机构的多域名[1]、泛域名证书大多是需要收费的。目前发现亚洲诚信(TrustAsia)的免费证书支持双域名，而Let’s Encrypt的免费证书既支持多域名，同时也支持泛域名。
+申请证书需要用到CSR[2]，直接在搜索引擎搜索CSR在线生成就可以很方便的生成，然...">
   
 
   <!-- feed -->
@@ -99,7 +102,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -567,10 +570,10 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">OpenSSL生成多域名CSR</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink"></div>
+  <div id="pjax-permalink">https://pdone.gitee.io/2018/09/15/openssl-csr/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -604,25 +607,12 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow blur reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow blur article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -632,11 +622,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/04/15/net-loading/">
-      WinForm加载中窗体
+  <h1 class="title">
+    <a href="/2018/09/15/openssl-csr/">
+      OpenSSL生成多域名CSR
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -672,58 +662,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2020-04-15</p>
+    <p>2018-09-15</p>
   </a>
 </div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>157 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/04/15/net-loading/" class="leancloud_visitors" data-flag-title="WinForm加载中窗体">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/04/15/net-loading/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/04/15/net-loading/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -741,38 +682,240 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近项目中用有用到，就简单整了个，只有几行代码。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/04/15/net-loading/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>首先要选择证书颁发机构(CA)，各大著名的证书颁发机构的<strong>多域名</strong><sup>[1]</sup>、泛域名证书大多是需要收费的。目前发现<a href="https://www.trustasia.com/" target="_blank" rel="noopener">亚洲诚信(TrustAsia)</a>的免费证书支持双域名，而<a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>的免费证书既支持多域名，同时也支持泛域名。</p>
+<p>申请证书需要用到<strong>CSR</strong><sup>[2]</sup>，直接在搜索引擎搜索CSR在线生成就可以很方便的生成，然后会得到一个CSR和一个KEY，前者是提交给证书颁发机构申请证书用的，后者是给服务器安装证书的时候用到的。</p>
+<a id="more"></a>
 
-          </div>
+<p>在实践过程中发现，网上大多数 CSR 生成工具都不支持填多个域名，熟悉OpenSSL的同学应该很容易就搞定了，但是对于像博主一样的小白来说，能有个工具再好不过了，这里分享一个支持多域名CSR的在线生成网站：<a href="https://certificatetools.com/newui/" target="_blank" rel="noopener">https://certificatetools.com/newui/</a></p>
+<p>CSR也可以使用<a href="https://www.openssl.org/" target="_blank" rel="noopener">OpenSSL</a>生成，动手能力强的同学可以自己用工具离线生成。</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><pre><code>[ req ]
+default_md &#x3D; sha256  
+prompt &#x3D; no  
+req_extensions &#x3D; req_ext  
+distinguished_name &#x3D; req_distinguished_name
+[ req_distinguished_name ]
+0.commonName &#x3D; pdoner.cn
+1.commonName &#x3D; *.pdoner.cn
+countryName &#x3D; CN
+stateOrProvinceName &#x3D; Henan
+localityName &#x3D; Zhengzhou
+organizationName &#x3D; Pdone Technology
+[ req_ext ]
+keyUsage&#x3D;critical,digitalSignature,keyEncipherment
+extendedKeyUsage&#x3D;critical,serverAuth,clientAuth
+subjectAltName &#x3D; @alt_names
+[ alt_names ]
+DNS.0 &#x3D; pdoner.cn</code></pre>
+
+<p><strong>[1]</strong>多域名证书，一说为SAN certificater(SubjectAltName Certificater)，一说为Unified Communications Certificater(这个是微软的说法)，已经迅速成为一种深受大家欢迎的证书，通过这种证书，可以方便部署Exchange， OCS 等经常有多个服务名的应用系统，此外也便于企业的网络管理人员对证书管理。</p>
+<p><strong>[2]</strong>CSR是Certificate Signing Request的英文缩写，即证书请求文件，也就是证书申请者在申请数字证书时由CSP(加密服务提供者)在生成私钥的同时也生成证书请求文件，证书申请者只要把CSR文件提交给证书颁发机构后，证书颁发机构使用其根证书私钥签名就生成了证书公钥文件，也就是颁发给用户的证书。</p>
+<h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><ul>
+<li>OpenSSL下载:<a href="http://gnuwin32.sourceforge.net/packages/openssl.htm" target="_blank" rel="noopener">http://gnuwin32.sourceforge.net/packages/openssl.htm</a></li>
+<li>SSL证书在线工具：<a href="https://csr.chinassl.net/" target="_blank" rel="noopener">https://csr.chinassl.net/</a></li>
+<li>免费证书在线申请：<a href="https://freessl.org/" target="_blank" rel="noopener">https://freessl.org/</a></li>
+</ul>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      
+        
+          <p>转载请注明出处并遵守 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+
+        
+      
+        
+          <p>本文链接：<a href=https://pdone.gitee.io/2018/09/15/openssl-csr/>https://pdone.gitee.io/2018/09/15/openssl-csr/</a></p>
         
       
     
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-03T09:24:26+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>Last Update 2020-08-03</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/SSL/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>SSL</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdone.gitee.io/2018/09/15/openssl-csr/&title=OpenSSL生成多域名CSR - 皮蛋的博客&summary=首先要选择证书颁发机构(CA)，各大著名的证书颁发机构的多域名[1]、泛域名证书大多是需要收费的。目前发现亚洲诚信(TrustAsia)的免费证书支持双域名，而Let’s Encrypt的免费证书既支持多域名，同时也支持泛域名。
+申请证书需要用到CSR[2]，直接在搜索引擎搜索CSR在线生成就可以很方便的生成，然后会得到一个CSR和一个KEY，前者是提交给证书颁发机构申请证书用的，后者是给服务器安装证书的时候用到的。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdone.gitee.io/2018/09/15/openssl-csr/&title=OpenSSL生成多域名CSR - 皮蛋的博客&summary=首先要选择证书颁发机构(CA)，各大著名的证书颁发机构的多域名[1]、泛域名证书大多是需要收费的。目前发现亚洲诚信(TrustAsia)的免费证书支持双域名，而Let’s Encrypt的免费证书既支持多域名，同时也支持泛域名。
+申请证书需要用到CSR[2]，直接在搜索引擎搜索CSR在线生成就可以很方便的生成，然后会得到一个CSR和一个KEY，前者是提交给证书颁发机构申请证书用的，后者是给服务器安装证书的时候用到的。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://pdone.gitee.io/2018/09/15/openssl-csr/&title=OpenSSL生成多域名CSR - 皮蛋的博客&summary=首先要选择证书颁发机构(CA)，各大著名的证书颁发机构的多域名[1]、泛域名证书大多是需要收费的。目前发现亚洲诚信(TrustAsia)的免费证书支持双域名，而Let’s Encrypt的免费证书既支持多域名，同时也支持泛域名。
+申请证书需要用到CSR[2]，直接在搜索引擎搜索CSR在线生成就可以很方便的生成，然后会得到一个CSR和一个KEY，前者是提交给证书颁发机构申请证书用的，后者是给服务器安装证书的时候用到的。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC+ElEQVR42u3aS24EMQgFwLn/pZMLJDI83FGjlHczan8obxD482X8OD4IwIABAwYMmDUwn3C0NzzM7+5b/b+9LhgwYMCAAQNmHUw3wGrgXeDf5k/PV/0eDBgwYMCAAbMXpppYpSBV4DTgcTxgwIABAwYMmH8Hc6sglSZqYMCAAQMGDBgwU5gu4BQYDBgwYMCAAQPmqQTqtE467/WdSDBgwIABAwbMn8F0x+1E7qnEsB0PGDBgwIABA2YNzHTcemiUrps25n7dFwwYMGDAgAGzBiZNkNKC1nSfp9YFAwYMGDBgwOyHOSVap3kpZHd+df9uHGDAgAEDBgyYfTDdhbpQ1QCmieP4ezBgwIABAwbMGpi0MdYFul1oSi/yGBcYMGDAgAEDZg1M+pCnG+itxG1aODt+DwYMGDBgwIBZC5MWkKaJVjWBmyakx3OCAQMGDBgwYNbBpIWmFC5dt/tgaZzggQEDBgwYMGBeC3NauJrI3SpQdffrNuLih0NgwIABAwYMmNfBtB/WhI25NEGLC07NCwYDBgwYMGDA7IXpLjhtdKXfVc/dbfiBAQMGDBgwYPbCTAtTtxK4Lnx3XlyoAgMGDBgwYMC8DiYtWKWFoilMmsCVLxYMGDBgwIABswZmGlDamJsWum4/GAIDBgwYMGDA7Id5upF2q6D11P9gwIABAwYMmP0w08ZX2sCbFraq52kXqsCAAQMGDBgw62HSDafrTYHKDUQwYMCAAQMGzFqY9Hc3oFsPlcYPhaqFKjBgwIABAwbM62Cm41YBK32oVIUsXxgYMGDAgAEDZg3M7UQpTdCuBTaFBAMGDBgwYMCsg+kmdFWQagDTQti0sAUGDBgwYMCA2Q8zTaC6YNX/u+ftNvzAgAEDBgwYMGDSALrfpRfwmgQPDBgwYMCAAfMamGmjq5swpgWsuOEGBgwYMGDAgHk9zF8dvPu721iLHyqBAQMGDBgwYNbBTBtX3QJSfPCwUFa+YDBgwIABAwbMGhgDDBgwYMCAAbNsfAOEpeFKwbGCtQAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2019/02/17/msi-b450m-mortar/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>微星B450M MORTAR主板PCI_E3接口无法识别硬件解决方法</p>
+                <p class='content'>博主购买的微星B450M MORTAR主板，由于安装显卡后会挡住PCI_E2接口，所以无线网卡(Intel 9260AC)只能插PCI_E3接口上，但是一直无法识别出来，在微星社区咨询后发现已经...</p>
+              </a>
+            
+            
+              <a class='next' href='/2018/09/09/listen1/'>
+                <p class='title'>Listen 1 – One for all free music in China<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。
+截图
+
+
+
+
+
+安装Chrome插件版
+下载Chrome插件版压缩包，并解压缩
+打...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+  <article class="post white-box reveal comments shadow blur">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 讨论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 </div>
 <aside class='l_side'>
   
@@ -780,149 +923,79 @@
     
     
 
-<section class="widget blogger shadow blur desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='/images/avatar.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>pdone</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:admin@pdoner.cn"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/pdone"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=55174435"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
     
-    
-
-<section class="widget shadow blur desktop">
-  
   <header>
     
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>Information</span>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>5 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2019/09/01'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>1.5k 字</div>
-        </div>
-      
-
-      
-
-      
-
-      
-        
-          
-<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
-
-          
-<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/locale/zh-cn.min.js"></script>
-
-        
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Mon Aug 03 2020 09:28:55 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2020-08-03 日</div>
-          
-        </div>
-        
-        <script>
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = moment(new Date(lastUpDate)).fromNow();
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2020-08-03 日';
-          }
-        </script>
-        
-      
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关资料"><span class="toc-text">相关资料</span></a></li></ol>
     </div>
-  </div>
-</section>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow blur desktop">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/Default/" href="/categories/Default/"
+            id="categoriesDefault"
+            ><div class='name'>Default</div><div class='badge'>(5)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow blur desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/NET/" style="font-size: 14px; color: #999">.NET</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C#</a> <a href="/tags/SSL/" style="font-size: 14px; color: #999">SSL</a> <a href="/tags/Share/" style="font-size: 24px; color: #555">Share</a>
+    </div>
+  </section>
+
 
   
 
 
 </aside>
+
 
 
     </div>

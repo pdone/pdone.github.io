@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pdone.gitee.io/"/>
-  <updated>2020-07-25T13:27:59.816Z</updated>
+  <updated>2020-08-03T01:24:26.579Z</updated>
   <id>https://pdone.gitee.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://pdone.gitee.io/2020/07/01/test/"/>
     <id>https://pdone.gitee.io/2020/07/01/test/</id>
     <published>2020-07-01T02:42:59.000Z</published>
-    <updated>2020-07-25T13:27:59.816Z</updated>
+    <updated>2020-08-03T01:24:26.579Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文仅用于测试</p><h2 id="1-测试"><a href="#1-测试" class="headerlink" title="1.测试"></a>1.测试</h2><h3 id="第一项测试"><a href="#第一项测试" class="headerlink" title="第一项测试"></a>第一项测试</h3><a id="more"></a><p>通过</p><h3 id="第二项测试"><a href="#第二项测试" class="headerlink" title="第二项测试"></a>第二项测试</h3><p>通过</p><h2 id="2-测试结果"><a href="#2-测试结果" class="headerlink" title="2.测试结果"></a>2.测试结果</h2><p>通过</p>]]></content>
     
@@ -33,7 +33,7 @@
     </summary>
     
     
-      <category term="默认分类" scheme="https://pdone.gitee.io/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
+      <category term="Default" scheme="https://pdone.gitee.io/categories/Default/"/>
     
     
       <category term="Share" scheme="https://pdone.gitee.io/tags/Share/"/>
@@ -44,10 +44,10 @@
     <title>WinForm加载中窗体</title>
     <link href="https://pdone.gitee.io/2020/04/15/net-loading/"/>
     <id>https://pdone.gitee.io/2020/04/15/net-loading/</id>
-    <published>2020-04-15T09:14:59.000Z</published>
-    <updated>2020-04-15T09:14:59.000Z</updated>
+    <published>2020-04-14T16:00:00.000Z</published>
+    <updated>2020-08-03T01:24:26.578Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近项目中用有用到，就简单整了个，只有几行代码。</p><a id="more"></a> <p><img src="https://pdoner.cn/wp-content/uploads/2020/04/gifhome_536x344_6s.gif" alt=""><br><img src="http://cdn.pdoner.cn/gh_c1c6ab80aac1_344.jpg" alt=""></p><h3 id="调用示例"><a href="#调用示例" class="headerlink" title="调用示例"></a>调用示例</h3><pre><code class="cs">public partial class Main : Form{    public Main()    {        InitializeComponent();    }    private void button1_Click(object sender, EventArgs e)    {        //构造函数参数说明：        //work: 需要在新线程中执行的任务        //msg: 执行完成提示信息（为空时不提示）        //openDir: 执行完成后自动打开指定目录（为空时不打开）                        Loading loading = new Loading(DoSomething, 执行完成);        //不show的话 可以当作后台线程执行任务来用        loading.ShowDialog();    }    public void DoSomething()    {        Thread.Sleep(3000);    }}</code></pre><h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><blockquote><p>链接: <a href="https://pan.baidu.com/s/1cRQL36VxqhMhAWrtwiLztA" target="_blank" rel="noopener">https://pan.baidu.com/s/1cRQL36VxqhMhAWrtwiLztA</a></p><p>提取码: s5fa</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近项目中用有用到，就简单整了个，只有几行代码。</p><a id="more"></a> <p><img src="/images/article/net-loading.gif" alt="预览图"></p><h3 id="调用示例"><a href="#调用示例" class="headerlink" title="调用示例"></a>调用示例</h3><pre><code>public partial class Main : Form{    public Main()    {        InitializeComponent();    }    private void button1_Click(object sender, EventArgs e)    {        &#x2F;&#x2F;构造函数参数说明：        &#x2F;&#x2F;work: 需要在新线程中执行的任务        &#x2F;&#x2F;msg: 执行完成提示信息（为空时不提示）        &#x2F;&#x2F;openDir: 执行完成后自动打开指定目录（为空时不打开）                        Loading loading &#x3D; new Loading(DoSomething, 执行完成);        &#x2F;&#x2F;不show的话 可以当作后台线程执行任务来用        loading.ShowDialog();    }    public void DoSomething()    {        Thread.Sleep(3000);    }}</code></pre><h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><blockquote><p>链接: <a href="https://pan.baidu.com/s/1cRQL36VxqhMhAWrtwiLztA" target="_blank" rel="noopener">https://pan.baidu.com/s/1cRQL36VxqhMhAWrtwiLztA</a></p><p>提取码: s5fa</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -56,7 +56,7 @@
     </summary>
     
     
-      <category term="默认分类" scheme="https://pdone.gitee.io/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
+      <category term="Default" scheme="https://pdone.gitee.io/categories/Default/"/>
     
     
       <category term="C#" scheme="https://pdone.gitee.io/tags/C/"/>
@@ -66,23 +66,73 @@
   </entry>
   
   <entry>
-    <title>Listen 1 – One for all free music in China</title>
-    <link href="https://pdone.gitee.io/2018/09/09/Listen1/"/>
-    <id>https://pdone.gitee.io/2018/09/09/Listen1/</id>
-    <published>2018-09-08T16:00:00.000Z</published>
-    <updated>2020-07-25T13:27:59.814Z</updated>
+    <title>微星B450M MORTAR主板PCI_E3接口无法识别硬件解决方法</title>
+    <link href="https://pdone.gitee.io/2019/02/17/msi-b450m-mortar/"/>
+    <id>https://pdone.gitee.io/2019/02/17/msi-b450m-mortar/</id>
+    <published>2019-02-16T16:00:00.000Z</published>
+    <updated>2020-08-03T01:24:26.577Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。</p><h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><img src='/images/post/listen1/Listen1_1-1024x710-768x533.png' alt='音乐平台歌单推荐界面' style='width:460px'><a id="more"></a><img src='/images/post/listen1/Listen1_2-1024x710-768x533.png' alt='从网易云音乐、QQ音乐等平台导入自己的歌单到Listen1' style='width:460px'><img src='/images/post/listen1/Listen1_3-1024x710-768x533.png' alt='搜索界面' style='width:460px'><img src='/images/post/listen1/Listen1_4-1024x710-768x533.png' alt='歌词界面' style='width:460px'><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Chrome插件版"><a href="#Chrome插件版" class="headerlink" title="Chrome插件版"></a>Chrome插件版</h3><ol><li>下载Chrome插件版压缩包，并解压缩</li><li>打开 Chrome 扩展页面，勾选右上角「开发者模式」</li><li>选择「加载已解压的扩展程序…」，选择刚刚解压缩的文件夹</li><li>开始使用</li></ol><h3 id="Firefox插件版"><a href="#Firefox插件版" class="headerlink" title="Firefox插件版"></a>Firefox插件版</h3><ol><li>下载Firefox插件版，并解压缩</li><li>打开 about:config 页面，xpinstall.signatures.required 设置为 false</li><li>选择「附加组件」，齿轮图标，选择从文件安装附加组件，选择下载的xpi文件</li><li>开始使用</li></ol><h3 id="Windows桌面版"><a href="#Windows桌面版" class="headerlink" title="Windows桌面版"></a>Windows桌面版</h3><ol><li>下载Windows压缩包，根据系统选择32位或64位版本</li><li>解压缩，运行 Listen1.exe</li></ol><h3 id="Mac桌面版"><a href="#Mac桌面版" class="headerlink" title="Mac桌面版"></a>Mac桌面版</h3><ol><li>下载并运行dmg，在打开的安装窗口把Listen 1图标拖动到右侧</li><li>点击Listen 1图标运行</li></ol><h3 id="Linux桌面版"><a href="#Linux桌面版" class="headerlink" title="Linux桌面版"></a>Linux桌面版</h3><ol><li>下载deb安装包，根据系统选择32位或64位版本</li><li>点击deb，在安装界面点击Install</li></ol><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><ul><li><a href="https://github.com/listen1/listen1_chrome_extension/archive/v1.8.0.zip" target="_blank" rel="noopener">Chrome 插件版</a></li><li><a href="https://addons.mozilla.org/zh-CN/firefox/addon/listen-1/" target="_blank" rel="noopener">Firefox插件页面</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_win32.exe" target="_blank" rel="noopener">Windows 32位桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_win64.exe" target="_blank" rel="noopener">Windows 64位桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_mac.dmg" target="_blank" rel="noopener">Mac 桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_linuxia32.tar.gz" target="_blank" rel="noopener">Linux 32位桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_linuxx64.tar.gz" target="_blank" rel="noopener">Linux 64位桌面版</a></li></ul><h2 id="Listen-1背后的开源项目"><a href="#Listen-1背后的开源项目" class="headerlink" title="Listen 1背后的开源项目"></a>Listen 1背后的开源项目</h2><p><a href="https://github.com/listen1/listen1" target="_blank" rel="noopener"><strong><em>listen1/listen1</em></strong></a><br>最初的网页版播放器，使用Python开发Web服务器。可以直接在服务器运行，也可使用打包的Windows版和Mac版在本地运行Web服务器</p><p><a href="https://github.com/listen1/listen1_chrome_extension" target="_blank" rel="noopener"><strong><em>listen1/listen1_chrome_extension</em></strong></a><br>Chrome和Firefox插件版</p><p><a href="https://github.com/listen1/listen1_desktop" target="_blank" rel="noopener"><strong><em>listen1/listen1_desktop</em></strong></a><br>Windows，Mac，Linux桌面版。使用Electron框架，基于Listen 1 Chrome插件版JS库开发</p><h2 id="Listen-1联系方式"><a href="#Listen-1联系方式" class="headerlink" title="Listen 1联系方式"></a>Listen 1联系方式</h2><ul><li>Github 主页：<a href="https://github.com/listen1" target="_blank" rel="noopener">https://github.com/listen1</a></li><li>中国镜像主页：<a href="http://githublisten1.coding.me/listen1/" target="_blank" rel="noopener">http://githublisten1.coding.me/listen1/</a></li><li>中国下载镜像仓库：<a href="https://coding.net/u/githublisten1" target="_blank" rel="noopener">https://coding.net/u/githublisten1</a></li><li>Twitter：<a href="https://twitter.com/githublisten1" target="_blank" rel="noopener">https://twitter.com/githublisten1</a></li><li>联系邮箱：<a href="githublisten1@gmail.com">githublisten1@gmail.com</a></li></ul><h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>感谢该项目的所有代码贡献者。</p><p>如果觉得不错，不妨推荐给你身边喜欢音乐的朋友。</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>博主购买的微星B450M MORTAR主板，由于安装显卡后会挡住PCI_E2接口，所以无线网卡(Intel 9260AC)只能插PCI_E3接口上，但是一直无法识别出来，在微星社区咨询后发现已经有人反馈过这个问题了，帖子中官方人员回复：</p><blockquote><ol><li>主板的PCIE 插槽必须有共享LANES的状况</li><li>PCIE CARD 本身没有依照规范将Prsnt 1(A1)#和Prsnt 2＃(B17)短接。</li></ol></blockquote><p>随后官方发布了B450M MORTAR新BIOS固件，版本号7B89v14，更新到最新BIOS后，进<kbd>BIOS</kbd> &raquo; <kbd>setting</kbd> &raquo; <kbd>advanced</kbd> &raquo; <kbd>PCI SUBsystem setting</kbd>, 找到<kbd>PCIe x1 slot switch</kbd> 改成<kbd>PCIE_3</kbd> (默认为<kbd>PCIE_2</kbd> )，然后插在PCI-E_E3上的无线网卡就可以正常被识别出来啦。B450M MORTAR Titanium版本的主板也同样适用该方法。</p><p>微星社区：<a href="http://forum-sc.msi.com/index.php?topic=5308.14" target="_blank" rel="noopener">http://forum-sc.msi.com/index.php?topic=5308.14</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。&lt;/p&gt;
-&lt;h2 id=&quot;截图&quot;&gt;&lt;a href=&quot;#截图&quot; class=&quot;headerlink&quot; title=&quot;截图&quot;&gt;&lt;/a&gt;截图&lt;/h2&gt;&lt;img src=&#39;/images/post/listen1/Listen1_1-1024x710-768x533.png&#39; alt=&#39;音乐平台歌单推荐界面&#39; style=&#39;width:460px&#39;&gt;
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
     
     </summary>
     
     
-      <category term="默认分类" scheme="https://pdone.gitee.io/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
+      <category term="Default" scheme="https://pdone.gitee.io/categories/Default/"/>
+    
+    
+      <category term="Share" scheme="https://pdone.gitee.io/tags/Share/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenSSL生成多域名CSR</title>
+    <link href="https://pdone.gitee.io/2018/09/15/openssl-csr/"/>
+    <id>https://pdone.gitee.io/2018/09/15/openssl-csr/</id>
+    <published>2018-09-14T16:00:00.000Z</published>
+    <updated>2020-08-03T01:24:26.579Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>首先要选择证书颁发机构(CA)，各大著名的证书颁发机构的<strong>多域名</strong><sup>[1]</sup>、泛域名证书大多是需要收费的。目前发现<a href="https://www.trustasia.com/" target="_blank" rel="noopener">亚洲诚信(TrustAsia)</a>的免费证书支持双域名，而<a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>的免费证书既支持多域名，同时也支持泛域名。</p><p>申请证书需要用到<strong>CSR</strong><sup>[2]</sup>，直接在搜索引擎搜索CSR在线生成就可以很方便的生成，然后会得到一个CSR和一个KEY，前者是提交给证书颁发机构申请证书用的，后者是给服务器安装证书的时候用到的。</p><a id="more"></a><p>在实践过程中发现，网上大多数 CSR 生成工具都不支持填多个域名，熟悉OpenSSL的同学应该很容易就搞定了，但是对于像博主一样的小白来说，能有个工具再好不过了，这里分享一个支持多域名CSR的在线生成网站：<a href="https://certificatetools.com/newui/" target="_blank" rel="noopener">https://certificatetools.com/newui/</a></p><p>CSR也可以使用<a href="https://www.openssl.org/" target="_blank" rel="noopener">OpenSSL</a>生成，动手能力强的同学可以自己用工具离线生成。</p><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><pre><code>[ req ]default_md &#x3D; sha256  prompt &#x3D; no  req_extensions &#x3D; req_ext  distinguished_name &#x3D; req_distinguished_name[ req_distinguished_name ]0.commonName &#x3D; pdoner.cn1.commonName &#x3D; *.pdoner.cncountryName &#x3D; CNstateOrProvinceName &#x3D; HenanlocalityName &#x3D; ZhengzhouorganizationName &#x3D; Pdone Technology[ req_ext ]keyUsage&#x3D;critical,digitalSignature,keyEnciphermentextendedKeyUsage&#x3D;critical,serverAuth,clientAuthsubjectAltName &#x3D; @alt_names[ alt_names ]DNS.0 &#x3D; pdoner.cn</code></pre><p><strong>[1]</strong>多域名证书，一说为SAN certificater(SubjectAltName Certificater)，一说为Unified Communications Certificater(这个是微软的说法)，已经迅速成为一种深受大家欢迎的证书，通过这种证书，可以方便部署Exchange， OCS 等经常有多个服务名的应用系统，此外也便于企业的网络管理人员对证书管理。</p><p><strong>[2]</strong>CSR是Certificate Signing Request的英文缩写，即证书请求文件，也就是证书申请者在申请数字证书时由CSP(加密服务提供者)在生成私钥的同时也生成证书请求文件，证书申请者只要把CSR文件提交给证书颁发机构后，证书颁发机构使用其根证书私钥签名就生成了证书公钥文件，也就是颁发给用户的证书。</p><h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><ul><li>OpenSSL下载:<a href="http://gnuwin32.sourceforge.net/packages/openssl.htm" target="_blank" rel="noopener">http://gnuwin32.sourceforge.net/packages/openssl.htm</a></li><li>SSL证书在线工具：<a href="https://csr.chinassl.net/" target="_blank" rel="noopener">https://csr.chinassl.net/</a></li><li>免费证书在线申请：<a href="https://freessl.org/" target="_blank" rel="noopener">https://freessl.org/</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先要选择证书颁发机构(CA)，各大著名的证书颁发机构的&lt;strong&gt;多域名&lt;/strong&gt;&lt;sup&gt;[1]&lt;/sup&gt;、泛域名证书大多是需要收费的。目前发现&lt;a href=&quot;https://www.trustasia.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;亚洲诚信(TrustAsia)&lt;/a&gt;的免费证书支持双域名，而&lt;a href=&quot;https://letsencrypt.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt&lt;/a&gt;的免费证书既支持多域名，同时也支持泛域名。&lt;/p&gt;
+&lt;p&gt;申请证书需要用到&lt;strong&gt;CSR&lt;/strong&gt;&lt;sup&gt;[2]&lt;/sup&gt;，直接在搜索引擎搜索CSR在线生成就可以很方便的生成，然后会得到一个CSR和一个KEY，前者是提交给证书颁发机构申请证书用的，后者是给服务器安装证书的时候用到的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Default" scheme="https://pdone.gitee.io/categories/Default/"/>
+    
+    
+      <category term="SSL" scheme="https://pdone.gitee.io/tags/SSL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Listen 1 – One for all free music in China</title>
+    <link href="https://pdone.gitee.io/2018/09/09/listen1/"/>
+    <id>https://pdone.gitee.io/2018/09/09/listen1/</id>
+    <published>2018-09-08T16:00:00.000Z</published>
+    <updated>2020-08-03T01:24:26.577Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。</p><h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><img src='/images/article/Listen1_1.png' alt='音乐平台歌单推荐界面' style='width:460px'><a id="more"></a><img src='/images/article/Listen1_2.png' alt='从网易云音乐、QQ音乐等平台导入自己的歌单到Listen1' style='width:460px'><img src='/images/article/Listen1_3.png' alt='搜索界面' style='width:460px'><img src='/images/article/Listen1_4.png' alt='歌词界面' style='width:460px'><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Chrome插件版"><a href="#Chrome插件版" class="headerlink" title="Chrome插件版"></a>Chrome插件版</h3><ol><li>下载Chrome插件版压缩包，并解压缩</li><li>打开 Chrome 扩展页面，勾选右上角「开发者模式」</li><li>选择「加载已解压的扩展程序…」，选择刚刚解压缩的文件夹</li><li>开始使用</li></ol><h3 id="Firefox插件版"><a href="#Firefox插件版" class="headerlink" title="Firefox插件版"></a>Firefox插件版</h3><ol><li>下载Firefox插件版，并解压缩</li><li>打开 about:config 页面，xpinstall.signatures.required 设置为 false</li><li>选择「附加组件」，齿轮图标，选择从文件安装附加组件，选择下载的xpi文件</li><li>开始使用</li></ol><h3 id="Windows桌面版"><a href="#Windows桌面版" class="headerlink" title="Windows桌面版"></a>Windows桌面版</h3><ol><li>下载Windows压缩包，根据系统选择32位或64位版本</li><li>解压缩，运行 Listen1.exe</li></ol><h3 id="Mac桌面版"><a href="#Mac桌面版" class="headerlink" title="Mac桌面版"></a>Mac桌面版</h3><ol><li>下载并运行dmg，在打开的安装窗口把Listen 1图标拖动到右侧</li><li>点击Listen 1图标运行</li></ol><h3 id="Linux桌面版"><a href="#Linux桌面版" class="headerlink" title="Linux桌面版"></a>Linux桌面版</h3><ol><li>下载deb安装包，根据系统选择32位或64位版本</li><li>点击deb，在安装界面点击Install</li></ol><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><ul><li><a href="https://github.com/listen1/listen1_chrome_extension/archive/v1.8.0.zip" target="_blank" rel="noopener">Chrome 插件版</a></li><li><a href="https://addons.mozilla.org/zh-CN/firefox/addon/listen-1/" target="_blank" rel="noopener">Firefox插件页面</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_win32.exe" target="_blank" rel="noopener">Windows 32位桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_win64.exe" target="_blank" rel="noopener">Windows 64位桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_mac.dmg" target="_blank" rel="noopener">Mac 桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_linuxia32.tar.gz" target="_blank" rel="noopener">Linux 32位桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_linuxx64.tar.gz" target="_blank" rel="noopener">Linux 64位桌面版</a></li></ul><h2 id="Listen-1背后的开源项目"><a href="#Listen-1背后的开源项目" class="headerlink" title="Listen 1背后的开源项目"></a>Listen 1背后的开源项目</h2><p><a href="https://github.com/listen1/listen1" target="_blank" rel="noopener"><strong><em>listen1/listen1</em></strong></a><br>最初的网页版播放器，使用Python开发Web服务器。可以直接在服务器运行，也可使用打包的Windows版和Mac版在本地运行Web服务器</p><p><a href="https://github.com/listen1/listen1_chrome_extension" target="_blank" rel="noopener"><strong><em>listen1/listen1_chrome_extension</em></strong></a><br>Chrome和Firefox插件版</p><p><a href="https://github.com/listen1/listen1_desktop" target="_blank" rel="noopener"><strong><em>listen1/listen1_desktop</em></strong></a><br>Windows，Mac，Linux桌面版。使用Electron框架，基于Listen 1 Chrome插件版JS库开发</p><h2 id="Listen-1联系方式"><a href="#Listen-1联系方式" class="headerlink" title="Listen 1联系方式"></a>Listen 1联系方式</h2><ul><li>Github 主页：<a href="https://github.com/listen1" target="_blank" rel="noopener">https://github.com/listen1</a></li><li>中国镜像主页：<a href="http://githublisten1.coding.me/listen1/" target="_blank" rel="noopener">http://githublisten1.coding.me/listen1/</a></li><li>中国下载镜像仓库：<a href="https://coding.net/u/githublisten1" target="_blank" rel="noopener">https://coding.net/u/githublisten1</a></li><li>Twitter：<a href="https://twitter.com/githublisten1" target="_blank" rel="noopener">https://twitter.com/githublisten1</a></li><li>联系邮箱：<a href="githublisten1@gmail.com">githublisten1@gmail.com</a></li></ul><h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>感谢该项目的所有代码贡献者。</p><p>如果觉得不错，不妨推荐给你身边喜欢音乐的朋友。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。&lt;/p&gt;
+&lt;h2 id=&quot;截图&quot;&gt;&lt;a href=&quot;#截图&quot; class=&quot;headerlink&quot; title=&quot;截图&quot;&gt;&lt;/a&gt;截图&lt;/h2&gt;&lt;img src=&#39;/images/article/Listen1_1.png&#39; alt=&#39;音乐平台歌单推荐界面&#39; style=&#39;width:460px&#39;&gt;
+    
+    </summary>
+    
+    
+      <category term="Default" scheme="https://pdone.gitee.io/categories/Default/"/>
     
     
       <category term="Share" scheme="https://pdone.gitee.io/tags/Share/"/>

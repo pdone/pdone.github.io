@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/custom/script.js"></script>
+
 <head hexo-theme='https://volantis.js.org/#3.0-beta2'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -44,8 +48,6 @@
   
 
   
-    <link rel="shortcut icon" type='image/x-icon' href="/images/logo.png">
-  
 
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
@@ -55,11 +57,14 @@
 
   <!-- import link -->
   
+  
+  <link rel="stylesheet" type="text/css" href="/custom/style.css" />
+  
 
   
     
       
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/zenburncss.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/rainbow.min.css">
 
     
   
@@ -88,17 +93,8 @@
 </head>
 
 
-<style>
-.aplayer-list-title,.aplayer-title
-{
-	color: #666
-}
-.title,.subtitle
-{
-	color: #f0f0f0
-}
-</style>
-<body>
+<body oncontextmenu="return popMenu(event);">
+
   
   
   
@@ -115,10 +111,18 @@
     
   </div>
   <div class='b'>
-    <div class='menu navigation dock'>
-      <ul class='cover-list-h'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation search'>
+      <div class='list-h'>
         
-      </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -159,13 +163,13 @@
             
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
                     id="home"
                   >
-                  <i class='fas fa-rss fa-fw'></i>博客
+                  <i class='fas fa-home fa-fw'></i>首页
                 </a>
                 
               </li>
@@ -175,7 +179,19 @@
             
             
               <li>
-                <a class="flat-box" href=/categories/
+                <a class="menuitem flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-list-ul fa-fw'></i>查阅
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box" href=/categories/
                   
                   
                   
@@ -187,11 +203,11 @@
               </li>
             
           
-          
-            
+                    
+                      
             
               <li>
-                <a class="flat-box" href=/tags/
+                <a class="menuitem flat-box" href=/tags/
                   
                   
                   
@@ -203,11 +219,11 @@
               </li>
             
           
-          
-            
+                    
+                      
             
               <li>
-                <a class="flat-box" href=/archives/
+                <a class="menuitem flat-box" href=/archives/
                   
                   
                   
@@ -219,17 +235,23 @@
               </li>
             
           
+                    
+                  </ul>
+                
+              </li>
+            
+          
           
             
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="menuitem flat-box" href=/friends/
                   
                   
                   
                     id="friends"
                   >
-                  <i class='fas fa-link fa-fw'></i>友链
+                  <i class='fas fa-child fa-fw'></i>友链
                 </a>
                 
               </li>
@@ -239,14 +261,84 @@
             
             
               <li>
-                <a class="flat-box" href=/about/
+                <a class="menuitem flat-box" href=/about/
                   
                   
                   
                     id="about"
                   >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
+                  <i class='fas fa-info fa-fw'></i>关于
                 </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-fan fa-spin fa-fw fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box" 
+                  
+                  
+                  >
+                  微信公众号
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                <img src="/images/wx-qrcode.jpg">
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box" 
+                  
+                  
+                  >
+                  微信小程序
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                <img src="/images/wxapp-qrcode.jpg">
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                  </ul>
                 
               </li>
             
@@ -258,7 +350,7 @@
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
           <i class="icon fas fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="" />
+          <input type="text" class="input u-search-input" placeholder="Search..." />
         </form>
       </div>
 
@@ -273,13 +365,13 @@
               
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
                     id="home"
                   >
-                  <i class='fas fa-rss fa-fw'></i>博客
+                  <i class='fas fa-home fa-fw'></i>首页
                 </a>
                 
               </li>
@@ -289,7 +381,19 @@
               
             
               <li>
-                <a class="flat-box" href=/categories/
+                <a class="menuitem flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-list-ul fa-fw'></i>查阅
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box" href=/categories/
                   
                   
                   
@@ -301,11 +405,11 @@
               </li>
             
           
-            
-              
+                    
+                      
             
               <li>
-                <a class="flat-box" href=/tags/
+                <a class="menuitem flat-box" href=/tags/
                   
                   
                   
@@ -317,11 +421,11 @@
               </li>
             
           
-            
-              
+                    
+                      
             
               <li>
-                <a class="flat-box" href=/archives/
+                <a class="menuitem flat-box" href=/archives/
                   
                   
                   
@@ -333,17 +437,23 @@
               </li>
             
           
+                    
+                  </ul>
+                
+              </li>
+            
+          
             
               
             
               <li>
-                <a class="flat-box" href=/friends/
+                <a class="menuitem flat-box" href=/friends/
                   
                   
                   
                     id="friends"
                   >
-                  <i class='fas fa-link fa-fw'></i>友链
+                  <i class='fas fa-child fa-fw'></i>友链
                 </a>
                 
               </li>
@@ -353,14 +463,84 @@
               
             
               <li>
-                <a class="flat-box" href=/about/
+                <a class="menuitem flat-box" href=/about/
                   
                   
                   
                     id="about"
                   >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
+                  <i class='fas fa-info fa-fw'></i>关于
                 </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-fan fa-spin fa-fw fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box" 
+                  
+                  
+                  >
+                  微信公众号
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                <img src="/images/wx-qrcode.jpg">
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box" 
+                  
+                  
+                  >
+                  微信小程序
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                <img src="/images/wxapp-qrcode.jpg">
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                  </ul>
                 
               </li>
             
@@ -390,6 +570,10 @@
   <div id="pjax-ispage">false</div>
   <div id="pjax-pageTitle"></div>
   <div id="pjax-enable-cover">true</div>
+  <div id="pjax-permalink"></div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
   
   
 </div>
@@ -435,7 +619,7 @@
 			          </div>
 		      		
 		          <div class="archive-item archive-post mark">
-		            <a href="/2020/07/01/test/">
+		            <a class='ai' href="/2020/07/01/test/">
 		              <time>07-01</time>
 		              <span class="title">
 		                
@@ -453,7 +637,7 @@
 						
 							
 		          <div class="archive-item archive-post mark">
-		            <a href="/2020/04/15/net-loading/">
+		            <a class='ai' href="/2020/04/15/net-loading/">
 		              <time>04-15</time>
 		              <span class="title">
 		                
@@ -472,11 +656,52 @@
 							
 		            
 			          <div class="archive-item archive-year mark">
+			            <h2>2019</h2>
+			          </div>
+		      		
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2019/02/17/msi-b450m-mortar/">
+		              <time>02-17</time>
+		              <span class="title">
+		                
+		                  微星B450M MORTAR主板PCI_E3接口无法识别硬件解决方法
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		            
+			          <div class="archive-item archive-year mark">
 			            <h2>2018</h2>
 			          </div>
 		      		
 		          <div class="archive-item archive-post mark">
-		            <a href="/2018/09/09/Listen1/">
+		            <a class='ai' href="/2018/09/15/openssl-csr/">
+		              <time>09-15</time>
+		              <span class="title">
+		                
+		                  OpenSSL生成多域名CSR
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2018/09/09/listen1/">
 		              <time>09-09</time>
 		              <span class="title">
 		                
@@ -504,8 +729,8 @@
   <div class='content'>
     
       
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='/images/pdone.jpg'/>
+        <a class='avatar flat-box circle' href='/about/'>
+          <img no-lazy src='/images/avatar.jpg'/>
         </a>
       
     
@@ -515,9 +740,6 @@
           <h2>pdone</h2>
         
         
-        
-          <p><span id="jinrishici-sentence">皮蛋的博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
     
@@ -563,6 +785,87 @@
 
   
 
+  
+    
+    
+
+<section class="widget shadow blur desktop">
+  
+  <header>
+    
+      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>Information</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>5 篇</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>已运行时间：</div>
+          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
+        </div>
+        <script>
+          var BirthDay = new Date(new Date('2019/09/01'));
+          var today = new Date();
+          var timeold = (today.getTime() - BirthDay.getTime());
+          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
+          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
+        </script>
+      
+
+
+      
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>1.5k 字</div>
+        </div>
+      
+
+      
+
+      
+
+      
+        
+          
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+
+          
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/locale/zh-cn.min.js"></script>
+
+        
+        <div class="webinfo-item">
+          <div>最后活动时间：</div>
+          
+            <div id="last-update" style="display: none;">Mon Aug 03 2020 09:28:55 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update-show">2020-08-03 日</div>
+          
+        </div>
+        
+        <script>
+          var lastUpDate = document.getElementById('last-update').innerHTML;
+          try {
+            document.getElementById('last-update-show').innerHTML = moment(new Date(lastUpDate)).fromNow();
+          } catch (error) {
+            document.getElementById('last-update-show').innerHTML = '2020-08-03 日';
+          }
+        </script>
+        
+      
+    </div>
+  </div>
+</section>
+
+  
+
 
 </aside>
 
@@ -597,7 +900,7 @@
       list-max-height='340px'
       server='netease'
       type='playlist'
-      id='5131984752'
+      id='5156176329'
       list-folded='true'>
     </meting-js>
   
@@ -664,7 +967,271 @@
   </div>
   <div>
     
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+      
+  
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('copy')"
+        
+        
+          id="menu-copy"
+        >
+        <i class='fa fa-copy fa-fw'></i> 复制文本
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+        
+          id="menu-copy-img"
+        >
+        <i class='fa fa-link fa-fw'></i> 复制图片链接
+      </a>
+    </li>
+  
+        
+      
+        
+          <li class='navigation'>
+            <a class='nav icon-only' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+            <a class='nav icon-only' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+            <a class='nav icon-only' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+            <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+          </li>
+        
+      
+        
+          <hr>
+        
+      
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+        
+        
+        
+        
+          id="https:volantisjsorgfaqs"
+        >
+        <i class='fa fa-question fa-fw'></i> 常见问题
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
+        
+        
+        
+        
+          id="https:volantisjsorgexamples"
+        >
+        <i class='fa fa-rss fa-fw'></i> 示例博客
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
+        
+        
+        
+        
+          id="https:volantisjsorgcontributors"
+        >
+        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xvolantis-docs"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          <li class='music name'>
+            <p class='nav music-title'></p>
+          </li>
+          <li class='music ctrl'>
+            <a class='nav icon-only backward' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+          </li>
+          <li class='music volume'>
+            <a class='nav volume'>
+              <div class="aplayer-volume-bar-wrap">
+                <div class="aplayer-volume-bar fix-cursor-pointer">
+                  <div class="aplayer-volume"></div>
+                  <i class='left fa fa-volume-off fa-fw'></i>
+                  <i class='right fa fa-volume-up fa-fw'></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function () {
+      return false;
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      // 选中文本
+      if (window.getSelection().toString()) {
+        document.getElementById('menu-copy').style.display = 'block';
+      } else {
+        document.getElementById('menu-copy').style.display = 'none';
+      }
+
+      // 选中图片
+      if (event.toElement.currentSrc) {
+        document.getElementById('menu-copy-img').style.display = 'block';
+        document.getElementById('menu-copy-img').addEventListener("click", function (e) {
+          copyString(event.toElement.currentSrc);
+        });
+      } else {
+        document.getElementById('menu-copy-img').style.display = 'none';
+      }
+
+      // 有音乐播放器
+      if (true == true) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      console.log(event);
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
 
 
@@ -679,7 +1246,7 @@
 
 
 
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
 
@@ -691,7 +1258,7 @@
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["/images/wallpaper/15.jpg"];
+        var imgs=["/images/wallpaper/18.jpg", "/images/wallpaper/17.jpg", "/images/wallpaper/15.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -710,14 +1277,14 @@
             imgs,
           {
             duration: "20000",
-            fade: "1500"
+            fade: "2500"
           });
         } else {
           $.backstretch(
             imgs,
           {
             duration: "20000",
-            fade: "1500"
+            fade: "2500"
           });
         }
       });
@@ -726,6 +1293,11 @@
 
 
 
+  <script>
+    let APlayerController = new Object();
+    APlayerController.id = '5156176329';  // 设定全局音乐播放ID
+    APlayerController.volume = '0.7';
+  </script>
   
     
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
@@ -735,9 +1307,13 @@
 <script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
 
   
+    
+<script src="/js/aplayer.js"></script>
+
+  
 
 
-<!-- 评论 （PS：只对 valine 做了 Pjax 兼容） -->
+
 
   
   
@@ -794,14 +1370,14 @@
       appId: "WnruMlxDCXIemyzEex7LNCgQ-gzGzoHsz",
       appKey: "mfQkdYRFXarbTVWjQHYs8n9J",
       pageSize: '10',
-      avatar: 'robohash',
+      avatar: 'retro',
       lang: 'zh-cn',
       visitor: 'true',
       highlight: 'true',
       mathJax: 'false',
       enableQQ: 'true',
       requiredFields: requiredFields,
-      emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
       emojiMaps: emojiMaps
     })
   }
@@ -815,7 +1391,6 @@
 
 
 <!-- darkmodejs -->
-
 
 
 <!-- 复制 -->
@@ -876,23 +1451,6 @@
 
 <!-- scrollreveal -->
 
-  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    function pjax_scrollrebeal() {
-      ScrollReveal().reveal('.l_main .reveal', {
-        distance: '32px',
-        duration: '800',
-        interval: '20',
-        scale: '1',
-        easing: 'ease-out'
-      });
-    }
-
-    $(function () {
-      pjax_scrollrebeal();
-    });
-  </script>
-
 <!-- ******************************** -->
 
 <!-- fancybox -->
@@ -901,6 +1459,7 @@
   function pjax_fancybox() {
     $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
       var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
       $(element).attr("pjax-fancybox", "");  // 过滤 pjax
       $(element).attr("href", $(this).attr("src"));
       if ($(this).attr("data-original")) {
@@ -957,7 +1516,7 @@
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 
@@ -979,14 +1538,14 @@
 
 
   
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
 
 
 
 
   
     
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
 
     <script>hljs.initHighlightingOnLoad();</script>
   
@@ -1004,7 +1563,6 @@
 
 <div class="pjax-animate">
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
     <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
     <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
     <script>
@@ -1035,16 +1593,20 @@
 
     document.addEventListener('pjax:send', function (e) {
       window.stop(); // 相当于点击了浏览器的停止按钮
-      var currentUrl = window.location.pathname;
-      var targetUrl = e.triggerElement.href;
-      var banUrl = [""];
-      if (banUrl[0] != "") {
-        banUrl.forEach(item => {
-          if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-            window.location.href = targetUrl;
-          }
-        });
-      }
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
       window.subData = null; // 移除标题（用于一二级导航栏切换处）
       $.fancybox.close();    // 关闭弹窗
       $('.nav-main').find('.list-v').not('.menu-phone').css("display","none"); // 移除小尾巴
@@ -1098,13 +1660,13 @@
         });
         
         
-          pjax_scrollrebeal();
-        
         
           pjax_initCopyCode();
         
         
           pjax_valine();
+        
+        
         
         
         
@@ -1122,5 +1684,8 @@
 
     
   </div>
+  
+    <script src="https://cdn.jsdelivr.net/gh/inkss/common@master/hexo/js/cookie.min.js"></script>
+  
 </body>
 </html>

@@ -1,9 +1,6 @@
-# pdone.gitee.io
+## Thanks
 
-## 皮蛋的博客源代码
+### [Hexo](https://hexo.io/ "https://hexo.io/")
+### [Volantis](https://volantis.js.org/ "https://volantis.js.org/")
+### [jsDelivr](https://www.jsdelivr.com/)
 
-### 致谢
-
-- [Hexo](https://hexo.io/)
-- [jsDelivr](https://www.jsdelivr.com/)
-- [Volantis](https://volantis.js.org/)
