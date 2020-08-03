@@ -5,9 +5,9 @@
   <subtitle>Only Peace &amp; Love Here</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://pdone.gitee.io/"/>
-  <updated>2020-08-03T06:09:04.424Z</updated>
-  <id>https://pdone.gitee.io/</id>
+  <link href="https://pdoner.cn/"/>
+  <updated>2020-08-03T07:17:34.982Z</updated>
+  <id>https://pdoner.cn/</id>
   
   <author>
     <name>Pdone</name>
@@ -17,33 +17,9 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试页面</title>
-    <link href="https://pdone.gitee.io/2020/07/01/test/"/>
-    <id>https://pdone.gitee.io/2020/07/01/test/</id>
-    <published>2020-07-01T02:42:59.000Z</published>
-    <updated>2020-08-03T06:09:04.424Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文仅用于测试</p><h2 id="1-测试"><a href="#1-测试" class="headerlink" title="1.测试"></a>1.测试</h2><h3 id="第一项测试"><a href="#第一项测试" class="headerlink" title="第一项测试"></a>第一项测试</h3><a id="more"></a><p>通过</p><h3 id="第二项测试"><a href="#第二项测试" class="headerlink" title="第二项测试"></a>第二项测试</h3><p>通过</p><h2 id="2-测试结果"><a href="#2-测试结果" class="headerlink" title="2.测试结果"></a>2.测试结果</h2><p>通过</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文仅用于测试&lt;/p&gt;
-&lt;h2 id=&quot;1-测试&quot;&gt;&lt;a href=&quot;#1-测试&quot; class=&quot;headerlink&quot; title=&quot;1.测试&quot;&gt;&lt;/a&gt;1.测试&lt;/h2&gt;&lt;h3 id=&quot;第一项测试&quot;&gt;&lt;a href=&quot;#第一项测试&quot; class=&quot;headerlink&quot; title=&quot;第一项测试&quot;&gt;&lt;/a&gt;第一项测试&lt;/h3&gt;
-    
-    </summary>
-    
-    
-      <category term="Default" scheme="https://pdone.gitee.io/categories/Default/"/>
-    
-    
-      <category term="Share" scheme="https://pdone.gitee.io/tags/Share/"/>
-    
-  </entry>
-  
-  <entry>
     <title>WinForm加载中窗体</title>
-    <link href="https://pdone.gitee.io/2020/04/15/net-loading/"/>
-    <id>https://pdone.gitee.io/2020/04/15/net-loading/</id>
+    <link href="https://pdoner.cn/2020/04/15/net-loading/"/>
+    <id>https://pdoner.cn/2020/04/15/net-loading/</id>
     <published>2020-04-14T16:00:00.000Z</published>
     <updated>2020-08-03T07:17:34.982Z</updated>
     
@@ -56,19 +32,19 @@
     </summary>
     
     
-      <category term="Default" scheme="https://pdone.gitee.io/categories/Default/"/>
+      <category term="Default" scheme="https://pdoner.cn/categories/Default/"/>
     
     
-      <category term="C#" scheme="https://pdone.gitee.io/tags/C/"/>
+      <category term="C#" scheme="https://pdoner.cn/tags/C/"/>
     
-      <category term=".NET" scheme="https://pdone.gitee.io/tags/NET/"/>
+      <category term=".NET" scheme="https://pdoner.cn/tags/NET/"/>
     
   </entry>
   
   <entry>
     <title>微星B450M MORTAR主板PCI_E3接口无法识别硬件解决方法</title>
-    <link href="https://pdone.gitee.io/2019/02/17/msi-b450m-mortar/"/>
-    <id>https://pdone.gitee.io/2019/02/17/msi-b450m-mortar/</id>
+    <link href="https://pdoner.cn/2019/02/17/msi-b450m-mortar/"/>
+    <id>https://pdoner.cn/2019/02/17/msi-b450m-mortar/</id>
     <published>2019-02-16T16:00:00.000Z</published>
     <updated>2020-08-03T01:24:26.577Z</updated>
     
@@ -84,17 +60,17 @@
     </summary>
     
     
-      <category term="Default" scheme="https://pdone.gitee.io/categories/Default/"/>
+      <category term="Default" scheme="https://pdoner.cn/categories/Default/"/>
     
     
-      <category term="Share" scheme="https://pdone.gitee.io/tags/Share/"/>
+      <category term="Share" scheme="https://pdoner.cn/tags/Share/"/>
     
   </entry>
   
   <entry>
     <title>OpenSSL生成多域名CSR</title>
-    <link href="https://pdone.gitee.io/2018/09/15/openssl-csr/"/>
-    <id>https://pdone.gitee.io/2018/09/15/openssl-csr/</id>
+    <link href="https://pdoner.cn/2018/09/15/openssl-csr/"/>
+    <id>https://pdoner.cn/2018/09/15/openssl-csr/</id>
     <published>2018-09-14T16:00:00.000Z</published>
     <updated>2020-08-03T04:46:22.754Z</updated>
     
@@ -108,17 +84,17 @@
     </summary>
     
     
-      <category term="Default" scheme="https://pdone.gitee.io/categories/Default/"/>
+      <category term="Default" scheme="https://pdoner.cn/categories/Default/"/>
     
     
-      <category term="SSL" scheme="https://pdone.gitee.io/tags/SSL/"/>
+      <category term="SSL" scheme="https://pdoner.cn/tags/SSL/"/>
     
   </entry>
   
   <entry>
     <title>Listen 1 – One for all free music in China</title>
-    <link href="https://pdone.gitee.io/2018/09/09/listen1/"/>
-    <id>https://pdone.gitee.io/2018/09/09/listen1/</id>
+    <link href="https://pdoner.cn/2018/09/09/listen1/"/>
+    <id>https://pdoner.cn/2018/09/09/listen1/</id>
     <published>2018-09-09T03:48:32.000Z</published>
     <updated>2020-08-03T08:20:54.866Z</updated>
     
@@ -132,10 +108,10 @@
     </summary>
     
     
-      <category term="Default" scheme="https://pdone.gitee.io/categories/Default/"/>
+      <category term="Default" scheme="https://pdoner.cn/categories/Default/"/>
     
     
-      <category term="Share" scheme="https://pdone.gitee.io/tags/Share/"/>
+      <category term="Share" scheme="https://pdoner.cn/tags/Share/"/>
     
   </entry>
   
