@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,9 +16,15 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：OpenSSL - 皮蛋的博客</title>
+  <title>5个小技巧让你写出更好的JavaScript条件语句 - 皮蛋的博客</title>
+  
+    <meta name="keywords" content="Skill">
   
 
+  
+    <meta name="description" content="
+原文地址：5 Tips to Write Better Conditionals in JavaScript原文作者：Jecelyn Yeen翻译&amp;校对：pdone
+">
   
 
   <!-- feed -->
@@ -56,7 +60,7 @@
   <!-- import link -->
   
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/pdone/static@latest/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/pdone/static/css/blog.css" />
   
 
   
@@ -95,7 +99,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -125,7 +129,7 @@
 
       <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
     </cover>
-    <header class="l_header shadow floatable">
+    <header class="l_header shadow blur">
   <div class='container'>
   <div class='wrapper'>
     <div class='nav-sub'>
@@ -561,10 +565,10 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">5个小技巧让你写出更好的JavaScript条件语句</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink"></div>
+  <div id="pjax-permalink">https://pdoner.cn/2018/10/18/js-5tip/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -598,25 +602,12 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow blur reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow blur article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -626,11 +617,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2018/09/15/openssl-csr/">
-      OpenSSL生成多域名CSR
+  <h1 class="title">
+    <a href="/2018/10/18/js-5tip/">
+      5个小技巧让你写出更好的JavaScript条件语句
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -653,9 +644,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/OpenSSL/' rel="nofollow">
+    <a href='/categories/JS/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>OpenSSL</p>
+      <p>JS</p>
     </a>
   </div>
 
@@ -666,45 +657,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2018-09-15</p>
+    <p>2018-10-18</p>
   </a>
 </div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2018/09/15/openssl-csr/" class="leancloud_visitors" data-flag-title="OpenSSL生成多域名CSR">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2018/09/15/openssl-csr/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2018/09/15/openssl-csr/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -722,38 +677,461 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <blockquote>
+<p>原文地址：<a href="https://scotch.io/tutorials/5-tips-to-write-better-conditionals-in-javascript#toc-1-use-array-includes-for-multiple-criteria" target="_blank" rel="noopener">5 Tips to Write Better Conditionals in JavaScript</a><br>原文作者：<a href="https://scotch.io/@jecelyn" target="_blank" rel="noopener">Jecelyn Yeen</a><br>翻译&amp;校对：<a href="https://pdoner.cn">pdone</a></p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="1-在条件较多时使用-Array-includes"><a href="#1-在条件较多时使用-Array-includes" class="headerlink" title="1.在条件较多时使用 Array.includes"></a>1.在条件较多时使用 Array.includes</h2><p>举个栗子：</p>
+<pre><code class="js">// condition
+function test(fruit) {
+  if (fruit == &#39;apple&#39; || fruit == &#39;strawberry&#39;) {
+    console.log(&#39;red&#39;);
+  }
+}</code></pre>
+<p>乍一看，上面的例子看起来不错。 但是，如果我们有更多的红色水果，比如樱桃和蔓越莓呢？ 我们是否要用更多的<code>||</code>来扩展语句？</p>
+<p>我们可以使用<code>Array.includes</code>重写上面的条件。</p>
+<pre><code class="js">function test(fruit) {
+  // extract conditions to array
+  const redFruits = [&#39;apple&#39;, &#39;strawberry&#39;, &#39;cherry&#39;, &#39;cranberries&#39;];
+
+  if (redFruits.includes(fruit)) {
+    console.log(&#39;red&#39;);
+  }
+}</code></pre>
+<p>我们将<code>红色水果（条件）</code>整合到一个数组中。这样做可以让代码看起来更整洁。</p>
+<h2 id="2-减少嵌套，尽早返回"><a href="#2-减少嵌套，尽早返回" class="headerlink" title="2.减少嵌套，尽早返回"></a>2.减少嵌套，尽早返回</h2><p>让我们扩展前面的示例，增加另外两个条件：<br>——如果没有提供水果，抛出错误；<br>——如果超过10种水果，打印出水果数量。</p>
+<pre><code class="js">function test(fruit, quantity) {
+  const redFruits = [&#39;apple&#39;, &#39;strawberry&#39;, &#39;cherry&#39;, &#39;cranberries&#39;];
+
+  // condition 1: fruit must has value
+  if (fruit) {
+    // condition 2: must be red
+    if (redFruits.includes(fruit)) {
+      console.log(&#39;red&#39;);
+
+      // condition 3: must be big quantity
+      if (quantity &gt; 10) {
+        console.log(&#39;big quantity&#39;);
+      }
+    }
+  } else {
+    throw new Error(&#39;No fruit!&#39;);
+  }
+}
+
+// test results
+test(null); // error: No fruits
+test(&#39;apple&#39;); // print: red
+test(&#39;apple&#39;, 20); // print: red, big quantity</code></pre>
+<p>看看上面的代码，我们有：<br>­——1个<code>if / else</code>语句过滤掉无效条件；<br>——3层嵌套if语句（条件1,2和3）。<br>对我而言，我遵循的规则是在发现无效条件时提前返回。</p>
+<pre><code class="js">/* return early when invalid conditions found */
+
+function test(fruit, quantity) {
+  const redFruits = [&#39;apple&#39;, &#39;strawberry&#39;, &#39;cherry&#39;, &#39;cranberries&#39;];
+
+  // condition 1: throw error early
+  if (!fruit) throw new Error(&#39;No fruit!&#39;);
+
+  // condition 2: must be red
+  if (redFruits.includes(fruit)) {
+    console.log(&#39;red&#39;);
+
+    // condition 3: must be big quantity
+    if (quantity &gt; 10) {
+      console.log(&#39;big quantity&#39;);
+    }
+  }
+}</code></pre>
+<p>这样做的话，我们会得到一个较少层级的嵌套语句。 这种编码风格很好，特别是当你有很长的if语句时（想象你需要滚动到最底层才知道这里有一个else语句，一点都不酷）。</p>
+<p>通过反转条件并提前返回，我们可以进一步减少嵌套。 请查看下面的条件2，看看我们是如何做到的：</p>
+<pre><code class="js">/* return early when invalid conditions found */
+
+function test(fruit, quantity) {
+  const redFruits = [&#39;apple&#39;, &#39;strawberry&#39;, &#39;cherry&#39;, &#39;cranberries&#39;];
+
+  if (!fruit) throw new Error(&#39;No fruit!&#39;); // condition 1: throw error early
+  if (!redFruits.includes(fruit)) return; // condition 2: stop when fruit is not red
+
+  console.log(&#39;red&#39;);
+
+  // condition 3: must be big quantity
+  if (quantity &gt; 10) {
+    console.log(&#39;big quantity&#39;);
+  }
+}</code></pre>
+<p>通过反转条件2，我们的代码现在没有嵌套语句。 当我们有很长的逻辑时，这种技巧非常有用，我们希望在不满足条件时停止下一步的处理。</p>
+<p>但是这并不是硬性规定。问问自己，这个版本（没有嵌套）是否比前一个版本（条件2嵌套）更好、更可读？</p>
+<p>对我而言，我会保留（条件2嵌套）这个版本，因为：<br>——代码简短直接，一个if语句是代码结构更清晰；<br>——反转条件可能会引发更多的思考过程（增加认知负荷）。</p>
+<p>因此，始终追求更少的嵌套和尽早的返回，但不要过度。如果你感兴趣的话，这里有篇关于这个问题的文章以及 StackOverflow 上的讨论：</p>
+<p><a href="http://blog.timoxley.com/post/47041269194/avoid-else-return-early" target="_blank" rel="noopener">Avoid Else, Return Early</a> by Tim Oxley</p>
+<p><a href="https://softwareengineering.stackexchange.com/questions/18454/should-i-return-from-a-function-early-or-use-an-if-statement" target="_blank" rel="noopener">StackOverflow discussion</a> on if/else coding style</p>
+<h2 id="3-使用函数默认参数和解构"><a href="#3-使用函数默认参数和解构" class="headerlink" title="3.使用函数默认参数和解构"></a>3.使用函数默认参数和解构</h2><p>我想下面的代码可能看起来很熟悉，我们总是需要检查<code>null / undefined</code>值并给参数赋予默认值：</p>
+<pre><code class="js">function test(fruit, quantity) {
+  if (!fruit) return;
+  const q = quantity || 1; // if quantity not provided, default to one
+
+  console.log(`We have ${q} ${fruit}!`);
+}
+
+//test results
+test(&#39;banana&#39;); // We have 1 banana!
+test(&#39;apple&#39;, 2); // We have 2 apple!</code></pre>
+<p>实际上，我们可以通过设置函数的默认参数来省去参数<code>q</code>：</p>
+<pre><code class="js">function test(fruit, quantity = 1) { // if quantity not provided, default to one
+  if (!fruit) return;
+  console.log(`We have ${quantity} ${fruit}!`);
+}
+
+//test results
+test(&#39;banana&#39;); // We have 1 banana!
+test(&#39;apple&#39;, 2); // We have 2 apple!</code></pre>
+<p>更简单直观不是吗？ 请注意，函数的每个参数都可以有自己的默认值。 例如，我们也可以为<code>水果</code>分配默认值：</p>
+<pre><code class="js">function test (fruit =&#39;unknown&#39;, quantity = 1)</code></pre>
+<p>如果我们的<code>水果</code>是一个<code>对象（Object）</code>怎么办？ 我们可以指定默认参数吗？</p>
+<pre><code class="js">function test(fruit) { 
+  // printing fruit name if value provided
+  if (fruit &amp;&amp; fruit.name)  {
+    console.log (fruit.name);
+  } else {
+    console.log(&#39;unknown&#39;);
+  }
+}
+
+//test results
+test(undefined); // unknown
+test({ }); // unknown
+test({ name: &#39;apple&#39;, color: &#39;red&#39; }); // apple</code></pre>
+<p>观察上边的例子，水果的<code>name</code>属性存在时，我们会将它打印出来，否则打印<code>&#39;unknown&#39;</code>。我们可以通过默认参数和解构赋值的方法来避免写出 <code>fruit &amp;&amp; fruit.name</code> 这种条件。</p>
+<pre><code class="js">// destructing - get name property only
+// assign default empty object {}
+function test({name} = {}) {
+  console.log (name || &#39;unknown&#39;);
+}
+
+//test results
+test(undefined); // unknown
+test({ }); // unknown
+test({ name: &#39;apple&#39;, color: &#39;red&#39; }); // apple</code></pre>
+<p>由于我们只需要来自fruit的<code>name</code>属性，我们可以使用<code>{name}</code>将其解构出来，然后我们可以在代码中使用<code>name</code>作为变量而不是<code>fruit.name</code>。</p>
+<p>我们还使用空对象<code>{}</code>作为默认值。 如果我们不这样做，你将在执行遇到错误<code>test(undefined) - Cannot destructure property name of &#39;undefined&#39; or &#39;null&#39;</code>。 因为<code>undefined</code>中没有<code>name</code>属性。</p>
+<p>如果你不介意使用第三方库，有几种方法可以减少空值检查：<br>——使用 <a href="https://lodash.com/docs/4.17.10#get" target="_blank" rel="noopener">Lodash get</a> 函数；<br>——使用 Facebook 开源的 <a href="https://github.com/facebookincubator/idx" target="_blank" rel="noopener">idx</a> 库（需搭配 Babeljs）。<br>这里有一个使用 Lodash 的例子：</p>
+<pre><code class="js">// Include lodash library, you will get _
+function test(fruit) {
+  console.log(__.get(fruit, &#39;name&#39;, &#39;unknown&#39;); // get property name, if not available, assign default value &#39;unknown&#39;
+}
+
+//test results
+test(undefined); // unknown
+test({ }); // unknown
+test({ name: &#39;apple&#39;, color: &#39;red&#39; }); // apple</code></pre>
+<p>您可以<a href="http://jsbin.com/bopovajiye/edit?js,console" target="_blank" rel="noopener">点击这里</a>运行演示代码。 此外，如果您是功能编程（FP）的粉丝，您可以选择使用<a href="https://github.com/lodash/lodash/wiki/FP-Guide" target="_blank" rel="noopener">Lodash fp</a>，Lodash的功能版本（方法更改为get或getOr）。</p>
+<h2 id="4-相较Switch更偏向于使用Map-Object"><a href="#4-相较Switch更偏向于使用Map-Object" class="headerlink" title="4.相较Switch更偏向于使用Map / Object"></a>4.相较Switch更偏向于使用Map / Object</h2><p>让我们看看下面的例子，我们想根据颜色打印水果：</p>
+<pre><code class="js">function test(color) {
+  // use switch case to find fruits in color
+  switch (color) {
+    case &#39;red&#39;:
+      return [&#39;apple&#39;, &#39;strawberry&#39;];
+    case &#39;yellow&#39;:
+      return [&#39;banana&#39;, &#39;pineapple&#39;];
+    case &#39;purple&#39;:
+      return [&#39;grape&#39;, &#39;plum&#39;];
+    default:
+      return [];
+  }
+}
+
+//test results
+test(null); // []
+test(&#39;yellow&#39;); // [&#39;banana&#39;, &#39;pineapple&#39;]</code></pre>
+<p>上面的代码似乎没有错，但我觉得它很冗长。 使用具有更清晰语法的object literal可以实现相同的结果：</p>
+<pre><code class="js">// use object literal to find fruits in color
+  const fruitColor = {
+    red: [&#39;apple&#39;, &#39;strawberry&#39;],
+    yellow: [&#39;banana&#39;, &#39;pineapple&#39;],
+    purple: [&#39;grape&#39;, &#39;plum&#39;]
+  };
+
+function test(color) {
+  return fruitColor[color] || [];
+}</code></pre>
+<p>或者，你可以使用Map来实现相同的结果：</p>
+<pre><code class="js">// use Map to find fruits in color
+  const fruitColor = new Map()
+    .set(&#39;red&#39;, [&#39;apple&#39;, &#39;strawberry&#39;])
+    .set(&#39;yellow&#39;, [&#39;banana&#39;, &#39;pineapple&#39;])
+    .set(&#39;purple&#39;, [&#39;grape&#39;, &#39;plum&#39;]);
+
+function test(color) {
+  return fruitColor.get(color) || [];
+}</code></pre>
+<p>Map是ES2015引入的对象类型，允许你存储键值对。</p>
+<p>我们应该禁止使用switch语句吗？ 不要局限于此。 就个人而言，我尽可能使用object literal，但我不会设置硬性规则来阻止使用Switch，视使用场景而定。</p>
+<p>Todd Motto有一篇文章深入研究switch语句与对象文字，你可以<a href="https://toddmotto.com/deprecating-the-switch-statement-for-object-literals/" target="_blank" rel="noopener">点击这里</a>阅读。</p>
+<h3 id="TL；DR；重构方法"><a href="#TL；DR；重构方法" class="headerlink" title="TL；DR；重构方法"></a>TL；DR；重构方法</h3><p>对于上面的示例，我们实际上可以重构我们的代码以使用Array.filter实现相同的结果。</p>
+<pre><code class="js"> const fruits = [
+    { name: &#39;apple&#39;, color: &#39;red&#39; }, 
+    { name: &#39;strawberry&#39;, color: &#39;red&#39; }, 
+    { name: &#39;banana&#39;, color: &#39;yellow&#39; }, 
+    { name: &#39;pineapple&#39;, color: &#39;yellow&#39; }, 
+    { name: &#39;grape&#39;, color: &#39;purple&#39; }, 
+    { name: &#39;plum&#39;, color: &#39;purple&#39; }
+];
+
+function test(color) {
+  // use Array filter to find fruits in color
+
+  return fruits.filter(f =&gt; f.color == color);
+}</code></pre>
+<p>解决问题的方法永远不只一种。对于这个例子我们展示了四种实现方法。编程真有趣！</p>
+<h2 id="5-使用-Array-every-和-Array-some-来处理全部-部分满足条件"><a href="#5-使用-Array-every-和-Array-some-来处理全部-部分满足条件" class="headerlink" title="5.使用 Array.every 和 Array.some 来处理全部/部分满足条件"></a>5.使用 Array.every 和 Array.some 来处理全部/部分满足条件</h2><p>最后一个小技巧更多地是关于使用新的（也不是很新了）JavaScript 数组函数来减少代码行数。观察以下的代码，我们想要检查是否所有的水果都是红色的：</p>
+<pre><code class="js">const fruits = [
+    { name: &#39;apple&#39;, color: &#39;red&#39; },
+    { name: &#39;banana&#39;, color: &#39;yellow&#39; },
+    { name: &#39;grape&#39;, color: &#39;purple&#39; }
+  ];
+
+function test() {
+  let isAllRed = true;
+
+  // condition: all fruits must be red
+  for (let f of fruits) {
+    if (!isAllRed) break;
+    isAllRed = (f.color == &#39;red&#39;);
+  }
+
+  console.log(isAllRed); // false
+}</code></pre>
+<p>代码太长了！ 我们可以使用<code>Array.every</code>减少行数：</p>
+<pre><code class="js">const fruits = [
+    { name: &#39;apple&#39;, color: &#39;red&#39; },
+    { name: &#39;banana&#39;, color: &#39;yellow&#39; },
+    { name: &#39;grape&#39;, color: &#39;purple&#39; }
+  ];
+
+function test() {
+  // condition: short way, all fruits must be red
+  const isAllRed = fruits.every(f =&gt; f.color == &#39;red&#39;);
+
+  console.log(isAllRed); // false
+}</code></pre>
+<p>现在是不是整洁了许多？ 以类似的方式，如果我们想测试是否至少有一个水果为红色，我们可以使用Array.some用一行代码实现它。</p>
+<pre><code class="js">const fruits = [
+    { name: &#39;apple&#39;, color: &#39;red&#39; },
+    { name: &#39;banana&#39;, color: &#39;yellow&#39; },
+    { name: &#39;grape&#39;, color: &#39;purple&#39; }
+];
+
+function test() {
+  // condition: if any fruit is red
+  const isAnyRed = fruits.some(f =&gt; f.color == &#39;red&#39;);
+
+  console.log(isAnyRed); // true
+}</code></pre>
+<p>让我们一起编写可读性更高的代码。 我希望你能在本文中学到一些新东西。</p>
+<p>就这样。 快乐的编码！</p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>版权声明：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">自由转载-需署名-非商业性使用-相同方式共享 (CC BY-NC-SA 4.0)</a></p>
+
+          
+        
+          
+            <p>本文链接：<a href=https://pdoner.cn/2018/10/18/js-5tip/>https://pdoner.cn/2018/10/18/js-5tip/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
-        <p>首先要选择证书颁发机构(CA)，各大著名的证书颁发机构的<strong>多域名</strong><sup>[1]</sup>、泛域名证书大多是需要收费的。目前发现<a href="https://www.trustasia.com/" target="_blank" rel="noopener">亚洲诚信(TrustAsia)</a>的免费证书支持双域名，而<a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>的免费证书既支持多域名，同时也支持泛域名。</p>
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-06T18:46:28+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>Last Update 2020-08-06</p>
+  </a>
+</div>
+
+        
       
-    </div>
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Skill/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>Skill</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        <a class= "readmore" href="/2018/09/15/openssl-csr/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/2018/10/18/js-5tip/&title=5个小技巧让你写出更好的JavaScript条件语句 - 皮蛋的博客&summary=
+原文地址：5 Tips to Write Better Conditionals in JavaScript原文作者：Jecelyn Yeen翻译&amp;校对：pdone
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
         </a>
       
     
-  </section>
-</article>
-
-          </div>
-        
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/2018/10/18/js-5tip/&title=5个小技巧让你写出更好的JavaScript条件语句 - 皮蛋的博客&summary=
+原文地址：5 Tips to Write Better Conditionals in JavaScript原文作者：Jecelyn Yeen翻译&amp;校对：pdone
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
       
     
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/2018/10/18/js-5tip/&title=5个小技巧让你写出更好的JavaScript条件语句 - 皮蛋的博客&summary=
+原文地址：5 Tips to Write Better Conditionals in JavaScript原文作者：Jecelyn Yeen翻译&amp;校对：pdone
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC+klEQVR42u3awa7bMAwEwPz/T7f3toHFJfNqOqNbAEeWxpeFVq9fxj/HCwEYMGDAgAGzBuYVjj///9cL3jx3NV91nnfPx/sBAwYMGDBgwKyDOQ5AxeevNpRufGp9YMCAAQMGDJjnwKSB7nSBp8GsGtym9gMGDBgwYMCA+R6YNIidgkwHRjBgwIABAwYMmPR3usE0QIIBAwYMGDBgvgemXFCFC0k3Vl3Pf2siwYABAwYMGDA/BhNfGL7p73g/YMCAAQMGDJg1MN1RfXE1OHbnLe8HDBgwYMCAAbMGplps/RTE1DrK84IBAwYMGDBg1sKkG/5UsZYekF0F0XLAAwMGDBgwYMDcDqa6sGqA6xZ4adGWXjACAwYMGDBgwOyFOQWZumCUHmylQQ8MGDBgwIAB8xyYtKBKD64+VbCNvQcMGDBgwIABswame4FoqvCaCozdQAkGDBgwYMCA2QOTLrQL0i7Ghi8egQEDBgwYMGCeA1MNgNWCbOqArDrP5brBgAEDBgwYMGtgpou0Klg1SHYPsI4DHhgwYMCAAQNmLUy30EqDXPegKy38wIABAwYMGDD7YLqF23Rh1g2G3SAKBgwYMGDAgNkDc/qi7sFWGgjToFeFBgMGDBgwYMDsgzm9sFN9vrvg7kWi6gcEAwYMGDBgwOyF6Qa+6eKsCzgW8MCAAQMGDBgwt4U5/sOnFhKCTX0oMGDAgAEDBsxzYKpBKz04OoWfugB9vF4wYMCAAQMGzBqYqQs83cKs+3x1H+UmEgwYMGDAgAFzO5juSC8cTR1MVQ/ILucDAwYMGDBgwKyB6QalbtF2upHqxtOCDgwYMGDAgAGzD2Yq0E0VZd0CLw2OYMCAAQMGDJi9MNWNdQ+quh+mG0zBgAEDBgwYMN8LM1WMpYDp+o8LNzBgwIABAwbM42HSg6y0mJuCBQMGDBgwYMA8B2aqcJteeBrYygETDBgwYMCAAbMOpltcVSGqYMeFWbfAAwMGDBgwYMCsgTHeBDwDDBgwYMCAuev4DRDWHkYtz40VAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2018/10/20/js-dateformat/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JavaScript获取时间并格式化</p>
+                <p class='content'>最近在学习微信小程序，用到不少前端的知识，比如时间格式化。
+
+
+Examplefunction getDateNow() {
+  var date = new Date();
+  return ...</p>
+              </a>
+            
+            
+              <a class='next' href='/2018/09/15/openssl-csr/'>
+                <p class='title'>OpenSSL生成多域名CSR<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>首先要选择证书颁发机构(CA)，各大著名的证书颁发机构的多域名[1]、泛域名证书大多是需要收费的。目前发现亚洲诚信(TrustAsia)的免费证书支持双域名，而Let’s Encrypt的免费证...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+  <article class="post white-box reveal comments shadow blur">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 讨论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
 
 </div>
 <aside class='l_side'>
@@ -762,139 +1140,98 @@
     
     
 
-<section class="widget blogger shadow blur desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>pdone</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:admin@pdoner.cn"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/pdone"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=55174435"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
     
-    
-
-<section class="widget shadow blur desktop">
-  
   <header>
     
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>Information</span>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>6 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2019/09/01'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-        
-          
-<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
-
-          
-<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/locale/zh-cn.min.js"></script>
-
-        
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Thu Aug 06 2020 15:10:12 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2020-08-06 日</div>
-          
-        </div>
-        
-        <script>
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = moment(new Date(lastUpDate)).fromNow();
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2020-08-06 日';
-          }
-        </script>
-        
-      
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-在条件较多时使用-Array-includes"><span class="toc-text">1.在条件较多时使用 Array.includes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-减少嵌套，尽早返回"><span class="toc-text">2.减少嵌套，尽早返回</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-使用函数默认参数和解构"><span class="toc-text">3.使用函数默认参数和解构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-相较Switch更偏向于使用Map-Object"><span class="toc-text">4.相较Switch更偏向于使用Map &#x2F; Object</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TL；DR；重构方法"><span class="toc-text">TL；DR；重构方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-使用-Array-every-和-Array-some-来处理全部-部分满足条件"><span class="toc-text">5.使用 Array.every 和 Array.some 来处理全部&#x2F;部分满足条件</span></a></li></ol>
     </div>
-  </div>
-</section>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow blur desktop">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/CSharp/" href="/categories/CSharp/"
+            id="categoriesCSharp"
+            ><div class='name'>CSharp</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/DataBase/" href="/categories/DataBase/"
+            id="categoriesDataBase"
+            ><div class='name'>DataBase</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Experience/" href="/categories/Experience/"
+            id="categoriesExperience"
+            ><div class='name'>Experience</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/JS/" href="/categories/JS/"
+            id="categoriesJS"
+            ><div class='name'>JS</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Open-Source/" href="/categories/Open-Source/"
+            id="categoriesOpen-Source"
+            ><div class='name'>Open Source</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Python/" href="/categories/Python/"
+            id="categoriesPython"
+            ><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow blur desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/NET/" style="font-size: 14px; color: #999">.NET</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C#</a> <a href="/tags/News/" style="font-size: 14px; color: #999">News</a> <a href="/tags/PC/" style="font-size: 19px; color: #777">PC</a> <a href="/tags/SQL/" style="font-size: 14px; color: #999">SQL</a> <a href="/tags/SSL/" style="font-size: 14px; color: #999">SSL</a> <a href="/tags/Skill/" style="font-size: 24px; color: #555">Skill</a> <a href="/tags/Soft/" style="font-size: 14px; color: #999">Soft</a>
+    </div>
+  </section>
+
 
   
 
@@ -973,22 +1310,10 @@
       
     
       
-        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div>
-      
-    
-      
         <div class='copyright'>
         <p><a href="https://pdoner.cn">Copyright © 2017-2020 pdoner.cn</a></p>
 
         </div>
-      
-    
-      
-        
-          <div><p><canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 99; pointer-events: none;" ></canvas></p>
-</div>
-        
       
     
   </footer>
@@ -1584,10 +1909,6 @@
   
 
 
-
-
-<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/pdone/static/js/fireworks.js"></script>
 
 
     

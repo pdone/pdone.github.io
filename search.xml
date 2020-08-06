@@ -47,7 +47,7 @@
       
         <tags>
             
-            <tag> Share </tag>
+            <tag> PC </tag>
             
         </tags>
       
@@ -72,7 +72,57 @@
       
         <tags>
             
-            <tag> Share </tag>
+            <tag> PC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS地图使用笔记</title>
+      <link href="/2018/12/25/jsmap/"/>
+      <url>/2018/12/25/jsmap/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近一个项目中要用JS实现一个简单的地图，由于是前端小白，开发过程中遇到了不少问题，然后整理了两个Demo，便于以后需要使用时有个参考。</p><a id="more"></a><p>对功能性要求不高使用Demo1，要求高的话用Demo2，Demo2是用的Highmaps，官方提供了很多方法，可以参考官方文档。</p><p>两个Demo的完整代码下载地址在文末。</p><h2 id="Demo1"><a href="#Demo1" class="headerlink" title="Demo1"></a>Demo1</h2><img src='https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/jsmap/1.png' style='width:460px'><p><a href=""><center>查看在线实例</center></a></p><h2 id="Demo2"><a href="#Demo2" class="headerlink" title="Demo2"></a>Demo2</h2><img src='https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/jsmap/2.png' style='width:460px'><p><a href=""><center>查看在线实例</center></a></p><h2 id="相关文档"><a href="#相关文档" class="headerlink" title="相关文档"></a>相关文档</h2><p><a href="https://api.hcharts.cn/highmaps" target="_blank" rel="noopener">Highmaps API 文档</a></p><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p>待上传</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Skill </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>微软开源WPF, Windows Forms 和 WinUI</title>
+      <link href="/2018/12/05/ms-opensource/"/>
+      <url>/2018/12/05/ms-opensource/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>美国当地时间12月4日，微软正式举行 <a href="https://www.microsoft.com/en-us/connectevent/" target="_blank" rel="noopener">Microsoft Connect(); 2018</a> 开发者大会。</p><a id="more"></a><h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><ul><li>Visual Studio 2019 Preview</li><li>.NET Core 3 Preview 1</li><li>.NET Framework 4.8</li><li>ASP.NET Core 2.2</li><li>ML.NET 0.8</li><li>WPF, Windows Forms 和 WinUI 框架宣布开源</li><li>宣布 .NET 基金会开放接受会员加入</li><li>微软和 Docker 宣布了一个新的联合开源项目，即 Cloud Native Application Bundle，它可以更轻松地打包和运行云原生应用程序</li></ul><p><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/tieba/tieba-1.png" alt="会不会有朝一日WindowsOS也开源了?"></p><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><ul><li><a href="https://blogs.msdn.microsoft.com/dotnet/2018/12/04/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/" target="_blank" rel="noopener">Open Sourcing Windows Desktop Frameworks</a></li><li><a href="https://opensource.microsoft.com/" target="_blank" rel="noopener">Microsoft Open Source 资源</a></li><li><a href="https://visualstudio.microsoft.com/zh-hans/vs/preview/?rr=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fvisualstudio%2F2018%2F12%2F04%2Fmaking-every-developer-more-productive-with-visual-studio-2019%2F%3FWT.mc_id%3Dsocial-reddit-marouill" target="_blank" rel="noopener">Visual Studio 2019 Preview 下载地址</a></li><li><a href="https://github.com/Microsoft" target="_blank" rel="noopener">Github 微软</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Open Source </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> News </tag>
             
         </tags>
       
@@ -97,7 +147,82 @@
       
         <tags>
             
-            <tag> Share </tag>
+            <tag> Skill </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SQL日期时间格式转换</title>
+      <link href="/2018/10/25/sql-date-format/"/>
+      <url>/2018/10/25/sql-date-format/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>不经常用，所以没有刻意记过，但每次用到了都要百度，所以保存到自己博客里方便使用。</p><a id="more"></a><pre><code class="sql">Select CONVERT(varchar(100), GETDATE(), 0)/*05 16 2006 10:57AM*/Select CONVERT(varchar(100), GETDATE(), 1)/*05/16/06*/Select CONVERT(varchar(100), GETDATE(), 2)/*06.05.16*/Select CONVERT(varchar(100), GETDATE(), 3)/*16/05/06*/Select CONVERT(varchar(100), GETDATE(), 4)/*16.05.06*/Select CONVERT(varchar(100), GETDATE(), 5)/*16-05-06*/Select CONVERT(varchar(100), GETDATE(), 6)/*16 05 06*/Select CONVERT(varchar(100), GETDATE(), 7)/*05 16, 06*/Select CONVERT(varchar(100), GETDATE(), 8)/*10:57:46*/Select CONVERT(varchar(100), GETDATE(), 9)/*05 16 2006 10:57:46:827AM*/Select CONVERT(varchar(100), GETDATE(), 10)/*05-16-06*/Select CONVERT(varchar(100), GETDATE(), 11)/*06/05/16*/Select CONVERT(varchar(100), GETDATE(), 12)/*060516*/Select CONVERT(varchar(100), GETDATE(), 13)/*16 05 2006 10:57:46:937*/Select CONVERT(varchar(100), GETDATE(), 14)/*10:57:46:967*/Select CONVERT(varchar(100), GETDATE(), 20)/*2006-05-16 10:57:47*/Select CONVERT(varchar(100), GETDATE(), 21)/*2006-05-16 10:57:47.157*/Select CONVERT(varchar(100), GETDATE(), 22)/*05/16/06 10:57:47 AM*/Select CONVERT(varchar(100), GETDATE(), 23)/*2006-05-16*/Select CONVERT(varchar(100), GETDATE(), 24)/*10:57:47*/Select CONVERT(varchar(100), GETDATE(), 25)/*2006-05-16 10:57:47.250*/Select CONVERT(varchar(100), GETDATE(), 100)/*05 16 2006 10:57AM*/Select CONVERT(varchar(100), GETDATE(), 101)/*05/16/2006*/Select CONVERT(varchar(100), GETDATE(), 102)/*2006.05.16*/Select CONVERT(varchar(100), GETDATE(), 103)/*16/05/2006*/Select CONVERT(varchar(100), GETDATE(), 104)/*16.05.2006*/Select CONVERT(varchar(100), GETDATE(), 105)/*16-05-2006*/Select CONVERT(varchar(100), GETDATE(), 106)/*16 05 2006*/Select CONVERT(varchar(100), GETDATE(), 107)/*05 16, 2006*/Select CONVERT(varchar(100), GETDATE(), 108)/*10:57:49*/Select CONVERT(varchar(100), GETDATE(), 109)/*05 16 2006 10:57:49:437AM*/Select CONVERT(varchar(100), GETDATE(), 110)/*05-16-2006*/Select CONVERT(varchar(100), GETDATE(), 111)/*2006/05/16*/Select CONVERT(varchar(100), GETDATE(), 112)/*20060516*/Select CONVERT(varchar(100), GETDATE(), 113)/*16 05 2006 10:57:49:513*/Select CONVERT(varchar(100), GETDATE(), 114)/*10:57:49:547*/Select CONVERT(varchar(100), GETDATE(), 120)/*2006-05-16 10:57:49*/Select CONVERT(varchar(100), GETDATE(), 121)/*2006-05-16 10:57:49.700*/Select CONVERT(varchar(100), GETDATE(), 126)/*2006-05-16T10:57:49.827*/</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> DataBase </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript获取时间并格式化</title>
+      <link href="/2018/10/20/js-dateformat/"/>
+      <url>/2018/10/20/js-dateformat/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近在学习微信小程序，用到不少前端的知识，比如时间格式化。</p><a id="more"></a><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><pre><code class="js">function getDateNow() {  var date = new Date();  return date.format(&quot;yyyy-MM-dd HH:mm:ss.t w&quot;);}</code></pre><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="js">/* *对Date的扩展，将 Date 转化为指定格式的String *月(M)、日(d)、小时(H)、分(m)、秒(s)、季度(q) 可以用 1-2个占位符， *年(y)可以用 1-4个占位符，毫秒(t) 1个占位符(3位的数字) *星期(w) 1个占位符 *example *(new Date()).Format(&quot;yyyy-MM-dd HH:mm:ss.t w&quot;) ==&gt; 2018-10-19 14:19:17.649 星期五 */Date.prototype.format = function(fmt) {  var weekArr = {    cn: new Array(&quot;星期日&quot;, &quot;星期一&quot;, &quot;星期二&quot;, &quot;星期三&quot;, &quot;星期四&quot;, &quot;星期五&quot;, &quot;星期六&quot;),    en: new Array(&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;)  };  var o = {    &quot;M+&quot;: this.getMonth() + 1,    &quot;d+&quot;: this.getDate(),    &quot;H+&quot;: this.getHours(),    &quot;m+&quot;: this.getMinutes(),    &quot;s+&quot;: this.getSeconds(),    &quot;q+&quot;: Math.floor((this.getMonth() + 3) / 3),    &quot;t&quot;: (&quot;00&quot; + this.getMilliseconds()).slice( - 3),    &quot;w&quot;: weekArr.en[this.getDay()]  };  if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + &quot;&quot;).substr(4 - RegExp.$1.length));  for (var k in o) if (new RegExp(&quot;(&quot; + k + &quot;)&quot;).test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : ((&quot;00&quot; + o[k]).substr((&quot;&quot; + o[k]).length)));  return fmt;};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Skill </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>5个小技巧让你写出更好的JavaScript条件语句</title>
+      <link href="/2018/10/18/js-5tip/"/>
+      <url>/2018/10/18/js-5tip/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote><p>原文地址：<a href="https://scotch.io/tutorials/5-tips-to-write-better-conditionals-in-javascript#toc-1-use-array-includes-for-multiple-criteria" target="_blank" rel="noopener">5 Tips to Write Better Conditionals in JavaScript</a><br>原文作者：<a href="https://scotch.io/@jecelyn" target="_blank" rel="noopener">Jecelyn Yeen</a><br>翻译&amp;校对：<a href="https://pdoner.cn">pdone</a></p></blockquote><a id="more"></a><h2 id="1-在条件较多时使用-Array-includes"><a href="#1-在条件较多时使用-Array-includes" class="headerlink" title="1.在条件较多时使用 Array.includes"></a>1.在条件较多时使用 Array.includes</h2><p>举个栗子：</p><pre><code class="js">// conditionfunction test(fruit) {  if (fruit == &#39;apple&#39; || fruit == &#39;strawberry&#39;) {    console.log(&#39;red&#39;);  }}</code></pre><p>乍一看，上面的例子看起来不错。 但是，如果我们有更多的红色水果，比如樱桃和蔓越莓呢？ 我们是否要用更多的<code>||</code>来扩展语句？</p><p>我们可以使用<code>Array.includes</code>重写上面的条件。</p><pre><code class="js">function test(fruit) {  // extract conditions to array  const redFruits = [&#39;apple&#39;, &#39;strawberry&#39;, &#39;cherry&#39;, &#39;cranberries&#39;];  if (redFruits.includes(fruit)) {    console.log(&#39;red&#39;);  }}</code></pre><p>我们将<code>红色水果（条件）</code>整合到一个数组中。这样做可以让代码看起来更整洁。</p><h2 id="2-减少嵌套，尽早返回"><a href="#2-减少嵌套，尽早返回" class="headerlink" title="2.减少嵌套，尽早返回"></a>2.减少嵌套，尽早返回</h2><p>让我们扩展前面的示例，增加另外两个条件：<br>——如果没有提供水果，抛出错误；<br>——如果超过10种水果，打印出水果数量。</p><pre><code class="js">function test(fruit, quantity) {  const redFruits = [&#39;apple&#39;, &#39;strawberry&#39;, &#39;cherry&#39;, &#39;cranberries&#39;];  // condition 1: fruit must has value  if (fruit) {    // condition 2: must be red    if (redFruits.includes(fruit)) {      console.log(&#39;red&#39;);      // condition 3: must be big quantity      if (quantity &gt; 10) {        console.log(&#39;big quantity&#39;);      }    }  } else {    throw new Error(&#39;No fruit!&#39;);  }}// test resultstest(null); // error: No fruitstest(&#39;apple&#39;); // print: redtest(&#39;apple&#39;, 20); // print: red, big quantity</code></pre><p>看看上面的代码，我们有：<br>­——1个<code>if / else</code>语句过滤掉无效条件；<br>——3层嵌套if语句（条件1,2和3）。<br>对我而言，我遵循的规则是在发现无效条件时提前返回。</p><pre><code class="js">/* return early when invalid conditions found */function test(fruit, quantity) {  const redFruits = [&#39;apple&#39;, &#39;strawberry&#39;, &#39;cherry&#39;, &#39;cranberries&#39;];  // condition 1: throw error early  if (!fruit) throw new Error(&#39;No fruit!&#39;);  // condition 2: must be red  if (redFruits.includes(fruit)) {    console.log(&#39;red&#39;);    // condition 3: must be big quantity    if (quantity &gt; 10) {      console.log(&#39;big quantity&#39;);    }  }}</code></pre><p>这样做的话，我们会得到一个较少层级的嵌套语句。 这种编码风格很好，特别是当你有很长的if语句时（想象你需要滚动到最底层才知道这里有一个else语句，一点都不酷）。</p><p>通过反转条件并提前返回，我们可以进一步减少嵌套。 请查看下面的条件2，看看我们是如何做到的：</p><pre><code class="js">/* return early when invalid conditions found */function test(fruit, quantity) {  const redFruits = [&#39;apple&#39;, &#39;strawberry&#39;, &#39;cherry&#39;, &#39;cranberries&#39;];  if (!fruit) throw new Error(&#39;No fruit!&#39;); // condition 1: throw error early  if (!redFruits.includes(fruit)) return; // condition 2: stop when fruit is not red  console.log(&#39;red&#39;);  // condition 3: must be big quantity  if (quantity &gt; 10) {    console.log(&#39;big quantity&#39;);  }}</code></pre><p>通过反转条件2，我们的代码现在没有嵌套语句。 当我们有很长的逻辑时，这种技巧非常有用，我们希望在不满足条件时停止下一步的处理。</p><p>但是这并不是硬性规定。问问自己，这个版本（没有嵌套）是否比前一个版本（条件2嵌套）更好、更可读？</p><p>对我而言，我会保留（条件2嵌套）这个版本，因为：<br>——代码简短直接，一个if语句是代码结构更清晰；<br>——反转条件可能会引发更多的思考过程（增加认知负荷）。</p><p>因此，始终追求更少的嵌套和尽早的返回，但不要过度。如果你感兴趣的话，这里有篇关于这个问题的文章以及 StackOverflow 上的讨论：</p><p><a href="http://blog.timoxley.com/post/47041269194/avoid-else-return-early" target="_blank" rel="noopener">Avoid Else, Return Early</a> by Tim Oxley</p><p><a href="https://softwareengineering.stackexchange.com/questions/18454/should-i-return-from-a-function-early-or-use-an-if-statement" target="_blank" rel="noopener">StackOverflow discussion</a> on if/else coding style</p><h2 id="3-使用函数默认参数和解构"><a href="#3-使用函数默认参数和解构" class="headerlink" title="3.使用函数默认参数和解构"></a>3.使用函数默认参数和解构</h2><p>我想下面的代码可能看起来很熟悉，我们总是需要检查<code>null / undefined</code>值并给参数赋予默认值：</p><pre><code class="js">function test(fruit, quantity) {  if (!fruit) return;  const q = quantity || 1; // if quantity not provided, default to one  console.log(`We have ${q} ${fruit}!`);}//test resultstest(&#39;banana&#39;); // We have 1 banana!test(&#39;apple&#39;, 2); // We have 2 apple!</code></pre><p>实际上，我们可以通过设置函数的默认参数来省去参数<code>q</code>：</p><pre><code class="js">function test(fruit, quantity = 1) { // if quantity not provided, default to one  if (!fruit) return;  console.log(`We have ${quantity} ${fruit}!`);}//test resultstest(&#39;banana&#39;); // We have 1 banana!test(&#39;apple&#39;, 2); // We have 2 apple!</code></pre><p>更简单直观不是吗？ 请注意，函数的每个参数都可以有自己的默认值。 例如，我们也可以为<code>水果</code>分配默认值：</p><pre><code class="js">function test (fruit =&#39;unknown&#39;, quantity = 1)</code></pre><p>如果我们的<code>水果</code>是一个<code>对象（Object）</code>怎么办？ 我们可以指定默认参数吗？</p><pre><code class="js">function test(fruit) {   // printing fruit name if value provided  if (fruit &amp;&amp; fruit.name)  {    console.log (fruit.name);  } else {    console.log(&#39;unknown&#39;);  }}//test resultstest(undefined); // unknowntest({ }); // unknowntest({ name: &#39;apple&#39;, color: &#39;red&#39; }); // apple</code></pre><p>观察上边的例子，水果的<code>name</code>属性存在时，我们会将它打印出来，否则打印<code>&#39;unknown&#39;</code>。我们可以通过默认参数和解构赋值的方法来避免写出 <code>fruit &amp;&amp; fruit.name</code> 这种条件。</p><pre><code class="js">// destructing - get name property only// assign default empty object {}function test({name} = {}) {  console.log (name || &#39;unknown&#39;);}//test resultstest(undefined); // unknowntest({ }); // unknowntest({ name: &#39;apple&#39;, color: &#39;red&#39; }); // apple</code></pre><p>由于我们只需要来自fruit的<code>name</code>属性，我们可以使用<code>{name}</code>将其解构出来，然后我们可以在代码中使用<code>name</code>作为变量而不是<code>fruit.name</code>。</p><p>我们还使用空对象<code>{}</code>作为默认值。 如果我们不这样做，你将在执行遇到错误<code>test(undefined) - Cannot destructure property name of &#39;undefined&#39; or &#39;null&#39;</code>。 因为<code>undefined</code>中没有<code>name</code>属性。</p><p>如果你不介意使用第三方库，有几种方法可以减少空值检查：<br>——使用 <a href="https://lodash.com/docs/4.17.10#get" target="_blank" rel="noopener">Lodash get</a> 函数；<br>——使用 Facebook 开源的 <a href="https://github.com/facebookincubator/idx" target="_blank" rel="noopener">idx</a> 库（需搭配 Babeljs）。<br>这里有一个使用 Lodash 的例子：</p><pre><code class="js">// Include lodash library, you will get _function test(fruit) {  console.log(__.get(fruit, &#39;name&#39;, &#39;unknown&#39;); // get property name, if not available, assign default value &#39;unknown&#39;}//test resultstest(undefined); // unknowntest({ }); // unknowntest({ name: &#39;apple&#39;, color: &#39;red&#39; }); // apple</code></pre><p>您可以<a href="http://jsbin.com/bopovajiye/edit?js,console" target="_blank" rel="noopener">点击这里</a>运行演示代码。 此外，如果您是功能编程（FP）的粉丝，您可以选择使用<a href="https://github.com/lodash/lodash/wiki/FP-Guide" target="_blank" rel="noopener">Lodash fp</a>，Lodash的功能版本（方法更改为get或getOr）。</p><h2 id="4-相较Switch更偏向于使用Map-Object"><a href="#4-相较Switch更偏向于使用Map-Object" class="headerlink" title="4.相较Switch更偏向于使用Map / Object"></a>4.相较Switch更偏向于使用Map / Object</h2><p>让我们看看下面的例子，我们想根据颜色打印水果：</p><pre><code class="js">function test(color) {  // use switch case to find fruits in color  switch (color) {    case &#39;red&#39;:      return [&#39;apple&#39;, &#39;strawberry&#39;];    case &#39;yellow&#39;:      return [&#39;banana&#39;, &#39;pineapple&#39;];    case &#39;purple&#39;:      return [&#39;grape&#39;, &#39;plum&#39;];    default:      return [];  }}//test resultstest(null); // []test(&#39;yellow&#39;); // [&#39;banana&#39;, &#39;pineapple&#39;]</code></pre><p>上面的代码似乎没有错，但我觉得它很冗长。 使用具有更清晰语法的object literal可以实现相同的结果：</p><pre><code class="js">// use object literal to find fruits in color  const fruitColor = {    red: [&#39;apple&#39;, &#39;strawberry&#39;],    yellow: [&#39;banana&#39;, &#39;pineapple&#39;],    purple: [&#39;grape&#39;, &#39;plum&#39;]  };function test(color) {  return fruitColor[color] || [];}</code></pre><p>或者，你可以使用Map来实现相同的结果：</p><pre><code class="js">// use Map to find fruits in color  const fruitColor = new Map()    .set(&#39;red&#39;, [&#39;apple&#39;, &#39;strawberry&#39;])    .set(&#39;yellow&#39;, [&#39;banana&#39;, &#39;pineapple&#39;])    .set(&#39;purple&#39;, [&#39;grape&#39;, &#39;plum&#39;]);function test(color) {  return fruitColor.get(color) || [];}</code></pre><p>Map是ES2015引入的对象类型，允许你存储键值对。</p><p>我们应该禁止使用switch语句吗？ 不要局限于此。 就个人而言，我尽可能使用object literal，但我不会设置硬性规则来阻止使用Switch，视使用场景而定。</p><p>Todd Motto有一篇文章深入研究switch语句与对象文字，你可以<a href="https://toddmotto.com/deprecating-the-switch-statement-for-object-literals/" target="_blank" rel="noopener">点击这里</a>阅读。</p><h3 id="TL；DR；重构方法"><a href="#TL；DR；重构方法" class="headerlink" title="TL；DR；重构方法"></a>TL；DR；重构方法</h3><p>对于上面的示例，我们实际上可以重构我们的代码以使用Array.filter实现相同的结果。</p><pre><code class="js"> const fruits = [    { name: &#39;apple&#39;, color: &#39;red&#39; },     { name: &#39;strawberry&#39;, color: &#39;red&#39; },     { name: &#39;banana&#39;, color: &#39;yellow&#39; },     { name: &#39;pineapple&#39;, color: &#39;yellow&#39; },     { name: &#39;grape&#39;, color: &#39;purple&#39; },     { name: &#39;plum&#39;, color: &#39;purple&#39; }];function test(color) {  // use Array filter to find fruits in color  return fruits.filter(f =&gt; f.color == color);}</code></pre><p>解决问题的方法永远不只一种。对于这个例子我们展示了四种实现方法。编程真有趣！</p><h2 id="5-使用-Array-every-和-Array-some-来处理全部-部分满足条件"><a href="#5-使用-Array-every-和-Array-some-来处理全部-部分满足条件" class="headerlink" title="5.使用 Array.every 和 Array.some 来处理全部/部分满足条件"></a>5.使用 Array.every 和 Array.some 来处理全部/部分满足条件</h2><p>最后一个小技巧更多地是关于使用新的（也不是很新了）JavaScript 数组函数来减少代码行数。观察以下的代码，我们想要检查是否所有的水果都是红色的：</p><pre><code class="js">const fruits = [    { name: &#39;apple&#39;, color: &#39;red&#39; },    { name: &#39;banana&#39;, color: &#39;yellow&#39; },    { name: &#39;grape&#39;, color: &#39;purple&#39; }  ];function test() {  let isAllRed = true;  // condition: all fruits must be red  for (let f of fruits) {    if (!isAllRed) break;    isAllRed = (f.color == &#39;red&#39;);  }  console.log(isAllRed); // false}</code></pre><p>代码太长了！ 我们可以使用<code>Array.every</code>减少行数：</p><pre><code class="js">const fruits = [    { name: &#39;apple&#39;, color: &#39;red&#39; },    { name: &#39;banana&#39;, color: &#39;yellow&#39; },    { name: &#39;grape&#39;, color: &#39;purple&#39; }  ];function test() {  // condition: short way, all fruits must be red  const isAllRed = fruits.every(f =&gt; f.color == &#39;red&#39;);  console.log(isAllRed); // false}</code></pre><p>现在是不是整洁了许多？ 以类似的方式，如果我们想测试是否至少有一个水果为红色，我们可以使用Array.some用一行代码实现它。</p><pre><code class="js">const fruits = [    { name: &#39;apple&#39;, color: &#39;red&#39; },    { name: &#39;banana&#39;, color: &#39;yellow&#39; },    { name: &#39;grape&#39;, color: &#39;purple&#39; }];function test() {  // condition: if any fruit is red  const isAnyRed = fruits.some(f =&gt; f.color == &#39;red&#39;);  console.log(isAnyRed); // true}</code></pre><p>让我们一起编写可读性更高的代码。 我希望你能在本文中学到一些新东西。</p><p>就这样。 快乐的编码！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Skill </tag>
             
         </tags>
       
@@ -115,7 +240,7 @@
       
       <categories>
           
-          <category> OpenSSL </category>
+          <category> Experience </category>
           
       </categories>
       
@@ -147,7 +272,7 @@
       
         <tags>
             
-            <tag> Share </tag>
+            <tag> Soft </tag>
             
         </tags>
       
