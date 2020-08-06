@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html>
-<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/pdone/static/js/fireworks.js"></script>
-
 <head hexo-theme='https://volantis.js.org/#3.0-beta2'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -50,6 +46,8 @@
   
 
   
+    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/favicon.ico">
+  
 
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
@@ -60,8 +58,7 @@
   <!-- import link -->
   
   
-  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/pdone/static/img/favicon.png">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/pdone/static/css/blog.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/pdone/static@latest/css/blog.css" />
   
 
   
@@ -85,7 +82,7 @@
     (function() {
 	  setTimeout(function() {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?3e645a3080848bcc88a42bda3c0c94b4";
+        hm.src = "https://hm.baidu.com/hm.js?1a864f4af9f5edebadeb6044213eb4aa";
 		hm.defer=true;
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
@@ -95,9 +92,7 @@
   
 </head>
 
-
-<body oncontextmenu="return popMenu(event);">
-
+<body>
   
   
   
@@ -132,7 +127,7 @@
 
       <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
     </cover>
-    <header class="l_header shadow blur">
+    <header class="l_header shadow floatable">
   <div class='container'>
   <div class='wrapper'>
     <div class='nav-sub'>
@@ -647,9 +642,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Default/' rel="nofollow">
+    <a href='/categories/CSharp/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Default</p>
+      <p>CSharp</p>
     </a>
   </div>
 
@@ -687,7 +682,7 @@
           <p>最近项目中用有用到，就简单整了个，只有几行代码。</p>
 <a id="more"></a> 
 
-<p><img src="https://cdn.jsdelivr.net/gh/pdone/static/img/article/net-loading.gif" alt="预览图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/net-loading/1.gif" alt="预览图"></p>
 <h3 id="调用示例"><a href="#调用示例" class="headerlink" title="调用示例"></a>调用示例</h3><pre><code>public partial class Main : Form
 {
     public Main()
@@ -743,16 +738,18 @@
 <section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
+      <blockquote>
         
-          <p>转载请注明出处并遵守 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+          
+            <p>版权声明：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">自由转载-需署名-非商业性使用-相同方式共享 (CC BY-NC-SA 4.0)</a></p>
 
+          
         
-      
+          
+            <p>本文链接：<a href=https://pdoner.cn/2020/04/15/net-loading/>https://pdoner.cn/2020/04/15/net-loading/</a></p>
+          
         
-          <p>本文链接：<a href=https://pdoner.cn/2020/04/15/net-loading/>https://pdoner.cn/2020/04/15/net-loading/</a></p>
-        
-      
+      </blockquote>
     
   </div>
 </section>
@@ -772,10 +769,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-03T15:17:34+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-06T08:45:02+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Last Update 2020-08-03</p>
+    <p>Last Update 2020-08-06</p>
   </a>
 </div>
 
@@ -940,9 +937,29 @@
       <ul class="entry navigation">
         
           <li><a class="flat-box"
-            title="/categories/Default/" href="/categories/Default/"
-            id="categoriesDefault"
-            ><div class='name'>Default</div><div class='badge'>(4)</div></a></li>
+            title="/categories/CSharp/" href="/categories/CSharp/"
+            id="categoriesCSharp"
+            ><div class='name'>CSharp</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Experience/" href="/categories/Experience/"
+            id="categoriesExperience"
+            ><div class='name'>Experience</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Open-Source/" href="/categories/Open-Source/"
+            id="categoriesOpen-Source"
+            ><div class='name'>Open Source</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/OpenSSL/" href="/categories/OpenSSL/"
+            id="categoriesOpenSSL"
+            ><div class='name'>OpenSSL</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Python/" href="/categories/Python/"
+            id="categoriesPython"
+            ><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -1059,6 +1076,13 @@
         </div>
       
     
+      
+        
+          <div><p><canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: -1; pointer-events: none;" ></canvas></p>
+</div>
+        
+      
+    
   </footer>
 
 
@@ -1071,53 +1095,22 @@
 
   <div id="rightmenu-wrapper">
     <ul class="list-v rightmenu" id="rightmenu-content">
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' 
-        
-        
-        
-          onclick="document.execCommand('copy')"
-        
-        
-          id="menu-copy"
-        >
-        <i class='fa fa-copy fa-fw'></i> 复制文本
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' 
-        
-        
-        
-        
-          id="menu-copy-img"
-        >
-        <i class='fa fa-link fa-fw'></i> 复制图片链接
-      </a>
-    </li>
-  
-        
-      
-        
-          <li class='navigation'>
-            <a class='nav icon-only' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
-            <a class='nav icon-only' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
-            <a class='nav icon-only' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
-            <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
-          </li>
-        
-      
-        
-          <hr>
-        
+      <li class='option'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick='document.execCommand("copy")'><i class='fa fa-copy fa-fw'></i>Copy Text</a>
+        <hr id='hr-text'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>Copy Link</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>Open Link in New Tab</a>
+        <hr id='hr-href'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>Copy Image Link</a>
+        <hr id='hr-src'>
+      </li>
+      <li class='navigation'>
+        <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+      </li>
+      <hr>
       
         
       
@@ -1211,12 +1204,12 @@
       
         
           <li class='music name'>
-            <p class='nav music-title'></p>
+            <p class='nav music-title fix-cursor-default'></p>
           </li>
           <li class='music ctrl'>
-            <a class='nav icon-only backward' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
-            <a class='nav icon-only toggle' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
-            <a class='nav icon-only forward' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
           </li>
           <li class='music volume'>
             <a class='nav volume'>
@@ -1235,8 +1228,10 @@
   </div>
 
   <script>
-    window.document.oncontextmenu = function () {
-      return false;
+    window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
     };
     document.addEventListener("click", function (event) {
       var mymenu = document.getElementById('rightmenu-wrapper');
@@ -1261,21 +1256,72 @@
         menuContent.classList.remove('top');
       }
 
-      // 选中文本
-      if (window.getSelection().toString()) {
-        document.getElementById('menu-copy').style.display = 'block';
-      } else {
-        document.getElementById('menu-copy').style.display = 'none';
-      }
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
 
       // 选中图片
-      if (event.toElement.currentSrc) {
-        document.getElementById('menu-copy-img').style.display = 'block';
-        document.getElementById('menu-copy-img').addEventListener("click", function (e) {
-          copyString(event.toElement.currentSrc);
-        });
-      } else {
-        document.getElementById('menu-copy-img').style.display = 'none';
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          copyText.style.display = 'block';
+          hrText.style.display = 'block';
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
       }
 
       // 有音乐播放器
@@ -1289,7 +1335,6 @@
       	}
       }
 
-      console.log(event);
       return false; // 该行代码确保系统自带的右键菜单不会被调出
     }
     function hideMenu() {
@@ -1312,6 +1357,7 @@
     
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
+<script>let CommentsSetting = new Object();</script>
 
 
   <script>
@@ -1337,7 +1383,7 @@
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/pdone/static/img/wallpaper/1_compressed.jpg", "https://cdn.jsdelivr.net/gh/pdone/static/img/wallpaper/2_compressed.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/pdone/static/img/wallpaper/2_compressed.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -1632,6 +1678,10 @@
 
 
 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/pdone/static/js/fireworks.js"></script>
+
+
     
       
 
@@ -1763,8 +1813,5 @@
 
     
   </div>
-  
-    <script src="https://cdn.jsdelivr.net/gh/inkss/common@master/hexo/js/cookie.min.js"></script>
-  
 </body>
 </html>
