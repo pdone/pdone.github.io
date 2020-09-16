@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -16,13 +18,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>用Python爬 历史的今天 数据 - 皮蛋的博客</title>
-  
-    <meta name="keywords" content="Python">
+  <title>标签：Linux - 皮蛋的博客</title>
   
 
-  
-    <meta name="description" content="刚开始学习Python，试着写了一些东西，发现Python确实是非常容易上手，代码十分简短，并且有很多第三方库可以使用，同样的一种操作用别的语言可能需要10行代码，Python可能只要1行就能实现。">
   
 
   <!-- feed -->
@@ -108,7 +106,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover post' style="display: none;">
+    <cover class='cover ' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -676,8 +674,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">用Python爬 历史的今天 数据</div> 
+  <div id="pjax-ispage">false</div> 
+  <div id="pjax-pageTitle"></div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -709,12 +707,25 @@
       
       
 
+
 <div class='l_main'>
   
-
-  
-    <article id="post" class="post white-box reveal shadow floatable article-type-post" itemscope itemprop="blogPost">
+    
       
+  <section class="post-list ">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow floatable reveal ">
+  
 
 
   <section class='meta'>
@@ -724,11 +735,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h1 class="title">
-    <a href="/post/python-historytoday/">
-      用Python爬 历史的今天 数据
+  <h2 class="title">
+    <a href="/post/deepin20/">
+      深度操作系统 20——崭新视界，创无止境
     </a>
-  </h1>
+  </h2>
 
 
         
@@ -738,22 +749,11 @@
           
             
               
-<div class='new-meta-item author'>
-  <a class='author' href="https://pdoner.cn" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg">
-    <p>pdone</p>
-  </a>
-</div>
-
-            
-          
-            
-              
   
   <div class='new-meta-item category'>
-    <a href='/categories/Development/' rel="nofollow">
+    <a href='/categories/Share/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Development</p>
+      <p>Share</p>
     </a>
   </div>
 
@@ -763,7 +763,7 @@
             
               
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>Python</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OS/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>OS</p></a></div>
 
 
             
@@ -772,7 +772,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2018-11-29</p>
+    <p>2020-09-16</p>
   </a>
 </div>
 
@@ -780,18 +780,6 @@
           
             
               
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/python-historytoday/" class="leancloud_visitors" data-flag-title="用Python爬 历史的今天 数据">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
 
             
           
@@ -809,243 +797,38 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          
-          <p>刚开始学习Python，试着写了一些东西，发现Python确实是非常容易上手，代码十分简短，并且有很多第三方库可以使用，同样的一种操作用别的语言可能需要10行代码，Python可能只要1行就能实现。</p>
-<a id="more"></a> 
-
-<p>我这里爬的是这个网站 <a href="www.lssdjt.com">www.lssdjt.com</a>，类似的网站还有很多。由于我也是初学者，所以注释写的比代码多。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="py">#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-from urllib import request
-from bs4 import BeautifulSoup
-
-# 初始化第一条要查的url
-startUrl = &quot;http://www.lssdjt.com/11/29&quot;
-
-# 打开一个txt用来保存爬到的数据
-pageFile = open(&#39;historyTodayData.txt&#39;, &#39;w&#39;, encoding=&#39;utf-8&#39;)
-
-# 获取数据 并返回下一天的url
-def getdata(url):
-    # 请求url
-    page = request.urlopen(url)
-    # 获取数据流
-    pageStream = page.read()
-    # utf8解码
-    pageHtml = pageStream.decode(&#39;utf-8&#39;)
-    # 把页面转换成BeautifulSoup对象 具体使用方法 参考文末链接里的文档
-    soup = BeautifulSoup(pageHtml, &quot;html.parser&quot;)
-    nextUrlClass = soup.find(&#39;ul&#39;, {&#39;class&#39;: &#39;bot&#39;}).find(&#39;li&#39;, {&#39;class&#39;: &#39;r&#39;})
-    next_url = nextUrlClass.a[&#39;href&#39;]
-    # print(next_url)
-    links = soup.find_all(&quot;a&quot;, class_=&quot;screenshot&quot;)
-    for link in links:
-        # 微信小程序云开发提供的数据库是JSON数据库  可以直接导入JSON文件或者CSV文件  这里把内容整理成CSV格式的方便导入云数据库
-        # title,date,month,day  导入云数据库时微信会自动给每条数据生成_id
-        print(link.i.string, link.em.string, link.em.string.split(&#39;年&#39;)[1].replace(&#39;月&#39;, &#39; &#39;).replace(&#39;日&#39;, &#39;&#39;))
-        # 这里把数据行整理成我需要的格式
-        tempStrLine = link.i.string+&#39; &#39;+link.em.string+&#39; &#39; + link.em.string.split(&#39;年&#39;)[1].replace(&#39;月&#39;, &#39; &#39;).replace(&#39;日&#39;, &#39;&#39;) + &#39;\n&#39;
-        # 这里开始把每行数据写到文件里
-        pageFile.writelines(tempStrLine)
-    return next_url
-
-# 循环365次
-for _ in range(365):
-    # 递归调用获取数据方法
-    startUrl = getdata(startUrl)
-
-# 关闭文件
-pageFile.close()</code></pre>
-<p>爬完的数据长下面这个样子，大概有一万多行，把列头title,date,month,day添加到第一行，文件扩展名改为csv就可以直接导入微信小程序云开发提供的数据库中了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/pdone/static/img/article/python-historytoday/1.png" alt=""></p>
-<h2 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h2><p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/index.html" target="_blank" rel="noopener">BeautifulSoup中文文档</a></p>
-
-          
-            <div class='article_footer'>
-              
-                
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
-  <div class='content'>
-    
-      <blockquote>
-        
-          
-            <p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
-
-          
-        
-          
-            <p>本文链接：<a href=https://pdoner.cn/post/python-historytoday/>https://pdoner.cn/post/python-historytoday/</a></p>
-          
-        
-      </blockquote>
-    
-  </div>
-</section>
-
-  
-
-
-              
-            </div>
-          
-        </div>
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
       
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-16T11:04:22+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Last Update 2020-09-16</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/python-historytoday/&title=用Python爬 历史的今天 数据 - 皮蛋的博客&summary=刚开始学习Python，试着写了一些东西，发现Python确实是非常容易上手，代码十分简短，并且有很多第三方库可以使用，同样的一种操作用别的语言可能需要10行代码，Python可能只要1行就能实现。"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/python-historytoday/&title=用Python爬 历史的今天 数据 - 皮蛋的博客&summary=刚开始学习Python，试着写了一些东西，发现Python确实是非常容易上手，代码十分简短，并且有很多第三方库可以使用，同样的一种操作用别的语言可能需要10行代码，Python可能只要1行就能实现。"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/python-historytoday/&title=用Python爬 历史的今天 数据 - 皮蛋的博客&summary=刚开始学习Python，试着写了一些东西，发现Python确实是非常容易上手，代码十分简短，并且有很多第三方库可以使用，同样的一种操作用别的语言可能需要10行代码，Python可能只要1行就能实现。"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
-          
-        </a>
-      
-    
-      
-        
-        <div class='hoverbox'>
-          <a class='share'><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
-          <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC/0lEQVR42u3aS7LiMBAEQO5/6Zn9fMJdrbafO0jtACOkZFNR0ueX8c/xQQAGDBgwYMCsgfk0x18T/vH+1fPd71fX0d0PGDBgwIABA2YfTDkAhTDpPE/N+9/5wYABAwYMGDBrYS4DUPH11PenIMvrAQMGDBgwYMB8HUw1+HUDZAoLBgwYMGDAgAGTLuRqQ9X503WAAQMGDBgwYMCcFkGnAe6nnwcDBgwYMGDA7INpXxh+6euxC9BgwIABAwYMmNfCnI5q4TS10dNAd7kfMGDAgAEDBswamG5A6hZZVxvsPj+2fjBgwIABAwbMGpj0B9PAdwrSvTjUvpAEBgwYMGDAgFkHM32Q1QWofi/9vFx8gQEDBgwYMGDWw6QHXneDdTcczwsGDBgwYMCAWQNzWgClF3nS3+sWYelBGxgwYMCAAQNmH0x68ScttqaKsBSuDQoGDBgwYMCAWQdzWjh1oeMA1jyYOz5wAwMGDBgwYMC8Fua0eJoqqKrzV4NovE4wYMCAAQMGzFqY06JnqviqQlUP3MrrAwMGDBgwYMCshYmLneGDt2rxlF4UOj6JBAMGDBgwYMC8FiadaDrgpVCnQTI+iQQDBgwYMGDAvBamGpS6xdXUBaT0D4nXCQYMGDBgwIBZAzMd0E4huoXUWDAEAwYMGDBgwKyDuTuAdQurNKh1CzAwYMCAAQMGzF6Y06In/bwa8KZGGRAMGDBgwIABsxZmOjhVg97UfLcduIEBAwYMGDBgXg+TFlinBVf3D+qO25MvGDBgwIABA+YxmOkCKC2c7i624oAJBgwYMGDAgFkDcxqU0g1PF1TdIqycfMGAAQMGDBgwr4eZKpTSBZ8WTdWAV34eDBgwYMCAAbMWZmqD0wEw3Xj5otBVUQUGDBgwYMCA+TqYblEVB7Kh3wEDBgwYMGDAfC/MVPA6LZ7SoHl7UQUGDBgwYMCAeQwmPXCbfr/7B73uJBIMGDBgwIAB8xjM1AWeanH0VNCLgykYMGDAgAEDZg2MAQYMGDBgwIBZNn4D+bjl/3WUPR0AAAAASUVORK5CYII=">
-          </div>
-        </div>
-      
-    
-  </div>
-</div>
-
-
-
-        
+        <p>深度操作系统是一个致力于为全球用户提供美观易用、安全可靠的Linux发行版。</p>
       
     </div>
+    
+      
+        <a class= "readmore" href="/post/deepin20/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
   </section>
+</article>
 
-
-        
-        
-          <div class="prev-next">
-            
-              <a class='prev' href='/post/ms-opensource/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>微软开源WPF, Windows Forms 和 WinUI</p>
-                <p class='content'>美国当地时间12月4日，微软正式举行 Microsoft Connect(); 2018 开发者大会。
-
-
-Content
-Visual Studio 2019 Preview
-.NET Cor...</p>
-              </a>
-            
-            
-              <a class='next' href='/post/sql-date-format/'>
-                <p class='title'>SQL日期时间格式转换<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>不经常用，所以没有刻意记过，但每次用到了都要百度，所以保存到自己博客里方便使用。
-
-
-Select CONVERT(varchar(100), GETDATE(), 0)/*05 16 2006...</p>
-              </a>
-            
           </div>
         
-      </section>
-    </article>
-  
-
+      
+    
+  </section>
   
     
-
-  <article class="post white-box reveal comments shadow floatable">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 讨论</p>
-      
-      <section id="comments">
-        <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-      </section>
-    </section>
-  </article>
-
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
 
   
 
 
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -1053,22 +836,63 @@ Select CONVERT(varchar(100), GETDATE(), 0)/*05 16 2006...</p>
     
     
 
-
-
-  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+<section class="widget blogger shadow floatable desktop mobile">
+  <div class='content'>
     
-  <header>
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg'/>
+        </a>
+      
     
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-text">Code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考内容"><span class="toc-text">参考内容</span></a></li></ol>
-    </div>
-  </section>
-
+      <div class='text'>
+        
+          <h2>pdone</h2>
+        
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:admin@pdoner.cn"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/pdone"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=55174435"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
 
   
 
@@ -1133,9 +957,127 @@ Select CONVERT(varchar(100), GETDATE(), 0)/*05 16 2006...</p>
 
   
 
+  
+    
+    
+
+<section class="widget shadow floatable desktop">
+  
+  <header>
+    
+      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>Information</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>18 篇</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>已运行时间：</div>
+          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
+        </div>
+        <script>
+          var BirthDay = new Date(new Date('2019/09/01'));
+          var today = new Date();
+          var timeold = (today.getTime() - BirthDay.getTime());
+          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
+          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
+        </script>
+      
+
+
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站访客数：</div>
+          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站总访问量：</div>
+          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>最近更新时间：</div>
+          
+            <div id="last-update" style="display: none;">Wed Sep 16 2020 18:50:08 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update-show">2020-09-16 日</div>
+          
+        </div>
+        
+        <script> 
+          function timeago(dateTimeStamp) { 
+              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示 
+              var hour = minute * 60; 
+              var day = hour * 24; 
+              var week = day * 7; 
+              var month = day * 30; 
+              var now = new Date().getTime(); //获取当前时间毫秒 
+              var diffValue = now - dateTimeStamp; //时间差 
+              if (diffValue < 0) { 
+                  return; 
+              } 
+              var minC = diffValue / minute; //计算时间差的分，时，天，周，月 
+              var hourC = diffValue / hour; 
+              var dayC = diffValue / day; 
+              var weekC = diffValue / week; 
+              var monthC = diffValue / month; 
+              if (monthC >= 1 && monthC <= 3) { 
+                  result = " " + parseInt(monthC) + " 月前" 
+              } else if (weekC >= 1 && weekC <= 3) { 
+                  result = " " + parseInt(weekC) + " 周前" 
+              } else if (dayC >= 1 && dayC <= 6) { 
+                  result = " " + parseInt(dayC) + " 天前" 
+              } else if (hourC >= 1 && hourC <= 23) { 
+                  result = " " + parseInt(hourC) + " 小时前" 
+              } else if (minC >= 1 && minC <= 59) { 
+                  result = " " + parseInt(minC) + " 分钟前" 
+              } else if (diffValue >= 0 && diffValue <= minute) { 
+                  result = "刚刚" 
+              } else { 
+                  var datetime = new Date(); 
+                  datetime.setTime(dateTimeStamp); 
+                  var Nyear = datetime.getFullYear(); 
+                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1; 
+                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate(); 
+                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours(); 
+                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes(); 
+                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds(); 
+                  result = Nyear + "-" + Nmonth + "-" + Ndate 
+              } 
+              return result; 
+          } 
+          var lastUpDate = document.getElementById('last-update').innerHTML; 
+          try { 
+            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate)); 
+          } catch (error) { 
+            document.getElementById('last-update-show').innerHTML = '2020-09-16 日'; 
+          } 
+        </script> 
+        
+      
+    </div>
+  </div>
+</section>
+
+  
+
 
 </aside>
-
 
 
     </div>

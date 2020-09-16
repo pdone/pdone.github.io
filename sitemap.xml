@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://pdoner.cn/404</loc>
+    
+    <lastmod>2020-09-16T10:44:09.160Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://pdoner.cn/game/</loc>
+    
+    <lastmod>2020-09-16T10:34:47.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://pdoner.cn/post/deepin20/</loc>
+    
+    <lastmod>2020-09-16T07:13:09.548Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://pdoner.cn/post/steam-free-game/</loc>
     
     <lastmod>2020-09-16T03:30:09.157Z</lastmod>
@@ -152,13 +173,6 @@
     <loc>https://pdoner.cn/index/</loc>
     
     <lastmod>2020-07-25T13:27:59.868Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://pdoner.cn/404</loc>
-    
-    <lastmod>2020-07-25T13:27:59.811Z</lastmod>
     
   </url>
   

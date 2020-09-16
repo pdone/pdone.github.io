@@ -16,13 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>用Python爬 历史的今天 数据 - 皮蛋的博客</title>
-  
-    <meta name="keywords" content="Python">
+  <title>小游戏 - 皮蛋的博客</title>
   
 
-  
-    <meta name="description" content="刚开始学习Python，试着写了一些东西，发现Python确实是非常容易上手，代码十分简短，并且有很多第三方库可以使用，同样的一种操作用别的语言可能需要10行代码，Python可能只要1行就能实现。">
   
 
   <!-- feed -->
@@ -108,7 +104,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover post' style="display: none;">
+    <cover class='cover page' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -136,15 +132,13 @@
 
       <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
     </cover>
-    <header class="l_header shadow floatable">
+    <header class="l_header no_sidebar shadow floatable">
   <div class='container'>
   <div class='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
         <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -676,8 +670,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">用Python爬 历史的今天 数据</div> 
+  <div id="pjax-ispage">false</div> 
+  <div id="pjax-pageTitle"></div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -709,11 +703,11 @@
       
       
 
-<div class='l_main'>
+<div class='l_main no_sidebar'>
   
 
   
-    <article id="post" class="post white-box reveal shadow floatable article-type-post" itemscope itemprop="blogPost">
+    <article id="page" class="post white-box reveal shadow floatable article-type-page" itemscope itemprop="blogPost">
       
 
 
@@ -725,8 +719,8 @@
         
           
   <h1 class="title">
-    <a href="/post/python-historytoday/">
-      用Python爬 历史的今天 数据
+    <a href="/game/">
+      小游戏
     </a>
   </h1>
 
@@ -749,22 +743,11 @@
           
             
               
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Development/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Development</p>
-    </a>
-  </div>
-
 
             
           
             
               
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>Python</p></a></div>
-
 
             
           
@@ -772,7 +755,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2018-11-29</p>
+    <p>2020-09-16</p>
   </a>
 </div>
 
@@ -784,7 +767,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/post/python-historytoday/" class="leancloud_visitors" data-flag-title="用Python爬 历史的今天 数据">
+      <span id="/game/" class="leancloud_visitors" data-flag-title="小游戏">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -813,104 +796,10 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p>刚开始学习Python，试着写了一些东西，发现Python确实是非常容易上手，代码十分简短，并且有很多第三方库可以使用，同样的一种操作用别的语言可能需要10行代码，Python可能只要1行就能实现。</p>
-<a id="more"></a> 
-
-<p>我这里爬的是这个网站 <a href="www.lssdjt.com">www.lssdjt.com</a>，类似的网站还有很多。由于我也是初学者，所以注释写的比代码多。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="py">#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-from urllib import request
-from bs4 import BeautifulSoup
-
-# 初始化第一条要查的url
-startUrl = &quot;http://www.lssdjt.com/11/29&quot;
-
-# 打开一个txt用来保存爬到的数据
-pageFile = open(&#39;historyTodayData.txt&#39;, &#39;w&#39;, encoding=&#39;utf-8&#39;)
-
-# 获取数据 并返回下一天的url
-def getdata(url):
-    # 请求url
-    page = request.urlopen(url)
-    # 获取数据流
-    pageStream = page.read()
-    # utf8解码
-    pageHtml = pageStream.decode(&#39;utf-8&#39;)
-    # 把页面转换成BeautifulSoup对象 具体使用方法 参考文末链接里的文档
-    soup = BeautifulSoup(pageHtml, &quot;html.parser&quot;)
-    nextUrlClass = soup.find(&#39;ul&#39;, {&#39;class&#39;: &#39;bot&#39;}).find(&#39;li&#39;, {&#39;class&#39;: &#39;r&#39;})
-    next_url = nextUrlClass.a[&#39;href&#39;]
-    # print(next_url)
-    links = soup.find_all(&quot;a&quot;, class_=&quot;screenshot&quot;)
-    for link in links:
-        # 微信小程序云开发提供的数据库是JSON数据库  可以直接导入JSON文件或者CSV文件  这里把内容整理成CSV格式的方便导入云数据库
-        # title,date,month,day  导入云数据库时微信会自动给每条数据生成_id
-        print(link.i.string, link.em.string, link.em.string.split(&#39;年&#39;)[1].replace(&#39;月&#39;, &#39; &#39;).replace(&#39;日&#39;, &#39;&#39;))
-        # 这里把数据行整理成我需要的格式
-        tempStrLine = link.i.string+&#39; &#39;+link.em.string+&#39; &#39; + link.em.string.split(&#39;年&#39;)[1].replace(&#39;月&#39;, &#39; &#39;).replace(&#39;日&#39;, &#39;&#39;) + &#39;\n&#39;
-        # 这里开始把每行数据写到文件里
-        pageFile.writelines(tempStrLine)
-    return next_url
-
-# 循环365次
-for _ in range(365):
-    # 递归调用获取数据方法
-    startUrl = getdata(startUrl)
-
-# 关闭文件
-pageFile.close()</code></pre>
-<p>爬完的数据长下面这个样子，大概有一万多行，把列头title,date,month,day添加到第一行，文件扩展名改为csv就可以直接导入微信小程序云开发提供的数据库中了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/pdone/static/img/article/python-historytoday/1.png" alt=""></p>
-<h2 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h2><p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/index.html" target="_blank" rel="noopener">BeautifulSoup中文文档</a></p>
-
-          
-            <div class='article_footer'>
-              
-                
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
-  <div class='content'>
-    
-      <blockquote>
-        
-          
-            <p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
-
-          
-        
-          
-            <p>本文链接：<a href=https://pdoner.cn/post/python-historytoday/>https://pdoner.cn/post/python-historytoday/</a></p>
-          
-        
-      </blockquote>
-    
-  </div>
-</section>
-
-  
-
-
-              
-            </div>
+          <ol style="font-size: 24px;margin-left: 30px;">
+  <li><a href="https://pdoner.cn/game/eatwhat/" target="_blank">今天吃什么</a></li>
+  <li><a href="https://pdoner.cn/game/swinggirl/" target="_blank">荡秋千的小女孩</a></li>
+</ol>
           
         </div>
         
@@ -921,7 +810,7 @@ pageFile.close()</code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-16T11:04:22+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-16T18:34:47+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>Last Update 2020-09-16</p>
@@ -938,7 +827,7 @@ pageFile.close()</code></pre>
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/python-historytoday/&title=用Python爬 历史的今天 数据 - 皮蛋的博客&summary=刚开始学习Python，试着写了一些东西，发现Python确实是非常容易上手，代码十分简短，并且有很多第三方库可以使用，同样的一种操作用别的语言可能需要10行代码，Python可能只要1行就能实现。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/game/&title=小游戏 - 皮蛋的博客&summary="
           
           >
           
@@ -950,7 +839,7 @@ pageFile.close()</code></pre>
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/python-historytoday/&title=用Python爬 历史的今天 数据 - 皮蛋的博客&summary=刚开始学习Python，试着写了一些东西，发现Python确实是非常容易上手，代码十分简短，并且有很多第三方库可以使用，同样的一种操作用别的语言可能需要10行代码，Python可能只要1行就能实现。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/game/&title=小游戏 - 皮蛋的博客&summary="
           
           >
           
@@ -962,7 +851,7 @@ pageFile.close()</code></pre>
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/python-historytoday/&title=用Python爬 历史的今天 数据 - 皮蛋的博客&summary=刚开始学习Python，试着写了一些东西，发现Python确实是非常容易上手，代码十分简短，并且有很多第三方库可以使用，同样的一种操作用别的语言可能需要10行代码，Python可能只要1行就能实现。"
+          href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/game/&title=小游戏 - 皮蛋的博客&summary="
           
           >
           
@@ -976,7 +865,7 @@ pageFile.close()</code></pre>
         <div class='hoverbox'>
           <a class='share'><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC/0lEQVR42u3aS7LiMBAEQO5/6Zn9fMJdrbafO0jtACOkZFNR0ueX8c/xQQAGDBgwYMCsgfk0x18T/vH+1fPd71fX0d0PGDBgwIABA2YfTDkAhTDpPE/N+9/5wYABAwYMGDBrYS4DUPH11PenIMvrAQMGDBgwYMB8HUw1+HUDZAoLBgwYMGDAgAGTLuRqQ9X503WAAQMGDBgwYMCcFkGnAe6nnwcDBgwYMGDA7INpXxh+6euxC9BgwIABAwYMmNfCnI5q4TS10dNAd7kfMGDAgAEDBswamG5A6hZZVxvsPj+2fjBgwIABAwbMGpj0B9PAdwrSvTjUvpAEBgwYMGDAgFkHM32Q1QWofi/9vFx8gQEDBgwYMGDWw6QHXneDdTcczwsGDBgwYMCAWQNzWgClF3nS3+sWYelBGxgwYMCAAQNmH0x68ScttqaKsBSuDQoGDBgwYMCAWQdzWjh1oeMA1jyYOz5wAwMGDBgwYMC8Fua0eJoqqKrzV4NovE4wYMCAAQMGzFqY06JnqviqQlUP3MrrAwMGDBgwYMCshYmLneGDt2rxlF4UOj6JBAMGDBgwYMC8FiadaDrgpVCnQTI+iQQDBgwYMGDAvBamGpS6xdXUBaT0D4nXCQYMGDBgwIBZAzMd0E4huoXUWDAEAwYMGDBgwKyDuTuAdQurNKh1CzAwYMCAAQMGzF6Y06In/bwa8KZGGRAMGDBgwIABsxZmOjhVg97UfLcduIEBAwYMGDBgXg+TFlinBVf3D+qO25MvGDBgwIABA+YxmOkCKC2c7i624oAJBgwYMGDAgFkDcxqU0g1PF1TdIqycfMGAAQMGDBgwr4eZKpTSBZ8WTdWAV34eDBgwYMCAAbMWZmqD0wEw3Xj5otBVUQUGDBgwYMCA+TqYblEVB7Kh3wEDBgwYMGDAfC/MVPA6LZ7SoHl7UQUGDBgwYMCAeQwmPXCbfr/7B73uJBIMGDBgwIAB8xjM1AWeanH0VNCLgykYMGDAgAEDZg2MAQYMGDBgwIBZNn4D+bjl/3WUPR0AAAAASUVORK5CYII=">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACNElEQVR42u3cQXbDMAgFQN//0u0Bsog+SEmMR7vkuYiRNwT0ev09dF3g4ODg4OCD4FdxtRMo7tPNFxwcHBwcfCI8TXgV1I37kngzLjg4ODg4+GT42wIgfL4L6e4PDg4ODg4Onm+cHsRqYQIODg4ODg6+H14dHFSfAwcHBwcHB9/QoA8Lj+7B/swkBRwcHBwc/Ifg5QtzX/q87YIfODg4ODj4jeHdlSZaLXy25QsODg4ODj4IfmrQn14EWD2Ydn7g4ODg4OCD4OlG3QKn21DovghwcHBwcPDJ8HcB04PoPne8AwMODg4ODn5j+K7GQRovbUDsigMODg4ODj4Rvruhf6rQSV8QODg4ODj4ZHj1AKqFS9roWL24sG2gAA4ODg4OfiP4dXhVE05fSLtyAwcHBwcHvyG8GujU86cu9oGDg4ODg0+EdxOqFhrdCwXbJing4ODg4OAD4GnCp0C7Gh7xQAEcHBwcHPzG8G6DIG4IVAf7xRcADg4ODg7+BHgXkA7w07jp34ODg4ODgz8J3v2hnxYouxoSy/mDg4ODg4MPgndXO5FiIZIeEDg4ODg4+ER4dxD/qTjdxgY4ODg4OPhkeFqwpJ/T79MCZjl/cHBwcHDwwfDTA4VdA4JyYwMcHBwcHBy8/Q/qqvtVBwvg4ODg4ODg9Yt41YZGd328gAEHBwcHB/8iPB0odBsSqweyLT44ODg4OPhAeLUwSBsF1QsHuxoh4ODg4ODgk+BPW+Dg4ODg4APWP1HsBR8M/g/qAAAAAElFTkSuQmCC">
           </div>
         </div>
       
@@ -993,29 +882,6 @@ pageFile.close()</code></pre>
 
 
         
-        
-          <div class="prev-next">
-            
-              <a class='prev' href='/post/ms-opensource/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>微软开源WPF, Windows Forms 和 WinUI</p>
-                <p class='content'>美国当地时间12月4日，微软正式举行 Microsoft Connect(); 2018 开发者大会。
-
-
-Content
-Visual Studio 2019 Preview
-.NET Cor...</p>
-              </a>
-            
-            
-              <a class='next' href='/post/sql-date-format/'>
-                <p class='title'>SQL日期时间格式转换<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>不经常用，所以没有刻意记过，但每次用到了都要百度，所以保存到自己博客里方便使用。
-
-
-Select CONVERT(varchar(100), GETDATE(), 0)/*05 16 2006...</p>
-              </a>
-            
-          </div>
         
       </section>
     </article>
@@ -1049,90 +915,6 @@ Select CONVERT(varchar(100), GETDATE(), 0)/*05 16 2006...</p>
 </div>
 <aside class='l_side'>
   
-  
-    
-    
-
-
-
-  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-text">Code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考内容"><span class="toc-text">参考内容</span></a></li></ol>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow floatable desktop">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>Category</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Development/" href="/categories/Development/"
-            id="categoriesDevelopment"
-            ><div class='name'>Development</div><div class='badge'>(11)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Share/" href="/categories/Share/"
-            id="categoriesShare"
-            ><div class='name'>Share</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Tools/" href="/categories/Tools/"
-            id="categoriesTools"
-            ><div class='name'>Tools</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow floatable desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>Tag</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/NET/" style="font-size: 20.67px; color: #555">.NET</a> <a href="/tags/CA/" style="font-size: 14px; color: #999">CA</a> <a href="/tags/JS/" style="font-size: 24px; color: #333">JS</a> <a href="/tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="/tags/ORM/" style="font-size: 14px; color: #999">ORM</a> <a href="/tags/OS/" style="font-size: 14px; color: #999">OS</a> <a href="/tags/PC/" style="font-size: 17.33px; color: #777">PC</a> <a href="/tags/PCI-E/" style="font-size: 14px; color: #999">PCI_E</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/SQL/" style="font-size: 14px; color: #999">SQL</a> <a href="/tags/SSL/" style="font-size: 14px; color: #999">SSL</a> <a href="/tags/Steam/" style="font-size: 14px; color: #999">Steam</a> <a href="/tags/%E4%B8%BB%E6%9D%BF/" style="font-size: 14px; color: #999">主板</a> <a href="/tags/%E5%8A%A0%E5%AF%86/" style="font-size: 14px; color: #999">加密</a> <a href="/tags/%E5%8F%B0%E5%BC%8F%E6%9C%BA/" style="font-size: 14px; color: #999">台式机</a> <a href="/tags/%E5%92%8C%E5%B9%B3/" style="font-size: 14px; color: #999">和平</a> <a href="/tags/%E5%9C%B0%E5%9B%BE/" style="font-size: 14px; color: #999">地图</a> <a href="/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/" style="font-size: 14px; color: #999">小技巧</a> <a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 14px; color: #999">开源</a> <a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 14px; color: #999">插件</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.33px; color: #777">数据库</a> <a href="/tags/%E6%96%B0%E9%97%BB/" style="font-size: 14px; color: #999">新闻</a> <a href="/tags/%E6%97%B6%E9%97%B4/" style="font-size: 14px; color: #999">时间</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">游戏</a> <a href="/tags/%E7%BB%84%E8%A3%85%E6%9C%BA/" style="font-size: 14px; color: #999">组装机</a> <a href="/tags/%E8%AF%81%E4%B9%A6/" style="font-size: 14px; color: #999">证书</a> <a href="/tags/%E8%B7%A8%E5%B1%8F%E5%8D%8F%E4%BD%9C/" style="font-size: 14px; color: #999">跨屏协作</a> <a href="/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 14px; color: #999">音乐</a>
-    </div>
-  </section>
-
-
-  
-
 
 </aside>
 
