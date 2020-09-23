@@ -27,7 +27,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/atom.xml" title="皮蛋的博客">
+    <link rel="alternate" href="/atom.xml" title="皮蛋的博客" type="application/atom+xml">
   
 
   <!-- import meta -->
@@ -68,7 +68,7 @@
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/third.module.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/theme.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/theme.custom.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static@latest/css/theme.custom.min.css">
 
   
 
@@ -100,20 +100,12 @@
   <div class='a'>
     
     
-      <p class="title"><iframe frameborder="0" scrolling="no" src="/res/logo.html" width="1000px" height="600px"></iframe></p>
+      <p class="title"><div class='pd_content' onclick='dontTouchMe()'><h1><span name='pd_title' class='capital'>P</span><span name='pd_title' >d</span><span name='pd_title' >o</span><span name='pd_title' >n</span><span name='pd_title' >e</span><span name='pd_title' >'s</span><span name='pd_title'  class='capital'>B</span><span name='pd_title' >l</span><span name='pd_title' >o</span><span name='pd_title' >g</span></h1><h2><span name='pd_title'  class='capital'>L</span><span name='pd_title' >o</span><span name='pd_title' >v</span><span name='pd_title' >e</span><span name='pd_title' >&</span><span name='pd_title'  class='capital'>P</span><span name='pd_title' >e</span><span name='pd_title' >a</span><span name='pd_title' >c</span><span name='pd_title' >e</span></h2></div></p>
     
     
   </div>
   <div class='b'>
-    
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="" />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
-    
-    <div class='menu navigation search'>
+    <div class='menu navigation featured'>
       <div class='list-h'>
         
       </div>
@@ -695,10 +687,10 @@
           <p>最近在学习微信小程序，用到不少前端的知识，比如时间格式化。</p>
 <a id="more"></a>
 
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><pre><code class="js">function getDateNow() {
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><pre><code class="js">function getDateNow() &#123;
   var date = new Date();
   return date.format(&quot;yyyy-MM-dd HH:mm:ss.t w&quot;);
-}</code></pre>
+&#125;</code></pre>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="js">/*
  *对Date的扩展，将 Date 转化为指定格式的String
  *月(M)、日(d)、小时(H)、分(m)、秒(s)、季度(q) 可以用 1-2个占位符，
@@ -707,12 +699,12 @@
  *example
  *(new Date()).Format(&quot;yyyy-MM-dd HH:mm:ss.t w&quot;) ==&gt; 2018-10-19 14:19:17.649 星期五
  */
-Date.prototype.format = function(fmt) {
-  var weekArr = {
+Date.prototype.format = function(fmt) &#123;
+  var weekArr = &#123;
     cn: new Array(&quot;星期日&quot;, &quot;星期一&quot;, &quot;星期二&quot;, &quot;星期三&quot;, &quot;星期四&quot;, &quot;星期五&quot;, &quot;星期六&quot;),
     en: new Array(&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;)
-  };
-  var o = {
+  &#125;;
+  var o = &#123;
     &quot;M+&quot;: this.getMonth() + 1,
     &quot;d+&quot;: this.getDate(),
     &quot;H+&quot;: this.getHours(),
@@ -721,11 +713,11 @@ Date.prototype.format = function(fmt) {
     &quot;q+&quot;: Math.floor((this.getMonth() + 3) / 3),
     &quot;t&quot;: (&quot;00&quot; + this.getMilliseconds()).slice( - 3),
     &quot;w&quot;: weekArr.en[this.getDay()]
-  };
+  &#125;;
   if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + &quot;&quot;).substr(4 - RegExp.$1.length));
   for (var k in o) if (new RegExp(&quot;(&quot; + k + &quot;)&quot;).test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : ((&quot;00&quot; + o[k]).substr((&quot;&quot; + o[k]).length)));
   return fmt;
-};</code></pre>
+&#125;;</code></pre>
 
           
             <div class='article_footer'>
@@ -757,7 +749,7 @@ Date.prototype.format = function(fmt) {
       <blockquote>
         
           
-            <p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
+            <p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
 
           
         
@@ -800,9 +792,9 @@ Date.prototype.format = function(fmt) {
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/js-dateformat/&title=JavaScript获取时间并格式化 - 皮蛋的博客&summary=最近在学习微信小程序，用到不少前端的知识，比如时间格式化。"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/js-dateformat/&title=JavaScript获取时间并格式化 - 皮蛋的博客&summary=最近在学习微信小程序，用到不少前端的知识，比如时间格式化。"
           
           >
           
@@ -812,9 +804,9 @@ Date.prototype.format = function(fmt) {
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/js-dateformat/&title=JavaScript获取时间并格式化 - 皮蛋的博客&summary=最近在学习微信小程序，用到不少前端的知识，比如时间格式化。"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/js-dateformat/&title=JavaScript获取时间并格式化 - 皮蛋的博客&summary=最近在学习微信小程序，用到不少前端的知识，比如时间格式化。"
           
           >
           
@@ -824,9 +816,9 @@ Date.prototype.format = function(fmt) {
       
     
       
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/js-dateformat/&title=JavaScript获取时间并格式化 - 皮蛋的博客&summary=最近在学习微信小程序，用到不少前端的知识，比如时间格式化。"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/js-dateformat/&title=JavaScript获取时间并格式化 - 皮蛋的博客&summary=最近在学习微信小程序，用到不少前端的知识，比如时间格式化。"
           
           >
           
@@ -1602,7 +1594,7 @@ Select CONVERT(varchar(100), GETDATE(), 0)/*05 16 2006...</p>
 
 
   
-<script src="/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/pdone/static/js/theme.custom.min.js"></script>
 
 
 

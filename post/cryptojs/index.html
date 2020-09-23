@@ -28,7 +28,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/atom.xml" title="皮蛋的博客">
+    <link rel="alternate" href="/atom.xml" title="皮蛋的博客" type="application/atom+xml">
   
 
   <!-- import meta -->
@@ -69,7 +69,7 @@
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/third.module.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/theme.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/theme.custom.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static@latest/css/theme.custom.min.css">
 
   
 
@@ -101,20 +101,12 @@
   <div class='a'>
     
     
-      <p class="title"><iframe frameborder="0" scrolling="no" src="/res/logo.html" width="1000px" height="600px"></iframe></p>
+      <p class="title"><div class='pd_content' onclick='dontTouchMe()'><h1><span name='pd_title' class='capital'>P</span><span name='pd_title' >d</span><span name='pd_title' >o</span><span name='pd_title' >n</span><span name='pd_title' >e</span><span name='pd_title' >'s</span><span name='pd_title'  class='capital'>B</span><span name='pd_title' >l</span><span name='pd_title' >o</span><span name='pd_title' >g</span></h1><h2><span name='pd_title'  class='capital'>L</span><span name='pd_title' >o</span><span name='pd_title' >v</span><span name='pd_title' >e</span><span name='pd_title' >&</span><span name='pd_title'  class='capital'>P</span><span name='pd_title' >e</span><span name='pd_title' >a</span><span name='pd_title' >c</span><span name='pd_title' >e</span></h2></div></p>
     
     
   </div>
   <div class='b'>
-    
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="" />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
-    
-    <div class='menu navigation search'>
+    <div class='menu navigation featured'>
       <div class='list-h'>
         
       </div>
@@ -712,23 +704,23 @@ var 3desDecrypt = CryptoJS.TripleDES.decrypt(3desEncrypt, &quot;Secret Passphras
 var message = &quot;Message&quot;;
 var key = CryptoJS.enc.Utf8.parse(&quot;123456&quot;); //密钥
 var iv = CryptoJS.enc.Utf8.parse(&quot;123456&quot;); //偏移量
-var aesEncrypt2 = CryptoJS.AES.encrypt(message ,key, {
+var aesEncrypt2 = CryptoJS.AES.encrypt(message ,key, &#123;
 iv: iv,
 mode: CryptoJS.mode.CBC, //加密模式
 padding: CryptoJS.pad.Pkcs7 //填充模式
-});
+&#125;);
 aesEncrypt2 = encodeURIComponent(CryptoJS.enc.Base64.stringify(encryptResult.ciphertext)); //可转为Base64后再进行Url编码，也可直接使用十六进制</code></pre>
 <h3 id="Extend"><a href="#Extend" class="headerlink" title="Extend"></a>Extend</h3><ol>
 <li>密钥和偏移量：一般情况下密钥为加密方与解密方双方约定好的，但如果长期使用同一密钥，对相同内容加密后的结果一致，容易被找出规律。所以，可以在双方交互时添加一个参数——偏移量，偏移量明文传递，并且每次请求都不同，但在一次交互过程中，双方使用同一偏移量，这样就可以使加密相同内容时结果每次都不同，间接提高安全性。</li>
-<li>加密模式：电码本模式（Electronic Codebook Book (ECB)）；密码分组链接模式（Cipher Block Chaining (CBC)）；计算器模式（Counter (CTR)）；密码反馈模式（Cipher FeedBack (CFB)）；输出反馈模式（Output FeedBack (OFB)）。ECB模式下偏移量不生效。具体各种模式的原理这里不再描述（<a href="https://www.cnblogs.com/starwolf/p/3365834.html" target="_blank" rel="noopener">参考资料1</a>）。</li>
-<li>填充模式：.NET和Java中并不完全通用，经过与安卓开发的同事踩坑与测试后，发现None和ISO10126两种填充模式，在两个平台是通用的。理论上PKCS7/PKCS5应该也是通用的（<a href="http://www.users.zetnet.co.uk/hopwood/crypto/scan/cs.html#pad_PKCSPadding" target="_blank" rel="noopener">参考资料2</a>/<a href="https://www.cnblogs.com/midea0978/articles/1437257.html" target="_blank" rel="noopener">参考资料3</a>）。</li>
+<li>加密模式：电码本模式（Electronic Codebook Book (ECB)）；密码分组链接模式（Cipher Block Chaining (CBC)）；计算器模式（Counter (CTR)）；密码反馈模式（Cipher FeedBack (CFB)）；输出反馈模式（Output FeedBack (OFB)）。ECB模式下偏移量不生效。具体各种模式的原理这里不再描述（<a target="_blank" rel="noopener" href="https://www.cnblogs.com/starwolf/p/3365834.html">参考资料1</a>）。</li>
+<li>填充模式：.NET和Java中并不完全通用，经过与安卓开发的同事踩坑与测试后，发现None和ISO10126两种填充模式，在两个平台是通用的。理论上PKCS7/PKCS5应该也是通用的（<a target="_blank" rel="noopener" href="http://www.users.zetnet.co.uk/hopwood/crypto/scan/cs.html#pad_PKCSPadding">参考资料2</a>/<a target="_blank" rel="noopener" href="https://www.cnblogs.com/midea0978/articles/1437257.html">参考资料3</a>）。</li>
 <li>编码格式：之前做项目时因为编码的问题耽误了不少时间。</li>
 <li>没有绝对的安全。</li>
 </ol>
 <h3 id="相关项目"><a href="#相关项目" class="headerlink" title="相关项目"></a>相关项目</h3><ul>
-<li>Google项目地址：<a href="https://code.google.com/archive/p/crypto-js/" target="_blank" rel="noopener">https://code.google.com/archive/p/crypto-js/</a></li>
-<li>npm项目地址：<a href="https://www.npmjs.com/package/crypto-j" target="_blank" rel="noopener">https://www.npmjs.com/package/crypto-j</a></li>
-<li>GitHub项目地址：<a href="https://github.com/brix/crypto-js" target="_blank" rel="noopener">https://github.com/brix/crypto-js</a></li>
+<li>Google项目地址：<a target="_blank" rel="noopener" href="https://code.google.com/archive/p/crypto-js/">https://code.google.com/archive/p/crypto-js/</a></li>
+<li>npm项目地址：<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/crypto-j">https://www.npmjs.com/package/crypto-j</a></li>
+<li>GitHub项目地址：<a target="_blank" rel="noopener" href="https://github.com/brix/crypto-js">https://github.com/brix/crypto-js</a></li>
 </ul>
 
           
@@ -761,7 +753,7 @@ aesEncrypt2 = encodeURIComponent(CryptoJS.enc.Base64.stringify(encryptResult.cip
       <blockquote>
         
           
-            <p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
+            <p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
 
           
         
@@ -804,9 +796,9 @@ aesEncrypt2 = encodeURIComponent(CryptoJS.enc.Base64.stringify(encryptResult.cip
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/cryptojs/&title=Cryptojs – JavaScript加密库 - 皮蛋的博客&summary=Importnpm install crypto-jsor
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/cryptojs/&title=Cryptojs – JavaScript加密库 - 皮蛋的博客&summary=Importnpm install crypto-jsor
 &lt;script src=&quot;http://pdoner.cn/share/crypto-js.js&quot; type=&quot;text/javascript&quot;&gt;"
           
           >
@@ -817,9 +809,9 @@ aesEncrypt2 = encodeURIComponent(CryptoJS.enc.Base64.stringify(encryptResult.cip
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/cryptojs/&title=Cryptojs – JavaScript加密库 - 皮蛋的博客&summary=Importnpm install crypto-jsor
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/cryptojs/&title=Cryptojs – JavaScript加密库 - 皮蛋的博客&summary=Importnpm install crypto-jsor
 &lt;script src=&quot;http://pdoner.cn/share/crypto-js.js&quot; type=&quot;text/javascript&quot;&gt;"
           
           >
@@ -830,9 +822,9 @@ aesEncrypt2 = encodeURIComponent(CryptoJS.enc.Base64.stringify(encryptResult.cip
       
     
       
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/cryptojs/&title=Cryptojs – JavaScript加密库 - 皮蛋的博客&summary=Importnpm install crypto-jsor
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/cryptojs/&title=Cryptojs – JavaScript加密库 - 皮蛋的博客&summary=Importnpm install crypto-jsor
 &lt;script src=&quot;http://pdoner.cn/share/crypto-js.js&quot; type=&quot;text/javascript&quot;&gt;"
           
           >
@@ -939,7 +931,7 @@ aesEncrypt2 = encodeURIComponent(CryptoJS.enc.Base64.stringify(encryptResult.cip
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Import"><span class="toc-text">Import</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Usage"><span class="toc-text">Usage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extend"><span class="toc-text">Extend</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关项目"><span class="toc-text">相关项目</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Import"><span class="toc-text">Import</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Usage"><span class="toc-text">Usage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extend"><span class="toc-text">Extend</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE"><span class="toc-text">相关项目</span></a></li></ol>
     </div>
   </section>
 
@@ -1612,7 +1604,7 @@ aesEncrypt2 = encodeURIComponent(CryptoJS.enc.Base64.stringify(encryptResult.cip
 
 
   
-<script src="/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/pdone/static/js/theme.custom.min.js"></script>
 
 
 

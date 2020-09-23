@@ -27,7 +27,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/atom.xml" title="皮蛋的博客">
+    <link rel="alternate" href="/atom.xml" title="皮蛋的博客" type="application/atom+xml">
   
 
   <!-- import meta -->
@@ -68,7 +68,7 @@
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/third.module.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/theme.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/theme.custom.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static@latest/css/theme.custom.min.css">
 
   
 
@@ -100,20 +100,12 @@
   <div class='a'>
     
     
-      <p class="title"><iframe frameborder="0" scrolling="no" src="/res/logo.html" width="1000px" height="600px"></iframe></p>
+      <p class="title"><div class='pd_content' onclick='dontTouchMe()'><h1><span name='pd_title' class='capital'>P</span><span name='pd_title' >d</span><span name='pd_title' >o</span><span name='pd_title' >n</span><span name='pd_title' >e</span><span name='pd_title' >'s</span><span name='pd_title'  class='capital'>B</span><span name='pd_title' >l</span><span name='pd_title' >o</span><span name='pd_title' >g</span></h1><h2><span name='pd_title'  class='capital'>L</span><span name='pd_title' >o</span><span name='pd_title' >v</span><span name='pd_title' >e</span><span name='pd_title' >&</span><span name='pd_title'  class='capital'>P</span><span name='pd_title' >e</span><span name='pd_title' >a</span><span name='pd_title' >c</span><span name='pd_title' >e</span></h2></div></p>
     
     
   </div>
   <div class='b'>
-    
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="" />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
-    
-    <div class='menu navigation search'>
+    <div class='menu navigation featured'>
       <div class='list-h'>
         
       </div>
@@ -701,45 +693,45 @@
 <li>Write a query to perform CRUD operations.</li>
 <li>Pass query as a parameter in the Execute method.</li>
 </ul>
-<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Dapper is installed through NuGet: <a href="https://www.nuget.org/packages/Dapper" target="_blank" rel="noopener">https://www.nuget.org/packages/Dapper</a></p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Dapper is installed through NuGet: <a target="_blank" rel="noopener" href="https://www.nuget.org/packages/Dapper">https://www.nuget.org/packages/Dapper</a></p>
 <pre><code>PM&gt; Install-Package Dapper</code></pre><h2 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h2><p>Dapper works with any database provider since there is no DB specific implementation.</p>
 <h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><p>Dapper will extend your IDbConnection interface with multiple methods:</p>
 <ul>
-<li><a href="https://dapper-tutorial.net/execute" target="_blank" rel="noopener">Execute</a></li>
-<li><a href="https://dapper-tutorial.net/query" target="_blank" rel="noopener">Query</a></li>
-<li><a href="https://dapper-tutorial.net/queryfirst" target="_blank" rel="noopener">QueryFirst</a></li>
-<li><a href="https://dapper-tutorial.net/queryfirstordefault" target="_blank" rel="noopener">QueryFirstOrDefault</a></li>
-<li><a href="https://dapper-tutorial.net/querysingle" target="_blank" rel="noopener">QuerySingle</a></li>
-<li><a href="https://dapper-tutorial.net/querysingleordefault" target="_blank" rel="noopener">QuerySingleOrDefault</a></li>
-<li><a href="https://dapper-tutorial.net/querymultiple" target="_blank" rel="noopener">QueryMultiple</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/execute">Execute</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/query">Query</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/queryfirst">QueryFirst</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/queryfirstordefault">QueryFirstOrDefault</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/querysingle">QuerySingle</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/querysingleordefault">QuerySingleOrDefault</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/querymultiple">QueryMultiple</a></li>
 </ul>
 <pre><code class="cs">string sqlOrderDetails = &quot;SELECT TOP 5 * FROM OrderDetails;&quot;;
 string sqlOrderDetail = &quot;SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;&quot;;
 string sqlCustomerInsert = &quot;INSERT INTO Customers (CustomerName) Values (@CustomerName);&quot;;
 
 using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
-{
+&#123;
     var orderDetails = connection.Query&lt;OrderDetail&gt;(sqlOrderDetails).ToList();
-    var orderDetail = connection.QueryFirstOrDefault&lt;OrderDetail&gt;(sqlOrderDetail, new {OrderDetailID = 1});
-    var affectedRows = connection.Execute(sqlCustomerInsert,  new {CustomerName = &quot;Mark&quot;});
+    var orderDetail = connection.QueryFirstOrDefault&lt;OrderDetail&gt;(sqlOrderDetail, new &#123;OrderDetailID = 1&#125;);
+    var affectedRows = connection.Execute(sqlCustomerInsert,  new &#123;CustomerName = &quot;Mark&quot;&#125;);
 
     Console.WriteLine(orderDetails.Count);
     Console.WriteLine(affectedRows);
 
     FiddleHelper.WriteTable(orderDetails);
-    FiddleHelper.WriteTable(new List&lt;OrderDetail&gt;() { orderDetail });
-}</code></pre>
-<p>Try it: <a href="https://dotnetfiddle.net/FghvFq" target="_blank" rel="noopener">.NET Core</a> | <a href="https://dotnetfiddle.net/vIvUNm" target="_blank" rel="noopener">.NET Framework</a></p>
+    FiddleHelper.WriteTable(new List&lt;OrderDetail&gt;() &#123; orderDetail &#125;);
+&#125;</code></pre>
+<p>Try it: <a target="_blank" rel="noopener" href="https://dotnetfiddle.net/FghvFq">.NET Core</a> | <a target="_blank" rel="noopener" href="https://dotnetfiddle.net/vIvUNm">.NET Framework</a></p>
 <h2 id="Parameter"><a href="#Parameter" class="headerlink" title="Parameter"></a>Parameter</h2><p>Execute and queries method can use parameters from multiple different ways:</p>
 <ul>
-<li><a href="https://dapper-tutorial.net/parameter-anonymous" target="_blank" rel="noopener">Anonymous</a></li>
-<li><a href="https://dapper-tutorial.net/parameter-dynamic" target="_blank" rel="noopener">Dynamic</a></li>
-<li><a href="https://dapper-tutorial.net/parameter-list" target="_blank" rel="noopener">List</a></li>
-<li><a href="https://dapper-tutorial.net/parameter-string" target="_blank" rel="noopener">String</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/parameter-anonymous">Anonymous</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/parameter-dynamic">Dynamic</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/parameter-list">List</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/parameter-string">String</a></li>
 </ul>
 <pre><code class="cs">// Anonymous
 var affectedRows = connection.Execute(sql,
-                    new {Kind = InvoiceKind.WebInvoice, Code = &quot;Single_Insert_1&quot;},
+                    new &#123;Kind = InvoiceKind.WebInvoice, Code = &quot;Single_Insert_1&quot;&#125;,
                     commandType: CommandType.StoredProcedure);
 
 // Dynamic
@@ -756,21 +748,21 @@ connection.Execute(sql,
 int rowCount = parameter.Get&lt;int&gt;(&quot;@RowCount&quot;);
 
 // List
-connection.Query&lt;Invoice&gt;(sql, new {Kind = new[] {InvoiceKind.StoreInvoice, InvoiceKind.WebInvoice}}).ToList();
+connection.Query&lt;Invoice&gt;(sql, new &#123;Kind = new[] &#123;InvoiceKind.StoreInvoice, InvoiceKind.WebInvoice&#125;&#125;).ToList();
 // String
-connection.Query&lt;Invoice&gt;(sql, new {Code = new DbString {Value = &quot;Invoice_1&quot;, IsFixedLength = false, Length = 9, IsAnsi = true}}).ToList();</code></pre>
+connection.Query&lt;Invoice&gt;(sql, new &#123;Code = new DbString &#123;Value = &quot;Invoice_1&quot;, IsFixedLength = false, Length = 9, IsAnsi = true&#125;&#125;).ToList();</code></pre>
 <h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p>The result returned by queries method can be mapped to multiple types:</p>
 <ul>
-<li><a href="https://dapper-tutorial.net/result-anonymous" target="_blank" rel="noopener">Anonymous</a></li>
-<li><a href="https://dapper-tutorial.net/result-strongly-typed" target="_blank" rel="noopener">Strongly Typed</a></li>
-<li><a href="https://dapper-tutorial.net/result-multi-mapping" target="_blank" rel="noopener">Multi-Mapping</a></li>
-<li><a href="https://dapper-tutorial.net/result-multi-result" target="_blank" rel="noopener">Multi-Result</a></li>
-<li><a href="https://dapper-tutorial.net/result-multi-type" target="_blank" rel="noopener">Multi-Type</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/result-anonymous">Anonymous</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/result-strongly-typed">Strongly Typed</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/result-multi-mapping">Multi-Mapping</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/result-multi-result">Multi-Result</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/result-multi-type">Multi-Type</a></li>
 </ul>
 <pre><code class="cs">string sqlOrderDetails = &quot;SELECT TOP 10 * FROM OrderDetails;&quot;;
 
 using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
-{
+&#123;
     var anonymousList = connection.Query(sqlOrderDetails).ToList();
     var orderDetails = connection.Query&lt;OrderDetail&gt;(sqlOrderDetails).ToList();
 
@@ -780,13 +772,13 @@ using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlSer
     FiddleHelper.WriteTable(orderDetails);
 
     FiddleHelper.WriteTable(connection.Query(sqlOrderDetails).FirstOrDefault());
-}</code></pre>
-<p>Try it: <a href="https://dotnetfiddle.net/VPwBKR" target="_blank" rel="noopener">.NET Core</a> | <a href="https://dotnetfiddle.net/EbR9BP" target="_blank" rel="noopener">.NET Framework</a></p>
+&#125;</code></pre>
+<p>Try it: <a target="_blank" rel="noopener" href="https://dotnetfiddle.net/VPwBKR">.NET Core</a> | <a target="_blank" rel="noopener" href="https://dotnetfiddle.net/EbR9BP">.NET Framework</a></p>
 <h2 id="Utilities"><a href="#Utilities" class="headerlink" title="Utilities"></a>Utilities</h2><ul>
-<li><a href="https://dapper-tutorial.net/async" target="_blank" rel="noopener">Async</a></li>
-<li><a href="https://dapper-tutorial.net/buffered" target="_blank" rel="noopener">Buffered</a></li>
-<li><a href="https://dapper-tutorial.net/transaction" target="_blank" rel="noopener">Transaction</a></li>
-<li><a href="https://dapper-tutorial.net/stored-procedure" target="_blank" rel="noopener">Stored Procedure</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/async">Async</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/buffered">Buffered</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/transaction">Transaction</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapper-tutorial.net/stored-procedure">Stored Procedure</a></li>
 </ul>
 <pre><code class="cs">// Async
 connection.QueryAsync&lt;Invoice&gt;(sql)
@@ -796,18 +788,18 @@ connection.Query&lt;Invoice&gt;(sql, buffered: false)
 
 // Transaction
 using (var transaction = connection.BeginTransaction())
-{
+&#123;
     var affectedRows = connection.Execute(sql,
-    new {Kind = InvoiceKind.WebInvoice, Code = &quot;Single_Insert_1&quot;},
+    new &#123;Kind = InvoiceKind.WebInvoice, Code = &quot;Single_Insert_1&quot;&#125;,
     commandType: CommandType.StoredProcedure,
     transaction: transaction);
 
     transaction.Commit();
-}
+&#125;
 
 // Stored Procedure
 var affectedRows = connection.Execute(sql,
-new {Kind = InvoiceKind.WebInvoice, Code = &quot;Single_Insert_1&quot;},
+new &#123;Kind = InvoiceKind.WebInvoice, Code = &quot;Single_Insert_1&quot;&#125;,
 commandType: CommandType.StoredProcedure);</code></pre>
 <h2 id="DapperHelper-cs"><a href="#DapperHelper-cs" class="headerlink" title="DapperHelper.cs"></a>DapperHelper.cs</h2><pre><code class="cs">using System;
 using System.Collections.Generic;
@@ -820,13 +812,13 @@ using System.Threading.Tasks;
 using Dapper;
 using MySql.Data.MySqlClient;
 
-namespace ORMSuit.DAO {
-    public class DapperHelper&lt;T&gt; {
-        enum DBType {
+namespace ORMSuit.DAO &#123;
+    public class DapperHelper&lt;T&gt; &#123;
+        enum DBType &#123;
             MSSQL,
             MySQL,
             SQLite
-        }
+        &#125;
         /// &lt;summary&gt;
         /// 数据库连接字符串
         /// &lt;/summary&gt;
@@ -842,8 +834,8 @@ namespace ORMSuit.DAO {
         /// 获取数据库连接
         /// &lt;/summary&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static IDbConnection GetConnection () {
-            switch ((DBType) dbType) {
+        public static IDbConnection GetConnection () &#123;
+            switch ((DBType) dbType) &#123;
                 case DBType.MSSQL:
                     return new SqlConnection (connectionString);
                 case DBType.MySQL:
@@ -854,8 +846,8 @@ namespace ORMSuit.DAO {
                     return new SQLiteConnection (connectionString);
                 default:
                     return new SqlConnection (connectionString);
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 查询列表
@@ -863,11 +855,11 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static List&lt;T&gt; Query (string sql, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static List&lt;T&gt; Query (string sql, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 return con.Query&lt;T&gt; (sql, param).ToList ();
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 查询第一个数据
@@ -875,17 +867,17 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static T QueryFirst (string sql, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static T QueryFirst (string sql, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 List&lt;T&gt; tempList = con.Query&lt;T&gt; (sql, param).ToList ();
-                if (tempList != null &amp;&amp; tempList.Count &gt; 0) {
+                if (tempList != null &amp;&amp; tempList.Count &gt; 0) &#123;
                     return tempList[0];
-                } else {
+                &#125; else &#123;
                     return default;
-                }
+                &#125;
                 //return con.QueryFirst&lt;T&gt;(sql, param);
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 查询第一个数据没有返回默认值
@@ -893,11 +885,11 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static T QueryFirstOrDefault (string sql, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static T QueryFirstOrDefault (string sql, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 return con.QueryFirstOrDefault&lt;T&gt; (sql, param);
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 查询单条数据
@@ -905,49 +897,49 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static T QuerySingle (string sql, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static T QuerySingle (string sql, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 return con.QuerySingle&lt;T&gt; (sql, param);
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 数据是否存在
         /// &lt;/summary&gt;
         /// &lt;param name=&quot;sql&quot;&gt;select count(*) from table where id=@id&lt;/param&gt;
-        /// &lt;param name=&quot;param&quot;&gt;new { id = 1 }&lt;/param&gt;
+        /// &lt;param name=&quot;param&quot;&gt;new &#123; id = 1 &#125;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static bool Exists (string sql, object param = null) {
+        public static bool Exists (string sql, object param = null) &#123;
             object obj = ExecuteScalar (sql, param);
             int count = 0;
-            if (obj == null) {
+            if (obj == null) &#123;
                 count = 0;
-            } else {
+            &#125; else &#123;
                 count = Convert.ToInt32 (obj);
-            }
-            if (count &gt; 0) {
+            &#125;
+            if (count &gt; 0) &#123;
                 return true;
-            } else {
+            &#125; else &#123;
                 return false;
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 数据行数
         /// &lt;/summary&gt;
         /// &lt;param name=&quot;sql&quot;&gt;select count(*) from table where id=@id&lt;/param&gt;
-        /// &lt;param name=&quot;param&quot;&gt;new { id = 1 }&lt;/param&gt;
+        /// &lt;param name=&quot;param&quot;&gt;new &#123; id = 1 &#125;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static int RecordCount (string sql, object param = null) {
+        public static int RecordCount (string sql, object param = null) &#123;
             object obj = ExecuteScalar (sql, param);
             int count = 0;
-            if (obj == null) {
+            if (obj == null) &#123;
                 count = 0;
-            } else {
+            &#125; else &#123;
                 count = Convert.ToInt32 (obj);
-            }
+            &#125;
             return count;
-        }
+        &#125;
 
         /// &lt;summary&gt;
         /// 查询单条数据没有返回默认值
@@ -955,11 +947,11 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static T QuerySingleOrDefault (string sql, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static T QuerySingleOrDefault (string sql, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 return con.QuerySingleOrDefault&lt;T&gt; (sql, param);
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 增删改
@@ -967,11 +959,11 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static int Execute (string sql, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static int Execute (string sql, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 return con.Execute (sql, param);
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// Reader获取数据
@@ -979,11 +971,11 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static IDataReader ExecuteReader (string sql, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static IDataReader ExecuteReader (string sql, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 return con.ExecuteReader (sql, param);
-            }
-        }
+            &#125;
+        &#125;
 
         #region 
         /// &lt;summary&gt;
@@ -992,11 +984,11 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static DataTable ExecuteDataTabel (string sql, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static DataTable ExecuteDataTabel (string sql, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 return DataReaderToDataTable (con.ExecuteReader (sql, param));
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 获取DataSet
@@ -1004,74 +996,74 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static DataSet ExecuteDataSet (string sql, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static DataSet ExecuteDataSet (string sql, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 return DataReaderToDataSet (con.ExecuteReader (sql, param));
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// DataReader转DataTable
         /// &lt;/summary&gt;
         /// &lt;param name=&quot;dataReader&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        private static DataTable DataReaderToDataTable (IDataReader dataReader) {
+        private static DataTable DataReaderToDataTable (IDataReader dataReader) &#123;
             DataTable datatable = new DataTable ();
-            for (int i = 0; i &lt; dataReader.FieldCount; i++) {
+            for (int i = 0; i &lt; dataReader.FieldCount; i++) &#123;
                 DataColumn myDataColumn = new DataColumn ();
                 myDataColumn.DataType = dataReader.GetFieldType (i);
                 myDataColumn.ColumnName = dataReader.GetName (i);
                 datatable.Columns.Add (myDataColumn);
-            }
-            while (dataReader.Read ()) {
+            &#125;
+            while (dataReader.Read ()) &#123;
                 DataRow myDataRow = datatable.NewRow ();
-                for (int i = 0; i &lt; dataReader.FieldCount; i++) {
+                for (int i = 0; i &lt; dataReader.FieldCount; i++) &#123;
                     myDataRow[i] = dataReader[i].ToString ();
-                }
+                &#125;
                 datatable.Rows.Add (myDataRow);
                 myDataRow = null;
-            }
+            &#125;
             dataReader.Close ();
             return datatable;
-        }
+        &#125;
 
         /// &lt;summary&gt;
         /// DataReader转DataSet
         /// &lt;/summary&gt;
         /// &lt;param name=&quot;reader&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static DataSet DataReaderToDataSet (IDataReader dataReader) {
+        public static DataSet DataReaderToDataSet (IDataReader dataReader) &#123;
             DataSet dataSet = new DataSet ();
-            do {
+            do &#123;
                 DataTable schemaTable = dataReader.GetSchemaTable ();
                 DataTable dataTable = new DataTable ();
-                if (schemaTable != null) {
-                    for (int i = 0; i &lt; schemaTable.Rows.Count; i++) {
+                if (schemaTable != null) &#123;
+                    for (int i = 0; i &lt; schemaTable.Rows.Count; i++) &#123;
                         DataRow dataRow = schemaTable.Rows[i];
                         string columnName = (string) dataRow[&quot;ColumnName&quot;];
                         DataColumn column = new DataColumn (columnName, (Type) dataRow[&quot;DataType&quot;]);
                         dataTable.Columns.Add (column);
-                    }
+                    &#125;
                     dataSet.Tables.Add (dataTable);
-                    while (dataReader.Read ()) {
+                    while (dataReader.Read ()) &#123;
                         DataRow dataRow = dataTable.NewRow ();
-                        for (int i = 0; i &lt; dataReader.FieldCount; i++) {
+                        for (int i = 0; i &lt; dataReader.FieldCount; i++) &#123;
                             dataRow[i] = dataReader.GetValue (i);
-                        }
+                        &#125;
                         dataTable.Rows.Add (dataRow);
-                    }
-                } else {
+                    &#125;
+                &#125; else &#123;
                     DataColumn column = new DataColumn (&quot;RowsAffected&quot;);
                     dataTable.Columns.Add (column);
                     dataSet.Tables.Add (dataTable);
                     DataRow dataRow = dataTable.NewRow ();
                     dataRow[0] = dataReader.RecordsAffected;
                     dataTable.Rows.Add (dataRow);
-                }
-            }
+                &#125;
+            &#125;
             while (dataReader.NextResult ());
             return dataSet;
-        }
+        &#125;
 
         #endregion
 
@@ -1081,11 +1073,11 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static object ExecuteScalar (string sql, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static object ExecuteScalar (string sql, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 return con.ExecuteScalar (sql, param);
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// Scalar获取数据
@@ -1093,11 +1085,11 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static T ExecuteScalarForT (string sql, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static T ExecuteScalarForT (string sql, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 return con.ExecuteScalar&lt;T&gt; (sql, param);
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 带参数的存储过程
@@ -1105,8 +1097,8 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;
         /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static List&lt;T&gt; ExecutePro (string proc, object param = null) {
-            using (IDbConnection con = GetConnection ()) {
+        public static List&lt;T&gt; ExecutePro (string proc, object param = null) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 List&lt;T&gt; list = con.Query&lt;T&gt; (proc,
                     param,
                     null,
@@ -1114,8 +1106,8 @@ namespace ORMSuit.DAO {
                     null,
                     CommandType.StoredProcedure).ToList ();
                 return list;
-            }
-        }
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 多条SQL批量执行
@@ -1123,24 +1115,24 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;Key&quot;&gt;多条SQL&lt;/param&gt;
         /// &lt;param name=&quot;Value&quot;&gt;SQL对应实体&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static int ExecuteTransaction (Dictionary&lt;string, object&gt; dic) {
-            using (IDbConnection con = GetConnection ()) {
-                using (var transaction = con.BeginTransaction ()) {
-                    try {
+        public static int ExecuteTransaction (Dictionary&lt;string, object&gt; dic) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
+                using (var transaction = con.BeginTransaction ()) &#123;
+                    try &#123;
                         int result = 0;
-                        foreach (var sql in dic) {
+                        foreach (var sql in dic) &#123;
                             result += con.Execute (sql.Key, sql.Value, transaction);
-                        }
+                        &#125;
 
                         transaction.Commit ();
                         return result;
-                    } catch (Exception ex) {
+                    &#125; catch (Exception ex) &#123;
                         transaction.Rollback ();
                         return 0;
-                    }
-                }
-            }
-        }
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 批量增删改 带事务
@@ -1148,24 +1140,24 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;单SQL&lt;/param&gt;
         /// &lt;param name=&quot;object&quot;&gt;实体列表&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static int ExecuteTransaction (string sql, object obj) {
-            using (IDbConnection con = GetConnection ()) {
+        public static int ExecuteTransaction (string sql, object obj) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 con.Open ();
-                using (IDbTransaction transaction = con.BeginTransaction ()) {
-                    try {
+                using (IDbTransaction transaction = con.BeginTransaction ()) &#123;
+                    try &#123;
                         int result = 0;
                         result = con.Execute (sql, obj, transaction);
                         transaction.Commit ();
                         con.Close ();
                         return result;
-                    } catch (Exception ex) {
+                    &#125; catch (Exception ex) &#123;
                         transaction.Rollback ();
                         con.Close ();
                         return 0;
-                    }
-                }
-            }
-        }
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
 
         /// &lt;summary&gt;
         /// 异步批量增删改 带事务 
@@ -1173,26 +1165,26 @@ namespace ORMSuit.DAO {
         /// &lt;param name=&quot;sql&quot;&gt;单SQL&lt;/param&gt;
         /// &lt;param name=&quot;object&quot;&gt;实体列表&lt;/param&gt;
         /// &lt;returns&gt;&lt;/returns&gt;
-        public static Task&lt;int&gt; ExecuteTransactionAsync (string sql, object obj) {
-            using (IDbConnection con = GetConnection ()) {
+        public static Task&lt;int&gt; ExecuteTransactionAsync (string sql, object obj) &#123;
+            using (IDbConnection con = GetConnection ()) &#123;
                 con.Open ();
-                using (IDbTransaction transaction = con.BeginTransaction ()) {
-                    try {
+                using (IDbTransaction transaction = con.BeginTransaction ()) &#123;
+                    try &#123;
                         Task&lt;int&gt; result;
                         result = con.ExecuteAsync (sql, obj, transaction);
                         transaction.Commit ();
                         con.Close ();
                         return result;
-                    } catch (Exception ex) {
+                    &#125; catch (Exception ex) &#123;
                         transaction.Rollback ();
                         con.Close ();
                         return null;
-                    }
-                }
-            }
-        }
-    }
-}</code></pre>
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;</code></pre>
 
           
             <div class='article_footer'>
@@ -1224,7 +1216,7 @@ namespace ORMSuit.DAO {
       <blockquote>
         
           
-            <p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
+            <p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
 
           
         
@@ -1267,9 +1259,9 @@ namespace ORMSuit.DAO {
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/dapperhelper/&title=DapperHelper - 皮蛋的博客&summary=Dapper is a simple object mapper for .NET and owns the title of King of Micro ORM in terms of speed and is virtually as fast as using a raw ADO.NET data reader. An ORM is an Object Relational Mapper, which is responsible for mapping between database and programming language."
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/dapperhelper/&title=DapperHelper - 皮蛋的博客&summary=Dapper is a simple object mapper for .NET and owns the title of King of Micro ORM in terms of speed and is virtually as fast as using a raw ADO.NET data reader. An ORM is an Object Relational Mapper, which is responsible for mapping between database and programming language."
           
           >
           
@@ -1279,9 +1271,9 @@ namespace ORMSuit.DAO {
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/dapperhelper/&title=DapperHelper - 皮蛋的博客&summary=Dapper is a simple object mapper for .NET and owns the title of King of Micro ORM in terms of speed and is virtually as fast as using a raw ADO.NET data reader. An ORM is an Object Relational Mapper, which is responsible for mapping between database and programming language."
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/dapperhelper/&title=DapperHelper - 皮蛋的博客&summary=Dapper is a simple object mapper for .NET and owns the title of King of Micro ORM in terms of speed and is virtually as fast as using a raw ADO.NET data reader. An ORM is an Object Relational Mapper, which is responsible for mapping between database and programming language."
           
           >
           
@@ -1291,9 +1283,9 @@ namespace ORMSuit.DAO {
       
     
       
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/dapperhelper/&title=DapperHelper - 皮蛋的博客&summary=Dapper is a simple object mapper for .NET and owns the title of King of Micro ORM in terms of speed and is virtually as fast as using a raw ADO.NET data reader. An ORM is an Object Relational Mapper, which is responsible for mapping between database and programming language."
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/dapperhelper/&title=DapperHelper - 皮蛋的博客&summary=Dapper is a simple object mapper for .NET and owns the title of King of Micro ORM in terms of speed and is virtually as fast as using a raw ADO.NET data reader. An ORM is an Object Relational Mapper, which is responsible for mapping between database and programming language."
           
           >
           
@@ -1334,10 +1326,9 @@ namespace ORMSuit.DAO {
 
 
 调用示例public partial class Main : Form
-{
+&#123;
     public Main()
-    {
-     ...</p>
+    &#...</p>
               </a>
             
             
@@ -2071,7 +2062,7 @@ namespace ORMSuit.DAO {
 
 
   
-<script src="/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/pdone/static/js/theme.custom.min.js"></script>
 
 
 

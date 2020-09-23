@@ -27,7 +27,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/atom.xml" title="皮蛋的博客">
+    <link rel="alternate" href="/atom.xml" title="皮蛋的博客" type="application/atom+xml">
   
 
   <!-- import meta -->
@@ -68,7 +68,7 @@
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/third.module.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/theme.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static/css/theme.custom.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pdone/static@latest/css/theme.custom.min.css">
 
   
 
@@ -100,20 +100,12 @@
   <div class='a'>
     
     
-      <p class="title"><iframe frameborder="0" scrolling="no" src="/res/logo.html" width="1000px" height="600px"></iframe></p>
+      <p class="title"><div class='pd_content' onclick='dontTouchMe()'><h1><span name='pd_title' class='capital'>P</span><span name='pd_title' >d</span><span name='pd_title' >o</span><span name='pd_title' >n</span><span name='pd_title' >e</span><span name='pd_title' >'s</span><span name='pd_title'  class='capital'>B</span><span name='pd_title' >l</span><span name='pd_title' >o</span><span name='pd_title' >g</span></h1><h2><span name='pd_title'  class='capital'>L</span><span name='pd_title' >o</span><span name='pd_title' >v</span><span name='pd_title' >e</span><span name='pd_title' >&</span><span name='pd_title'  class='capital'>P</span><span name='pd_title' >e</span><span name='pd_title' >a</span><span name='pd_title' >c</span><span name='pd_title' >e</span></h2></div></p>
     
     
   </div>
   <div class='b'>
-    
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="" />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
-    
-    <div class='menu navigation search'>
+    <div class='menu navigation featured'>
       <div class='list-h'>
         
       </div>
@@ -694,16 +686,16 @@
           
           <p>这些都是Steam上免费的游戏，如果手动领取的话需要一个一个领取，这里提供一种简便的方法，一键批量把免费游戏添加到自己的库里。</p>
 <a id="more"></a>
-<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>打开该链接： <a href="https://store.steampowered.com/account/licenses/" target="_blank" rel="noopener">https://store.steampowered.com/account/licenses/</a> ，然后登录自己的账号（或者自己进入Steam主页，登录网页版Steam，然后进入到 <strong>主页 &gt; 帐户 &gt; 许可和产品序列号激活</strong> 页面）。</p>
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>打开该链接： <a target="_blank" rel="noopener" href="https://store.steampowered.com/account/licenses/">https://store.steampowered.com/account/licenses/</a> ，然后登录自己的账号（或者自己进入Steam主页，登录网页版Steam，然后进入到 <strong>主页 &gt; 帐户 &gt; 许可和产品序列号激活</strong> 页面）。</p>
 <h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>按键盘F12，进入Console，粘贴下方代码后按Enter键执行代码。</p>
-<pre><code class="js">(function () {
-  if (location.href.match(/^https:\/\/store\.steampowered\.com\/account\/licenses\/?$/) === null) {
+<pre><code class="js">(function () &#123;
+  if (location.href.match(/^https:\/\/store\.steampowered\.com\/account\/licenses\/?$/) === null) &#123;
     alert(&#39;请在Steam帐号明细页面运行这些代码: https://store.steampowered.com/account/licenses/&#39;);
 
     window.location = &#39;https://store.steampowered.com/account/licenses/&#39;;
 
     return;
-  }
+  &#125;
 
   var freePackages =
     [
@@ -791,15 +783,15 @@
       21151, //  Ether Vapor Remaster Demo
     ];
 
-  var ownedPackages = {};
+  var ownedPackages = &#123;&#125;;
 
-  jQuery(&#39;.account_table a&#39;).each(function (i, el) {
+  jQuery(&#39;.account_table a&#39;).each(function (i, el) &#123;
     var match = el.href.match(/javascript:RemoveFreeLicense\( ([0-9]+), &#39;/);
 
-    if (match !== null) {
+    if (match !== null) &#123;
       ownedPackages[+match[1]] = true;
-    }
-  });
+    &#125;
+  &#125;);
 
   var i = 0,
     loaded = 0,
@@ -808,37 +800,37 @@
     modal = ShowBlockingWaitDialog(&#39;努力执行中...&#39;,
       &#39;请耐心等待，如果有错误请无视，请耐心等待脚本加载完毕&#39;);
 
-  for (; i &lt; total; i++) {
+  for (; i &lt; total; i++) &#123;
     package = freePackages[i];
 
-    if (ownedPackages[package]) {
+    if (ownedPackages[package]) &#123;
       loaded++;
       continue;
-    }
+    &#125;
 
     jQuery.post(
       &#39;//store.steampowered.com/checkout/addfreelicense&#39;,
-      {
+      &#123;
         action: &#39;add_to_cart&#39;,
         sessionid: g_sessionID,
         subid: package
-      }
-    ).always(function () {
+      &#125;
+    ).always(function () &#123;
       loaded++;
 
       modal.Dismiss();
 
-      if (loaded &gt;= total) {
+      if (loaded &gt;= total) &#123;
         location.reload();
-      }
-      else {
+      &#125;
+      else &#123;
         modal = ShowBlockingWaitDialog(&#39;执行中...&#39;,
           &#39;加载至 &lt;b&gt;&#39; + loaded + &#39;&lt;/b&gt;/&#39; + total + &#39;.&#39;);
-      }
-    }
+      &#125;
+    &#125;
     );
-  }
-}());</code></pre>
+  &#125;
+&#125;());</code></pre>
 <h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>Enjoy your free game！</p>
 
           
@@ -871,7 +863,7 @@
       <blockquote>
         
           
-            <p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
+            <p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
 
           
         
@@ -914,9 +906,9 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/steam-free-game/&title=Steam免费游戏一键领取 - 皮蛋的博客&summary=这些都是Steam上免费的游戏，如果手动领取的话需要一个一个领取，这里提供一种简便的方法，一键批量把免费游戏添加到自己的库里。"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/steam-free-game/&title=Steam免费游戏一键领取 - 皮蛋的博客&summary=这些都是Steam上免费的游戏，如果手动领取的话需要一个一个领取，这里提供一种简便的方法，一键批量把免费游戏添加到自己的库里。"
           
           >
           
@@ -926,9 +918,9 @@
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/steam-free-game/&title=Steam免费游戏一键领取 - 皮蛋的博客&summary=这些都是Steam上免费的游戏，如果手动领取的话需要一个一个领取，这里提供一种简便的方法，一键批量把免费游戏添加到自己的库里。"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/steam-free-game/&title=Steam免费游戏一键领取 - 皮蛋的博客&summary=这些都是Steam上免费的游戏，如果手动领取的话需要一个一个领取，这里提供一种简便的方法，一键批量把免费游戏添加到自己的库里。"
           
           >
           
@@ -938,9 +930,9 @@
       
     
       
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/steam-free-game/&title=Steam免费游戏一键领取 - 皮蛋的博客&summary=这些都是Steam上免费的游戏，如果手动领取的话需要一个一个领取，这里提供一种简便的方法，一键批量把免费游戏添加到自己的库里。"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/steam-free-game/&title=Steam免费游戏一键领取 - 皮蛋的博客&summary=这些都是Steam上免费的游戏，如果手动领取的话需要一个一个领取，这里提供一种简便的方法，一键批量把免费游戏添加到自己的库里。"
           
           >
           
@@ -1041,7 +1033,7 @@ Microsoft.VisualStudio.Shell.Interop.8.0.dll
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一步"><span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步"><span class="toc-text">第二步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三步"><span class="toc-text">第三步</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="toc-text">第二步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="toc-text">第三步</span></a></li></ol>
     </div>
   </section>
 
@@ -1714,7 +1706,7 @@ Microsoft.VisualStudio.Shell.Interop.8.0.dll
 
 
   
-<script src="/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/pdone/static/js/theme.custom.min.js"></script>
 
 
 
