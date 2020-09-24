@@ -51,8 +51,6 @@
   
 
   
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css"> -->
-  
 
   
 
@@ -885,8 +883,8 @@
         <div class="webinfo-item">
           <div>最近更新时间：</div>
           
-            <div id="last-update" style="display: none;">Wed Sep 23 2020 17:49:36 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2020-09-23 日</div>
+            <div id="last-update" style="display: none;">Thu Sep 24 2020 17:48:27 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update-show">2020-09-24 日</div>
           
         </div>
         
@@ -936,7 +934,7 @@
           try { 
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate)); 
           } catch (error) { 
-            document.getElementById('last-update-show').innerHTML = '2020-09-23 日'; 
+            document.getElementById('last-update-show').innerHTML = '2020-09-24 日'; 
           } 
         </script> 
         
@@ -983,22 +981,6 @@
       
         <div class="aplayer-container">
           
-
-  
-    <meting-js
-      theme='#99CCFF'
-      autoplay='true'
-      volume='0.5'
-      loop='all'
-      order='random'
-      fixed='false'
-      list-max-height='340px'
-      server='netease'
-      type='playlist'
-      id='53675361'
-      list-folded='true'>
-    </meting-js>
-  
 
 
         </div>
@@ -1177,26 +1159,6 @@
         
       
         
-          <li class='music name'>
-            <p class='nav music-title fix-cursor-default'></p>
-          </li>
-          <li class='music ctrl'>
-            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
-            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
-            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
-          </li>
-          <li class='music volume'>
-            <a class='nav volume'>
-              <div class="aplayer-volume-bar-wrap">
-                <div class="aplayer-volume-bar fix-cursor-pointer">
-                  <div class="aplayer-volume"></div>
-                  <i class='left fa fa-volume-off fa-fw'></i>
-                  <i class='right fa fa-volume-up fa-fw'></i>
-                </div>
-              </div>
-            </a>
-          </li>
-        
       
     </ul>
   </div>
@@ -1299,7 +1261,7 @@
       }
 
       // 有音乐播放器
-      if (true == true) {
+      if (false == true) {
         // 如果有aplayer，初始化一下
       	try {
       		checkAPlayer();
@@ -1347,25 +1309,6 @@
 
 
 
-
-  <script>
-    let APlayerController = new Object();
-    APlayerController.id = '53675361';  // 设定全局音乐播放ID
-    APlayerController.volume = '0.5';
-  </script>
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
-
-  
-    
-<script src="/js/aplayer.js"></script>
-
-  
 
 
 
@@ -1576,7 +1519,7 @@
 
   
 <script src="https://cdn.jsdelivr.net/gh/pdone/static@latest/js/theme.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/pdone/static@master/js/theme.custom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/pdone/static@latest/js/theme.custom.min.js"></script>
 
 
 

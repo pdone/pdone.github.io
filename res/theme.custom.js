@@ -26,10 +26,10 @@ function dontTouchMe() {
 }
 (function ($) {
   var pd_spans = $("span[name='pd_title']")
-  for (var i = 0; i < pd_spans.length; i++) {
+  pd_spans.each(idx => {
     setTimeout(function () {
-      $(pd_spans[i]).addClass('animate-in')
-    }, 120 * i)
-  }
+      $(pd_spans[idx]).addClass("animate-in")
+    }, 120 * idx)
+  });
 })(jQuery);
 

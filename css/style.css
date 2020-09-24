@@ -3239,14 +3239,6 @@ div.gallery.stretch>p img {
 .article mjx-container + br {
   display: none;
 }
-@media screen and (max-width: 500px) {
-  .l_header .list-v .aplayer,
-  .l_header .list-v .aplayer-pic {
-    border-radius: 4px;
-    width: 64px;
-    height: 64px;
-  }
-}
 .highlight {
   position: relative;
 }
