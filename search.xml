@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>我的软件清单 - 持续更新</title>
+      <link href="post/soft-list/"/>
+      <url>post/soft-list/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文记录了博主日常使用的优秀软件，文章内容按照软件类别分类，安利给大家。</p><a id="more"></a><h2 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h2><ul><li>Typora - Markdown文本编辑器</li></ul><p>Typora 是一款<strong>支持实时预览的 Markdown 文本编辑器</strong>。它有 OS X、Windows、Linux 三个平台的版本，并且由于仍在测试中，是<strong>完全免费</strong>的。</p><p>本文便是使用Typora完成写作的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Share </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>BuildInCategory枚举</title>
       <link href="post/revit-category/"/>
       <url>post/revit-category/</url>
@@ -89,7 +114,7 @@
       <link href="post/free-control/"/>
       <url>post/free-control/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>基于开源项目<a href="https://github.com/Genymobile/scrcpy"><strong>scrcpy</strong></a>，使用C#简单封装了一下。</p><a id="more"></a> <p>同类的开源项目也有不少，如<a href="https://github.com/barry-ran/QtScrcpy"><strong>QtScrcpy</strong></a>在scrcpy的基础上增加了更多功能。</p><p>做本程序的目的主要是学习，另外就是自己用着方便些。</p><h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/1.jpg" alt=""></p><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/2.jpg" alt=""></p><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/3.gif" alt=""></p><h2 id="版本说明"><a href="#版本说明" class="headerlink" title="版本说明"></a>版本说明</h2><h3 id="v1-0-0"><a href="#v1-0-0" class="headerlink" title="v1.0.0"></a>v1.0.0</h3><ul><li>基于scrcpy v1.14</li><li>无线访问需要先连接数据线，使用”adb tcpip 5555”手动设置端口号才可用，不确定是不是应为手机升级Android 10造成的，升级前默认端口号5555是可以直接访问的</li></ul><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><blockquote><p><a href="https://www.lanzoux.com/ivoy7gnbenc">https://www.lanzoux.com/ivoy7gnbenc</a>  密码:pdone</p></blockquote><h2 id="代码仓库"><a href="#代码仓库" class="headerlink" title="代码仓库"></a>代码仓库</h2><blockquote><p><a href="https://github.com/pdone/FreeControl">https://github.com/pdone/FreeControl</a></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>基于开源项目<a href="https://github.com/Genymobile/scrcpy"><strong>scrcpy</strong></a>，使用C#简单封装。</p><p>做本程序的主要目的是学习，另外就是自己用着方便些。</p><h2 id="启动界面"><a href="#启动界面" class="headerlink" title="启动界面"></a>启动界面</h2><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/1.jpg" alt=""></p><a id="more"></a> <h2 id="设置界面"><a href="#设置界面" class="headerlink" title="设置界面"></a>设置界面</h2><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/2.jpg" alt=""></p><h2 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h2><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/3.gif" alt=""></p><h2 id="版本说明"><a href="#版本说明" class="headerlink" title="版本说明"></a>版本说明</h2><h3 id="v1-0-0"><a href="#v1-0-0" class="headerlink" title="v1.0.0"></a>v1.0.0</h3><ul><li>基于scrcpy v1.14</li><li>无线访问需要先连接数据线，使用”adb tcpip 5555”手动设置端口号才可用，不确定是不是应为手机升级Android 10造成的，升级前默认端口号5555是可以直接访问的</li></ul><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><blockquote><p><a href="https://www.lanzoux.com/ivoy7gnbenc">https://www.lanzoux.com/ivoy7gnbenc</a>  密码:pdone</p></blockquote><h2 id="代码仓库"><a href="#代码仓库" class="headerlink" title="代码仓库"></a>代码仓库</h2><blockquote><p><a href="https://github.com/pdone/FreeControl">https://github.com/pdone/FreeControl</a></p></blockquote>]]></content>
       
       
       <categories>

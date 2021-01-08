@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pdoner.cn/"/>
-  <updated>2020-12-01T08:37:32.355Z</updated>
+  <updated>2021-01-08T06:52:05.191Z</updated>
   <id>https://pdoner.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的软件清单 - 持续更新</title>
+    <link href="https://pdoner.cn/post/soft-list/"/>
+    <id>https://pdoner.cn/post/soft-list/</id>
+    <published>2020-12-04T16:00:00.000Z</published>
+    <updated>2021-01-08T06:52:05.191Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文记录了博主日常使用的优秀软件，文章内容按照软件类别分类，安利给大家。</p><a id="more"></a><h2 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h2><ul><li>Typora - Markdown文本编辑器</li></ul><p>Typora 是一款<strong>支持实时预览的 Markdown 文本编辑器</strong>。它有 OS X、Windows、Linux 三个平台的版本，并且由于仍在测试中，是<strong>完全免费</strong>的。</p><p>本文便是使用Typora完成写作的。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文记录了博主日常使用的优秀软件，文章内容按照软件类别分类，安利给大家。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Share" scheme="https://pdoner.cn/categories/Share/"/>
+    
+    
+      <category term="软件" scheme="https://pdoner.cn/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>BuildInCategory枚举</title>
@@ -96,13 +119,15 @@
     <link href="https://pdoner.cn/post/free-control/"/>
     <id>https://pdoner.cn/post/free-control/</id>
     <published>2020-09-14T16:00:00.000Z</published>
-    <updated>2020-09-23T07:19:37.999Z</updated>
+    <updated>2021-01-08T06:02:34.799Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>基于开源项目<a href="https://github.com/Genymobile/scrcpy"><strong>scrcpy</strong></a>，使用C#简单封装了一下。</p><a id="more"></a> <p>同类的开源项目也有不少，如<a href="https://github.com/barry-ran/QtScrcpy"><strong>QtScrcpy</strong></a>在scrcpy的基础上增加了更多功能。</p><p>做本程序的目的主要是学习，另外就是自己用着方便些。</p><h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/1.jpg" alt=""></p><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/2.jpg" alt=""></p><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/3.gif" alt=""></p><h2 id="版本说明"><a href="#版本说明" class="headerlink" title="版本说明"></a>版本说明</h2><h3 id="v1-0-0"><a href="#v1-0-0" class="headerlink" title="v1.0.0"></a>v1.0.0</h3><ul><li>基于scrcpy v1.14</li><li>无线访问需要先连接数据线，使用”adb tcpip 5555”手动设置端口号才可用，不确定是不是应为手机升级Android 10造成的，升级前默认端口号5555是可以直接访问的</li></ul><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><blockquote><p><a href="https://www.lanzoux.com/ivoy7gnbenc">https://www.lanzoux.com/ivoy7gnbenc</a>  密码:pdone</p></blockquote><h2 id="代码仓库"><a href="#代码仓库" class="headerlink" title="代码仓库"></a>代码仓库</h2><blockquote><p><a href="https://github.com/pdone/FreeControl">https://github.com/pdone/FreeControl</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>基于开源项目<a href="https://github.com/Genymobile/scrcpy"><strong>scrcpy</strong></a>，使用C#简单封装。</p><p>做本程序的主要目的是学习，另外就是自己用着方便些。</p><h2 id="启动界面"><a href="#启动界面" class="headerlink" title="启动界面"></a>启动界面</h2><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/1.jpg" alt=""></p><a id="more"></a> <h2 id="设置界面"><a href="#设置界面" class="headerlink" title="设置界面"></a>设置界面</h2><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/2.jpg" alt=""></p><h2 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h2><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/3.gif" alt=""></p><h2 id="版本说明"><a href="#版本说明" class="headerlink" title="版本说明"></a>版本说明</h2><h3 id="v1-0-0"><a href="#v1-0-0" class="headerlink" title="v1.0.0"></a>v1.0.0</h3><ul><li>基于scrcpy v1.14</li><li>无线访问需要先连接数据线，使用”adb tcpip 5555”手动设置端口号才可用，不确定是不是应为手机升级Android 10造成的，升级前默认端口号5555是可以直接访问的</li></ul><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><blockquote><p><a href="https://www.lanzoux.com/ivoy7gnbenc">https://www.lanzoux.com/ivoy7gnbenc</a>  密码:pdone</p></blockquote><h2 id="代码仓库"><a href="#代码仓库" class="headerlink" title="代码仓库"></a>代码仓库</h2><blockquote><p><a href="https://github.com/pdone/FreeControl">https://github.com/pdone/FreeControl</a></p></blockquote>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;基于开源项目&lt;a href=&quot;https://github.com/Genymobile/scrcpy&quot;&gt;&lt;strong&gt;scrcpy&lt;/strong&gt;&lt;/a&gt;，使用C#简单封装了一下。&lt;/p&gt;
+      &lt;p&gt;基于开源项目&lt;a href=&quot;https://github.com/Genymobile/scrcpy&quot;&gt;&lt;strong&gt;scrcpy&lt;/strong&gt;&lt;/a&gt;，使用C#简单封装。&lt;/p&gt;
+&lt;p&gt;做本程序的主要目的是学习，另外就是自己用着方便些。&lt;/p&gt;
+&lt;h2 id=&quot;启动界面&quot;&gt;&lt;a href=&quot;#启动界面&quot; class=&quot;headerlink&quot; title=&quot;启动界面&quot;&gt;&lt;/a&gt;启动界面&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -489,31 +514,6 @@
       <category term="JS" scheme="https://pdoner.cn/tags/JS/"/>
     
       <category term="加密" scheme="https://pdoner.cn/tags/%E5%8A%A0%E5%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Listen 1 – One for all free music in China</title>
-    <link href="https://pdoner.cn/post/listen1/"/>
-    <id>https://pdoner.cn/post/listen1/</id>
-    <published>2018-09-09T03:48:32.000Z</published>
-    <updated>2020-09-16T03:04:22.794Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。</p><a id="more"></a><h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><img src='https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/1.jpg' alt='音乐平台歌单推荐界面' style='width:460px'><img src='https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/2.jpg' alt='从网易云音乐、QQ音乐等平台导入自己的歌单到Listen1' style='width:460px'><img src='https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/3.jpg' alt='搜索界面' style='width:460px'><img src='https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/4.jpg' alt='歌词界面' style='width:460px'><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Chrome插件版"><a href="#Chrome插件版" class="headerlink" title="Chrome插件版"></a>Chrome插件版</h3><ol><li>下载Chrome插件版压缩包，并解压缩</li><li>打开 Chrome 扩展页面，勾选右上角「开发者模式」</li><li>选择「加载已解压的扩展程序…」，选择刚刚解压缩的文件夹</li><li>开始使用</li></ol><h3 id="Firefox插件版"><a href="#Firefox插件版" class="headerlink" title="Firefox插件版"></a>Firefox插件版</h3><ol><li>下载Firefox插件版，并解压缩</li><li>打开 about:config 页面，xpinstall.signatures.required 设置为 false</li><li>选择「附加组件」，齿轮图标，选择从文件安装附加组件，选择下载的xpi文件</li><li>开始使用</li></ol><h3 id="Windows桌面版"><a href="#Windows桌面版" class="headerlink" title="Windows桌面版"></a>Windows桌面版</h3><ol><li>下载Windows压缩包，根据系统选择32位或64位版本</li><li>解压缩，运行 Listen1.exe</li></ol><h3 id="Mac桌面版"><a href="#Mac桌面版" class="headerlink" title="Mac桌面版"></a>Mac桌面版</h3><ol><li>下载并运行dmg，在打开的安装窗口把Listen 1图标拖动到右侧</li><li>点击Listen 1图标运行</li></ol><h3 id="Linux桌面版"><a href="#Linux桌面版" class="headerlink" title="Linux桌面版"></a>Linux桌面版</h3><ol><li>下载deb安装包，根据系统选择32位或64位版本</li><li>点击deb，在安装界面点击Install</li></ol><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><ul><li><a href="https://github.com/listen1/listen1_chrome_extension/archive/v1.8.0.zip">Chrome 插件版</a></li><li><a href="https://addons.mozilla.org/zh-CN/firefox/addon/listen-1/">Firefox插件页面</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_win32.exe">Windows 32位桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_win64.exe">Windows 64位桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_mac.dmg">Mac 桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_linuxia32.tar.gz">Linux 32位桌面版</a></li><li><a href="https://github.com/listen1/listen1_desktop/releases/download/v1.8.0/Listen1_1.8.0_linuxx64.tar.gz">Linux 64位桌面版</a></li></ul><h2 id="Listen-1背后的开源项目"><a href="#Listen-1背后的开源项目" class="headerlink" title="Listen 1背后的开源项目"></a>Listen 1背后的开源项目</h2><p><a href="https://github.com/listen1/listen1"><strong><em>listen1/listen1</em></strong></a><br>最初的网页版播放器，使用Python开发Web服务器。可以直接在服务器运行，也可使用打包的Windows版和Mac版在本地运行Web服务器</p><p><a href="https://github.com/listen1/listen1_chrome_extension"><strong><em>listen1/listen1_chrome_extension</em></strong></a><br>Chrome和Firefox插件版</p><p><a href="https://github.com/listen1/listen1_desktop"><strong><em>listen1/listen1_desktop</em></strong></a><br>Windows，Mac，Linux桌面版。使用Electron框架，基于Listen 1 Chrome插件版JS库开发</p><h2 id="Listen-1联系方式"><a href="#Listen-1联系方式" class="headerlink" title="Listen 1联系方式"></a>Listen 1联系方式</h2><ul><li>Github 主页：<a href="https://github.com/listen1">https://github.com/listen1</a></li><li>中国镜像主页：<a href="http://githublisten1.coding.me/listen1/">http://githublisten1.coding.me/listen1/</a></li><li>中国下载镜像仓库：<a href="https://coding.net/u/githublisten1">https://coding.net/u/githublisten1</a></li><li>Twitter：<a href="https://twitter.com/githublisten1">https://twitter.com/githublisten1</a></li><li>联系邮箱：<a href="githublisten1@gmail.com">githublisten1@gmail.com</a></li></ul><h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>感谢该项目的所有代码贡献者。</p><p>如果觉得不错，不妨推荐给你身边喜欢音乐的朋友。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗音乐、酷我音乐网站的歌曲，让你的曲库更全面。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Tools" scheme="https://pdoner.cn/categories/Tools/"/>
-    
-    
-      <category term="音乐" scheme="https://pdoner.cn/tags/%E9%9F%B3%E4%B9%90/"/>
-    
-      <category term="插件" scheme="https://pdoner.cn/tags/%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
