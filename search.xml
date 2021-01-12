@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>领取外卖红包</title>
+      <link href="post/eatfood/"/>
+      <url>post/eatfood/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>美团外卖红包 👉 <a href="https://4m.cn/xFUlb">https://4m.cn/xFUlb</a><br>饿了么红包 👉 <a href="https://4m.cn/QynTs">https://4m.cn/QynTs</a></p><p>每天都可以领一次哦！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Share </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 福利 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我的软件清单 - 持续更新</title>
       <link href="post/soft-list/"/>
       <url>post/soft-list/</url>

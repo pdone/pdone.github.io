@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pdoner.cn/"/>
-  <updated>2021-01-08T06:52:05.191Z</updated>
+  <updated>2021-01-12T07:33:54.669Z</updated>
   <id>https://pdoner.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>领取外卖红包</title>
+    <link href="https://pdoner.cn/post/eatfood/"/>
+    <id>https://pdoner.cn/post/eatfood/</id>
+    <published>2021-01-11T16:00:00.000Z</published>
+    <updated>2021-01-12T07:33:54.669Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>美团外卖红包 👉 <a href="https://4m.cn/xFUlb">https://4m.cn/xFUlb</a><br>饿了么红包 👉 <a href="https://4m.cn/QynTs">https://4m.cn/QynTs</a></p><p>每天都可以领一次哦！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="Share" scheme="https://pdoner.cn/categories/Share/"/>
+    
+    
+      <category term="福利" scheme="https://pdoner.cn/tags/%E7%A6%8F%E5%88%A9/"/>
+    
+  </entry>
   
   <entry>
     <title>我的软件清单 - 持续更新</title>
@@ -488,32 +514,6 @@
       <category term="CA" scheme="https://pdoner.cn/tags/CA/"/>
     
       <category term="证书" scheme="https://pdoner.cn/tags/%E8%AF%81%E4%B9%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cryptojs – JavaScript加密库</title>
-    <link href="https://pdoner.cn/post/cryptojs/"/>
-    <id>https://pdoner.cn/post/cryptojs/</id>
-    <published>2018-09-10T16:00:00.000Z</published>
-    <updated>2020-09-16T03:01:09.903Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h3><pre><code>npm install crypto-js</code></pre><p>or</p><pre><code>&lt;script src=&quot;http://pdoner.cn/share/crypto-js.js&quot; type=&quot;text/javascript&quot;&gt;</code></pre><a id="more"></a><h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><pre><code class="js">//MD5加密var md5Encrypt = CryptoJS.MD5(&quot;Message&quot;);//SHA1加密var sha1Encrypt = CryptoJS.SHA1(&quot;Message&quot;);//SHA256加密var sha256Encrypt = CryptoJS.SHA256(&quot;Message&quot;); //AES加解密var aesEncrypt = CryptoJS.AES.encrypt(&quot;Message&quot;, &quot;Secret Passphrase&quot;);var aesDecrypt = CryptoJS.AES.decrypt(aesEncrypt, &quot;Secret Passphrase&quot;);//3DES加解密（不建议使用DES，这里展示3DES）var 3desEncrypt = CryptoJS.TripleDES.encrypt(&quot;Message&quot;, &quot;Secret Passphrase&quot;);var 3desDecrypt = CryptoJS.TripleDES.decrypt(3desEncrypt, &quot;Secret Passphrase&quot;);//偏移量、加密模式、填充模式的应用var message = &quot;Message&quot;;var key = CryptoJS.enc.Utf8.parse(&quot;123456&quot;); //密钥var iv = CryptoJS.enc.Utf8.parse(&quot;123456&quot;); //偏移量var aesEncrypt2 = CryptoJS.AES.encrypt(message ,key, &#123;iv: iv,mode: CryptoJS.mode.CBC, //加密模式padding: CryptoJS.pad.Pkcs7 //填充模式&#125;);aesEncrypt2 = encodeURIComponent(CryptoJS.enc.Base64.stringify(encryptResult.ciphertext)); //可转为Base64后再进行Url编码，也可直接使用十六进制</code></pre><h3 id="Extend"><a href="#Extend" class="headerlink" title="Extend"></a>Extend</h3><ol><li>密钥和偏移量：一般情况下密钥为加密方与解密方双方约定好的，但如果长期使用同一密钥，对相同内容加密后的结果一致，容易被找出规律。所以，可以在双方交互时添加一个参数——偏移量，偏移量明文传递，并且每次请求都不同，但在一次交互过程中，双方使用同一偏移量，这样就可以使加密相同内容时结果每次都不同，间接提高安全性。</li><li>加密模式：电码本模式（Electronic Codebook Book (ECB)）；密码分组链接模式（Cipher Block Chaining (CBC)）；计算器模式（Counter (CTR)）；密码反馈模式（Cipher FeedBack (CFB)）；输出反馈模式（Output FeedBack (OFB)）。ECB模式下偏移量不生效。具体各种模式的原理这里不再描述（<a href="https://www.cnblogs.com/starwolf/p/3365834.html">参考资料1</a>）。</li><li>填充模式：.NET和Java中并不完全通用，经过与安卓开发的同事踩坑与测试后，发现None和ISO10126两种填充模式，在两个平台是通用的。理论上PKCS7/PKCS5应该也是通用的（<a href="http://www.users.zetnet.co.uk/hopwood/crypto/scan/cs.html#pad_PKCSPadding">参考资料2</a>/<a href="https://www.cnblogs.com/midea0978/articles/1437257.html">参考资料3</a>）。</li><li>编码格式：之前做项目时因为编码的问题耽误了不少时间。</li><li>没有绝对的安全。</li></ol><h3 id="相关项目"><a href="#相关项目" class="headerlink" title="相关项目"></a>相关项目</h3><ul><li>Google项目地址：<a href="https://code.google.com/archive/p/crypto-js/">https://code.google.com/archive/p/crypto-js/</a></li><li>npm项目地址：<a href="https://www.npmjs.com/package/crypto-j">https://www.npmjs.com/package/crypto-j</a></li><li>GitHub项目地址：<a href="https://github.com/brix/crypto-js">https://github.com/brix/crypto-js</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Import&quot;&gt;&lt;a href=&quot;#Import&quot; class=&quot;headerlink&quot; title=&quot;Import&quot;&gt;&lt;/a&gt;Import&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;npm install crypto-js&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;http://pdoner.cn/share/crypto-js.js&amp;quot; type=&amp;quot;text/javascript&amp;quot;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="Development" scheme="https://pdoner.cn/categories/Development/"/>
-    
-    
-      <category term="JS" scheme="https://pdoner.cn/tags/JS/"/>
-    
-      <category term="加密" scheme="https://pdoner.cn/tags/%E5%8A%A0%E5%AF%86/"/>
     
   </entry>
   
