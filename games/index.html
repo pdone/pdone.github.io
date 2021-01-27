@@ -16,13 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>JavaScript获取时间并格式化 - 皮蛋的博客</title>
-  
-    <meta name="keywords" content="JS,时间">
+  <title>小游戏 - 皮蛋的博客</title>
   
 
-  
-    <meta name="description" content="最近在学习微信小程序，用到不少前端的知识，比如时间格式化。">
   
 
   <!-- feed -->
@@ -93,7 +89,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover post' style="display: none;">
+    <cover class='cover page' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -113,15 +109,13 @@
 
       <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
     </cover>
-    <header class="l_header shadow floatable">
+    <header class="l_header no_sidebar shadow floatable">
   <div class='container'>
   <div class='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
         <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -617,8 +611,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">JavaScript获取时间并格式化</div> 
+  <div id="pjax-ispage">false</div> 
+  <div id="pjax-pageTitle"></div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -650,11 +644,11 @@
       
       
 
-<div class='l_main'>
+<div class='l_main no_sidebar'>
   
 
   
-    <article id="post" class="post white-box reveal shadow floatable article-type-post" itemscope itemprop="blogPost">
+    <article id="page" class="post white-box reveal shadow floatable article-type-page" itemscope itemprop="blogPost">
       
 
 
@@ -666,8 +660,8 @@
         
           
   <h1 class="title">
-    <a href="/post/js-dateformat/">
-      JavaScript获取时间并格式化
+    <a href="/games/">
+      小游戏
     </a>
   </h1>
 
@@ -690,22 +684,11 @@
           
             
               
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Development/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Development</p>
-    </a>
-  </div>
-
 
             
           
             
               
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JS/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>JS</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%97%B6%E9%97%B4/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>时间</p></a></div>
-
 
             
           
@@ -713,7 +696,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2018-10-20</p>
+    <p>2020-09-16</p>
   </a>
 </div>
 
@@ -725,7 +708,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/post/js-dateformat/" class="leancloud_visitors" data-flag-title="JavaScript获取时间并格式化">
+      <span id="/games/" class="leancloud_visitors" data-flag-title="小游戏">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -754,89 +737,11 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p>最近在学习微信小程序，用到不少前端的知识，比如时间格式化。</p>
-<a id="more"></a>
-
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><pre><code class="js">function getDateNow() &#123;
-  var date = new Date();
-  return date.format(&quot;yyyy-MM-dd HH:mm:ss.t w&quot;);
-&#125;</code></pre>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="js">/*
- *对Date的扩展，将 Date 转化为指定格式的String
- *月(M)、日(d)、小时(H)、分(m)、秒(s)、季度(q) 可以用 1-2个占位符，
- *年(y)可以用 1-4个占位符，毫秒(t) 1个占位符(3位的数字)
- *星期(w) 1个占位符
- *example
- *(new Date()).Format(&quot;yyyy-MM-dd HH:mm:ss.t w&quot;) ==&gt; 2018-10-19 14:19:17.649 星期五
- */
-Date.prototype.format = function(fmt) &#123;
-  var weekArr = &#123;
-    cn: new Array(&quot;星期日&quot;, &quot;星期一&quot;, &quot;星期二&quot;, &quot;星期三&quot;, &quot;星期四&quot;, &quot;星期五&quot;, &quot;星期六&quot;),
-    en: new Array(&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;)
-  &#125;;
-  var o = &#123;
-    &quot;M+&quot;: this.getMonth() + 1,
-    &quot;d+&quot;: this.getDate(),
-    &quot;H+&quot;: this.getHours(),
-    &quot;m+&quot;: this.getMinutes(),
-    &quot;s+&quot;: this.getSeconds(),
-    &quot;q+&quot;: Math.floor((this.getMonth() + 3) / 3),
-    &quot;t&quot;: (&quot;00&quot; + this.getMilliseconds()).slice( - 3),
-    &quot;w&quot;: weekArr.en[this.getDay()]
-  &#125;;
-  if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + &quot;&quot;).substr(4 - RegExp.$1.length));
-  for (var k in o) if (new RegExp(&quot;(&quot; + k + &quot;)&quot;).test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : ((&quot;00&quot; + o[k]).substr((&quot;&quot; + o[k]).length)));
-  return fmt;
-&#125;;</code></pre>
-
-          
-            <div class='article_footer'>
-              
-                
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
-  <div class='content'>
-    
-      <blockquote>
-        
-          
-            <p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
-
-          
-        
-          
-            <p>本文链接：<a href=https://pdoner.cn/post/js-dateformat/>https://pdoner.cn/post/js-dateformat/</a></p>
-          
-        
-      </blockquote>
-    
-  </div>
-</section>
-
-  
-
-
-              
-            </div>
+          <ol style="font-size: 24px;margin-left: 30px;">
+  <li><a href="https://pdoner.cn/games/list/eatwhat/" target="_blank">今天吃什么</a></li>
+  <li><a href="https://pdoner.cn/games/list/swinggirl/" target="_blank">荡秋千</a></li>
+  <li><a href="https://pdoner.cn/games/list/planet/" target="_blank">星球</a></li>
+</ol>
           
         </div>
         
@@ -847,10 +752,10 @@ Date.prototype.format = function(fmt) &#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-16T11:04:22+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-27T16:29:27+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Last Update 2020-09-16</p>
+    <p>Last Update 2021-01-27</p>
   </a>
 </div>
 
@@ -864,7 +769,7 @@ Date.prototype.format = function(fmt) &#123;
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/js-dateformat/&title=JavaScript获取时间并格式化 - 皮蛋的博客&summary=最近在学习微信小程序，用到不少前端的知识，比如时间格式化。"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/games/&title=小游戏 - 皮蛋的博客&summary="
           
           >
           
@@ -876,7 +781,7 @@ Date.prototype.format = function(fmt) &#123;
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/js-dateformat/&title=JavaScript获取时间并格式化 - 皮蛋的博客&summary=最近在学习微信小程序，用到不少前端的知识，比如时间格式化。"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/games/&title=小游戏 - 皮蛋的博客&summary="
           
           >
           
@@ -888,7 +793,7 @@ Date.prototype.format = function(fmt) &#123;
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/js-dateformat/&title=JavaScript获取时间并格式化 - 皮蛋的博客&summary=最近在学习微信小程序，用到不少前端的知识，比如时间格式化。"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/games/&title=小游戏 - 皮蛋的博客&summary="
           
           >
           
@@ -902,7 +807,7 @@ Date.prototype.format = function(fmt) &#123;
         <div class='hoverbox'>
           <a class='share'><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC+0lEQVR42u3aS1LEMAwFwLn/peEAMBX9MlihvYOJHbuzUen59WX8Ol4IwIABAwYMmDUwr+L4seCb3989f/X71D6y64ABAwYMGDBg9sGEC6DkQa8OEJ1/BTJ1HjBgwIABAwbMXpjLAujm57PAXVgwYMCAAQMGDJhqI6pbQIIBAwYMGDBgwHwKptp4qjbAwIABAwYMGDD/B6bbCOoWcFONqT9PIsGAAQMGDBgwH4MpXxg+9O+xC9BgwIABAwYMmGNhumOqQIwerPv+y/2BAQMGDBgwYNbAVAukq2As29Dqvq+7HhgwYMCAAQPmOTDdDUQLsS5MFSydRIIBAwYMGDBgjoMZX/jmQi66bnZ/YMCAAQMGDJi9MNGFo/O6oFOFXxoODBgwYMCAAbMOptsIyl4UuitQy74nfaMKDBgwYMCAAXMMTLYAqwZuWbDuh6u+DwwYMGDAgAGzDya6kWqBNXXhaKpgvAzcwIABAwYMGDDHw7QbO8Hnq+tPFZzhfYIBAwYMGDBg1sCkJ04FW8kLSt3ALbwPMGDAgAEDBswamLs2HJ3fbTxF54VBwYABAwYMGDBrYO66MJQFif6/fTGomkSCAQMGDBgwYI6DyR44W1B1g7pq4VkN4MCAAQMGDBgwe2C6jZ1qg6la4HUbU5fnBgMGDBgwYMCsh4luuFpQdSGnAz4wYMCAAQMGzF6YauDWDdiyBeL0B7stiQQDBgwYMGDAfBwm21CKAkWfTwdkQ4UnGDBgwIABA+Y5MFMFVTVoqwaBWVAwYMCAAQMGzF6Y7sgWglWA7odKB25gwIABAwYMmONhpi/4dAu07LpTgSEYMGDAgAEDZi9MtVHVDea6H6IauIULPDBgwIABAwbMGpi7C6hoo6kanGXnhQs8MGDAgAEDBsxjYbrrdAvObuAHBgwYMGDAgAEz1ajq7q8KDwYMGDBgwIDZC9NtLHXXyQZ92X2BAQMGDBgwYJ4HMx5cNQu+bIMqDRAN3MCAAQMGDBgwx8IYYMCAAQMGDJhl4xtRSOfhzvNaXgAAAABJRU5ErkJggg==">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACRElEQVR42u3aS47CQAwFQO5/aeYEKP4FMu7qHSIormbzZPv1PvS8wMHBwcHBF8FfxRP9/dVzHwssvu+yDnBwcHBw8IXwcAC4KCQKmHp/ul5wcHBwcPDF8GgQmSqw+/708+Dg4ODg4ODhi4gGnmyDAhwcHBwcHHw+wGQbD9kGBTg4ODg4OPjcQGFqEJFdMPj5JAUcHBwcHPxB8KlCvvX5MZuN4ODg4ODgP4R3T7bxEAW8bzrg4ODg4OCb4NXB/V2LednFgLQDHBwcHBz8IPj0RXSf714UODg4ODj4Rvj0YH4qmHSD1mUjAhwcHBwcfCE8uzgXHexXBxRfCzDg4ODg4OD/CJ4NINVBQfbCphcUwMHBwcHBT4Bng0w14Fw2DJINhvDFg4ODg4ODL4JHA0m3UVAteGohARwcHBwcfDN8qoHQDhjJkw5Q4ODg4ODgi+B3BZdqQyF74ek/ChwcHBwcfCG8OiCIXkx1YFEdOICDg4ODg58An24kVAcFUXj2Mzg4ODg4+GZ4N7h0g0V3gJH+HhwcHBwcfCG8WlC28RAdEEQDUDpQgYODg4ODL4RXTxU61lhIXgQ4ODg4OPgmeDcg3L2w1108vJykgIODg4ODL4BPBZbsIsFUAAovGoCDg4ODgy+GZwutBpboQH88UIGDg4ODg4OXA0y5gdBcOAAHBwcHBwfvN/SjwSV7EeFFA3BwcHBw8MXwuwqtNi66Aem2SQo4ODg4OPiD4FMLftXGwtQgARwcHBwc/CT4aQccHBwcHHzB+QP03sNuKEgiiAAAAABJRU5ErkJggg==">
           </div>
         </div>
       
@@ -919,29 +824,6 @@ Date.prototype.format = function(fmt) &#123;
 
 
         
-        
-          <div class="prev-next">
-            
-              <a class='prev' href='/post/sql-date-format/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>SQL日期时间格式转换</p>
-                <p class='content'>不经常用，所以没有刻意记过，但每次用到了都要百度，所以保存到自己博客里方便使用。
-
-
-Select CONVERT(varchar(100), GETDATE(), 0)/*05 16 2006...</p>
-              </a>
-            
-            
-              <a class='next' href='/post/js-5tip/'>
-                <p class='title'>5个小技巧让你写出更好的JavaScript条件语句<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>
-原文地址：5 Tips to Write Better Conditionals in JavaScript原文作者：Jecelyn Yeen翻译&amp;校对：pdone
-
-
-
-1.在条件较...</p>
-              </a>
-            
-          </div>
         
       </section>
     </article>
@@ -975,90 +857,6 @@ Select CONVERT(varchar(100), GETDATE(), 0)/*05 16 2006...</p>
 </div>
 <aside class='l_side'>
   
-  
-    
-    
-
-
-
-  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-text">Code</span></a></li></ol>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow floatable desktop">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>Category</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Development/" href="/categories/Development/"
-            id="categoriesDevelopment"
-            ><div class='name'>Development</div><div class='badge'>(13)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Share/" href="/categories/Share/"
-            id="categoriesShare"
-            ><div class='name'>Share</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Tools/" href="/categories/Tools/"
-            id="categoriesTools"
-            ><div class='name'>Tools</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow floatable desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>Tag</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/NET/" style="font-size: 24px; color: #333">.NET</a> <a href="/tags/CA/" style="font-size: 14px; color: #999">CA</a> <a href="/tags/JS/" style="font-size: 20.67px; color: #555">JS</a> <a href="/tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="/tags/ORM/" style="font-size: 14px; color: #999">ORM</a> <a href="/tags/OS/" style="font-size: 14px; color: #999">OS</a> <a href="/tags/PC/" style="font-size: 17.33px; color: #777">PC</a> <a href="/tags/PCI-E/" style="font-size: 14px; color: #999">PCI_E</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/Revit/" style="font-size: 17.33px; color: #777">Revit</a> <a href="/tags/SQL/" style="font-size: 14px; color: #999">SQL</a> <a href="/tags/SSL/" style="font-size: 14px; color: #999">SSL</a> <a href="/tags/Steam/" style="font-size: 14px; color: #999">Steam</a> <a href="/tags/%E4%B8%BB%E6%9D%BF/" style="font-size: 14px; color: #999">主板</a> <a href="/tags/%E5%8A%A0%E5%AF%86/" style="font-size: 14px; color: #999">加密</a> <a href="/tags/%E5%8F%B0%E5%BC%8F%E6%9C%BA/" style="font-size: 14px; color: #999">台式机</a> <a href="/tags/%E5%92%8C%E5%B9%B3/" style="font-size: 14px; color: #999">和平</a> <a href="/tags/%E5%9C%B0%E5%9B%BE/" style="font-size: 14px; color: #999">地图</a> <a href="/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/" style="font-size: 14px; color: #999">小技巧</a> <a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 14px; color: #999">开源</a> <a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 14px; color: #999">插件</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.33px; color: #777">数据库</a> <a href="/tags/%E6%96%B0%E9%97%BB/" style="font-size: 14px; color: #999">新闻</a> <a href="/tags/%E6%97%B6%E9%97%B4/" style="font-size: 14px; color: #999">时间</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">游戏</a> <a href="/tags/%E7%A6%8F%E5%88%A9/" style="font-size: 14px; color: #999">福利</a> <a href="/tags/%E7%BB%84%E8%A3%85%E6%9C%BA/" style="font-size: 14px; color: #999">组装机</a> <a href="/tags/%E8%AF%81%E4%B9%A6/" style="font-size: 14px; color: #999">证书</a> <a href="/tags/%E8%B7%A8%E5%B1%8F%E5%8D%8F%E4%BD%9C/" style="font-size: 14px; color: #999">跨屏协作</a> <a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 14px; color: #999">软件</a> <a href="/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 14px; color: #999">音乐</a>
-    </div>
-  </section>
-
-
-  
-
 
 </aside>
 
