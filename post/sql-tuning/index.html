@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,9 +16,18 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：台式机 - 皮蛋的博客</title>
+  <title>数据库调优 - 皮蛋的博客</title>
+  
+    <meta name="keywords" content="SQL,数据库">
   
 
+  
+    <meta name="description" content="先思考这几个问题：
+
+什么时候才需要分库分表呢？我们的评判标准是什么？
+一张表存储了多少数据的时候，才需要考虑分库分表？
+数据增长速度很快，每天产生多少数据，才需要考虑做分库分表？
+">
   
 
   <!-- feed -->
@@ -91,7 +98,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -679,8 +686,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">数据库调优</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -712,25 +719,12 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper' >
-            <article class="post white-box shadow floatable reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -740,11 +734,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/post/my-second-pc/">
-      年轻人的第二台PC诞生
+  <h1 class="title">
+    <a href="/post/sql-tuning/">
+      数据库调优
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -754,11 +748,22 @@
           
             
               
+<div class='new-meta-item author'>
+  <a class='author' href="https://pdoner.cn" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg">
+    <p>pdone</p>
+  </a>
+</div>
+
+            
+          
+            
+              
   
   <div class='new-meta-item category'>
-    <a href='/categories/Share/' rel="nofollow">
+    <a href='/categories/Development/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Share</p>
+      <p>Development</p>
     </a>
   </div>
 
@@ -768,7 +773,7 @@
             
               
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/PC/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>PC</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8F%B0%E5%BC%8F%E6%9C%BA/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>台式机</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BB%84%E8%A3%85%E6%9C%BA/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>组装机</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/SQL/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>SQL</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>数据库</p></a></div>
 
 
             
@@ -777,7 +782,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2019-02-17</p>
+    <p>2021-02-01</p>
   </a>
 </div>
 
@@ -785,6 +790,18 @@
           
             
               
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/post/sql-tuning/" class="leancloud_visitors" data-flag-title="数据库调优">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
 
             
           
@@ -802,38 +819,241 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>先思考这几个问题：</p>
+<ul>
+<li>什么时候才需要分库分表呢？我们的评判标准是什么？</li>
+<li>一张表存储了多少数据的时候，才需要考虑分库分表？</li>
+<li>数据增长速度很快，每天产生多少数据，才需要考虑做分库分表？</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="为什么要分库分表？"><a href="#为什么要分库分表？" class="headerlink" title="为什么要分库分表？"></a>为什么要分库分表？</h2><p>首先回答一下为什么要分库分表，答案很简单：<strong>数据库出现性能瓶颈</strong>。用大白话来说就是数据库快扛不住了。<br>数据库出现性能瓶颈，对外表现有几个方面：</p>
+<ul>
+<li><p>大量请求阻塞<br>在高并发场景下，大量请求都需要操作数据库，导致连接数不够了，请求处于阻塞状态。</p>
+</li>
+<li><p>SQL 操作变慢<br>如果数据库中存在一张上亿数据量的表，一条 SQL 没有命中索引会全表扫描，这个查询耗时会非常久。</p>
+</li>
+<li><p>存储出现问题<br>业务量剧增，单库数据量越来越大，给存储造成巨大压力。</p>
+</li>
+</ul>
+<p>从机器的角度看，性能瓶颈无非就是CPU、内存、磁盘、网络这些，要解决性能瓶颈最简单粗暴的办法就是提升机器性能，但是通过这种方法成本和收益投入比往往又太高了，不划算，所以重点还是要从软件角度入手。</p>
+<h2 id="数据库相关优化方案"><a href="#数据库相关优化方案" class="headerlink" title="数据库相关优化方案"></a>数据库相关优化方案</h2><p>数据库优化方案很多，主要分为两大类：<strong>软件层面</strong>、<strong>硬件层面</strong>。<br>软件层面包括：SQL 调优、表结构优化、读写分离、数据库集群、分库分表等；<br>硬件层面主要是增加机器性能。</p>
+<h3 id="SQL-调优"><a href="#SQL-调优" class="headerlink" title="SQL 调优"></a><b style="font-size:1.3rem;">SQL 调优</b></h3><p>SQL 调优往往是解决数据库问题的第一步，往往投入少部分精力就能获得较大的收益。<br>SQL 调优主要目的是尽可能的让那些慢 SQL 变快，手段其实也很简单就是让 SQL 执行尽量命中索引。</p>
+<details open><summary> <p>开启慢 SQL 记录</p> </summary>
+              <div class='content'>
+              <p>如果你使用的是 Mysql，需要在 Mysql 配置文件中配置几个参数即可。</p><pre><code>slow_query_log = on</code></pre><pre><code>long_query_time = 1</code></pre><pre><code>slow_query_log_file = /path/to/log</code></pre>
+              </div>
+            </details>
+
+<details open><summary> <p>调优工具</p> </summary>
+              <div class='content'>
+              <p>常常会用到 explain 这个命令来查看 SQL 语句的执行计划，通过观察执行结果很容易就知道该 SQL 语句是不是全表扫描、有没有命中索引。</p><pre><code class="sql"><span class="keyword">select</span> <span class="keyword">id</span>, age, gender <span class="keyword">from</span>  <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">name</span> = <span class="string">'pdone'</span>;</code></pre><p>返回有一列叫“type”，常见取值有：</p><p>ALL、index、range、 ref、eq_ref、const、system、NULL（从左到右，性能从差到好）<br>ALL 代表这条 SQL 语句全表扫描了，需要优化。一般来说需要达到range 级别及以上。</p>
+              </div>
+            </details>
+
+<h3 id="表结构优化"><a href="#表结构优化" class="headerlink" title="表结构优化"></a><b style="font-size:1.3rem;">表结构优化</b></h3><p>以一个场景举例说明：</p>
+<p>“user”表中有 user_id、nickname 等字段，“order”表中有order_id、user_id等字段，如果想拿到用户昵称怎么办？一般情况是通过 join 关联表操作，在查询订单表时关联查询用户表，从而获取导用户昵称。</p>
+<p>但是随着业务量增加，订单表和用户表肯定也是暴增，这时候通过两个表关联数据就比较费力了，为了取一个昵称字段而不得不关联查询几十上百万的用户表，其速度可想而知。</p>
+<p>这个时候可以尝试将 nickname 这个字段加到 order 表中（order_id、user_id、nickname），这种做法通常叫做数据库表冗余字段。这样做的好处展示订单列表时不需要再关联查询用户表了。</p>
+<p>冗余字段的做法也有一个弊端，如果这个字段更新会同时涉及到多个表的更新，因此在选择冗余字段时要尽量选择不经常更新的字段。</p>
+<h3 id="架构优化"><a href="#架构优化" class="headerlink" title="架构优化"></a><b style="font-size:1.3rem;">架构优化</b></h3><p>当单台数据库实例扛不住，我们可以增加实例组成集群对外服务。</p>
+<p>当发现读请求明显多于写请求时，我们可以让主实例负责写，从实例对外提供读的能力；如果读实例压力依然很大，可以在数据库前面加入缓存如 redis，让请求优先从缓存取数据减少数据库访问。</p>
+<p>缓存分担了部分压力后，数据库依然是瓶颈，这个时候就可以考虑分库分表的方案了，后面会详细介绍。</p>
+<h3 id="硬件优化"><a href="#硬件优化" class="headerlink" title="硬件优化"></a><b style="font-size:1.3rem;">硬件优化</b></h3><p>硬件成本非常高，一般来说不可能遇到数据库性能瓶颈就去升级硬件。</p>
+<p>在前期业务量比较小的时候，升级硬件数据库性能可以得到较大提升；但是在后期，升级硬件得到的收益就不那么明显了。</p>
+<h2 id="分库分表详解"><a href="#分库分表详解" class="headerlink" title="分库分表详解"></a>分库分表详解</h2><p>下面我们以一个商城系统为例逐步讲解数据库是如何一步步演进。</p>
+ <div class="note todo blue"><p>未完待续</p></div>
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
+
+          
+        
+          
+            <p>本文链接：<a href=https://pdoner.cn/post/sql-tuning/>https://pdoner.cn/post/sql-tuning/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
-        <p>博主的第一台主机是17年6月份大学毕业时组的一套，当时资金有限，主机花了2600毛爷爷，服役了一年半，由于性能不能满足 <s>游戏</s> 工作的需要，所以就在19年春节前又配了一套。</p>
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-01T14:19:04+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>Last Update 2021-03-01</p>
+  </a>
+</div>
+
+        
       
-    </div>
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        <a class= "readmore" href="/post/my-second-pc/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/sql-tuning/&title=数据库调优 - 皮蛋的博客&summary=先思考这几个问题：
+
+什么时候才需要分库分表呢？我们的评判标准是什么？
+一张表存储了多少数据的时候，才需要考虑分库分表？
+数据增长速度很快，每天产生多少数据，才需要考虑做分库分表？
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
         </a>
       
     
-  </section>
-</article>
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/sql-tuning/&title=数据库调优 - 皮蛋的博客&summary=先思考这几个问题：
 
-          </div>
-        
+什么时候才需要分库分表呢？我们的评判标准是什么？
+一张表存储了多少数据的时候，才需要考虑分库分表？
+数据增长速度很快，每天产生多少数据，才需要考虑做分库分表？
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
       
     
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/sql-tuning/&title=数据库调优 - 皮蛋的博客&summary=先思考这几个问题：
+
+什么时候才需要分库分表呢？我们的评判标准是什么？
+一张表存储了多少数据的时候，才需要考虑分库分表？
+数据增长速度很快，每天产生多少数据，才需要考虑做分库分表？
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC8klEQVR42u3aQXbDMAgFwNz/0u0B2j6LD05NO+zsRDYab3ig14f4Nl4IwIABAwYMmDUwrzC+PPDif6fr0vtT+wEDBgwYMGDA7IM5LoCaMCn4ab7d/YABAwYMGDBg9sJUC7UqRBeqvNHqfsCAAQMGDBgw/x7mKvHTdWk+YMCAAQMGDBgwaSJpw6l7HwwYMGDAgAHzf2HSRlA1sWqBl+bza5NIMGDAgAEDBszbYKrRhbr7Ot4PGDBgwIABA2YNTDfSAm7q/nSAAQMGDBgwYPbA3NVY6sYp1Hj+YMCAAQMGDJg1MGlDaGoAVt3YFNjlwA0MGDBgwIAB83iYtME0fWDnFKr7QcuVLxgwYMCAAQPmsTBpgydNIP0A1YZTvC8wYMCAAQMGzBqYKkQVIC3wTuGrA8DL94MBAwYMGDBg1sCcFl5VqKkDPd3GVTl/MGDAgAEDBsw6mLsaVt0DRN3CsPx8MGDAgAEDBswamOmB1l0bTRtS5cYWGDBgwIABA2YNTDXSBKYHeemA8LLwAwMGDBgwYMCsgZk6oFNtTKVgp3mmHwAMGDBgwIABswemW9h1DwqljbG7Cj8wYMCAAQMGzD6YqQRT0HcBlQs8MGDAgAEDBszjYaYaSOmA7nR9WsgdF6ZgwIABAwYMmDUw1YHWVOFWhequPy0UwYABAwYMGDB7Ye4q7KYBU8jjgRsYMGDAgAEDZj1MdbBVbXhVC7Hquup6MGDAgAEDBsx+mGqDKB3cTTfM2h8MDBgwYMCAAbMGphvdwVna6EobWZfXYMCAAQMGDJg1MK8w3gVXHQCmB57AgAEDBgwYMHth0o2mg7mpdacFXvvgEBgwYMCAAQPm8TBXD6jCTP3vLsDyJBIMGDBgwIAB8+dgphpQ6cCsekAIDBgwYMCAAQPmFKbaCKsWdFXwH98PBgwYMGDAgFkLkx4ESuG6ANVC8jJ/MGDAgAEDBsw6mHRwlQ62qqDdBtTp72DAgAEDBgyYPTACDBgwYMCAAbMsPgGlumK7MtaMMgAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/post/eatfood/'>
+                <p class='title'>领取外卖红包<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>美团外卖红包 👉 https://4m.cn/xFUlb饿了么红包 👉 https://4m.cn/QynTs
+每天都可以领一次哦！
+</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+
+  <article class="post white-box reveal comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 讨论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 </div>
 <aside class='l_side'>
   
@@ -841,63 +1061,22 @@
     
     
 
-<section class="widget blogger shadow floatable desktop mobile">
-  <div class='content'>
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
     
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg'/>
-        </a>
-      
+  <header>
     
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
-      <div class='text'>
-        
-          <h2>pdone</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:a@pdoner.cn"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/pdone"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=55174435"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%EF%BC%9F"><span class="toc-text">为什么要分库分表？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-text">数据库相关优化方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E8%B0%83%E4%BC%98"><span class="toc-text">SQL 调优</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">表结构优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">架构优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E4%BC%98%E5%8C%96"><span class="toc-text">硬件优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E8%AF%A6%E8%A7%A3"><span class="toc-text">分库分表详解</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -962,138 +1141,9 @@
 
   
 
-  
-    
-    
-
-<section class="widget shadow floatable desktop">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>Information</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>23 篇</div>
-        </div>
-      
-
-      
-
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最近活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Mon Mar 01 2021 14:19:36 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-03-01 日</div>
-          
-        </div>
-        
-        <script> 
-          function timeago(dateTimeStamp) { 
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示 
-              var hour = minute * 60; 
-              var day = hour * 24; 
-              var week = day * 7; 
-              var month = day * 30; 
-              var now = new Date().getTime(); //获取当前时间毫秒 
-              var diffValue = now - dateTimeStamp; //时间差 
-              if (diffValue < 0) { 
-                  return; 
-              } 
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月 
-              var hourC = diffValue / hour; 
-              var dayC = diffValue / day; 
-              var weekC = diffValue / week; 
-              var monthC = diffValue / month; 
-              if (monthC >= 1 && monthC <= 3) { 
-                  result = " " + parseInt(monthC) + " 月前" 
-              } else if (weekC >= 1 && weekC <= 3) { 
-                  result = " " + parseInt(weekC) + " 周前" 
-              } else if (dayC >= 1 && dayC <= 6) { 
-                  result = " " + parseInt(dayC) + " 天前" 
-              } else if (hourC >= 1 && hourC <= 23) { 
-                  result = " " + parseInt(hourC) + " 小时前" 
-              } else if (minC >= 1 && minC <= 59) { 
-                  result = " " + parseInt(minC) + " 分钟前" 
-              } else if (diffValue >= 0 && diffValue <= minute) { 
-                  result = "刚刚" 
-              } else { 
-                  var datetime = new Date(); 
-                  datetime.setTime(dateTimeStamp); 
-                  var Nyear = datetime.getFullYear(); 
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1; 
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate(); 
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours(); 
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes(); 
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds(); 
-                  result = Nyear + "-" + Nmonth + "-" + Ndate 
-              } 
-              return result; 
-          } 
-          var lastUpDate = document.getElementById('last-update').innerHTML; 
-          try { 
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate)); 
-          } catch (error) { 
-            document.getElementById('last-update-show').innerHTML = '2021-03-01 日'; 
-          } 
-        </script> 
-        
-      
-    </div>
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow floatable desktop">
-  
-  <header>
-    
-      <a href='https://pdoner.cn'><i class="fab fa-weixin fa-fw" aria-hidden="true"></i><span class='name'>WeChat</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <p><a href="https://pdoner.cn"><img src="https://cdn.jsdelivr.net/gh/pdone/static@1.0/img/wxapp-qrcode.jpg"></a></p>
-
-    
-  </div>
-</section>
-
-  
-
 
 </aside>
+
 
 
     </div>
