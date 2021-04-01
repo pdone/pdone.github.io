@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>洛阳地铁一号线开通啦！</title>
+      <link href="post/luoyang-subway/"/>
+      <url>post/luoyang-subway/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>洛阳轨道交通（Luoyang Subway）是服务于中国河南省洛阳市的城市轨道交通系统，其首条线路于2020年12月1日开始试运行。</p><p>2021年3月28日正式运营，当日客流量为10.7382万人次。</p><p>截至2021年3月，洛阳轨道交通已开通运营线路1条，为洛阳轨道交通1号线；在建线路1条，为洛阳轨道交通2号线；规划线路2条，为洛阳轨道交通3号线、洛阳轨道交通4号线；线网共设车站34座。</p><img src='https://cdn.jsdelivr.net/gh/pdone/static@latest/img/ly_line_lite.png' alt='洛阳地铁线路简图'><a id="more"></a><img src='https://cdn.jsdelivr.net/gh/pdone/static@latest/img/ly_line.jpg' alt='洛阳地铁线路图'>]]></content>
+      
+      
+      <categories>
+          
+          <category> Share </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 新闻 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据库调优</title>
       <link href="post/sql-tuning/"/>
       <url>post/sql-tuning/</url>
