@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pdoner.cn/"/>
-  <updated>2021-04-01T02:48:31.050Z</updated>
+  <updated>2021-04-08T02:26:24.299Z</updated>
   <id>https://pdoner.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>批处理获取时间小于10点时补零</title>
+    <link href="https://pdoner.cn/post/bat-date/"/>
+    <id>https://pdoner.cn/post/bat-date/</id>
+    <published>2021-04-07T16:00:00.000Z</published>
+    <updated>2021-04-08T02:26:24.299Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>直接使用<code>%time:~0,2%</code>在小于10点时，获取到的时间不会自动补零，但是分钟和秒钟会补零，所以小时部分需要自己处理一下。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="bash">@echo offset hour=%time:~0,2%if %hour% LSS 10 (set &quot;hour=0%time:~1,1%&quot;)set date=%date:~0,4%-%date:~5,2%-%date:~8,2%T%hour%:%time:~3,2%:%time:~6,5%echo %date%pause</code></pre><h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><pre><code class="text">2021-04-08T09:45:01.11</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="Development" scheme="https://pdoner.cn/categories/Development/"/>
+    
+    
+      <category term="批处理" scheme="https://pdoner.cn/tags/%E6%89%B9%E5%A4%84%E7%90%86/"/>
+    
+      <category term="bat" scheme="https://pdoner.cn/tags/bat/"/>
+    
+  </entry>
   
   <entry>
     <title>洛阳地铁一号线开通啦！</title>
@@ -69,6 +97,31 @@
       <category term="SQL" scheme="https://pdoner.cn/tags/SQL/"/>
     
       <category term="数据库" scheme="https://pdoner.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown代码块支持的语言</title>
+    <link href="https://pdoner.cn/post/md-codeblock-lang/"/>
+    <id>https://pdoner.cn/post/md-codeblock-lang/</id>
+    <published>2021-01-29T16:00:00.000Z</published>
+    <updated>2021-04-08T02:25:15.904Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Markdown代码块支持的语言，使用时在<code>```</code>后加上对应关键字即可。</p><a id="more"></a><style>table th:nth-of-type(2) {    width: 400px;}</style><table><thead><tr><th>名称</th><th>关键字</th><th>调用的js</th></tr></thead><tbody><tr><td>AppleScript</td><td>applescript</td><td>shBrushAppleScript.js</td></tr><tr><td>ActionScript 3.0</td><td>actionscript3, as3</td><td>shBrushAS3.js</td></tr><tr><td>Shell</td><td>bash, shell</td><td>shBrushBash.js</td></tr><tr><td>ColdFusion</td><td>coldfusion, cf</td><td>shBrushColdFusion.js</td></tr><tr><td>C</td><td>cpp, c</td><td>shBrushCpp.js</td></tr><tr><td>C#</td><td>c#, c-sharp, csharp</td><td>shBrushCSharp.js</td></tr><tr><td>CSS</td><td>css</td><td>shBrushCss.js</td></tr><tr><td>Delphi</td><td>delphi, pascal, pas</td><td>shBrushDelphi.js</td></tr><tr><td>diff&amp;patch</td><td>diff patch</td><td>shBrushDiff.js</td></tr><tr><td>Erlang</td><td>erl, erlang</td><td>shBrushErlang.js</td></tr><tr><td>Groovy</td><td>groovy</td><td>shBrushGroovy.js</td></tr><tr><td>Java</td><td>java</td><td>shBrushJava.js</td></tr><tr><td>JavaFX</td><td>jfx, javafx</td><td>shBrushJavaFX.js</td></tr><tr><td>JavaScript</td><td>js, jscript, javascript</td><td>shBrushJScript.js</td></tr><tr><td>Perl</td><td>perl, pl, Perl</td><td>shBrushPerl.js</td></tr><tr><td>PHP</td><td>php</td><td>shBrushPhp.js</td></tr><tr><td>text</td><td>text, plain</td><td>shBrushPlain.js</td></tr><tr><td>Python</td><td>py, python</td><td>shBrushPython.js</td></tr><tr><td>Ruby</td><td>ruby, rails, ror, rb</td><td>shBrushRuby.js</td></tr><tr><td>SASS&amp;SCSS</td><td>sass, scss</td><td>shBrushSass.js</td></tr><tr><td>Scala</td><td>scala</td><td>shBrushScala.js</td></tr><tr><td>SQL</td><td>sql</td><td>shBrushSql.js</td></tr><tr><td>Visual Basic</td><td>vb, vbnet</td><td>shBrushVb.js</td></tr><tr><td>XML</td><td>xml, xhtml, xslt, html</td><td>shBrushXml.js</td></tr><tr><td>Objective C</td><td>objc, obj-c</td><td>shBrushObjectiveC.js</td></tr><tr><td>F#</td><td>f# f-sharp, fsharp</td><td>shBrushFSharp.js</td></tr><tr><td></td><td>xpp, dynamics-xpp</td><td>shBrushDynamics.js</td></tr><tr><td>R</td><td>r, s, splus</td><td>shBrushR.js</td></tr><tr><td>matlab</td><td>matlab</td><td>shBrushMatlab.js</td></tr><tr><td>swift</td><td>swift</td><td>shBrushSwift.js</td></tr><tr><td>GO</td><td>go, golang</td><td>shBrushGo.js</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Markdown代码块支持的语言，使用时在&lt;code&gt;```&lt;/code&gt;后加上对应关键字即可。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Development" scheme="https://pdoner.cn/categories/Development/"/>
+    
+    
+      <category term="MD" scheme="https://pdoner.cn/tags/MD/"/>
+    
+      <category term="Markdown" scheme="https://pdoner.cn/tags/Markdown/"/>
     
   </entry>
   
@@ -466,56 +519,6 @@
     
     
       <category term="Python" scheme="https://pdoner.cn/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL日期时间格式转换</title>
-    <link href="https://pdoner.cn/post/sql-date-format/"/>
-    <id>https://pdoner.cn/post/sql-date-format/</id>
-    <published>2018-10-24T16:00:00.000Z</published>
-    <updated>2020-09-16T03:04:22.796Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>不经常用，所以没有刻意记过，但每次用到了都要百度，所以保存到自己博客里方便使用。</p><a id="more"></a><pre><code class="sql">Select CONVERT(varchar(100), GETDATE(), 0)/*05 16 2006 10:57AM*/Select CONVERT(varchar(100), GETDATE(), 1)/*05/16/06*/Select CONVERT(varchar(100), GETDATE(), 2)/*06.05.16*/Select CONVERT(varchar(100), GETDATE(), 3)/*16/05/06*/Select CONVERT(varchar(100), GETDATE(), 4)/*16.05.06*/Select CONVERT(varchar(100), GETDATE(), 5)/*16-05-06*/Select CONVERT(varchar(100), GETDATE(), 6)/*16 05 06*/Select CONVERT(varchar(100), GETDATE(), 7)/*05 16, 06*/Select CONVERT(varchar(100), GETDATE(), 8)/*10:57:46*/Select CONVERT(varchar(100), GETDATE(), 9)/*05 16 2006 10:57:46:827AM*/Select CONVERT(varchar(100), GETDATE(), 10)/*05-16-06*/Select CONVERT(varchar(100), GETDATE(), 11)/*06/05/16*/Select CONVERT(varchar(100), GETDATE(), 12)/*060516*/Select CONVERT(varchar(100), GETDATE(), 13)/*16 05 2006 10:57:46:937*/Select CONVERT(varchar(100), GETDATE(), 14)/*10:57:46:967*/Select CONVERT(varchar(100), GETDATE(), 20)/*2006-05-16 10:57:47*/Select CONVERT(varchar(100), GETDATE(), 21)/*2006-05-16 10:57:47.157*/Select CONVERT(varchar(100), GETDATE(), 22)/*05/16/06 10:57:47 AM*/Select CONVERT(varchar(100), GETDATE(), 23)/*2006-05-16*/Select CONVERT(varchar(100), GETDATE(), 24)/*10:57:47*/Select CONVERT(varchar(100), GETDATE(), 25)/*2006-05-16 10:57:47.250*/Select CONVERT(varchar(100), GETDATE(), 100)/*05 16 2006 10:57AM*/Select CONVERT(varchar(100), GETDATE(), 101)/*05/16/2006*/Select CONVERT(varchar(100), GETDATE(), 102)/*2006.05.16*/Select CONVERT(varchar(100), GETDATE(), 103)/*16/05/2006*/Select CONVERT(varchar(100), GETDATE(), 104)/*16.05.2006*/Select CONVERT(varchar(100), GETDATE(), 105)/*16-05-2006*/Select CONVERT(varchar(100), GETDATE(), 106)/*16 05 2006*/Select CONVERT(varchar(100), GETDATE(), 107)/*05 16, 2006*/Select CONVERT(varchar(100), GETDATE(), 108)/*10:57:49*/Select CONVERT(varchar(100), GETDATE(), 109)/*05 16 2006 10:57:49:437AM*/Select CONVERT(varchar(100), GETDATE(), 110)/*05-16-2006*/Select CONVERT(varchar(100), GETDATE(), 111)/*2006/05/16*/Select CONVERT(varchar(100), GETDATE(), 112)/*20060516*/Select CONVERT(varchar(100), GETDATE(), 113)/*16 05 2006 10:57:49:513*/Select CONVERT(varchar(100), GETDATE(), 114)/*10:57:49:547*/Select CONVERT(varchar(100), GETDATE(), 120)/*2006-05-16 10:57:49*/Select CONVERT(varchar(100), GETDATE(), 121)/*2006-05-16 10:57:49.700*/Select CONVERT(varchar(100), GETDATE(), 126)/*2006-05-16T10:57:49.827*/</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;不经常用，所以没有刻意记过，但每次用到了都要百度，所以保存到自己博客里方便使用。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Development" scheme="https://pdoner.cn/categories/Development/"/>
-    
-    
-      <category term="SQL" scheme="https://pdoner.cn/tags/SQL/"/>
-    
-      <category term="数据库" scheme="https://pdoner.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript获取时间并格式化</title>
-    <link href="https://pdoner.cn/post/js-dateformat/"/>
-    <id>https://pdoner.cn/post/js-dateformat/</id>
-    <published>2018-10-19T16:00:00.000Z</published>
-    <updated>2020-09-16T03:04:22.793Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近在学习微信小程序，用到不少前端的知识，比如时间格式化。</p><a id="more"></a><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><pre><code class="js">function getDateNow() &#123;  var date = new Date();  return date.format(&quot;yyyy-MM-dd HH:mm:ss.t w&quot;);&#125;</code></pre><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="js">/* *对Date的扩展，将 Date 转化为指定格式的String *月(M)、日(d)、小时(H)、分(m)、秒(s)、季度(q) 可以用 1-2个占位符， *年(y)可以用 1-4个占位符，毫秒(t) 1个占位符(3位的数字) *星期(w) 1个占位符 *example *(new Date()).Format(&quot;yyyy-MM-dd HH:mm:ss.t w&quot;) ==&gt; 2018-10-19 14:19:17.649 星期五 */Date.prototype.format = function(fmt) &#123;  var weekArr = &#123;    cn: new Array(&quot;星期日&quot;, &quot;星期一&quot;, &quot;星期二&quot;, &quot;星期三&quot;, &quot;星期四&quot;, &quot;星期五&quot;, &quot;星期六&quot;),    en: new Array(&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;)  &#125;;  var o = &#123;    &quot;M+&quot;: this.getMonth() + 1,    &quot;d+&quot;: this.getDate(),    &quot;H+&quot;: this.getHours(),    &quot;m+&quot;: this.getMinutes(),    &quot;s+&quot;: this.getSeconds(),    &quot;q+&quot;: Math.floor((this.getMonth() + 3) / 3),    &quot;t&quot;: (&quot;00&quot; + this.getMilliseconds()).slice( - 3),    &quot;w&quot;: weekArr.en[this.getDay()]  &#125;;  if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + &quot;&quot;).substr(4 - RegExp.$1.length));  for (var k in o) if (new RegExp(&quot;(&quot; + k + &quot;)&quot;).test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : ((&quot;00&quot; + o[k]).substr((&quot;&quot; + o[k]).length)));  return fmt;&#125;;</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近在学习微信小程序，用到不少前端的知识，比如时间格式化。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Development" scheme="https://pdoner.cn/categories/Development/"/>
-    
-    
-      <category term="JS" scheme="https://pdoner.cn/tags/JS/"/>
-    
-      <category term="时间" scheme="https://pdoner.cn/tags/%E6%97%B6%E9%97%B4/"/>
     
   </entry>
   

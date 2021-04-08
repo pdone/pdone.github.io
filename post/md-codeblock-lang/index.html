@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,9 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：地图</title>
+  <title>Markdown代码块支持的语言</title>
+  
+    <meta name="keywords" content="MD,Markdown">
   
 
+  
+    <meta name="description" content="Markdown代码块支持的语言，使用时在```后加上对应关键字即可。">
   
 
   <!-- feed -->
@@ -91,7 +93,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -679,8 +681,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">Markdown代码块支持的语言</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -712,25 +714,12 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper' >
-            <article class="post white-box shadow floatable reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -740,16 +729,27 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/post/jsmap/">
-      JS地图使用笔记
+  <h1 class="title">
+    <a href="/post/md-codeblock-lang/">
+      Markdown代码块支持的语言
     </a>
-  </h2>
+  </h1>
 
 
         
         <div class='new-meta-box'>
           
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="https://pdoner.cn" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg">
+    <p>pdone</p>
+  </a>
+</div>
+
             
           
             
@@ -768,7 +768,7 @@
             
               
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JS/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>JS</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%9C%B0%E5%9B%BE/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>地图</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/MD/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>MD</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Markdown/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>Markdown</p></a></div>
 
 
             
@@ -777,7 +777,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2018-12-25</p>
+    <p>2021-01-30</p>
   </a>
 </div>
 
@@ -785,6 +785,18 @@
           
             
               
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/post/md-codeblock-lang/" class="leancloud_visitors" data-flag-title="Markdown代码块支持的语言">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
 
             
           
@@ -802,38 +814,367 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>Markdown代码块支持的语言，使用时在<code>```</code>后加上对应关键字即可。</p>
+<a id="more"></a>
+<style>
+table th:nth-of-type(2) {
+    width: 400px;
+}
+</style>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>关键字</th>
+<th>调用的js</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AppleScript</td>
+<td>applescript</td>
+<td>shBrushAppleScript.js</td>
+</tr>
+<tr>
+<td>ActionScript 3.0</td>
+<td>actionscript3, as3</td>
+<td>shBrushAS3.js</td>
+</tr>
+<tr>
+<td>Shell</td>
+<td>bash, shell</td>
+<td>shBrushBash.js</td>
+</tr>
+<tr>
+<td>ColdFusion</td>
+<td>coldfusion, cf</td>
+<td>shBrushColdFusion.js</td>
+</tr>
+<tr>
+<td>C</td>
+<td>cpp, c</td>
+<td>shBrushCpp.js</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>c#, c-sharp, csharp</td>
+<td>shBrushCSharp.js</td>
+</tr>
+<tr>
+<td>CSS</td>
+<td>css</td>
+<td>shBrushCss.js</td>
+</tr>
+<tr>
+<td>Delphi</td>
+<td>delphi, pascal, pas</td>
+<td>shBrushDelphi.js</td>
+</tr>
+<tr>
+<td>diff&amp;patch</td>
+<td>diff patch</td>
+<td>shBrushDiff.js</td>
+</tr>
+<tr>
+<td>Erlang</td>
+<td>erl, erlang</td>
+<td>shBrushErlang.js</td>
+</tr>
+<tr>
+<td>Groovy</td>
+<td>groovy</td>
+<td>shBrushGroovy.js</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>java</td>
+<td>shBrushJava.js</td>
+</tr>
+<tr>
+<td>JavaFX</td>
+<td>jfx, javafx</td>
+<td>shBrushJavaFX.js</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>js, jscript, javascript</td>
+<td>shBrushJScript.js</td>
+</tr>
+<tr>
+<td>Perl</td>
+<td>perl, pl, Perl</td>
+<td>shBrushPerl.js</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>php</td>
+<td>shBrushPhp.js</td>
+</tr>
+<tr>
+<td>text</td>
+<td>text, plain</td>
+<td>shBrushPlain.js</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>py, python</td>
+<td>shBrushPython.js</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>ruby, rails, ror, rb</td>
+<td>shBrushRuby.js</td>
+</tr>
+<tr>
+<td>SASS&amp;SCSS</td>
+<td>sass, scss</td>
+<td>shBrushSass.js</td>
+</tr>
+<tr>
+<td>Scala</td>
+<td>scala</td>
+<td>shBrushScala.js</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>sql</td>
+<td>shBrushSql.js</td>
+</tr>
+<tr>
+<td>Visual Basic</td>
+<td>vb, vbnet</td>
+<td>shBrushVb.js</td>
+</tr>
+<tr>
+<td>XML</td>
+<td>xml, xhtml, xslt, html</td>
+<td>shBrushXml.js</td>
+</tr>
+<tr>
+<td>Objective C</td>
+<td>objc, obj-c</td>
+<td>shBrushObjectiveC.js</td>
+</tr>
+<tr>
+<td>F#</td>
+<td>f# f-sharp, fsharp</td>
+<td>shBrushFSharp.js</td>
+</tr>
+<tr>
+<td></td>
+<td>xpp, dynamics-xpp</td>
+<td>shBrushDynamics.js</td>
+</tr>
+<tr>
+<td>R</td>
+<td>r, s, splus</td>
+<td>shBrushR.js</td>
+</tr>
+<tr>
+<td>matlab</td>
+<td>matlab</td>
+<td>shBrushMatlab.js</td>
+</tr>
+<tr>
+<td>swift</td>
+<td>swift</td>
+<td>shBrushSwift.js</td>
+</tr>
+<tr>
+<td>GO</td>
+<td>go, golang</td>
+<td>shBrushGo.js</td>
+</tr>
+</tbody></table>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
+
+          
+        
+          
+            <p>本文链接：<a href=https://pdoner.cn/post/md-codeblock-lang/>https://pdoner.cn/post/md-codeblock-lang/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
-        <p>最近一个项目中要用JS实现一个简单的地图，由于是前端小白，开发过程中遇到了不少问题，然后整理了两个Demo，便于以后需要使用时有个参考。</p>
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-08T10:25:15+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>Last Update 2021-04-08</p>
+  </a>
+</div>
+
+        
       
-    </div>
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        <a class= "readmore" href="/post/jsmap/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/md-codeblock-lang/&title=Markdown代码块支持的语言 - 皮蛋的博客&summary=Markdown代码块支持的语言，使用时在```后加上对应关键字即可。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
         </a>
       
     
-  </section>
-</article>
-
-          </div>
-        
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/md-codeblock-lang/&title=Markdown代码块支持的语言 - 皮蛋的博客&summary=Markdown代码块支持的语言，使用时在```后加上对应关键字即可。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
       
     
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/md-codeblock-lang/&title=Markdown代码块支持的语言 - 皮蛋的博客&summary=Markdown代码块支持的语言，使用时在```后加上对应关键字即可。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAADC0lEQVR42u3aQXLbQAwEQP3/0/E9sovAYKkQce9NliUuWpcpAK8/zrfnhQAMGDBgwIBZA/MKz9+fr75+u8gP73fvcaweMGDAgAEDBsw6mHIA+qHwKkj379XCj9UDBgwYMGDAgFkLM31wGsxO/1BpPWDAgAEDBgyY3wPTLXwa9NJGGRgwYMCAAQMGTDfgTRtPYMCAAQMGDBgwdw3cqiDpIlIX/DGTSDBgwIABAwbMx2C6Zxq47n4d1wMGDBgwYMCAWQMzPVcXSxtUpxti5XrAgAEDBgwYMGtgqoVVB2PTAHZ6INeuEwwYMGDAgAGzFmb6wBQyBasGv9sWh8CAAQMGDBgw/wym20jqNpTS4JU2yLqNMDBgwIABAwbMXpi0IZVe+NT/TRec2skXDBgwYMCAAfM4mG7B3cbTKZDufW5LvmDAgAEDBgyYx8BMF4WqF+82olLobiPr7XNgwIABAwYMmDUw1QtULxJf6PBgr7uIBAYMGDBgwIDZC1P94jRgdX+AFLzbmAIDBgwYMGDA/H8wp4JTO2Adek78fDBgwIABAwbMGpi0QdQNaNPPV6HKC0LdxSEwYMCAAQMGzONgqgWlg7BpYSl02rACAwYMGDBgwOyBiRdswoDXDlxN+O4928kXDBgwYMCAAfMYmNPB6dTFqw2oKSAYMGDAgAEDZi9MWtB0oFZtWN01CAQDBgwYMGDA7IfpBqFpYysehN08AAQDBgwYMGDA7IU5HaTSxlIXPG1ctTt4YMCAAQMGDJjHwaSNnWrQqxaaLhhNg+fbPcCAAQMGDBgwa2CmJ204pVDpQLAc+MCAAQMGDBgwa2Cmgana4ErBpgtF4+QLBgwYMGDAgHk8zKlAd7rBlC4axZBgwIABAwYMmLUw3S9KF35eHz7lBhgYMGDAgAED5tfAdAdaV4FxOjBLF5HAgAEDBgwYMGDSANctOB0AXv4QYMCAAQMGDJi1MGkgmwa1TwFdBkEwYMCAAQMGzDqY0wOsUwGxO9DrDtguAx4YMGDAgAED5rEwDhgwYMCAAQNm2fkCNWhhyjQkPCMAAAAASUVORK5CYII=">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/post/sql-tuning/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>数据库调优</p>
+                <p class='content'>先思考这几个问题：
+
+什么时候才需要分库分表呢？我们的评判标准是什么？
+一张表存储了多少数据的时候，才需要考虑分库分表？
+数据增长速度很快，每天产生多少数据，才需要考虑做分库分表？
+
+
+
+为什么...</p>
+              </a>
+            
+            
+              <a class='next' href='/post/eatfood/'>
+                <p class='title'>领取外卖红包<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>美团外卖红包 👉 https://4m.cn/xFUlb饿了么红包 👉 https://4m.cn/QynTs
+每天都可以领一次哦！
+</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+
+  <article class="post white-box reveal comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 讨论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 </div>
 <aside class='l_side'>
   
@@ -841,63 +1182,8 @@
     
     
 
-<section class="widget blogger shadow floatable desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>pdone</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:a@pdoner.cn"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/pdone"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=55174435"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+
+
 
   
 
@@ -962,79 +1248,9 @@
 
   
 
-  
-    
-    
-
-<section class="widget shadow floatable desktop">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>Information</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>26 篇</div>
-        </div>
-      
-
-      
-
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-    </div>
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow floatable desktop">
-  
-  <header>
-    
-      <a href='https://pdoner.cn'><i class="fab fa-weixin fa-fw" aria-hidden="true"></i><span class='name'>WeChat</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <p><a href="https://pdoner.cn"><img src="https://cdn.jsdelivr.net/gh/pdone/static@1.0/img/wxapp-qrcode.jpg"></a></p>
-
-    
-  </div>
-</section>
-
-  
-
 
 </aside>
+
 
 
     </div>

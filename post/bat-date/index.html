@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：地图</title>
+  <title>批处理获取时间小于10点时补零</title>
+  
+    <meta name="keywords" content="批处理,bat">
   
 
   
@@ -91,7 +91,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -679,8 +679,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">批处理获取时间小于10点时补零</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -712,25 +712,12 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper' >
-            <article class="post white-box shadow floatable reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -740,16 +727,27 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/post/jsmap/">
-      JS地图使用笔记
+  <h1 class="title">
+    <a href="/post/bat-date/">
+      批处理获取时间小于10点时补零
     </a>
-  </h2>
+  </h1>
 
 
         
         <div class='new-meta-box'>
           
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="https://pdoner.cn" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg">
+    <p>pdone</p>
+  </a>
+</div>
+
             
           
             
@@ -768,7 +766,7 @@
             
               
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JS/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>JS</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%9C%B0%E5%9B%BE/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>地图</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%89%B9%E5%A4%84%E7%90%86/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>批处理</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/bat/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>bat</p></a></div>
 
 
             
@@ -777,7 +775,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2018-12-25</p>
+    <p>2021-04-08</p>
   </a>
 </div>
 
@@ -785,6 +783,18 @@
           
             
               
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/post/bat-date/" class="leancloud_visitors" data-flag-title="批处理获取时间小于10点时补零">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
 
             
           
@@ -802,38 +812,191 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>直接使用<code>%time:~0,2%</code>在小于10点时，获取到的时间不会自动补零，但是分钟和秒钟会补零，所以小时部分需要自己处理一下。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="bash">@echo off
+set hour=%time:~0,2%
+if %hour% LSS 10 (
+set &quot;hour=0%time:~1,1%&quot;)
+set date=%date:~0,4%-%date:~5,2%-%date:~8,2%T%hour%:%time:~3,2%:%time:~6,5%
+echo %date%
+pause</code></pre>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><pre><code class="text">2021-04-08T09:45:01.11</code></pre>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
+
+          
+        
+          
+            <p>本文链接：<a href=https://pdoner.cn/post/bat-date/>https://pdoner.cn/post/bat-date/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
-        <p>最近一个项目中要用JS实现一个简单的地图，由于是前端小白，开发过程中遇到了不少问题，然后整理了两个Demo，便于以后需要使用时有个参考。</p>
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-08T10:26:24+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>Last Update 2021-04-08</p>
+  </a>
+</div>
+
+        
       
-    </div>
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        <a class= "readmore" href="/post/jsmap/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/bat-date/&title=批处理获取时间小于10点时补零 - 皮蛋的博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
         </a>
       
     
-  </section>
-</article>
-
-          </div>
-        
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/bat-date/&title=批处理获取时间小于10点时补零 - 皮蛋的博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
       
     
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/bat-date/&title=批处理获取时间小于10点时补零 - 皮蛋的博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACRElEQVR42u3bO2LkQAgEUN3/0t7cDiQKZG8zrzN7fryOaoC5vj70XODg4ODg4IvgV3juXv/98R8FFN9/rF5wcHBwcPCF8McB4Ob5Ty+o+/+0XnBwcHBw8M3wNJBUC0uh3XrBwcHBwcHB7wt+GwoODg4ODg4+B396EdMBCRwcHBwcHLzRoB9u/D+9uD+fpICDg4ODg/9H8O6C32//PbbgBw4ODg4OfjC8e9LGQhU8Vi84ODg4OPgi+FQDv9uQmAouYx0YcHBwcHDwA+B3gaQbZLqD/OrnxI0IcHBwcHDwA+HdD3qrgVENMuMbEeDg4ODg4IvgU0FnKgDd1TEWYMDBwcHBwQ+EdwNFGkymGyPlxQBwcHBwcPAD4emCQFp4FXQ1Dzg4ODg4+Eb4VGCpXlD1IqYWDcDBwcHBwTfCnw4YqgP+p5DuYOPxRYGDg4ODgy+CVwNH+Yv/S4t745MUcHBwcHDwBfB0MD89GEhfHwcYcHBwcHDwA+FVcDWQdBcF0gZEeaAADg4ODg6+ED7VsEgHDGljoh1gwMHBwcHBD4BXv9B3GwHdwFO9GHBwcHBw8M3w7pkKFumCQPVxcHBwcHDwTfCpBb50MaDbyCg/HxwcHBwcfCG8G1i6waO6ABAvDoCDg4ODgy+GTwWIduP/rfcFBwcHBwcHj3+glzY2qkELHBwcHBwc/HkBaSOiOmCovh84ODg4OPgnwbsLfSnk7YUBcHBwcHDwzfC0cZ829qcbF/FiADg4ODg4+MHwTzvg4ODg4OALzj8H0AYQDWXz4wAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/post/luoyang-subway/'>
+                <p class='title'>洛阳地铁一号线开通啦！<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>洛阳轨道交通（Luoyang Subway）是服务于中国河南省洛阳市的城市轨道交通系统，其首条线路于2020年12月1日开始试运行。
+2021年3月28日正式运营，当日客流量为10.7382万人...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+
+  <article class="post white-box reveal comments shadow floatable">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 讨论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 </div>
 <aside class='l_side'>
   
@@ -841,63 +1004,22 @@
     
     
 
-<section class="widget blogger shadow floatable desktop mobile">
-  <div class='content'>
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
     
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg'/>
-        </a>
-      
+  <header>
     
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
-      <div class='text'>
-        
-          <h2>pdone</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:a@pdoner.cn"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/pdone"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=55174435"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code"><span class="toc-text">Code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-text">Output</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -962,79 +1084,9 @@
 
   
 
-  
-    
-    
-
-<section class="widget shadow floatable desktop">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>Information</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>26 篇</div>
-        </div>
-      
-
-      
-
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-    </div>
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow floatable desktop">
-  
-  <header>
-    
-      <a href='https://pdoner.cn'><i class="fab fa-weixin fa-fw" aria-hidden="true"></i><span class='name'>WeChat</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <p><a href="https://pdoner.cn"><img src="https://cdn.jsdelivr.net/gh/pdone/static@1.0/img/wxapp-qrcode.jpg"></a></p>
-
-    
-  </div>
-</section>
-
-  
-
 
 </aside>
+
 
 
     </div>

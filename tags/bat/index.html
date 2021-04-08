@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：地图</title>
+  <title>标签：bat</title>
   
 
   
@@ -741,8 +741,8 @@
         
           
   <h2 class="title">
-    <a href="/post/jsmap/">
-      JS地图使用笔记
+    <a href="/post/bat-date/">
+      批处理获取时间小于10点时补零
     </a>
   </h2>
 
@@ -768,7 +768,7 @@
             
               
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JS/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>JS</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%9C%B0%E5%9B%BE/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>地图</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%89%B9%E5%A4%84%E7%90%86/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>批处理</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/bat/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>bat</p></a></div>
 
 
             
@@ -777,7 +777,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2018-12-25</p>
+    <p>2021-04-08</p>
   </a>
 </div>
 
@@ -805,14 +805,19 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近一个项目中要用JS实现一个简单的地图，由于是前端小白，开发过程中遇到了不少问题，然后整理了两个Demo，便于以后需要使用时有个参考。</p>
+        <p>直接使用<code>%time:~0,2%</code>在小于10点时，获取到的时间不会自动补零，但是分钟和秒钟会补零，所以小时部分需要自己处理一下。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="bash">@echo off
+set hour=%time:~0,2%
+if %hour% LSS 10 (
+set &quot;hour=0%time:~1,1%&quot;)
+set date=%date:~0,4%-%date:~5,2%-%date:~8,2%T%hour%:%time:~3,2%:%time:~6,5%
+echo %date%
+pause</code></pre>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><pre><code class="text">2021-04-08T09:45:01.11</code></pre>
+
       
     </div>
     
-      
-        <a class= "readmore" href="/post/jsmap/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
       
     
   </section>

@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>批处理获取时间小于10点时补零</title>
+      <link href="post/bat-date/"/>
+      <url>post/bat-date/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>直接使用<code>%time:~0,2%</code>在小于10点时，获取到的时间不会自动补零，但是分钟和秒钟会补零，所以小时部分需要自己处理一下。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="bash">@echo offset hour=%time:~0,2%if %hour% LSS 10 (set &quot;hour=0%time:~1,1%&quot;)set date=%date:~0,4%-%date:~5,2%-%date:~8,2%T%hour%:%time:~3,2%:%time:~6,5%echo %date%pause</code></pre><h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><pre><code class="text">2021-04-08T09:45:01.11</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Development </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 批处理 </tag>
+            
+            <tag> bat </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>洛阳地铁一号线开通啦！</title>
       <link href="post/luoyang-subway/"/>
       <url>post/luoyang-subway/</url>
@@ -48,6 +75,33 @@
             <tag> SQL </tag>
             
             <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown代码块支持的语言</title>
+      <link href="post/md-codeblock-lang/"/>
+      <url>post/md-codeblock-lang/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Markdown代码块支持的语言，使用时在<code>```</code>后加上对应关键字即可。</p><a id="more"></a><style>table th:nth-of-type(2) {    width: 400px;}</style><table><thead><tr><th>名称</th><th>关键字</th><th>调用的js</th></tr></thead><tbody><tr><td>AppleScript</td><td>applescript</td><td>shBrushAppleScript.js</td></tr><tr><td>ActionScript 3.0</td><td>actionscript3, as3</td><td>shBrushAS3.js</td></tr><tr><td>Shell</td><td>bash, shell</td><td>shBrushBash.js</td></tr><tr><td>ColdFusion</td><td>coldfusion, cf</td><td>shBrushColdFusion.js</td></tr><tr><td>C</td><td>cpp, c</td><td>shBrushCpp.js</td></tr><tr><td>C#</td><td>c#, c-sharp, csharp</td><td>shBrushCSharp.js</td></tr><tr><td>CSS</td><td>css</td><td>shBrushCss.js</td></tr><tr><td>Delphi</td><td>delphi, pascal, pas</td><td>shBrushDelphi.js</td></tr><tr><td>diff&amp;patch</td><td>diff patch</td><td>shBrushDiff.js</td></tr><tr><td>Erlang</td><td>erl, erlang</td><td>shBrushErlang.js</td></tr><tr><td>Groovy</td><td>groovy</td><td>shBrushGroovy.js</td></tr><tr><td>Java</td><td>java</td><td>shBrushJava.js</td></tr><tr><td>JavaFX</td><td>jfx, javafx</td><td>shBrushJavaFX.js</td></tr><tr><td>JavaScript</td><td>js, jscript, javascript</td><td>shBrushJScript.js</td></tr><tr><td>Perl</td><td>perl, pl, Perl</td><td>shBrushPerl.js</td></tr><tr><td>PHP</td><td>php</td><td>shBrushPhp.js</td></tr><tr><td>text</td><td>text, plain</td><td>shBrushPlain.js</td></tr><tr><td>Python</td><td>py, python</td><td>shBrushPython.js</td></tr><tr><td>Ruby</td><td>ruby, rails, ror, rb</td><td>shBrushRuby.js</td></tr><tr><td>SASS&amp;SCSS</td><td>sass, scss</td><td>shBrushSass.js</td></tr><tr><td>Scala</td><td>scala</td><td>shBrushScala.js</td></tr><tr><td>SQL</td><td>sql</td><td>shBrushSql.js</td></tr><tr><td>Visual Basic</td><td>vb, vbnet</td><td>shBrushVb.js</td></tr><tr><td>XML</td><td>xml, xhtml, xslt, html</td><td>shBrushXml.js</td></tr><tr><td>Objective C</td><td>objc, obj-c</td><td>shBrushObjectiveC.js</td></tr><tr><td>F#</td><td>f# f-sharp, fsharp</td><td>shBrushFSharp.js</td></tr><tr><td></td><td>xpp, dynamics-xpp</td><td>shBrushDynamics.js</td></tr><tr><td>R</td><td>r, s, splus</td><td>shBrushR.js</td></tr><tr><td>matlab</td><td>matlab</td><td>shBrushMatlab.js</td></tr><tr><td>swift</td><td>swift</td><td>shBrushSwift.js</td></tr><tr><td>GO</td><td>go, golang</td><td>shBrushGo.js</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> Development </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MD </tag>
+            
+            <tag> Markdown </tag>
             
         </tags>
       
