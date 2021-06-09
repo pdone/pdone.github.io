@@ -720,12 +720,21 @@ function getQueryVariable(variable)
 }
 (function(){
   var tel = getQueryVariable("tel");
+  var show = getQueryVariable("show");
   if (tel == false) return;
   if (tel.length < 11 ) return;
-  var num1 = tel.substr(0,3);
-  var num2 = tel.substr(3,4);
-  var num3 = tel.substr(7,4);
-  document.getElementsByClassName("p center logo large")[0].innerText = num1 + " " + num2 + " " + num3;
+
+  if (show == 1)
+  {
+    var num1 = tel.substr(0,3);
+    var num2 = tel.substr(3,4);
+    var num3 = tel.substr(7,4);
+    document.getElementsByClassName("p center logo large")[0].innerText = num1 + " " + num2 + " " + num3;
+  }
+  else
+  {
+    document.getElementsByClassName("p center logo large")[0].innerText = "";
+  }
   document.getElementById("btnCall").setAttribute("href", "tel:" + tel.substr(0,11));
 })();
 </script>
