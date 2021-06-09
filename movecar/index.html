@@ -703,9 +703,32 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p class='p center logo large'>198 3898 5923</p>
+          <p class='p center logo large'>Unknown</p>
 
-<div class="article-entry" itemprop="articleBody"><span class="btn solid center large"><a class="button" style="border-radius: 2em;" href="tel:19838985923" title="拨打号码" data-pjax-state="external"><i class="fas fa-phone"></i>拨打号码</a></span></div>
+<div class="article-entry" itemprop="articleBody"><span class="btn solid center large"><a id="btnCall" class="button" style="border-radius: 2em;" href="tel:114" title="拨打号码" data-pjax-state="external"><i class="fas fa-phone"></i>拨打号码</a></span></div>
+
+<script>
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+(function(){
+  var tel = getQueryVariable("tel");
+  if (tel == false) return;
+  if (tel.length < 11 ) return;
+  var num1 = tel.substr(0,3);
+  var num2 = tel.substr(3,4);
+  var num3 = tel.substr(7,4);
+  document.getElementsByClassName("p center logo large")[0].innerText = num1 + " " + num2 + " " + num3;
+  document.getElementById("btnCall").setAttribute("href", "tel:" + tel.substr(0,11));
+})();
+</script>
           
         </div>
         
