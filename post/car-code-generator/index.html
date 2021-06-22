@@ -16,13 +16,16 @@
 
   <!-- 页面元数据 -->
   
-  <title>WinForm加载中窗体</title>
+  <title>挪车码生成器 - 已开源</title>
   
-    <meta name="keywords" content=".NET">
+    <meta name="keywords" content=".NET,QRCode">
   
 
   
-    <meta name="description" content="最近项目中用有用到，就简单整了个，只有几行代码。">
+    <meta name="description" content="临时停车时，直接把手机号放在车上，容易被广告推销人员盯上，用二维码的方式间接给别人提供联系方式，可以有效降低此类情况发生。
+优势
+使用挪车码展示联系方式，可以避免直接展示出手机号码，广告推销人员可能懒得扫码获取你的手机号
+可以使用微信、浏览器、系统相机扫一扫等进行扫码，无需手动输入长达11位的无序数字组成的手机号...">
   
 
   <!-- feed -->
@@ -650,7 +653,7 @@
  
 <div id="pjax-data" style="display: none"> 
   <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">WinForm加载中窗体</div> 
+  <div id="pjax-pageTitle">挪车码生成器 - 已开源</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -698,8 +701,8 @@
         
           
   <h1 class="title">
-    <a href="/post/net-loading/">
-      WinForm加载中窗体
+    <a href="/post/car-code-generator/">
+      挪车码生成器 - 已开源
     </a>
   </h1>
 
@@ -724,9 +727,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Development/' rel="nofollow">
+    <a href='/categories/Tools/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Development</p>
+      <p>Tools</p>
     </a>
   </div>
 
@@ -736,7 +739,7 @@
             
               
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/NET/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>.NET</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/NET/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>.NET</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/QRCode/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>QRCode</p></a></div>
 
 
             
@@ -745,7 +748,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2020-04-15</p>
+    <p>2021-06-18</p>
   </a>
 </div>
 
@@ -757,7 +760,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/post/net-loading/" class="leancloud_visitors" data-flag-title="WinForm加载中窗体">
+      <span id="/post/car-code-generator/" class="leancloud_visitors" data-flag-title="挪车码生成器 - 已开源">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -786,36 +789,30 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p>最近项目中用有用到，就简单整了个，只有几行代码。</p>
-<a id="more"></a> 
+          <p>临时停车时，直接把手机号放在车上，容易被广告推销人员盯上，用二维码的方式间接给别人提供联系方式，可以有效降低此类情况发生。</p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><ul>
+<li>使用挪车码展示联系方式，可以避免直接展示出手机号码，广告推销人员可能懒得扫码获取你的手机号</li>
+<li>可以使用微信、浏览器、系统相机扫一扫等进行扫码，无需手动输入<strong>长达11位的无序数字</strong>组成的手机号，直接一键拨号，减少焦虑感<a id="more"></a>
 
-<p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/net-loading/1.gif" alt="预览图"></p>
-<h2 id="调用示例"><a href="#调用示例" class="headerlink" title="调用示例"></a>调用示例</h2><pre><code>public partial class Main : Form
-&#123;
-    public Main()
-    &#123;
-        InitializeComponent();
-    &#125;
+</li>
+</ul>
+<h2 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h2><ul>
+<li>由于本服务是完全免费的，故无法提供虚拟手机号进行拨号</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol>
+<li>输入手机号码</li>
+<li>保存到挪车码</li>
+<li>用作图工具添加“扫码挪车”等字样后用A4纸打印出来</li>
+<li>临时停车的时候放在车窗下显眼位置</li>
+</ol>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/1.png" alt=""></p>
+<div class="gallery " col='3'>
+              <p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/2.jpg" alt="微信扫一扫"><br><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/3.jpg" alt="点击拨打号码按钮"><br><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/4.jpg" alt="跳转系统拨号界面"></p>
+            </div>
 
-    private void button1_Click(object sender, EventArgs e)
-    &#123;
-        //构造函数参数说明：
-        //work: 需要在新线程中执行的任务
-        //msg: 执行完成提示信息（为空时不提示）
-        //openDir: 执行完成后自动打开指定目录（为空时不打开）                
-        Loading loading = new Loading(DoSomething, 执行完成);
-
-        //不show的话 可以当作后台线程执行任务来用
-        loading.ShowDialog();
-    &#125;
-
-    public void DoSomething()
-    &#123;
-        Thread.Sleep(3000);
-    &#125;
-&#125;</code></pre><h2 id="源代下载"><a href="#源代下载" class="headerlink" title="源代下载"></a>源代下载</h2><div><a class='link-card' title='https://pan.baidu.com/s/1NzrZeNKqjlZxK__iXaGvwQ' target="_blank" rel="noopener" href='https://pan.baidu.com/s/1NzrZeNKqjlZxK__iXaGvwQ'><div class='left'><img src=https://cdn.jsdelivr.net/gh/pdone/static@latest/img/app/baiduyun.png></div><div class='right'><p class='text'>百度云</p><p class='url'>https://pan.baidu.com/s/1NzrZeNKqjlZxK__iXaGvwQ</p></div></a></div>
-<p><b style='font-size:1em;'>提取码：npkt</b></p>
-
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><div><a class='link-card' title='https://www.lanzoux.com/iej9Tqkzj7c' target="_blank" rel="noopener" href='https://www.lanzoux.com/iej9Tqkzj7c'><div class='left'><img src=https://cdn.jsdelivr.net/gh/pdone/static@latest/img/app/lanzou.png></div><div class='right'><p class='text'>蓝奏云</p><p class='url'>https://www.lanzoux.com/iej9Tqkzj7c</p></div></a></div>
+<p><b style='font-size:1em;'>提取码：pdone</b></p>
+<h2 id="代码仓库"><a href="#代码仓库" class="headerlink" title="代码仓库"></a>代码仓库</h2><a class="ghcard" rel="external nofollow noopener noreferrer noopener" target="_blank" href="https://github.com/pdone/car-code-generator"><img src="https://github-readme-stats.vercel.app/api/pin/?username=pdone&repo=car-code-generator&show_owner=true"/></a>
           
             <div class='article_footer'>
               
@@ -851,7 +848,7 @@
           
         
           
-            <p>本文链接：<a href=https://pdoner.cn/post/net-loading/>https://pdoner.cn/post/net-loading/</a></p>
+            <p>本文链接：<a href=https://pdoner.cn/post/car-code-generator/>https://pdoner.cn/post/car-code-generator/</a></p>
           
         
       </blockquote>
@@ -874,10 +871,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-03T10:39:25+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-22T13:28:46+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Last Update 2021-02-03</p>
+    <p>Last Update 2021-06-22</p>
   </a>
 </div>
 
@@ -891,7 +888,10 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/net-loading/&title=WinForm加载中窗体 - 皮蛋的博客&summary=最近项目中用有用到，就简单整了个，只有几行代码。"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/car-code-generator/&title=挪车码生成器 - 已开源 - 皮蛋的博客&summary=临时停车时，直接把手机号放在车上，容易被广告推销人员盯上，用二维码的方式间接给别人提供联系方式，可以有效降低此类情况发生。
+优势
+使用挪车码展示联系方式，可以避免直接展示出手机号码，广告推销人员可能懒得扫码获取你的手机号
+可以使用微信、浏览器、系统相机扫一扫等进行扫码，无需手动输入长达11位的无序数字组成的手机号，直接一键拨号，减少焦虑感"
           
           >
           
@@ -903,7 +903,10 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/net-loading/&title=WinForm加载中窗体 - 皮蛋的博客&summary=最近项目中用有用到，就简单整了个，只有几行代码。"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/car-code-generator/&title=挪车码生成器 - 已开源 - 皮蛋的博客&summary=临时停车时，直接把手机号放在车上，容易被广告推销人员盯上，用二维码的方式间接给别人提供联系方式，可以有效降低此类情况发生。
+优势
+使用挪车码展示联系方式，可以避免直接展示出手机号码，广告推销人员可能懒得扫码获取你的手机号
+可以使用微信、浏览器、系统相机扫一扫等进行扫码，无需手动输入长达11位的无序数字组成的手机号，直接一键拨号，减少焦虑感"
           
           >
           
@@ -915,7 +918,10 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/net-loading/&title=WinForm加载中窗体 - 皮蛋的博客&summary=最近项目中用有用到，就简单整了个，只有几行代码。"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/car-code-generator/&title=挪车码生成器 - 已开源 - 皮蛋的博客&summary=临时停车时，直接把手机号放在车上，容易被广告推销人员盯上，用二维码的方式间接给别人提供联系方式，可以有效降低此类情况发生。
+优势
+使用挪车码展示联系方式，可以避免直接展示出手机号码，广告推销人员可能懒得扫码获取你的手机号
+可以使用微信、浏览器、系统相机扫一扫等进行扫码，无需手动输入长达11位的无序数字组成的手机号，直接一键拨号，减少焦虑感"
           
           >
           
@@ -929,7 +935,7 @@
         <div class='hoverbox'>
           <a class='share'><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC+klEQVR42u3aSZbCMAwFQO5/aXrfw7M1OETp8g4IjlLZ/Cf59bZ+XS8EYMCAAQMGzBiYV3L92PCP75eFLPb7/vtuHdnnAQMGDBgwYMDMg6k+SBbkrwdfPWhXfWDAgAEDBgyY58AsA9Dm9btBsHrd7v+2nwcMGDBgwIAB8+9gsoEs2riKAoIBAwYMGDBgwGQDXlfjqRoMwYABAwYMGDDPh8k2gt7Nq/sg0uWTSDBgwIABAwbMZTDpA8M3/dx2ABoMGDBgwIABc1uY7iB2+sHehxcYMGDAgAEDZg5MdYBWHXhlQaIDve36wYABAwYMGDDjYE4d0KmC7N4/CpYeuIEBAwYMGDBgbgOz+uPu79GCqy8gWvf29WDAgAEDBgyYcTDRxlK0wVQ94BMFy74QMGDAgAEDBsw8mN0NTgW0bAOrWi8YMGDAgAEDZi5Md9CKDsCijbBqw2oJBgYMGDBgwIAZA1MORB9uSFUbZeFJJBgwYMCAAQPm9jCnDubsBsOuIBneBwwYMGDAgAEzBqY62Nq9cXZgl30R2XrBgAEDBgwYMHNgugZeUYhTjadyow0MGDBgwIABMw7m6oKjQS/6wtKNNzBgwIABAwbMGJjuINY9IIvWmX0hYMCAAQMGDJj5MNkGVTTwZfc/3igDAwYMGDBgwIyF6QpeuwVlr4s2tMCAAQMGDBgwz4WpDtyig7dqgIsGzu3BHhgwYMCAAQNmLEz14E40mJ06aJQOiGDAgAEDBgyYx8B0FRodtK32j67tASEYMGDAgAEDZgxMdWUHYNUgVgVfDtzAgAEDBgwYMLeH6QpM2cDYNfir3h8MGDBgwIABMxcmGuiiDaVooMs2mqIHiMCAAQMGDBgwz4GpHvRpC1rBAV/bYBAMGDBgwIABAya4bzVwZvdbDtzAgAEDBgwYMI+Hie5XHeBFG2Qfa1SBAQMGDBgwYC6DiQ7coo2l7vtGQcCAAQMGDBgwz4PpHlxlIasNqmxwBAMGDBgwYMDMg7HAgAEDBgwYMMPWF5iEZn9n+uv7AAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAADAUlEQVR42u3aQXLjMAwEQP//05sHZF0CBlQixM2bLYkSm5cpgK9/xn/HCwEYMGDAgAGzBuYVjnfPf3tReL37HcfWAwYMGDBgwIBZB1MOQMUFXD13Nd/V+69A4/WAAQMGDBgwYNbC3P3iFKT63HQ9YMCAAQMGDJjPgakGvCkIGDBgwIABAwbMXQHvdMGqW7gCAwYMGDBgwIBJC0/V57oNtfT5X+9EggEDBgwYMGB+DGZ6APppv48dgAYDBgwYMGDAPBZmOu46SHR34Hw7HxgwYMCAAQNmDUy1INRtqHUPPncbedPGXTn5ggEDBgwYMGAeCxM3psLGWfeDpweYqv+DAQMGDBgwYPbBvA6NLlgXMA2gbSgwYMCAAQMGzDqYtDCUBr70IFK1cNadBwwYMGDAgAGzD+ZUgEqh0obdtAH49n4wYMCAAQMGzDqYKsS0ARcf6Akbb+3vAQMGDBgwYMCsgUkX2G2QdYNaGiTTQhsYMGDAgAEDZi9MWuiZFq6mGzE9KAQGDBgwYMCA+Tsw00CV/t8NftMNBAMGDBgwYMD8PZhp8DvVwEuhxhsHBgwYMGDAgFkDc7pgVS04tYPXcP7yOsGAAQMGDBgw62HSQNZtnJ0GSQ8ugQEDBgwYMGD2wpx6Ufr7dOMs3RgwYMCAAQMGzB6YtLAzDYBpg63bWGtvKBgwYMCAAQNmDcypwtLdgN0NiwtwYMCAAQMGDJh1MD9VmEoXUg2C4w0GAwYMGDBgwKyBOR2QqoWpbnDsfk9cuAIDBgwYMGDArIGZjjQYpgGx2mDr3gcGDBgwYMCA2QczDUzdgJc28KaFrzj5ggEDBgwYMGAeD5MGurSR1oU8FfAuC1hgwIABAwYMmLUwaaBLDxidbvx1Qb9dBwMGDBgwYMB8DEw3IE4D5KmDSm/vAwMGDBgwYMB8PEzaoEsLT9X3Xs4PBgwYMGDAgFkL0w1O04LVtDA2DYTlgAcGDBgwYMCAeSzMqQZWFbY7T3q9DQUGDBgwYMCAWQNjgAEDBgwYMGCWjS8p8mOsdKMAngAAAABJRU5ErkJggg==">
           </div>
         </div>
       
@@ -949,24 +955,17 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/post/free-control/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Free Control 用电脑控制手机 - 已开源</p>
-                <p class='content'>基于开源项目scrcpy，使用C#简单封装。
-做本程序的主要目的是学习，另外就是自己用着方便些。
-启动界面
- 
+            
+              <a class='next' href='/post/eatfood/'>
+                <p class='title'>美团外卖、饿了么外卖、美团APP、拼多多APP优惠领取<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>点击链接 或者 微信扫码 都可以哦！点击链接 或者 微信扫码 都可以哦！点击链接 或者 微信扫码 都可以哦！
 
-设置界面
-使用效果
-版本说明v1.0.0
-基于scrcpy v1.14
-无线访问...</p>
-              </a>
-            
-            
-              <a class='next' href='/post/dapperhelper/'>
-                <p class='title'>DapperHelper<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>Dapper is a simple object mapper for .NET and owns the title of King of Micro ORM in terms of spe...</p>
+
+美团外卖美团外卖红包http://mtw.so/6tskwM
+
+
+
+饿了么外卖饿...</p>
               </a>
             
           </div>
@@ -1019,7 +1018,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text">调用示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E4%BB%A3%E4%B8%8B%E8%BD%BD"><span class="toc-text">源代下载</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8A%BF"><span class="toc-text">优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A3%E5%8A%BF"><span class="toc-text">劣势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%AA%E5%9B%BE"><span class="toc-text">截图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="toc-text">下载地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93"><span class="toc-text">代码仓库</span></a></li></ol>
     </div>
   </section>
 

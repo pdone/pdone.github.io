@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -16,13 +18,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>WinForm加载中窗体</title>
-  
-    <meta name="keywords" content=".NET">
+  <title>标签：QRCode</title>
   
 
-  
-    <meta name="description" content="最近项目中用有用到，就简单整了个，只有几行代码。">
   
 
   <!-- feed -->
@@ -93,7 +91,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover post' style="display: none;">
+    <cover class='cover ' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -649,8 +647,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">WinForm加载中窗体</div> 
+  <div id="pjax-ispage">false</div> 
+  <div id="pjax-pageTitle"></div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -682,12 +680,25 @@
       
       
 
+
 <div class='l_main'>
   
-
-  
-    <article id="post" class="post white-box reveal shadow floatable article-type-post" itemscope itemprop="blogPost">
+    
       
+  <section class="post-list ">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper' >
+            <article class="post white-box shadow floatable reveal ">
+  
 
 
   <section class='meta'>
@@ -697,11 +708,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h1 class="title">
-    <a href="/post/net-loading/">
-      WinForm加载中窗体
+  <h2 class="title">
+    <a href="/post/car-code-generator/">
+      挪车码生成器 - 已开源
     </a>
-  </h1>
+  </h2>
 
 
         
@@ -711,22 +722,11 @@
           
             
               
-<div class='new-meta-item author'>
-  <a class='author' href="https://pdoner.cn" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg">
-    <p>pdone</p>
-  </a>
-</div>
-
-            
-          
-            
-              
   
   <div class='new-meta-item category'>
-    <a href='/categories/Development/' rel="nofollow">
+    <a href='/categories/Tools/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Development</p>
+      <p>Tools</p>
     </a>
   </div>
 
@@ -736,7 +736,7 @@
             
               
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/NET/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>.NET</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/NET/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>.NET</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/QRCode/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>QRCode</p></a></div>
 
 
             
@@ -745,7 +745,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2020-04-15</p>
+    <p>2021-06-18</p>
   </a>
 </div>
 
@@ -753,18 +753,6 @@
           
             
               
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/post/net-loading/" class="leancloud_visitors" data-flag-title="WinForm加载中窗体">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
 
             
           
@@ -782,224 +770,41 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          
-          <p>最近项目中用有用到，就简单整了个，只有几行代码。</p>
-<a id="more"></a> 
-
-<p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/net-loading/1.gif" alt="预览图"></p>
-<h2 id="调用示例"><a href="#调用示例" class="headerlink" title="调用示例"></a>调用示例</h2><pre><code>public partial class Main : Form
-&#123;
-    public Main()
-    &#123;
-        InitializeComponent();
-    &#125;
-
-    private void button1_Click(object sender, EventArgs e)
-    &#123;
-        //构造函数参数说明：
-        //work: 需要在新线程中执行的任务
-        //msg: 执行完成提示信息（为空时不提示）
-        //openDir: 执行完成后自动打开指定目录（为空时不打开）                
-        Loading loading = new Loading(DoSomething, 执行完成);
-
-        //不show的话 可以当作后台线程执行任务来用
-        loading.ShowDialog();
-    &#125;
-
-    public void DoSomething()
-    &#123;
-        Thread.Sleep(3000);
-    &#125;
-&#125;</code></pre><h2 id="源代下载"><a href="#源代下载" class="headerlink" title="源代下载"></a>源代下载</h2><div><a class='link-card' title='https://pan.baidu.com/s/1NzrZeNKqjlZxK__iXaGvwQ' target="_blank" rel="noopener" href='https://pan.baidu.com/s/1NzrZeNKqjlZxK__iXaGvwQ'><div class='left'><img src=https://cdn.jsdelivr.net/gh/pdone/static@latest/img/app/baiduyun.png></div><div class='right'><p class='text'>百度云</p><p class='url'>https://pan.baidu.com/s/1NzrZeNKqjlZxK__iXaGvwQ</p></div></a></div>
-<p><b style='font-size:1em;'>提取码：npkt</b></p>
-
-          
-            <div class='article_footer'>
-              
-                
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
-  <div class='content'>
-    
-      <blockquote>
-        
-          
-            <p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a></p>
-
-          
-        
-          
-            <p>本文链接：<a href=https://pdoner.cn/post/net-loading/>https://pdoner.cn/post/net-loading/</a></p>
-          
-        
-      </blockquote>
-    
-  </div>
-</section>
-
-  
-
-
-              
-            </div>
-          
-        </div>
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
       
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-03T10:39:25+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Last Update 2021-02-03</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://pdoner.cn/post/net-loading/&title=WinForm加载中窗体 - 皮蛋的博客&summary=最近项目中用有用到，就简单整了个，只有几行代码。"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://pdoner.cn/post/net-loading/&title=WinForm加载中窗体 - 皮蛋的博客&summary=最近项目中用有用到，就简单整了个，只有几行代码。"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://pdoner.cn/post/net-loading/&title=WinForm加载中窗体 - 皮蛋的博客&summary=最近项目中用有用到，就简单整了个，只有几行代码。"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
-          
-        </a>
-      
-    
-      
-        
-        <div class='hoverbox'>
-          <a class='share'><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
-          <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC+klEQVR42u3aSZbCMAwFQO5/aXrfw7M1OETp8g4IjlLZ/Cf59bZ+XS8EYMCAAQMGzBiYV3L92PCP75eFLPb7/vtuHdnnAQMGDBgwYMDMg6k+SBbkrwdfPWhXfWDAgAEDBgyY58AsA9Dm9btBsHrd7v+2nwcMGDBgwIAB8+9gsoEs2riKAoIBAwYMGDBgwGQDXlfjqRoMwYABAwYMGDDPh8k2gt7Nq/sg0uWTSDBgwIABAwbMZTDpA8M3/dx2ABoMGDBgwIABc1uY7iB2+sHehxcYMGDAgAEDZg5MdYBWHXhlQaIDve36wYABAwYMGDDjYE4d0KmC7N4/CpYeuIEBAwYMGDBgbgOz+uPu79GCqy8gWvf29WDAgAEDBgyYcTDRxlK0wVQ94BMFy74QMGDAgAEDBsw8mN0NTgW0bAOrWi8YMGDAgAEDZi5Md9CKDsCijbBqw2oJBgYMGDBgwIAZA1MORB9uSFUbZeFJJBgwYMCAAQPm9jCnDubsBsOuIBneBwwYMGDAgAEzBqY62Nq9cXZgl30R2XrBgAEDBgwYMHNgugZeUYhTjadyow0MGDBgwIABMw7m6oKjQS/6wtKNNzBgwIABAwbMGJjuINY9IIvWmX0hYMCAAQMGDJj5MNkGVTTwZfc/3igDAwYMGDBgwIyF6QpeuwVlr4s2tMCAAQMGDBgwz4WpDtyig7dqgIsGzu3BHhgwYMCAAQNmLEz14E40mJ06aJQOiGDAgAEDBgyYx8B0FRodtK32j67tASEYMGDAgAEDZgxMdWUHYNUgVgVfDtzAgAEDBgwYMLeH6QpM2cDYNfir3h8MGDBgwIABMxcmGuiiDaVooMs2mqIHiMCAAQMGDBgwz4GpHvRpC1rBAV/bYBAMGDBgwIABAya4bzVwZvdbDtzAgAEDBgwYMI+Hie5XHeBFG2Qfa1SBAQMGDBgwYC6DiQ7coo2l7vtGQcCAAQMGDBgwz4PpHlxlIasNqmxwBAMGDBgwYMDMg7HAgAEDBgwYMMPWF5iEZn9n+uv7AAAAAElFTkSuQmCC">
-          </div>
-        </div>
-      
-    
-  </div>
-</div>
-
-
-
-        
+        <p>临时停车时，直接把手机号放在车上，容易被广告推销人员盯上，用二维码的方式间接给别人提供联系方式，可以有效降低此类情况发生。</p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><ul>
+<li>使用挪车码展示联系方式，可以避免直接展示出手机号码，广告推销人员可能懒得扫码获取你的手机号</li>
+<li>可以使用微信、浏览器、系统相机扫一扫等进行扫码，无需手动输入<strong>长达11位的无序数字</strong>组成的手机号，直接一键拨号，减少焦虑感
       
     </div>
+    
+      
+        <a class= "readmore" href="/post/car-code-generator/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
   </section>
+</article>
 
-
-        
-        
-          <div class="prev-next">
-            
-              <a class='prev' href='/post/free-control/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Free Control 用电脑控制手机 - 已开源</p>
-                <p class='content'>基于开源项目scrcpy，使用C#简单封装。
-做本程序的主要目的是学习，另外就是自己用着方便些。
-启动界面
- 
-
-设置界面
-使用效果
-版本说明v1.0.0
-基于scrcpy v1.14
-无线访问...</p>
-              </a>
-            
-            
-              <a class='next' href='/post/dapperhelper/'>
-                <p class='title'>DapperHelper<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>Dapper is a simple object mapper for .NET and owns the title of King of Micro ORM in terms of spe...</p>
-              </a>
-            
           </div>
         
-      </section>
-    </article>
-  
-
+      
+    
+  </section>
   
     
-
-  <article class="post white-box reveal comments shadow floatable">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 讨论</p>
-      
-      <section id="comments">
-        <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-      </section>
-    </section>
-  </article>
-
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
 
   
 
 
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -1007,22 +812,63 @@
     
     
 
-
-
-  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+<section class="widget blogger shadow floatable desktop mobile">
+  <div class='content'>
     
-  <header>
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg'/>
+        </a>
+      
     
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text">调用示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E4%BB%A3%E4%B8%8B%E8%BD%BD"><span class="toc-text">源代下载</span></a></li></ol>
-    </div>
-  </section>
-
+      <div class='text'>
+        
+          <h2>pdone</h2>
+        
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:a@pdoner.cn"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/pdone"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=55174435"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
 
   
 
@@ -1087,9 +933,79 @@
 
   
 
+  
+    
+    
+
+<section class="widget shadow floatable desktop">
+  
+  <header>
+    
+      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>Information</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>28 篇</div>
+        </div>
+      
+
+      
+
+
+      
+
+      
+        <div class="webinfo-item">
+          <div>访客数：</div>
+          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>总访问量：</div>
+          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
+        </div>
+      
+
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget text shadow floatable desktop">
+  
+  <header>
+    
+      <a href='https://pdoner.cn'><i class="fab fa-weixin fa-fw" aria-hidden="true"></i><span class='name'>WeChat</span></a>
+    
+  </header>
+
+
+  <div class='content'>
+    
+      <p><a href="https://pdoner.cn"><img src="https://cdn.jsdelivr.net/gh/pdone/static@1.0/img/wxapp-qrcode.jpg"></a></p>
+
+    
+  </div>
+</section>
+
+  
+
 
 </aside>
-
 
 
     </div>

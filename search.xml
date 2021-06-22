@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>挪车码生成器 - 已开源</title>
+      <link href="post/car-code-generator/"/>
+      <url>post/car-code-generator/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>临时停车时，直接把手机号放在车上，容易被广告推销人员盯上，用二维码的方式间接给别人提供联系方式，可以有效降低此类情况发生。</p><h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><ul><li>使用挪车码展示联系方式，可以避免直接展示出手机号码，广告推销人员可能懒得扫码获取你的手机号</li><li>可以使用微信、浏览器、系统相机扫一扫等进行扫码，无需手动输入<strong>长达11位的无序数字</strong>组成的手机号，直接一键拨号，减少焦虑感<a id="more"></a></li></ul><h2 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h2><ul><li>由于本服务是完全免费的，故无法提供虚拟手机号进行拨号</li></ul><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol><li>输入手机号码</li><li>保存到挪车码</li><li>用作图工具添加“扫码挪车”等字样后用A4纸打印出来</li><li>临时停车的时候放在车窗下显眼位置</li></ol><h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/1.png" alt=""></p><div class="gallery " col='3'>              <p><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/2.jpg" alt="微信扫一扫"><br><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/3.jpg" alt="点击拨打号码按钮"><br><img src="https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/4.jpg" alt="跳转系统拨号界面"></p>            </div><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><div><a class='link-card' title='https://www.lanzoux.com/iej9Tqkzj7c' href='https://www.lanzoux.com/iej9Tqkzj7c'><div class='left'><img src=https://cdn.jsdelivr.net/gh/pdone/static@latest/img/app/lanzou.png></div><div class='right'><p class='text'>蓝奏云</p><p class='url'>https://www.lanzoux.com/iej9Tqkzj7c</p></div></a></div><p><b style='font-size:1em;'>提取码：pdone</b></p><h2 id="代码仓库"><a href="#代码仓库" class="headerlink" title="代码仓库"></a>代码仓库</h2><a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/pdone/car-code-generator"><img src="https://github-readme-stats.vercel.app/api/pin/?username=pdone&repo=car-code-generator&show_owner=true"/></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> .NET </tag>
+            
+            <tag> QRCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>美团外卖、饿了么外卖、美团APP、拼多多APP优惠领取</title>
       <link href="post/eatfood/"/>
       <url>post/eatfood/</url>
@@ -45,9 +72,9 @@
       
         <tags>
             
-            <tag> Git </tag>
-            
             <tag> 小技巧 </tag>
+            
+            <tag> Git </tag>
             
         </tags>
       
