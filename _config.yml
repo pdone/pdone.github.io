@@ -6,8 +6,8 @@
 title: "Pdone's Blog"
 subtitle: 'Only Peace & Love Here'
 description: 'Only Peace & Love Here'
-keywords: 'pdone,Hexo,C++,C#,coder,vue'
-author: Pdone
+keywords: 'pdone,Hexo,C++,C#,developer,vue'
+author: pdone
 language: zh-CN
 timezone: 'Asia/Shanghai'
 favicon: https://fastly.jsdelivr.net/gh/pdone/static/img/favicon.ico
@@ -15,7 +15,7 @@ favicon: https://fastly.jsdelivr.net/gh/pdone/static/img/favicon.ico
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://awaw.cc
-permalink: post/:title/ #:year/:month/:day/:title/
+permalink: :year/:title/ #:year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks

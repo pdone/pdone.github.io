@@ -344,7 +344,7 @@ navbar:
   menu:
     - { name: "主页", key: "home", link: "/", icon: "iconfont icon-home-fill" }
     - { name: "归档", key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
-    # - { name: "分类", key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
+    - { name: "分类", key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { name: "标签", key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { name: "关于", key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
     - { name: "友链", key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
@@ -431,9 +431,9 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    <div style="font-size:0.8rem">Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> & 
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a><br>
+    Copyright © 2017-2023 <a href="https://awaw.cc/" target="_blank">awaw.cc</a></div>
   '
 
   # 展示网站的 PV、UV 统计数
@@ -513,7 +513,7 @@ index:
   # 自动截取文章摘要
   # Auto extract post
   auto_excerpt:
-    enable: true
+    enable: false
 
   # 打开文章的标签方式
   # The browser tag to open the post
@@ -558,7 +558,7 @@ post:
     # 文章日期，优先根据 front-matter 里 date 字段，其次是 md 文件日期
     # Post date, based on `date` field in front-matter, if not set, based on create date of .md file
     date:
-      enable: true
+      enable: false
       # 格式参照 ISO-8601 日期格式化
       # ISO-8601 date format
       # See: http://momentjs.cn/docs/#/parsing/string-format/
@@ -583,7 +583,7 @@ post:
     # 浏览量计数
     # Number of visits
     views:
-      enable: false
+      enable: true
       # 统计数据来源
       # Data Source
       # Options: busuanzi | leancloud
