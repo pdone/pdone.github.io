@@ -83,7 +83,7 @@ fun_features:
   # 为 subtitle 添加打字机效果
   # Typing animation for subtitle
   typing:
-    enable: false
+    enable: true
 
     # 打印速度，数字越大越慢
     # Typing speed, the larger the number, the slower
@@ -344,21 +344,21 @@ navbar:
   # Navigation bar menu. `key` is used to associate languages/*.yml. If there is no association, the value of `key` itself will be displayed; if `icon` is a css class, it can be omitted; adding `name` can force the display of the specified name
   menu:
     - { name: "主页", key: "home", link: "/", icon: "iconfont icon-home-fill" }
-    - { name: "寻觅", key: "lookup", icon: "fa fa-quote-left",
+    - { name: "寻觅", key: "lookup", icon: "fa fa-quote-left fa-fw",
         submenu: [
           { name: "归档", key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" },
           { name: "分类", key: "category", link: "/categories/", icon: "iconfont icon-category-fill" },
-          { name: "标签", key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+          { name: "标签", key: "tag", link: "/tags/", icon: "fa fa-tags" }
         ]
     }
-    - { name: "工具", key: "tools", link: "/pages/tools/", icon: "fa fa-wrench",
+    - { name: "工具", key: "tools", icon: "fa fa-wrench fa-fw",
         submenu: [
-          { key: '今天吃什么', link: '/pages/tools/list/eatwhat/' },
-          { key: '荡秋千', link: '/pages/tools/list/swinggirl/' },
-          { key: '星球', link: '/pages/tools/list/planet/' },
-          { key: 'MD编辑器', link: '/pages/tools/list/md-editor/' },
-          { key: '密码生成器', link: '/pages/tools/list/pwd-builder/' },
-          { key: 'AriaNg', link: '/pages/tools/list/aria/' }
+          { key: '今天吃什么', link: '/tools/list/eatwhat/', icon: "fa fa-apple fa-fw" },
+          { key: '荡秋千', link: '/tools/list/swinggirl/', icon: "fa fa-trophy fa-fw" },
+          { key: '星球', link: '/tools/list/planet/', icon: "fa fa-superpowers fa-fw"},
+          { key: 'MD编辑器', link: '/tools/list/md-editor/', icon: "fa fa-snowflake-o fa-fw" },
+          { key: '密码生成器', link: '/tools/list/pwd-builder/', icon: "fa fa-shield fa-fw" },
+          { key: 'AriaNg', link: '/tools/list/aria/', icon: "fa fa-rocket fa-fw"}
         ]
     }
     - { name: "友链", key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
@@ -491,7 +491,8 @@ index:
 
     # 为空则按 hexo config.subtitle 显示
     # If empty, text based on `subtitle` in hexo config
-    text: "<div class='pd_content' onclick='dontTouchMe()'><h1><span name='pd_title' class='capital'>P</span><span name='pd_title' >d</span><span name='pd_title' >o</span><span name='pd_title' >n</span><span name='pd_title' >e</span><span name='pd_title' >'s</span><span name='pd_title'  class='capital'>B</span><span name='pd_title' >l</span><span name='pd_title' >o</span><span name='pd_title' >g</span></h1><h2><span name='pd_title'  class='capital'>L</span><span name='pd_title' >o</span><span name='pd_title' >v</span><span name='pd_title' >e</span><span name='pd_title' >&</span><span name='pd_title'  class='capital'>P</span><span name='pd_title' >e</span><span name='pd_title' >a</span><span name='pd_title' >c</span><span name='pd_title' >e</span></h2></div>"
+    # text: "<div class='pd_content' onclick='dontTouchMe()'><h1><span name='pd_title' class='capital'>P</span><span name='pd_title' >d</span><span name='pd_title' >o</span><span name='pd_title' >n</span><span name='pd_title' >e</span><span name='pd_title' >'s</span><span name='pd_title'  class='capital'>B</span><span name='pd_title' >l</span><span name='pd_title' >o</span><span name='pd_title' >g</span></h1><h2><span name='pd_title'  class='capital'>L</span><span name='pd_title' >o</span><span name='pd_title' >v</span><span name='pd_title' >e</span><span name='pd_title' >&</span><span name='pd_title'  class='capital'>P</span><span name='pd_title' >e</span><span name='pd_title' >a</span><span name='pd_title' >c</span><span name='pd_title' >e</span></h2></div>"
+    text: Only Peace &amp; Love Here
 
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation

@@ -33,7 +33,7 @@ skip_render:
   - "README.md"
   - "CNAME"
   - "res/**/*"
-  - "pages/tools/**/*"
+  - "tools/**/*"
   - "pages/quark/**/*"
 
 # Writing
@@ -110,6 +110,6 @@ theme: fluid
 deploy:
   - type: git
     repo: 
-      gitee: https://gitee.com/pdone/pdone.git
+      # gitee: https://gitee.com/pdone/pdone.git
       github: https://github.com/pdone/pdone.github.io.git
     branch: master
