@@ -1,15 +1,15 @@
 ---
 title: Cryptojs – JavaScript加密库
 date: 2018-09-11
-tags: [JS,加密]
-categories: Development
+tags: [JS,Security]
+categories: Developer
 ---
 
 ### Import
 ```
 npm install crypto-js
 ```
-<!--more-->
+
 ### Usage
 ```js
 //MD5加密

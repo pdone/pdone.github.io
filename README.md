@@ -1,6 +1,5 @@
 ## Thanks
 
-### [Hexo](https://hexo.io/ "https://hexo.io/")
-### [Volantis](https://volantis.js.org/ "https://volantis.js.org/")
+### [Hexo](https://hexo.io/)
+### [hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)
 ### [jsDelivr](https://www.jsdelivr.com/)
-

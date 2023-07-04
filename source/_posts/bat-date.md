@@ -2,7 +2,7 @@
 title: 批处理获取时间小于10点时补零
 date: 2021-04-08
 tags: [批处理]
-categories: Development
+categories: Developer
 ---
 使用 `%time:~0,2%` 获取时间时，当前时间若小于10点，获取到的时间不会自动补零，但是分钟和秒钟会补零，所以小时部分需要自己处理一下。
 <!--more-->

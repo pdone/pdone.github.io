@@ -237,6 +237,7 @@ custom_js:
 # The usage is the same as custom_js
 custom_css:
   - /res/theme.custom.css
+  - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css # 图标库
 
 # 网页访问统计
 # Analysis of website visitors
@@ -343,12 +344,14 @@ navbar:
   # Navigation bar menu. `key` is used to associate languages/*.yml. If there is no association, the value of `key` itself will be displayed; if `icon` is a css class, it can be omitted; adding `name` can force the display of the specified name
   menu:
     - { name: "主页", key: "home", link: "/", icon: "iconfont icon-home-fill" }
-    - { name: "归档", key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
-    - { name: "分类", key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
-    - { name: "标签", key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
-    - { name: "关于", key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    - { name: "友链", key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
-    - { name: "工具", key: "tools", link: "/pages/tools/", icon: "fas fa-tools",
+    - { name: "寻觅", key: "lookup", icon: "fa fa-quote-left",
+        submenu: [
+          { name: "归档", key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" },
+          { name: "分类", key: "category", link: "/categories/", icon: "iconfont icon-category-fill" },
+          { name: "标签", key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+        ]
+    }
+    - { name: "工具", key: "tools", link: "/pages/tools/", icon: "fa fa-wrench",
         submenu: [
           { key: '今天吃什么', link: '/pages/tools/list/eatwhat/' },
           { key: '荡秋千', link: '/pages/tools/list/swinggirl/' },
@@ -358,6 +361,8 @@ navbar:
           { key: 'AriaNg', link: '/pages/tools/list/aria/' }
         ]
     }
+    - { name: "友链", key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    - { name: "关于", key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -656,7 +661,7 @@ post:
 
     # CreativeCommons license
     # Options: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
-    license: 'BY'
+    license: 'BY-NC-SA'
 
     # 显示作者
     author:
@@ -671,7 +676,7 @@ post:
     # 显示更新日期
     # Show update date
     update_date:
-      enable: false
+      enable: true
       format: "LL"
 
   # 文章底部上一篇下一篇功能

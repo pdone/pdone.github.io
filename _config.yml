@@ -4,7 +4,7 @@
 
 # Site
 title: "Pdone's Blog"
-subtitle: 'Only Peace & Love Here'
+subtitle: '皮蛋的博客'
 description: 'Only Peace & Love Here'
 keywords: 'pdone,Hexo,C++,C#,developer,vue'
 author: pdone
@@ -15,7 +15,7 @@ favicon: https://fastly.jsdelivr.net/gh/pdone/static/img/favicon.ico
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://awaw.cc
-permalink: :year/:title/ #:year/:month/:day/:title/
+permalink: post/:title/ #:year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
@@ -33,7 +33,7 @@ skip_render:
   - "README.md"
   - "CNAME"
   - "res/**/*"
-  - "pages/tools/list/**/*"
+  - "pages/tools/**/*"
   - "pages/quark/**/*"
 
 # Writing

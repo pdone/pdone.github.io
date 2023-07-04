@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JsMap Demo2</title>
+	<style>
+		*{margin:0 auto;padding:0;overflow:hidden}
+		.container{height:800px;width:100%;margin:0 auto;}
+		.container>div{width:650px;height:500px;margin:0 auto;color: white;}
+	</style>
+    <script src="https://cdn.jsdelivr.net/gh/pdone/static@master/js/jquery-1.8.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/pdone/static@master/js/highmaps.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/pdone/static@master/js/drilldown.js"></script>
+    <script>
+        var map = null,
+            geochina = 'https://data.jianshukeji.com/jsonp?filename=geochina/';
+        $.getJSON(geochina + 'china.json&callback=?', function (mapdata) {
+            var data = [];
+			var areaGoodsCount = {"河南":15,"北京":10,"台湾":5,"浙江":20};
+            Highcharts.each(mapdata.features, function (md, i) {
+                //console.log(md.properties);			
+                var tmp = {
+                    name: md.properties.name,
+                    value: Math.floor((Math.random() * 30))
+                };
+				//使用自定义数据
+                /*if(areaGoodsCount[tmp.name])
+				{
+					tmp.value=areaGoodsCount[tmp.name];
+				}*/
+                tmp.drilldown = md.properties.drilldown;
+
+                data.push(tmp);
+            });
+            map = new Highcharts.Map('container', {
+				credits:{
+					enabled: !1
+				},
+                chart: {
+						width:750,
+						height:500,
+                        backgroundColor:'transparent',
+						events: {
+						drilldown: function (e) {
+                            this.tooltip.hide();
+                            //console.log(e);
+                            if (e.point.drilldown) {
+                                var pointName = e.point.properties.name;
+								$("#chinamapshow").html("<h1>"+pointName+"</h1>");
+                            }
+                        },
+                        drillup: function () {
+                            map.setTitle({
+                                text: '中国'
+                            });
+                        }
+                    }
+                },
+                title: {
+                    text: ''
+                },
+                subtitle: {
+                    useHTML: true,
+                    text: ''
+                },
+                mapNavigation: {
+                    enabled: !1,
+                    buttonOptions: {
+                        verticalAlign: 'bottom'
+                    }
+                },
+				legend:{
+					enabled:!0
+				},
+                tooltip: {
+                    enabled: !0,
+                    useHTML: !1,
+                    headerFormat: '<table>',
+                    pointFormatter: function () {
+                                        return '<tr><td>' + this.name + '</td></tr><tr><td>共' + this.value + '家</td></tr>';
+                                    },
+                    footerFormat: '</table>'
+                },
+                colorAxis: {
+                    min: 0,
+                    minColor: '#FFF',
+                    maxColor: '#006cee',
+                    labels: {
+                        style: {
+                            "color": "gray", "fontWeight": "bold"
+                        }
+                    }
+                },
+                series: [{
+                    data: data,
+                    mapData: mapdata,
+                    joinBy: 'name',
+                    name: '中国地图',
+                    states: {
+                        hover: {
+                            color: '#fab27b'
+                        }
+                    }
+                }]
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+	<div class="container">
+		<div id="container" style="width:750px"></div>
+		<div id="chinamapshow"/>
+	</div>
+</body>
+
+</html>
