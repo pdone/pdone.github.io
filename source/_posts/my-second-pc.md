@@ -22,22 +22,22 @@ categories: [Share]
 > 配置清单合计5024元，显示器、键盘、鼠标、PCIE无线网卡、音箱以及两块1TB机械硬盘都使用上台主机的，故不算入总价中。
 
 ## 安装过程
-![先放桌子上点亮](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/1.jpg)
+![先放桌子上点亮](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/1.jpg)
 
-![点亮成功](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/2.jpg)
+![点亮成功](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/2.jpg)
 
-![装系统](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/3.jpg)
+![装系统](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/3.jpg)
 
-![放入机箱](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/4.jpg)
+![放入机箱](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/4.jpg)
 
-![粗糙的背线](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/5.jpg)
+![粗糙的背线](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/5.jpg)
 
-![安装完成](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/6.jpg)
+![安装完成](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/6.jpg)
 
 ## 娱乐大师跑分
-![跑分](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/8.png)
+![跑分](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/8.png)
 
-![配置](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/9.png)
+![配置](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/9.png)
 
 ## 灯效
-[https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/video.mp4](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/video.mp4)
+[https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/video.mp4](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/video.mp4)

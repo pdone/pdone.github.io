@@ -18,7 +18,7 @@ categories: [Share]
 - 宣布 .NET 基金会开放接受会员加入
 - 微软和 Docker 宣布了一个新的联合开源项目，即 Cloud Native Application Bundle，它可以更轻松地打包和运行云原生应用程序
 
-![会不会有朝一日WindowsOS也开源了?](https://fastly.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/tieba/tieba-1.png)
+![会不会有朝一日WindowsOS也开源了?](https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/tieba/tieba-1.png)
 
 ## Link
 - [Open Sourcing Windows Desktop Frameworks](https://blogs.msdn.microsoft.com/dotnet/2018/12/04/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/)

@@ -22,11 +22,11 @@ categories: Tools
 
 ## 截图
 
-![](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/1.png)
+![](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/1.png)
 
-![微信扫一扫](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/2.jpg)
-![点击拨打号码按钮](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/3.jpg)
-![跳转系统拨号界面](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/4.jpg)
+![微信扫一扫](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/2.jpg)
+![点击拨打号码按钮](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/3.jpg)
+![跳转系统拨号界面](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/car-code-generator/4.jpg)
 
 ## 下载地址
 

@@ -737,11 +737,11 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
-    type: disqus
+    type: valine
 
 
 #---------------------------
@@ -802,13 +802,13 @@ gitalk:
 # Based on LeanCloud
 # See: https://valine.js.org/
 valine:
-  appId:
-  appKey:
+  appId: WnruMlxDCXIemyzEex7LNCgQ-gzGzoHsz
+  appKey: mfQkdYRFXarbTVWjQHYs8n9J
   path: window.location.pathname
-  placeholder:
+  placeholder: Say something...
   avatar: 'retro'
   meta: ['nick', 'mail', 'link']
-  requiredFields: []
+  requiredFields: ['nick', 'mail']
   pageSize: 10
   lang: 'zh-CN'
   highlight: false
@@ -816,7 +816,7 @@ valine:
   serverURLs: ''
   emojiCDN:
   emojiMaps:
-  enableQQ: false
+  enableQQ: true
 
 # Waline
 # 从 Valine 衍生而来，额外增加了服务端和多种功能
@@ -968,16 +968,16 @@ about:
   banner_img: /img/default.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
-  avatar: https://fastly.jsdelivr.net/gh/pdone/static/img/avatar.jpg
+  avatar: https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg
   name: "pdone"
   intro: "A developer with C++, C#, Vue, Electron. "
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
-    - { class: "iconfont icon-github-fill", link: "https://github.com/pdone", tip: "GitHub" }
-    - { class: "iconfont icon-gitlab-fill", link: "https://gitlab.com/pdone", tip: "GitLab" }
-    - { class: "iconfont icon-wechat-fill", qrcode: "https://fastly.jsdelivr.net/gh/pdone/static/img/wx-qrcode.jpg" }
-    - { class: "iconfont icon-mini-program-fill", qrcode: "https://fastly.jsdelivr.net/gh/pdone/static/img/wxapp-qrcode.jpg" }
+    - { class: "fa fa-github fa-fw", link: "https://github.com/pdone", tip: "GitHub" }
+    - { class: "fa fa-envelope fa-fw", link: "mailto:617941447@qq.com", tip: "Email" }
+    - { class: "fa fa-weixin fa-fw", qrcode: "https://cdn.jsdelivr.net/gh/pdone/static/img/wx-qrcode.jpg" }
+    - { class: "iconfont icon-mini-program-fill", qrcode: "https://cdn.jsdelivr.net/gh/pdone/static/img/wxapp-qrcode.jpg" }
 
 
 #---------------------------
@@ -1019,7 +1019,7 @@ links:
   # 友链的成员项
   # Member item of page
   items:
-    - {title: "Pdone's Blog", intro: "", link: "https://awaw.cc", avatar: "https://fastly.jsdelivr.net/gh/pdone/static/img/avatar.jpg"}
+    - {title: "Pdone's Blog", intro: "", link: "https://awaw.cc", avatar: "https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg"}
     - {title: "Colsrch", intro: "愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。", link: "https://colsrch.top", avatar: "https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg"}
     - {title: "Flexiston", intro: "立即行动吧，未来要自己争取", link: "https://flexiston.com", avatar: "https://cdn.jsdelivr.net/gh/Flexiston/CDN@latest/img/avatar/avatar.jpg"}
     - {title: "忆星辰", intro: "To Be A Better Programmer", link: "https://extingstudio.com", avatar: "https://cdn.jsdelivr.net/gh/BillScott1024/cdn-blog/images/avatar.webp"}
@@ -1034,17 +1034,17 @@ links:
   # 友链下方自定义区域，支持 HTML，可插入例如申请友链的文字
   # Custom content at the bottom of the links
   custom:
-    enable: false
+    enable: true
     content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：Fluid</li><li>简介：Fluid 主题官方博客</li><li>链接：https://hexo.fluid-dev.com</li><li>图片：https://hexo.fluid-dev.com/img/favicon.png</li></ul>'
 
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
-    type: disqus
+    type: valine
 
 
 #---------------------------

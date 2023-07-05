@@ -8,10 +8,10 @@ Listen 1可以搜索和播放来自网易云音乐、虾米、QQ音乐、酷狗�
 <!--more-->
 ## 截图
 
-![音乐平台歌单推荐界面](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/1.jpg)
-![从网易云音乐、QQ音乐等平台导入自己的歌单到Listen1](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/2.jpg)
-![搜索界面](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/3.jpg)
-![歌词界面](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/4.jpg)
+![音乐平台歌单推荐界面](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/1.jpg)
+![从网易云音乐、QQ音乐等平台导入自己的歌单到Listen1](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/2.jpg)
+![搜索界面](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/3.jpg)
+![歌词界面](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/listen1/4.jpg)
 
 ## 安装
 

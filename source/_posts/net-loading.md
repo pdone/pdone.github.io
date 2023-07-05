@@ -8,7 +8,7 @@ categories: Developer
 
 <!--more--> 
 
-![预览图](https://fastly.jsdelivr.net/gh/pdone/static@latest/img/article/net-loading/1.gif)
+![预览图](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/net-loading/1.gif)
 
 ## 调用示例
 
