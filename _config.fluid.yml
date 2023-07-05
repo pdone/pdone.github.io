@@ -100,7 +100,7 @@ fun_features:
     # 在指定页面开启，不填则在所有页面开启
     # Enable in specified page, all pages by default
     # Options: home | post | tag | category | about | links | page | 404
-    scope: []
+    scope: [home, post]
 
   # 为文章内容中的标题添加锚图标
   # Add an anchor icon to the title on the post page
@@ -631,7 +631,7 @@ post:
     # 文章的排序字段，前面带减号是倒序，不带减号是正序
     # Sort field for posts, with a minus sign is reverse order
     # Options: date | title | or other field of front-matter
-    post_order_by: "title"
+    post_order_by: "date"
 
     # 单个分类中折叠展示文章数的最大值，超过限制会显示 More，0 则不限制
     # The maximum number of posts in a single category. If the limit is exceeded, it will be displayed More. If 0 no limit
@@ -1019,7 +1019,7 @@ links:
   # 友链的成员项
   # Member item of page
   items:
-    - {title: "Pdone's Blog", intro: "", link: "https://awaw.cc", avatar: "https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg"}
+    - {title: "Pdone's Blog", intro: "Only Peace &amp; Love Here", link: "https://awaw.cc", avatar: "https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg"}
     - {title: "Colsrch", intro: "愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。", link: "https://colsrch.top", avatar: "https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg"}
     - {title: "Flexiston", intro: "立即行动吧，未来要自己争取", link: "https://flexiston.com", avatar: "https://cdn.jsdelivr.net/gh/Flexiston/CDN@latest/img/avatar/avatar.jpg"}
     - {title: "忆星辰", intro: "To Be A Better Programmer", link: "https://extingstudio.com", avatar: "https://cdn.jsdelivr.net/gh/BillScott1024/cdn-blog/images/avatar.webp"}
@@ -1035,7 +1035,7 @@ links:
   # Custom content at the bottom of the links
   custom:
     enable: true
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：Fluid</li><li>简介：Fluid 主题官方博客</li><li>链接：https://hexo.fluid-dev.com</li><li>图片：https://hexo.fluid-dev.com/img/favicon.png</li></ul>'
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>名称：Pdone&apos;s Blog</li><li>简介：Only Peace &amp; Love Here</li><li>地址：https://awaw.cc</li><li>头像：https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg</li></ul>'
 
   # 评论插件
   # Comment plugin
