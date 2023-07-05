@@ -353,12 +353,12 @@ navbar:
     }
     - { name: "工具", key: "tools", icon: "fa fa-wrench fa-fw",
         submenu: [
-          { key: '今天吃什么', link: '/tools/list/eatwhat/', icon: "fa fa-apple fa-fw" },
-          { key: '荡秋千', link: '/tools/list/swinggirl/', icon: "fa fa-trophy fa-fw" },
-          { key: '星球', link: '/tools/list/planet/', icon: "fa fa-superpowers fa-fw"},
-          { key: 'MD编辑器', link: '/tools/list/md-editor/', icon: "fa fa-snowflake-o fa-fw" },
-          { key: '密码生成器', link: '/tools/list/pwd-builder/', icon: "fa fa-shield fa-fw" },
-          { key: 'AriaNg', link: '/tools/list/aria/', icon: "fa fa-rocket fa-fw"}
+          { key: '今天吃什么', link: '/tools/eatwhat/', icon: "fa fa-apple fa-fw" },
+          { key: '荡秋千', link: '/tools/swinggirl/', icon: "fa fa-trophy fa-fw" },
+          { key: '星球', link: '/tools/planet/', icon: "fa fa-superpowers fa-fw"},
+          { key: 'MD编辑器', link: '/tools/md-editor/', icon: "fa fa-snowflake-o fa-fw" },
+          { key: '密码生成器', link: '/tools/pwd-builder/', icon: "fa fa-shield fa-fw" },
+          { key: 'AriaNg', link: '/tools/aria/', icon: "fa fa-rocket fa-fw"}
         ]
     }
     - { name: "友链", key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
@@ -949,11 +949,11 @@ category:
 tag:
   enable: true
   banner_img: /img/default.png
-  banner_img_height: 80
+  banner_img_height: 60
   banner_mask_alpha: 0.3
   tagcloud:
     min_font: 15
-    max_font: 30
+    max_font: 35
     unit: px
     start_color: "#BBBBEE"
     end_color: "#337ab7"
