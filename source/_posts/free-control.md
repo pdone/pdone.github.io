@@ -12,14 +12,13 @@ sticky: 99
 
 做本程序的目的主要是学习，另外就是自己用着方便些。
 <!--more-->
-## 启动界面
-![](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/v1.4.0_1.png)
+## 界面
 
-## 设置界面
-![](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/v1.4.0_2.png)
+![启动界面](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/v1.4.0_1.png)
 
-## 功能演示
-![](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/v1.4.0_5.gif)
+![设置界面](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/v1.4.0_2.png)
+
+![功能演示](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/v1.4.0_5.gif)
 
 ## 版本说明
 ### v1.5.1
