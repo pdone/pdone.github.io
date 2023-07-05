@@ -1020,12 +1020,15 @@ links:
   # Member item of page
   items:
     - {title: "Pdone's Blog", intro: "Only Peace &amp; Love Here", link: "https://awaw.cc", avatar: "https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg"}
-    - {title: "Colsrch", intro: "愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。", link: "https://colsrch.top", avatar: "https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg"}
-    - {title: "Flexiston", intro: "立即行动吧，未来要自己争取", link: "https://flexiston.com", avatar: "https://cdn.jsdelivr.net/gh/Flexiston/CDN@latest/img/avatar/avatar.jpg"}
-    - {title: "忆星辰", intro: "To Be A Better Programmer", link: "https://extingstudio.com", avatar: "https://cdn.jsdelivr.net/gh/BillScott1024/cdn-blog/images/avatar.webp"}
-    - {title: "Ymkiux", intro: "", link: "https://ymkiux.gitee.io/", avatar: "https://q.qlogo.cn/g?b=qq&k=29s35ggyPqzFwOBP1dHR0Q&s=0&mType=friendlist"}
-    - {title: "xaoxuu", intro: "", link: "https://xaoxuu.com", avatar: "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png"}
-    - {title: "Made_by_qwe", intro: "", link: "https://www.10086.fund", avatar: "https://cdn.10086.fund:23350/img/0.jpg"}
+    - {title: "Mitsea Blog", intro: "", link: "https://blog.mitsea.com/", avatar: "https://blog.mitsea.com/img/avatar_hu1a77e9e103305ce4ff113e3bf67fedf5_21168_300x0_resize_q75_box.jpeg"}
+
+    # 已失效
+    # - {title: "Colsrch", intro: "愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。", link: "https://colsrch.top", avatar: "https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg"}
+    # - {title: "Flexiston", intro: "立即行动吧，未来要自己争取", link: "https://flexiston.com", avatar: "https://cdn.jsdelivr.net/gh/Flexiston/CDN@latest/img/avatar/avatar.jpg"}
+    # - {title: "忆星辰", intro: "To Be A Better Programmer", link: "https://extingstudio.com", avatar: "https://cdn.jsdelivr.net/gh/BillScott1024/cdn-blog/images/avatar.webp"}
+    # - {title: "Ymkiux", intro: "", link: "https://ymkiux.gitee.io/", avatar: "https://q.qlogo.cn/g?b=qq&k=29s35ggyPqzFwOBP1dHR0Q&s=0&mType=friendlist"}
+    # - {title: "xaoxuu", intro: "", link: "https://xaoxuu.com", avatar: "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png"}
+    # - {title: "Made_by_qwe", intro: "", link: "https://www.10086.fund", avatar: "https://cdn.10086.fund:23350/img/0.jpg"}
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
