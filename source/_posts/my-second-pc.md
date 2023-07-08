@@ -22,6 +22,7 @@ categories: [Share]
 > 配置清单合计5024元，显示器、键盘、鼠标、PCIE无线网卡、音箱以及两块1TB机械硬盘都使用上台主机的，故不算入总价中。
 
 ## 安装过程
+{% gi 6 3-3 %}
 ![先放桌子上点亮](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/1.jpg)
 
 ![点亮成功](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/2.jpg)
@@ -33,11 +34,12 @@ categories: [Share]
 ![粗糙的背线](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/5.jpg)
 
 ![安装完成](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/6.jpg)
-
+{% endgi %}
 ## 娱乐大师跑分
+{% gi 2 2 %}
 ![跑分](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/8.png)
 
 ![配置](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/9.png)
-
+{% endgi %}
 ## 灯效
 [https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/video.mp4](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/video.mp4)

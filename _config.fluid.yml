@@ -1021,6 +1021,7 @@ links:
   items:
     - {title: "Pdone's Blog", intro: "Only Peace &amp; Love Here", link: "https://awaw.cc", avatar: "https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg"}
     - {title: "Mitsea Blog", intro: "", link: "https://blog.mitsea.com/", avatar: "https://blog.mitsea.com/img/avatar_hu1a77e9e103305ce4ff113e3bf67fedf5_21168_300x0_resize_q75_box.jpeg"}
+    - {title: "一只鬆の小站", intro: "心有多宽，世界就有多远", link: "https://www.takagi.icu", avatar: "https://s2.loli.net/2023/02/20/q7Zhwm35QIGt6XA.jpg"}
 
     # 已失效
     # - {title: "Colsrch", intro: "愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。", link: "https://colsrch.top", avatar: "https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg"}
@@ -1038,7 +1039,7 @@ links:
   # Custom content at the bottom of the links
   custom:
     enable: true
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>名称：Pdone&apos;s Blog</li><li>简介：Only Peace &amp; Love Here</li><li>地址：https://awaw.cc</li><li>头像：https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg</li></ul>'
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>名称：Pdone&apos;s Blog</li><li>简介：Only Peace &amp; Love Here</li><li>地址：https://awaw.cc</li><li>头像：https://awaw.cc/avatar.jpg</li></ul>'
 
   # 评论插件
   # Comment plugin
