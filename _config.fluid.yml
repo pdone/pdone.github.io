@@ -344,7 +344,7 @@ navbar:
   # Navigation bar menu. `key` is used to associate languages/*.yml. If there is no association, the value of `key` itself will be displayed; if `icon` is a css class, it can be omitted; adding `name` can force the display of the specified name
   menu:
     - { name: "主页", key: "home", link: "/", icon: "iconfont icon-home-fill" }
-    - { name: "寻觅", key: "lookup", icon: "fa fa-quote-left fa-fw",
+    - { name: "寻觅", key: "lookup", icon: "fa fa-quote-left fa-fw fa-lg",
         submenu: [
           { name: "归档", key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" },
           { name: "分类", key: "category", link: "/categories/", icon: "iconfont icon-category-fill" },
@@ -537,8 +537,7 @@ index:
   # If the posts are sorted by `sticky`, an icon is displayed in front of the post title
   post_sticky:
     enable: true
-    icon: "iconfont icon-top"
-
+    icon: "fa fa-arrow-up"
 
 #---------------------------
 # 文章页
