@@ -2,9 +2,12 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-cdn:
-  current: https://cdn.jsdelivr.net/gh/pdone/static/
-  jsdelivr: https://cdn.jsdelivr.net/gh/pdone/static/
+assets_repo:
+  current: jsdelivr
+
+  origin: https://github.com/pdone/static/blob/master
+  ghproxy: https://ghproxy.com/https://github.com/pdone/static/blob/master
+  jsdelivr: https://cdn.jsdelivr.net/gh/pdone/static@latest/
 
 # Site
 title: "Pdone's Blog"

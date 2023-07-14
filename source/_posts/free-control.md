@@ -6,7 +6,7 @@ tags: [.NET,OpenSource]
 categories: Tools
 sticky: 99
 # category_bar: true
-# index_img: https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/v1.4.0_1.png
+# index_img: /img/article/free-control/v1.4.0_1.png
 ---
 
 基于开源项目[**scrcpy**](https://github.com/Genymobile/scrcpy)，使用C#简单封装。
@@ -15,11 +15,11 @@ sticky: 99
 <!--more-->
 ## 界面
 
-![启动界面](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/v1.4.0_1.png)
+![启动界面](/img/article/free-control/v1.4.0_1.png)
 
-![设置界面](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/v1.4.0_2.png)
+![设置界面](/img/article/free-control/v1.4.0_2.png)
 
-![功能演示](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/free-control/v1.4.0_5.gif)
+![功能演示](/img/article/free-control/v1.4.0_5.gif)
 
 ## 版本说明
 ### v1.5.1

@@ -10,6 +10,6 @@ categories: Share
 
 截至2021年3月，洛阳轨道交通已开通运营线路1条，为洛阳轨道交通1号线；在建线路1条，为洛阳轨道交通2号线；规划线路2条，为洛阳轨道交通3号线、洛阳轨道交通4号线；线网共设车站34座。
 
-![洛阳地铁线路简图](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/ly_line_lite.png)
+![洛阳地铁线路简图](/img/ly_line_lite.png)
 
-![洛阳地铁线路图](https://cdn.jsdelivr.net/gh/pdone/static@latest/img/ly_line.jpg)
+![洛阳地铁线路图](/img/ly_line.jpg)

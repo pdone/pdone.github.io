@@ -59,6 +59,6 @@ pageFile.close()
 
 爬完的数据长下面这个样子，大概有一万多行，把列头title,date,month,day添加到第一行，文件扩展名改为csv就可以直接导入微信小程序云开发提供的数据库中了。
 
-![](https://cdn.jsdelivr.net/gh/pdone/static/img/article/python-historytoday/1.png)
+![](/img/article/python-historytoday/1.png)
 ## 参考内容
 [BeautifulSoup中文文档](https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/index.html)
