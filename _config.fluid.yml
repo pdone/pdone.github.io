@@ -237,6 +237,7 @@ custom_js:
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css:
+  - /res/custom.css
   # - /res/theme.custom.css
   # - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css # 图标库
 
@@ -473,7 +474,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/default.png
+  banner_img: https://ghproxy.com/https://raw.githubusercontent.com/pdone/static/master/img/wallpaper/1.jpg # /img/default.png
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -968,7 +969,7 @@ about:
   banner_img: /img/default.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
-  avatar: https://cdn.jsdelivr.net/gh/pdone/static/img/avatar.jpg
+  avatar: https://awaw.cc/avatar.jpg
   name: "pdone"
   intro: "A developer with C++, C#, Vue, Electron. "
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
@@ -976,8 +977,8 @@ about:
   icons:
     - { class: "fa fa-github fa-fw", link: "https://github.com/pdone", tip: "GitHub" }
     - { class: "fa fa-envelope fa-fw", link: "mailto:617941447@qq.com", tip: "Email" }
-    - { class: "fa fa-weixin fa-fw", qrcode: "https://cdn.jsdelivr.net/gh/pdone/static/img/wx-qrcode.jpg" }
-    - { class: "iconfont icon-mini-program-fill", qrcode: "https://cdn.jsdelivr.net/gh/pdone/static/img/wxapp-qrcode.jpg" }
+    - { class: "fa fa-weixin fa-fw", qrcode: "https://cdn.jsdelivr.net/gh/pdone/static@latest/img/wx-qrcode.jpg" }
+    - { class: "iconfont icon-mini-program-fill", qrcode: "https://cdn.jsdelivr.net/gh/pdone/static@latest/img/wxapp-qrcode.jpg" }
 
 
 #---------------------------

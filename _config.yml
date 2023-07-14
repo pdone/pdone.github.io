@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 assets_repo:
-  current: jsdelivr
+  current: ghproxy
 
   origin: https://github.com/pdone/static/blob/master
-  ghproxy: https://ghproxy.com/https://github.com/pdone/static/blob/master
-  jsdelivr: https://cdn.jsdelivr.net/gh/pdone/static@latest/
+  ghproxy: https://ghproxy.com/https://raw.githubusercontent.com/pdone/static/master
+  jsdelivr: https://cdn.jsdelivr.net/gh/pdone/static@latest
 
 # Site
 title: "Pdone's Blog"
@@ -17,7 +17,7 @@ keywords: 'pdone,Hexo,C++,C#,developer,vue'
 author: pdone
 language: zh-CN
 timezone: 'Asia/Shanghai'
-favicon: https://cdn.jsdelivr.net/gh/pdone/static/img/favicon.ico
+favicon: https://awaw.cc/favicon.ico
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
