@@ -5,7 +5,7 @@
 assets_repo:
   current: ghproxy
 
-  origin: https://github.com/pdone/static/blob/master
+  origin: https://raw.githubusercontent.com/pdone/static/master
   ghproxy: https://ghproxy.com/https://raw.githubusercontent.com/pdone/static/master
   jsdelivr: https://cdn.jsdelivr.net/gh/pdone/static@latest
 

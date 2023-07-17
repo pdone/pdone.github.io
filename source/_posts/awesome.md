@@ -24,7 +24,7 @@ sticky: 99
 ## DBeaver - 数据库工具
 DBeaver Community是一个免费的跨平台数据库工具，面向开发人员、数据库管理员、分析师和所有使用数据的人。它支持所有流行的SQL数据库，如MySQL，MariaDB，PostgreSQL，SQLite，Apache Family等。
 
-![](/img/article/awesome/DBeaver.png)
+![](/img/article/awesome/dbeaver.png)
 
 程序员必备工具，之前一直使用Navicat的crack版，随着版权意识深入我心，开始使用DBeaver社区版，社区版功能即可满足大部分需求。
 
@@ -33,7 +33,7 @@ DBeaver Community是一个免费的跨平台数据库工具，面向开发人员
 ## Everything - 本地搜索引擎
 Everything 是 Windows 上一款搜索引擎，它能够基于文件名快速定文件和文件夹位置。
 
-![](/img/article/awesome/Everything.png)
+![](/img/article/awesome/everything.png)
 
 可以快速搜索本地任何角落，以便找到自己想要的内容，装机必备。Everything也衍生了一些工具，比如uTools中的本地搜索依赖Everything才能更高效的工作，又如[EverythingToolbar](https://github.com/srwi/EverythingToolbar)可以把Everything集成到任务栏中。
 
@@ -42,7 +42,7 @@ Everything 是 Windows 上一款搜索引擎，它能够基于文件名快速定
 ## Motrix - 下载工具
 一款全能的下载工具。支持下载 HTTP、FTP、BT、磁力链接等资源。
 
-![](/img/article/awesome/Motrix.png)
+![](/img/article/awesome/motrix.png)
 
 这个软件内置了[Aria2 - 下载工具](#Aria2-下载工具)，如果懒得折腾aria2，用这个软件就够用了。如果有NAS设备，推荐使用Docker部署aria2服务，让下载这件事与PC解耦。
 
@@ -54,16 +54,16 @@ Everything 是 Windows 上一款搜索引擎，它能够基于文件名快速定
 ## Snipaste - 截图贴图工具
 Snipaste 是一个简单但强大的贴图工具，同时也可以执行截屏、标注等功能。
 
-![](/img/article/awesome/Snipaste.png)
+![](/img/article/awesome/snipaste.png)
 
 <a class="btn" href="https://zh.snipaste.com/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
 
 ## TrafficMonitor - 硬件资源监控
 一款用于Windows平台的网速监控悬浮窗软件，可以显示当前网速、CPU及内存利用率，支持嵌入到任务栏显示，支持更换皮肤、历史流量统计等功能。
 
-![](/img/article/awesome/TrafficMonitor1.gif)
+![](/img/article/awesome/traffic-monitor1.gif)
 
-![](/img/article/awesome/TrafficMonitor2.png)
+![](/img/article/awesome/traffic-monitor2.png)
 
 <a class="btn" href="https://github.com/zhongyang219/TrafficMonitor" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 
@@ -71,9 +71,9 @@ Snipaste 是一个简单但强大的贴图工具，同时也可以执行截屏�
 一个轻量级的实用程序，使Windows任务栏半透明/透明。
 
 {% gi 2 2 %}
-![](/img/article/awesome/TranslucentTB1.png)
+![](/img/article/awesome/translucent-tb1.png)
 
-![](/img/article/awesome/TranslucentTB2.png)
+![](/img/article/awesome/translucent-tb2.png)
 {% endgi %}
 
 本来由于不支持Windows 11不打算推荐的，但是今天（2023.07.10）发布了2023.1版本，增加对了Windows 11的支持，虽迟但到！
@@ -92,10 +92,10 @@ uTools 是一个极简、插件化的现代桌面软件，通过自由选配丰�
 ### 插件推荐
 易翻翻译、ctool、颜色助手、OCR、文件批量重命名、hosts、二维码、本地搜索、文本代码对比、json编辑器、变量命名方式、正则编辑器、编码小助手、计算稿纸。
 
-## VS Code - 宇宙第一IDE
+## VS Code - 代码编辑器
 Visual Studio Code是一个轻量级但功能强大的源代码编辑器，可在桌面上运行，适用于Windows、macOS和Linux。它内置了对JavaScript，TypeScript和Node.js的支持，并拥有丰富的其他语言和运行时扩展生态系统（如C++，C#，Java，Python，PHP，Go，.NET）。通过这些[介绍视频](https://code.visualstudio.com/docs/getstarted/introvideos)开始您的VS Code之旅。
 
-![](/img/article/awesome/VSCode.png)
+![](/img/article/awesome/vs-code.png)
 
 程序员必备工具，本博客的构建和文章的编写都是使用VSCode完成的。
 
@@ -114,7 +114,7 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，可�
 ## Alist - 存储整合
 一个支持多存储的文件列表程序，使用 Gin 和 Solidjs。
 
-![](/img/article/awesome/Alist.png)
+![](/img/article/awesome/alist.png)
 
 ⭐⭐⭐⭐⭐强烈推荐的一款存储整合服务，可以把各种存储整合在一个服务中，提供了友好的操作界面，支持超多网盘和其他存储方式、在线预览、离线下载、推送到Aira下载等，作为网上冲浪资深选手的你，如果还没用过是你的损失。`docker-compose`
 
@@ -134,7 +134,7 @@ Aria 2是一个轻量级的多协议和多源，跨平台下载工具，在命�
 ## AriaNg - Aria2 WebUI
 AriaNg，一个现代的Web前端，使aria2更容易使用。
 
-![](/img/article/awesome/AriaNg.png)
+![](/img/article/awesome/aria-ng.png)
 
 只是一个静态的网站，可以直接双击index.html运行，也可以托管到免费的平台中使用，如GitHub Pages、Vercel等。或者使用我托管在Netlify中的[AriaNg](https://aria.awaw.cc/)。`nginx`
 
@@ -152,7 +152,7 @@ AriaNg，一个现代的Web前端，使aria2更容易使用。
 ## Heimdall - 导航页
 应用程序仪表板和启动器。
 
-![](/img/article/awesome/Heimdall.png)
+![](/img/article/awesome/heimdall.png)
 
 简约大气的导航页，且可以对一些支持的应用提供扩展功能，如监控Portainer容器状态、aria2下载任务状态等。`docker-compose`
 
@@ -161,7 +161,7 @@ AriaNg，一个现代的Web前端，使aria2更容易使用。
 ## RustDesk - 远程桌面
 RustDesk 是一款可以平替 TeamViewer 的开源软件，旨在提供安全便捷的自建方案。
 
-![](/img/article/awesome/RustDesk.png)
+![](/img/article/awesome/rustdesk.png)
 
 建议使用拥有公网IP的设备自建服务器（无公网IP可以通过[Tailscale - 异地组网](#Tailscale-异地组网)后使用），我的NAS只有公网IPv6，上行带宽30Mbps，使用体验比ToDesk免费版好很多，已经逐渐放弃使用ToDesk。`docker-compose`
 
@@ -173,7 +173,7 @@ RustDesk 是一款可以平替 TeamViewer 的开源软件，旨在提供安全�
 ## Tailscale - 异地组网
 Tailscale是一种VPN服务，可以让您在世界任何地方安全、轻松地访问您拥有的设备和应用程序。它使用开源WireGuard协议实现加密的点对点连接，这意味着只有您的专用网络上的设备才能相互通信。
 
-![](/img/article/awesome/Tailscale.png)
+![](/img/article/awesome/tailscale.png)
 
 当用手机或电脑处于无IPv6环境时，可以通过Tailscale来访问家中的NAS服务器。需要注意的是，组网的双方其中有一方的[NAT](https://www.zhihu.com/question/38729355)是Symmetric（对称型），就会打洞失败，流量会经转公共DERP服务器，速度很慢。同类型的产品还有Zerotier，个人感觉没有Tailscale好用。`docker-compose`
 
@@ -185,8 +185,39 @@ Tailscale是一种VPN服务，可以让您在世界任何地方安全、轻松�
 ## Uptime Kuma - 服务状态监控
 一个精美的自托管监控工具。
 
-![](/img/article/awesome/UptimeKuma.jpg)
+![](/img/article/awesome/uptime-kuma.jpg)
 
 可以用于监控并记录一些可访问服务的运行状态，如docker容器、网站等，也可以用作导航页（Heimdall平替）。除了管理页面，还可以创建允许匿名访问的状态页面（[示例 - IPv6 Only](https://u.awaw.cc/status/me)）。`docker-compose`
 
 <a class="btn" href="https://github.com/louislam/uptime-kuma" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+
+# 开源字体
+
+## 阿里巴巴普惠体
+阿里巴巴普惠体是一套全球永久免费正版商用的字体家族。
+
+![](/img/article/awesome/alibaba-font.png)
+
+阿里巴巴普惠体3.0为一套符合新国家标准GB18030-2022的简体中文字符集，包含GB18030-2022强制规范三个实现级别：实现级别1＋实现级别2标准规格的7字重、实现级别3标准规格的Regular 单一字重。7字重共194,460个全形汉字。包含拉丁字母、希腊字母、西里尔字母、标点符号。
+
+<a class="btn" href="https://fonts.alibabagroup.com/#/font" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
+
+## Cascadia Code
+This is a fun, new monospaced font that includes programming ligatures and is designed to enhance the modern look and feel of the Windows Terminal.
+这是一种有趣的新型等宽字体，包含编程连字，旨在增强 Windows 终端的现代外观和感觉。
+
+![](/img/article/awesome/cascadia-code2.png)
+
+![](/img/article/awesome/cascadia-code3.png)
+
+<a class="btn" href="https://github.com/microsoft/cascadia-code" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+
+## 霞鹜文楷
+An open-source Chinese font derived from Fontworks' Klee One.
+一款开源中文字体，基于 FONTWORKS 出品字体 Klee One 衍生。
+
+![](/img/article/awesome/lxgw1.png)
+
+![](/img/article/awesome/lxgw2.png)
+
+<a class="btn" href="https://github.com/lxgw/LxgwWenKai" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
