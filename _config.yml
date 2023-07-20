@@ -3,12 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 assets_repo:
-  current: jsd2
+  current: ghproxy
 
   origin: https://raw.githubusercontent.com/pdone/static/master
   ghproxy: https://ghproxy.com/https://raw.githubusercontent.com/pdone/static/master
+  ghps: https://ghps.cc/https://raw.githubusercontent.com/pdone/static/master
+  gitmirror: https://hub.gitmirror.com/https://raw.githubusercontent.com/pdone/static/master
+
   jsdelivr: https://cdn.jsdelivr.net/gh/pdone/static@latest
   jsd2: https://fastly.jsdelivr.net/gh/pdone/static@latest
+  statically: https://cdn.statically.io/gh/pdone/static/master
 
 # Site
 title: "Pdone's Blog"
