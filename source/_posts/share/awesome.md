@@ -111,6 +111,21 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，可�
 
 推荐部署在云服务器上或有公网IP的NAS设备上，推荐使用常见的Linux发行版，如CentOS、Ubuntu、Debian。段末标注了推荐的部署方式，但部署方式不限于此，文中推荐的大部分服务都提供了跨平台、跨架构支持，更多部署方式请参考官方网站或GitHub。
 
+## acme.sh - 自动化证书
+一个实现ACME客户端协议的纯Unix shell脚本。
+
+本站的证书由Let's Encrypt签发，因为托管在Vercel和Netlify中，服务商会定期进行续签，个人无需维护。
+
+但个人服务器的证书就需要自己维护了，这时就要用到acme.sh。具体用法参考以下内容以及项目官网文档。
+
+- [什么是acme协议？](https://www.ssl.com/zh-CN/常见问题/什么是acme协议/)
+- [ACME v2证书自动化快速入门](https://blog.freessl.cn/acme-quick-start/)
+
+<span>
+<a class="btn" href="https://acme.sh/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
+<a class="btn" href="https://github.com/acmesh-official/acme.sh" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+</span>
+
 ## Alist - 存储整合
 一个支持多存储的文件列表程序，使用 Gin 和 Solidjs。
 
@@ -123,15 +138,15 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，可�
 <a class="btn" href="https://github.com/alist-org/alist" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 </span>
 
-## Aria2 - 下载工具
-Aria 2是一个轻量级的多协议和多源，跨平台下载工具，在命令行操作。它支持HTTP/HTTPS，FTP，SFTP，BitTorrent和Metalink。
+## aria2 - 下载工具
+aria 2是一个轻量级的多协议和多源，跨平台下载工具，在命令行操作。它支持HTTP/HTTPS，FTP，SFTP，BitTorrent和Metalink。
 
 如果没有自己的服务器，建议使用[Motrix - 下载工具](#Motrix-下载工具)简单易用。
 如果有自己的服务器，可以使用 `docker pull ghcr.io/p3terx/aria2-pro:latest` 获取镜像。`docker-compose`
 
 <a class="btn" href="https://github.com/aria2/aria2" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 
-## AriaNg - Aria2 WebUI
+## AriaNg - aria2 WebUI
 AriaNg，一个现代的Web前端，使aria2更容易使用。
 
 ![](/img/article/awesome/aria-ng.png)
