@@ -22,15 +22,15 @@ sticky: 99
 桌面应用是一种在桌面操作系统上运行的应用程序，例如 Windows、macOS 和 Linux。与 Web 应用程序和移动应用程序不同，桌面应用程序通常是使用本地编程语言和工具（例如 C++、C#、Java 或 Swift）开发的，并且可以直接在计算机上运行，而无需通过浏览器或移动设备。桌面应用程序可以具有许多不同的功能，例如文本编辑器、图形设计工具、游戏、办公套件、音频/视频编辑器等。与 Web 应用程序相比，桌面应用程序通常具有更高的性能和更好的用户体验，因为它们可以直接访问计算机的资源，例如文件系统、网络和硬件设备。同时，桌面应用程序也需要更多的开发和维护工作，因为它们需要考虑不同操作系统和硬件设备的兼容性问题。(GPT-3.5)
 
 ## DBeaver - 数据库工具
+DBeaver Community is a free cross-platform database tool for developers, database administrators, analysts, and everyone working with data. It supports all popular SQL databases like MySQL, MariaDB, PostgreSQL, SQLite, Apache Family, and more.
 DBeaver Community是一个免费的跨平台数据库工具，面向开发人员、数据库管理员、分析师和所有使用数据的人。它支持所有流行的SQL数据库，如MySQL，MariaDB，PostgreSQL，SQLite，Apache Family等。
 
 ![](/img/article/awesome/dbeaver.png)
 
-程序员必备工具，之前一直使用Navicat的crack版，随着版权意识深入我心，开始使用DBeaver社区版，社区版功能即可满足大部分需求。
-
 <a class="btn" href="https://dbeaver.io/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
 
 ## Everything - 本地搜索引擎
+Everything is search engine that locates files and folders by filename instantly for Windows.
 Everything 是 Windows 上一款搜索引擎，它能够基于文件名快速定文件和文件夹位置。
 
 ![](/img/article/awesome/everything.png)
@@ -40,6 +40,7 @@ Everything 是 Windows 上一款搜索引擎，它能够基于文件名快速定
 <a class="btn" href="https://www.voidtools.com/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
 
 ## Motrix - 下载工具
+A full-featured download manager. Support downloading HTTP, FTP, BitTorrent, Magnet, etc.
 一款全能的下载工具。支持下载 HTTP、FTP、BT、磁力链接等资源。
 
 ![](/img/article/awesome/motrix.png)
@@ -52,6 +53,7 @@ Everything 是 Windows 上一款搜索引擎，它能够基于文件名快速定
 </span>
 
 ## Snipaste - 截图贴图工具
+Snipaste is a simple but powerful snipping tool, and also allows you to pin the screenshot back onto the screen.
 Snipaste 是一个简单但强大的贴图工具，同时也可以执行截屏、标注等功能。
 
 ![](/img/article/awesome/snipaste.png)
@@ -59,15 +61,15 @@ Snipaste 是一个简单但强大的贴图工具，同时也可以执行截屏�
 <a class="btn" href="https://zh.snipaste.com/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
 
 ## TrafficMonitor - 硬件资源监控
+TrafficMonitor is a network monitoring software with floating window feature for Windows. It displays the current internet speed and CPU and RAM usage. There are also other capabilities like an embedded display in the taksbar, changeable display skins, and historical traffic statistics.
 一款用于Windows平台的网速监控悬浮窗软件，可以显示当前网速、CPU及内存利用率，支持嵌入到任务栏显示，支持更换皮肤、历史流量统计等功能。
 
 ![](/img/article/awesome/traffic-monitor1.gif)
 
-![](/img/article/awesome/traffic-monitor2.png)
-
 <a class="btn" href="https://github.com/zhongyang219/TrafficMonitor" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 
 ## TranslucentTB - 任务栏透明
+A lightweight utility that makes the Windows taskbar translucent/transparent.
 一个轻量级的实用程序，使Windows任务栏半透明/透明。
 
 {% gi 2 2 %}
@@ -75,8 +77,6 @@ Snipaste 是一个简单但强大的贴图工具，同时也可以执行截屏�
 
 ![](/img/article/awesome/translucent-tb2.png)
 {% endgi %}
-
-本来由于不支持Windows 11不打算推荐的，但是今天（2023.07.10）发布了2023.1版本，增加对了Windows 11的支持，虽迟但到！
 
 <a class="btn" href="https://github.com/TranslucentTB/TranslucentTB" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 
@@ -89,19 +89,30 @@ uTools 是一个极简、插件化的现代桌面软件，通过自由选配丰�
 
 <a class="btn" href="https://u.tools/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
 
-### 插件推荐
+**插件推荐**
+
 易翻翻译、ctool、颜色助手、OCR、文件批量重命名、hosts、二维码、本地搜索、文本代码对比、json编辑器、变量命名方式、正则编辑器、编码小助手、计算稿纸。
 
 ## VS Code - 代码编辑器
+Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages and runtimes (such as C++, C#, Java, Python, PHP, Go, .NET). Begin your journey with VS Code with these [introductory videos](https://code.visualstudio.com/docs/getstarted/introvideos).
 Visual Studio Code是一个轻量级但功能强大的源代码编辑器，可在桌面上运行，适用于Windows、macOS和Linux。它内置了对JavaScript，TypeScript和Node.js的支持，并拥有丰富的其他语言和运行时扩展生态系统（如C++，C#，Java，Python，PHP，Go，.NET）。通过这些[介绍视频](https://code.visualstudio.com/docs/getstarted/introvideos)开始您的VS Code之旅。
 
 ![](/img/article/awesome/vs-code.png)
 
-程序员必备工具，本博客的构建和文章的编写都是使用VSCode完成的。
-
 <span>
 <a class="btn" href="https://code.visualstudio.com/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
 <a class="btn" href="https://github.com/Microsoft/vscode" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+</span>
+
+## WindTerm - 跨平台终端
+A professional cross-platform SSH/Sftp/Shell/Telnet/Serial terminal.
+一款专业的跨平台SSH/Sftp/Shell/Telnet/Serial终端。
+
+![](/img/article/awesome/wind-term.png)
+
+<span>
+<a class="btn" href="https://kingtoolbox.github.io/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
+<a class="btn" href="https://github.com/kingToolbox/WindTerm" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 </span>
 
 <!-- # 移动应用 -->
@@ -109,9 +120,10 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，可�
 # 服务应用
 服务应用是一种在后台运行的应用程序，通常在服务器或云平台上运行。与桌面应用程序和移动应用程序不同，服务应用程序通常不直接与用户交互，而是在后台执行某些任务。服务应用程序可以具有许多不同的功能，例如数据处理、文件传输、消息传递、安全认证等。服务应用程序通常使用 Web 技术（例如 RESTful API、SOAP、JSON 等）作为与其他应用程序和服务进行交互的接口。服务应用程序可以在云平台上扩展和自动扩展，以满足不断变化的需求。同时，服务应用程序也需要更多的开发和维护工作，因为它们需要考虑安全性、可伸缩性、可靠性等问题。(GPT-3.5)
 
-推荐部署在云服务器上或有公网IP的NAS设备上，推荐使用常见的Linux发行版，如CentOS、Ubuntu、Debian。段末标注了推荐的部署方式，但部署方式不限于此，文中推荐的大部分服务都提供了跨平台、跨架构支持，更多部署方式请参考官方网站或GitHub。
+推荐部署在云服务器上或有公网IP的NAS设备上，推荐使用常见的Linux发行版，如CentOS、Ubuntu、Debian。段末标注了推荐的部署方式（如 `docker-compose` `nginx` ），但部署方式不限于此，文中推荐的大部分服务都提供了跨平台、跨架构支持，更多部署方式请参考官方网站或GitHub。
 
 ## acme.sh - 自动化证书
+A pure Unix shell script implementing ACME client protocol.
 一个实现ACME客户端协议的纯Unix shell脚本。
 
 本站的证书由Let's Encrypt签发，因为托管在Vercel和Netlify中，服务商会定期进行续签，个人无需维护。
@@ -126,8 +138,9 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，可�
 <a class="btn" href="https://github.com/acmesh-official/acme.sh" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 </span>
 
-## Alist - 存储整合
-一个支持多存储的文件列表程序，使用 Gin 和 Solidjs。
+## Alist - 多存储整合
+A file list program that supports multiple storage, powered by Gin and Solidjs.
+一个支持多存储的文件列表程序，由 Gin 和 Solidjs 驱动。
 
 ![](/img/article/awesome/alist.png)
 
@@ -139,6 +152,7 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，可�
 </span>
 
 ## aria2 - 下载工具
+aria2 is a lightweight multi-protocol & multi-source, cross platform download utility operated in command-line. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent and Metalink.
 aria 2是一个轻量级的多协议和多源，跨平台下载工具，在命令行操作。它支持HTTP/HTTPS，FTP，SFTP，BitTorrent和Metalink。
 
 如果没有自己的服务器，建议使用[Motrix - 下载工具](#Motrix-下载工具)简单易用。
@@ -147,7 +161,8 @@ aria 2是一个轻量级的多协议和多源，跨平台下载工具，在命�
 <a class="btn" href="https://github.com/aria2/aria2" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 
 ## AriaNg - aria2 WebUI
-AriaNg，一个现代的Web前端，使aria2更容易使用。
+AriaNg, a modern web frontend making aria2 easier to use.
+AriaNg，一个让aria2更容易使用的现代化Web前端。
 
 ![](/img/article/awesome/aria-ng.png)
 
@@ -165,6 +180,7 @@ AriaNg，一个现代的Web前端，使aria2更容易使用。
 <a class="btn" href="https://github.com/jeessy2/ddns-go" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 
 ## Heimdall - 导航页
+An Application dashboard and launcher.
 应用程序仪表板和启动器。
 
 ![](/img/article/awesome/heimdall.png)
@@ -186,7 +202,8 @@ RustDesk 是一款可以平替 TeamViewer 的开源软件，旨在提供安全�
 </span>
 
 ## Tailscale - 异地组网
-Tailscale是一种VPN服务，可以让您在世界任何地方安全、轻松地访问您拥有的设备和应用程序。它使用开源WireGuard协议实现加密的点对点连接，这意味着只有您的专用网络上的设备才能相互通信。
+Tailscale is a VPN service that makes the devices and applications you own accessible anywhere in the world, securely and effortlessly. It enables encrypted point-to-point connections using the open source (WireGuard)[https://www.wireguard.com/] protocol, which means only devices on your private network can communicate with each other.
+Tailscale是一种VPN服务，可以让您在世界任何地方安全、轻松地访问您拥有的设备和应用程序。它使用开源(WireGuard)[https://www.wireguard.com/]协议实现加密的点对点连接，这意味着只有您的专用网络上的设备才能相互通信。
 
 ![](/img/article/awesome/tailscale.png)
 
@@ -198,6 +215,7 @@ Tailscale是一种VPN服务，可以让您在世界任何地方安全、轻松�
 </span>
 
 ## Uptime Kuma - 服务状态监控
+A fancy self-hosted monitoring tool.
 一个精美的自托管监控工具。
 
 ![](/img/article/awesome/uptime-kuma.jpg)

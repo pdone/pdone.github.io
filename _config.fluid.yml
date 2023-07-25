@@ -63,8 +63,8 @@ code:
       # 在链接中挑选 style 填入
       # Select a style in the link
       # See: https://highlightjs.org/static/demo/
-      style: "github gist"
-      style_dark: "dark"
+      style: "github"
+      style_dark: "github dark"
 
     prismjs:
       # 在下方链接页面右侧的圆形按钮挑选 style 填入，也可以直接填入 css 链接
@@ -225,20 +225,17 @@ color:
 # Font
 font:
   font_size: 16px
-  font_family:
+  font_family: LXGW WenKai Screen,-apple-system,Microsoft YaHei,monospace,sans-serif
   letter_spacing: 0.02em
   code_font_size: 85%
 
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js:
-  # - /res/theme.custom.js
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css:
-  - /res/custom.css
-  # - /res/theme.custom.css
   # - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css # 图标库
 
 # 网页访问统计

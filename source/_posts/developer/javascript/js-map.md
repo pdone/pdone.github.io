@@ -13,10 +13,10 @@ categories: Developer
 两个Demo的完整代码下载地址在文末。
 
 ## Demo1
-<iframe src="/res/jsmap/demo1.html" width="750" height="450" frameborder="0"></iframe>
+<iframe src="/assets/jsmap/demo1.html" width="750" height="450" frameborder="0"></iframe>
 
 ## Demo2
-<iframe src="/res/jsmap/demo2.html" width="750" height="450" frameborder="0"></iframe>
+<iframe src="/assets/jsmap/demo2.html" width="750" height="450" frameborder="0"></iframe>
 
 ## 相关文档
 [Highmaps API 文档](https://api.hcharts.cn/highmaps)
