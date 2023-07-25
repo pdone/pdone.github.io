@@ -17,13 +17,13 @@ hexo.extend.injector.register('head_end', () => {
     return css_custom + css_fa + css_lxgw;
 }, 'default');
 
-hexo.extend.injector.register('head_end', () => {
-    return css_aplayer;
-}, 'post');
+// hexo.extend.injector.register('head_end', () => {
+//     return css_aplayer;
+// }, 'post');
 
-hexo.extend.injector.register('body_end', () => {
-    return js_aplayer + js_meting + tag_meting;
-}, 'post');
+// hexo.extend.injector.register('body_end', () => {
+//     return js_aplayer + js_meting + tag_meting;
+// }, 'post');
 
 hexo.extend.filter.register('before_post_render', function (data) {
     // 获取当前配置文件设置的仓库类型

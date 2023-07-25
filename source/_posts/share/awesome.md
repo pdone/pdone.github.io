@@ -45,7 +45,7 @@ A full-featured download manager. Support downloading HTTP, FTP, BitTorrent, Mag
 
 ![](/img/article/awesome/motrix.png)
 
-这个软件内置了[Aria2 - 下载工具](#Aria2-下载工具)，如果懒得折腾aria2，用这个软件就够用了。如果有NAS设备，推荐使用Docker部署aria2服务，让下载这件事与PC解耦。
+这个软件内置了[Aria2 - 下载工具](#aria2-下载工具)，如果懒得折腾aria2，用这个软件就够用了。如果有NAS设备，推荐使用Docker部署aria2服务，让下载这件事与PC解耦。
 
 <span>
 <a class="btn" href="https://motrix.app/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
@@ -190,7 +190,8 @@ An Application dashboard and launcher.
 <a class="btn" href="https://github.com/linuxserver/Heimdall" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 
 ## RustDesk - 远程桌面
-RustDesk 是一款可以平替 TeamViewer 的开源软件，旨在提供安全便捷的自建方案。
+RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration.
+RustDesk 是一个功能齐全的开源远程控制替代方案，可通过最少的配置实现自托管和安全性。
 
 ![](/img/article/awesome/rustdesk.png)
 
@@ -202,8 +203,8 @@ RustDesk 是一款可以平替 TeamViewer 的开源软件，旨在提供安全�
 </span>
 
 ## Tailscale - 异地组网
-Tailscale is a VPN service that makes the devices and applications you own accessible anywhere in the world, securely and effortlessly. It enables encrypted point-to-point connections using the open source (WireGuard)[https://www.wireguard.com/] protocol, which means only devices on your private network can communicate with each other.
-Tailscale是一种VPN服务，可以让您在世界任何地方安全、轻松地访问您拥有的设备和应用程序。它使用开源(WireGuard)[https://www.wireguard.com/]协议实现加密的点对点连接，这意味着只有您的专用网络上的设备才能相互通信。
+Tailscale is a VPN service that makes the devices and applications you own accessible anywhere in the world, securely and effortlessly. It enables encrypted point-to-point connections using the open source [WireGuard](https://www.wireguard.com/) protocol, which means only devices on your private network can communicate with each other.
+Tailscale是一种VPN服务，可以让您在世界任何地方安全、轻松地访问您拥有的设备和应用程序。它使用开源[WireGuard](https://www.wireguard.com/)协议实现加密的点对点连接，这意味着只有您的专用网络上的设备才能相互通信。
 
 ![](/img/article/awesome/tailscale.png)
 
