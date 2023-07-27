@@ -44,4 +44,4 @@ categories: [Share]
 
 ## 灯效
 
-{% dplayer "url=https://cdn.jsdelivr.net/gh/pdone/static@latest/img/article/my-second-pc/video.mp4" "autoplay=no" %}
+{% dplayer "url=https://ghproxy.com/https://raw.githubusercontent.com/pdone/static/master/img/article/my-second-pc/video.mp4" "autoplay=no" %}
