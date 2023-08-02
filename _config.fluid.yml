@@ -804,14 +804,14 @@ valine:
   appId: WnruMlxDCXIemyzEex7LNCgQ-gzGzoHsz
   appKey: mfQkdYRFXarbTVWjQHYs8n9J
   path: window.location.pathname
-  placeholder: Say something...
-  avatar: 'retro'
+  placeholder: 'Input text...'
+  avatar: 'mp'
   meta: ['nick', 'mail', 'link']
   requiredFields: ['nick', 'mail']
   pageSize: 10
   lang: 'zh-CN'
-  highlight: false
-  recordIP: false
+  highlight: true
+  recordIP: true
   serverURLs: ''
   emojiCDN:
   emojiMaps:

@@ -6,6 +6,10 @@ body {
     border-radius: 8px !important;
 }
 
+img[src$="boxshadow=none"] {
+    box-shadow: none !important;
+}
+
 @media not print {
     [data-user-color-scheme="light"] {
         background-attachment: fixed;
@@ -21,8 +25,13 @@ body {
         }
 
         #toc {
-            --text-color: #222;
-            color: #333;
+            --text-color: #111;
+            color: #111;
+        }
+
+        ::selection {
+            background-color: #6d96cf;
+            color: #fff;
         }
     }
 
@@ -34,6 +43,11 @@ body {
 
         ::-webkit-scrollbar-track-piece {
             background-color: #303a47;
+        }
+
+        ::selection {
+            background-color: #666;
+            color: #fff;
         }
     }
 }

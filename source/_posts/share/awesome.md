@@ -56,7 +56,7 @@ A full-featured download manager. Support downloading HTTP, FTP, BitTorrent, Mag
 Snipaste is a simple but powerful snipping tool, and also allows you to pin the screenshot back onto the screen.
 Snipaste 是一个简单但强大的贴图工具，同时也可以执行截屏、标注等功能。
 
-![](/img/article/awesome/snipaste.png)
+![](/img/article/awesome/snipaste.png?boxshadow=none)
 
 <a class="btn" href="https://zh.snipaste.com/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
 
@@ -193,7 +193,7 @@ An Application dashboard and launcher.
 RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration.
 RustDesk 是一个功能齐全的开源远程控制替代方案，可通过最少的配置实现自托管和安全性。
 
-![](/img/article/awesome/rustdesk.png)
+![](/img/article/awesome/rustdesk.png?boxshadow=none)
 
 建议使用拥有公网IP的设备自建服务器（无公网IP可以通过[Tailscale - 异地组网](#Tailscale-异地组网)后使用），我的NAS只有公网IPv6，上行带宽30Mbps，使用体验比ToDesk免费版好很多，已经逐渐放弃使用ToDesk。`docker-compose`
 
@@ -206,7 +206,7 @@ RustDesk 是一个功能齐全的开源远程控制替代方案，可通过最�
 Tailscale is a VPN service that makes the devices and applications you own accessible anywhere in the world, securely and effortlessly. It enables encrypted point-to-point connections using the open source [WireGuard](https://www.wireguard.com/) protocol, which means only devices on your private network can communicate with each other.
 Tailscale是一种VPN服务，可以让您在世界任何地方安全、轻松地访问您拥有的设备和应用程序。它使用开源[WireGuard](https://www.wireguard.com/)协议实现加密的点对点连接，这意味着只有您的专用网络上的设备才能相互通信。
 
-![](/img/article/awesome/tailscale.png)
+![](/img/article/awesome/tailscale.png?boxshadow=none)
 
 当用手机或电脑处于无IPv6环境时，可以通过Tailscale来访问家中的NAS服务器。需要注意的是，组网的双方其中有一方的[NAT](https://www.zhihu.com/question/38729355)是Symmetric（对称型），就会打洞失败，流量会经转公共DERP服务器，速度很慢。同类型的产品还有Zerotier，个人感觉没有Tailscale好用。`docker-compose`
 
