@@ -358,7 +358,7 @@ navbar:
           { key: 'MD编辑器', link: '/tools/md-editor/', icon: "fa fa-edit" },
           { key: '荡秋千', link: '/tools/swing-girl/', icon: "fa fa-pagelines" },
           { key: '星球', link: '/tools/planet/', icon: "fa fa-superpowers"},
-          { key: 'AriaNg', link: '/tools/aria/', icon: "fa fa-rocket"}
+          { key: 'AriaNg', link: 'https://aria.awaw.cc', icon: "fa fa-rocket"}
         ]
     }
     - { name: "友链", key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
@@ -436,9 +436,11 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    <div style="font-size:0.8rem">Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> & 
+    <div style="font-size:0.8rem">
+    <a href="https://icp.gov.moe/?keyword=20235677" target="_blank">萌ICP备20235677号</a><br>
+    Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> & 
     <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a><br>
-    Copyright © 2017-2023 <a href="https://awaw.cc/" target="_blank">awaw.cc</a></div>
+    © 2017-2023 Pdone&apos;s Blog All rights reserved.</div>
   '
 
   # 展示网站的 PV、UV 统计数
