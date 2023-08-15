@@ -3,6 +3,7 @@ title: 奇思妙想💭
 date: 2023-08-04
 tags: [Whimsy]
 categories: Share
+hide: true
 ---
 
 ## 我的想法

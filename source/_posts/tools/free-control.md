@@ -6,7 +6,6 @@ tags: [.NET,OpenSource]
 categories: Tools
 sticky: 99
 # category_bar: true
-# index_img: /img/article/free-control/v1.4.0_1.png
 ---
 
 基于开源项目[**scrcpy**](https://github.com/Genymobile/scrcpy)，使用C#简单封装。
@@ -15,7 +14,7 @@ sticky: 99
 <!--more-->
 ## 界面
 
-![启动界面](/img/article/free-control/v1.4.0_1.png)
+![启动界面](/img/article/free-control/v1.5.1.png)
 
 ![设置界面](/img/article/free-control/v1.4.0_2.png)
 
