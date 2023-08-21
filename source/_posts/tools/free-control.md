@@ -130,6 +130,6 @@ Android 11 及更高版本支持使用 Android 调试桥 (adb) 从工作站以�
 <script>
 function resizeIframe(iframe) {
     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-    iframe.style.width = '45%';
+    iframe.style.width = iframe.contentWindow.document.body.scrollWidth + 'px';
 }
 </script>
