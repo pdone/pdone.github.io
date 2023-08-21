@@ -17,9 +17,9 @@ sticky: 99
 - 运行环境 `.NET Framework 4.7.2`
 ## 界面
 
-![启动界面](/img/article/free-control/v1.5.1.png)
+![启动界面](/img/article/free-control/1.6.1_1.png)
 
-![设置界面](/img/article/free-control/v1.4.0_2.png)
+![设置界面](/img/article/free-control/1.6.1_2.png)
 
 ![截图功能](/img/article/free-control/v1.4.0_4.png)
 
