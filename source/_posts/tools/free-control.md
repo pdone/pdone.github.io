@@ -8,55 +8,34 @@ sticky: 99
 # category_bar: true
 ---
 
-基于开源项目[**scrcpy**](https://github.com/Genymobile/scrcpy)，使用C#简单封装。
+基于开源项目[**scrcpy**](https://github.com/Genymobile/scrcpy)，提供简洁的交互界面。
 
-做本程序的目的主要是学习，另外就是自己用着方便些。
 <!--more-->
+
+- 编码语言 `C#`
+- 开发工具 `Visual Studio 2022`
+- 运行环境 `.NET Framework 4.7.2`
 ## 界面
 
 ![启动界面](/img/article/free-control/v1.5.1.png)
 
 ![设置界面](/img/article/free-control/v1.4.0_2.png)
 
+![截图功能](/img/article/free-control/v1.4.0_4.png)
+
 ![功能演示](/img/article/free-control/v1.4.0_5.gif)
 
-## 版本说明
-### v1.5.1
-- 基于scrcpy v1.25
+## 下载
+### GitHub Release
 
-### v1.5.0
-- 基于scrcpy v1.21
-- 优化了代码
+[https://github.com/pdone/FreeControl/releases/latest/download/FreeControl.exe](https://github.com/pdone/FreeControl/releases/latest/download/FreeControl.exe)
 
-### v1.4.0
-- 基于scrcpy v1.19
-- 增加虚拟按键（常用功能，记忆启动时位置和大小）
-- 优化了代码
-  
-### v1.3.0
-- 基于scrcpy v1.18
-- 增加了一些设置项
-- 修复了一些bug
+### ghproxy代理加速
 
-### v1.2.0
-- 基于scrcpy v1.17
-- 修复了一些bug
+[https://ghproxy.com/https://github.com/pdone/FreeControl/releases/latest/download/FreeControl.exe](https://ghproxy.com/https://github.com/pdone/FreeControl/releases/latest/download/FreeControl.exe)
 
-### v1.1.0
-- 基于scrcpy v1.16
-- 增加了设置端口号功能
+## 代码
 
-### v1.0.0
-- 基于scrcpy v1.14
-
-## 下载地址
-### 蓝奏云
-[https://pdone.lanzouf.com/b018hod6f?password=5555](https://pdone.lanzouf.com/b018hod6f?password=5555)
-
-### Github
-[https://github.com/pdone/FreeControl/releases](https://github.com/pdone/FreeControl/releases)
-
-## 代码仓库地址
 [https://github.com/pdone/FreeControl](https://github.com/pdone/FreeControl)
 
 ## FAQ
@@ -133,8 +112,24 @@ Android 11 及更高版本支持使用 Android 调试桥 (adb) 从工作站以�
 #### 无线连接（无需借助 USB 线）
 此方式**需要设备root**，此处不做详细说明，有需要的朋友可参考[此处内容](https://github.com/mzlogin/awesome-adb#%E6%97%A0%E7%BA%BF%E8%BF%9E%E6%8E%A5%E6%97%A0%E9%9C%80%E5%80%9F%E5%8A%A9-usb-%E7%BA%BF)。
 
-
-
 ### Q3 保持唤醒功能
 
 保持唤醒功能**仅在手机充电时**有效。
+
+### Q4 音频转发功能
+
+使用 `Android 11` 或更高版本的设备支持音频转发，并且默认情况下启用:
+
+- 对于 `Android 12` 或更高版本，它开箱即用。
+- 对于 `Android 11` ，您需要确保在启动scrcpy时设备屏幕已解锁。假的弹出窗口将短暂出现，使系统认为shell应用程序处于前台。没有这个，音频捕获将失败。
+- 对于 `Android 10` 或更早版本，无法捕获音频并自动禁用。
+
+## 更新日志
+<iframe src="/assets/timeline/freecontrol.html" onload="resizeIframe(this)" frameborder="0"></iframe>
+
+<script>
+function resizeIframe(iframe) {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    iframe.style.width = '45%';
+}
+</script>
