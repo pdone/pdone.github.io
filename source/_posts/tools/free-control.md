@@ -125,11 +125,4 @@ Android 11 及更高版本支持使用 Android 调试桥 (adb) 从工作站以�
 - 对于 `Android 10` 或更早版本，无法捕获音频并自动禁用。
 
 ## 更新日志
-<iframe src="/assets/timeline/freecontrol.html" onload="resizeIframe(this)" frameborder="0"></iframe>
-
-<script>
-function resizeIframe(iframe) {
-    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-    iframe.style.width = iframe.contentWindow.document.body.scrollWidth + 'px';
-}
-</script>
+<iframe src="/assets/timeline/freecontrol.html" width="370" height="1580" frameborder="0"></iframe>
