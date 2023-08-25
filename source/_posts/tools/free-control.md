@@ -67,7 +67,7 @@ Android 11 及更高版本支持使用 Android 调试桥 (adb) 从工作站以�
 	```       
 	adb pair ipaddr:port
 	```
-6. 提示 `Enter pairing code: ` 时输入弹窗中的配对码，成功后会显示 `Successfully paired to ...`。
+6. 提示 `Enter pairing code:` 时输入弹窗中的配对码，成功后会显示 `Successfully paired to ...` 。
 7. 使用无线调试下的 **IP 地址和端口**。
 	```       
 	adb connect ipaddr:port       
@@ -125,4 +125,10 @@ Android 11 及更高版本支持使用 Android 调试桥 (adb) 从工作站以�
 - 对于 `Android 10` 或更早版本，无法捕获音频并自动禁用。
 
 ## 更新日志
-<iframe src="/assets/timeline/freecontrol.html" width="370" height="1580" frameborder="0"></iframe>
+<style>
+iframe {
+  width: 100%;
+  height: 1780px;
+}
+</style>
+<iframe src="/assets/timeline/freecontrol.html" frameborder="0"></iframe>
