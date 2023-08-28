@@ -65,3 +65,13 @@ div>i.iconfont.icon-arrowdown,
 a>div {
     cursor: url('https://ghproxy.com/raw.githubusercontent.com/pdone/static/master/img/cursor/link.cur'), pointer !important;
 }
+
+@font-face {
+    font-family: AlibabaPuHuiTi-3-55-Regular;
+    font-display: swap;
+    src:
+        url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2) format('woff2'),
+        url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff) format('woff'),
+        url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.ttf) format('TrueType'),
+        url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.otf) format('opentype');
+}
