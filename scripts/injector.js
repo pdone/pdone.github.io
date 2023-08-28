@@ -14,7 +14,7 @@ let tag_meting = `<meting-js server="netease" type="playlist" id="5156176329" au
 order="random" lrc-type="1" volume="0.5"></meting-js>`
 
 hexo.extend.injector.register('head_end', () => {
-    return css_custom + css_fa + css_lxgw;
+    return css_custom + css_fa; // + css_lxgw;
 }, 'default');
 
 // hexo.extend.injector.register('head_end', () => {

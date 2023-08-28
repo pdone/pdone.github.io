@@ -225,7 +225,7 @@ color:
 # Font
 font:
   font_size: 16px
-  font_family: LXGW WenKai Screen,-apple-system,Microsoft YaHei,monospace,sans-serif
+  font_family: sans-serif,-apple-system,Microsoft YaHei,Apple Color Emoji,monospace,Segoe UI,Segoe UI Emoji # LXGW WenKai Screen,-apple-system,Microsoft YaHei,monospace,sans-serif
   letter_spacing: 0.02em
   code_font_size: 85%
 
