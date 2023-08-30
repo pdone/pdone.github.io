@@ -54,7 +54,7 @@ img[src$="boxshadow=none"] {
 
 body,
 div {
-    cursor: url(//fastly.jsdelivr.net/gh/pdone/static@master/img/cursor/pointer.cur), default !important;
+    cursor: url(//ghps.cc/https://raw.githubusercontent.com/pdone/static/master/img/cursor/pointer.cur), default !important;
 }
 
 a,
@@ -63,20 +63,21 @@ img,
 p>a,
 div>i.iconfont.icon-arrowdown,
 a>div {
-    cursor: url(//fastly.jsdelivr.net/gh/pdone/static@master/img/cursor/link.cur), pointer !important;
+    cursor: url(//ghps.cc/https://raw.githubusercontent.com/pdone/static/master/img/cursor/link.cur), pointer !important;
 }
 
 @font-face {
     font-family: AlibabaPuHuiTi-3-55-Regular;
     font-display: swap;
     src:
-        local('AlibabaPuHuiTi-3-55-Regular'),
-        url(//fastly.jsdelivr.net/gh/pdone/static@master/font/AlibabaPuHuiTi-3-55-Regular.subset.woff2) format('woff2'),
-        url(//fastly.jsdelivr.net/gh/pdone/static@master/font/AlibabaPuHuiTi-3-55-Regular.subset.woff) format('woff'),
-        url(//fastly.jsdelivr.net/gh/pdone/static@master/font/AlibabaPuHuiTi-3-55-Regular.subset.ttf) format('TrueType'),
-        url(//fastly.jsdelivr.net/gh/pdone/static@master/font/AlibabaPuHuiTi-3-55-Regular.subset.otf) format('opentype');
-    /* url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2) format('woff2'),
-    url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff) format('woff'),
-    url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.ttf) format('TrueType'),
-    url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.otf) format('opentype'); */
+
+        url(//ghps.cc/https://raw.githubusercontent.com/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.woff2) format('woff2'),
+        url(//ghps.cc/https://raw.githubusercontent.com/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.woff) format('woff'),
+        url(//ghps.cc/https://raw.githubusercontent.com/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.ttf) format('TrueType'),
+        url(//ghps.cc/https://raw.githubusercontent.com/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.otf) format('opentype');
+
+        /* url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2) format('woff2'),
+        url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff) format('woff'),
+        url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.ttf) format('TrueType'),
+        url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.otf) format('opentype'); */
 }
