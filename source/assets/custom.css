@@ -1,5 +1,5 @@
 body {
-    --body-bg-color: transparent;
+    /* --body-bg-color: transparent; */
 }
 
 /* body {
@@ -34,13 +34,18 @@ img[src$="boxshadow=none"] {
 
 @media not print {
     [data-user-color-scheme="light"] {
+        transition: background-color .5s ease-in-out !important;
         background-attachment: fixed;
-        background-image: linear-gradient(to bottom, #5482b3, #b5ceff);
+        /* background-image: linear-gradient(to bottom, #5482b3, #b5ceff); */
+        --body-bg-color: #85a8d9;
 
         --navbar-bg-color: #5482b3CC;
-        --link-hover-color: #0366d6;
+        --link-hover-color: #2181ff;
+
         --scrollbar-color: #c1dfff;
         --scrollbar-hover-color: #e5effc;
+
+        --my-hover-color: #fff;
 
         ::-webkit-scrollbar-track-piece {
             background-color: #87a7d7;
@@ -51,6 +56,24 @@ img[src$="boxshadow=none"] {
             color: #111;
         }
 
+        .toc-list-item a:hover {
+            color: var(--my-hover-color);
+        }
+
+        .tocbot-active-link {
+            font-weight: bold;
+            color: var(--my-hover-color);
+        }
+
+        .navbar .nav-item .nav-link:hover {
+            color: var(--my-hover-color);
+        }
+
+        .navbar .dropdown-item:hover,
+        .navbar .dropdown-item:focus {
+            color: var(--my-hover-color);
+        }
+
         ::selection {
             background-color: #6d96cf;
             color: #fff;
@@ -58,8 +81,10 @@ img[src$="boxshadow=none"] {
     }
 
     [data-user-color-scheme="dark"] {
+        transition: background-color .5s ease-in-out !important;
         background-attachment: fixed;
-        background-image: linear-gradient(to bottom, #131f29, #4b5466);
+        /* background-image: linear-gradient(to bottom, #131f29, #4b5466); */
+        --body-bg-color: #2f3a48;
 
         --navbar-bg-color: #131f29CC;
 
