@@ -1,6 +1,6 @@
-body {
-    /* --body-bg-color: transparent; */
-}
+/* body {
+    --body-bg-color: transparent;
+} */
 
 /* body {
     background-attachment: fixed;
@@ -34,10 +34,10 @@ img[src$="boxshadow=none"] {
 
 @media not print {
     [data-user-color-scheme="light"] {
-        transition: background-color .5s ease-in-out !important;
+        transition: background-color 1s ease-in-out !important;
         background-attachment: fixed;
         /* background-image: linear-gradient(to bottom, #5482b3, #b5ceff); */
-        --body-bg-color: #85a8d9;
+        --body-bg-color: #87a7d7;
 
         --navbar-bg-color: #5482b3CC;
         --link-hover-color: #2181ff;
@@ -84,7 +84,7 @@ img[src$="boxshadow=none"] {
         transition: background-color .5s ease-in-out !important;
         background-attachment: fixed;
         /* background-image: linear-gradient(to bottom, #131f29, #4b5466); */
-        --body-bg-color: #2f3a48;
+        --body-bg-color: #303a47;
 
         --navbar-bg-color: #131f29CC;
 

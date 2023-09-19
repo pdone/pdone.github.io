@@ -14,9 +14,9 @@ sticky: 99
 {% endnote %}
 
 {% note info %}
-最近更新 2023.09.08
-- 新增 HiBit Uninstaller
-- 新增 AdGuard Home
+最近更新 2023.09.19
+- 新增 7z
+- 新增 VLC
 {% endnote %}
 
 # 宗旨
@@ -25,7 +25,19 @@ sticky: 99
 - 提高生活、工作效率
 
 # 桌面应用
-桌面应用是一种在桌面操作系统上运行的应用程序，例如 Windows、macOS 和 Linux。与 Web 应用程序和移动应用程序不同，桌面应用程序通常是使用本地编程语言和工具（例如 C++、C#、Java 或 Swift）开发的，并且可以直接在计算机上运行，而无需通过浏览器或移动设备。桌面应用程序可以具有许多不同的功能，例如文本编辑器、图形设计工具、游戏、办公套件、音频/视频编辑器等。与 Web 应用程序相比，桌面应用程序通常具有更高的性能和更好的用户体验，因为它们可以直接访问计算机的资源，例如文件系统、网络和硬件设备。同时，桌面应用程序也需要更多的开发和维护工作，因为它们需要考虑不同操作系统和硬件设备的兼容性问题。(GPT-3.5)
+桌面应用是一种在桌面操作系统上运行的应用程序，例如 Windows、macOS 和 Linux。与 Web 应用程序和移动应用程序不同，桌面应用程序通常是使用本地编程语言和工具（例如 C++、C#、Java 或 Swift）开发的，并且可以直接在计算机上运行，而无需通过浏览器或移动设备。桌面应用程序可以具有许多不同的功能，例如文本编辑器、图形设计工具、游戏、办公套件、音频/视频编辑器等。与 Web 应用程序相比，桌面应用程序通常具有更高的性能和更好的用户体验，因为它们可以直接访问计算机的资源，例如文件系统、网络和硬件设备。同时，桌面应用程序也需要更多的开发和维护工作，因为它们需要考虑不同操作系统和硬件设备的兼容性问题。
+
+## 7z - 压缩工具
+7-Zip是一个具有高压缩比的文件归档器。
+
+> 7-Zip is a file archiver with a high compression ratio.
+
+![](/img/article/awesome/7z.png)
+
+<span>
+<a class="btn" href="https://7-zip.org/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
+<a class="btn" href="https://github.com/sparanoid/7z" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+</span>
 
 ## DBeaver - 数据库工具
 DBeaver Community是一个免费的跨平台数据库工具，面向开发人员、数据库管理员、分析师和所有使用数据的人。它支持所有流行的SQL数据库，如MySQL，MariaDB，PostgreSQL，SQLite，Apache Family等。
@@ -127,6 +139,18 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，可�
 <a class="btn" href="https://github.com/Microsoft/vscode" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 </span>
 
+## VLC - 媒体播放器
+VLC 是一款自由、开源的跨平台多媒体播放器及框架，可播放大多数多媒体文件，以及 DVD、音频 CD、VCD 及各类流媒体协议。
+
+> VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols.
+
+![](/img/article/awesome/vlc.png)
+
+<span>
+<a class="btn" href="https://www.videolan.org/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
+<a class="btn" href="https://github.com/videolan/vlc" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+</span>
+
 ## WindTerm - 跨平台终端
 一款专业的跨平台SSH/Sftp/Shell/Telnet/Serial终端。
 
@@ -142,7 +166,7 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，可�
 <!-- # 移动应用 -->
 
 # 服务应用
-服务应用是一种在后台运行的应用程序，通常在服务器或云平台上运行。与桌面应用程序和移动应用程序不同，服务应用程序通常不直接与用户交互，而是在后台执行某些任务。服务应用程序可以具有许多不同的功能，例如数据处理、文件传输、消息传递、安全认证等。服务应用程序通常使用 Web 技术（例如 RESTful API、SOAP、JSON 等）作为与其他应用程序和服务进行交互的接口。服务应用程序可以在云平台上扩展和自动扩展，以满足不断变化的需求。同时，服务应用程序也需要更多的开发和维护工作，因为它们需要考虑安全性、可伸缩性、可靠性等问题。(GPT-3.5)
+服务应用是一种在后台运行的应用程序，通常在服务器或云平台上运行。与桌面应用程序和移动应用程序不同，服务应用程序通常不直接与用户交互，而是在后台执行某些任务。服务应用程序可以具有许多不同的功能，例如数据处理、文件传输、消息传递、安全认证等。服务应用程序通常使用 Web 技术（例如 RESTful API、SOAP、JSON 等）作为与其他应用程序和服务进行交互的接口。服务应用程序可以在云平台上扩展和自动扩展，以满足不断变化的需求。同时，服务应用程序也需要更多的开发和维护工作，因为它们需要考虑安全性、可伸缩性、可靠性等问题。
 
 推荐部署在云服务器上或有公网IP的NAS设备上，推荐使用常见的Linux发行版，如CentOS、Ubuntu、Debian。段末标注了推荐的部署方式（如 `docker-compose` `nginx` ），但部署方式不限于此，文中推荐的大部分服务都提供了跨平台、跨架构支持，更多部署方式请参考官方网站或GitHub。
 
