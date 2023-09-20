@@ -1,13 +1,10 @@
 /* body {
     --body-bg-color: transparent;
-} */
-
-/* body {
     background-attachment: fixed;
     background-size: 400%;
     background-image: linear-gradient(125deg, #3a6ea3, #27ae60, #2980b9, #e74c3c, #8e44ad);
     animation: bg_move 20s ease-in-out infinite;
-} */
+}
 
 @keyframes bg_move {
     0% {
@@ -21,7 +18,7 @@
     100% {
         background-position: 0% 50%;
     }
-}
+} */
 
 
 .dplayer {
@@ -40,15 +37,24 @@ img[src$="boxshadow=none"] {
         --body-bg-color: #87a7d7;
 
         --navbar-bg-color: #5482b3CC;
-        --link-hover-color: #2181ff;
+        --link-hover-color: #2067ed;
 
         --scrollbar-color: #c1dfff;
         --scrollbar-hover-color: #e5effc;
 
         --my-hover-color: #fff;
+        --my-text-shadow: 3px 3px 5px #575863;
+        --my-text-shadow2: 1px 1px 5px #575863;
 
         ::-webkit-scrollbar-track-piece {
             background-color: #87a7d7;
+        }
+
+        #navbar{
+            text-shadow: var(--my-text-shadow2);
+        }
+        #subtitle{
+            text-shadow: var(--my-text-shadow);
         }
 
         #toc {
@@ -56,13 +62,14 @@ img[src$="boxshadow=none"] {
             color: #111;
         }
 
-        .toc-list-item a:hover {
-            color: var(--my-hover-color);
-        }
+        /* .toc-list-item a:hover {
+            color: var(--link-hover-color);
+        } */
 
         .tocbot-active-link {
             font-weight: bold;
-            color: var(--my-hover-color);
+            color: #d7e5ff;
+            text-shadow: var(--my-text-shadow);
         }
 
         .navbar .nav-item .nav-link:hover {
@@ -81,7 +88,7 @@ img[src$="boxshadow=none"] {
     }
 
     [data-user-color-scheme="dark"] {
-        transition: background-color .5s ease-in-out !important;
+        transition: background-color 1s ease-in-out !important;
         background-attachment: fixed;
         /* background-image: linear-gradient(to bottom, #131f29, #4b5466); */
         --body-bg-color: #303a47;
