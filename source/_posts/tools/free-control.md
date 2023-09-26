@@ -128,7 +128,7 @@ adb devices
 <style>
 iframe {
   width: 90%;
-  height: 1780px;
+  height: 1870px;
 }
 </style>
 <iframe src="/assets/timeline/freecontrol.html" frameborder="0"></iframe>
