@@ -125,10 +125,48 @@ adb devices
 - 对于 `Android 10` 或更早版本，无法捕获音频并自动禁用。
 
 ## 更新日志
-<style>
-iframe {
-  width: 90%;
-  height: 1870px;
-}
-</style>
-<iframe src="/assets/timeline/freecontrol.html" frameborder="0"></iframe>
+
+<details>
+<summary>点击查看</summary>
+
+### Version 1.6.4
+- 增加无线访问记录历史IP
+- 修复了一些bug
+### Version 1.6.3
+- 增加控制器吸附scrcpy窗口
+- 增加scrcpy窗口位置记忆
+### Version 1.6.2
+- 修复了一些bug
+### Version 1.6.1
+- 修复了一些bug
+- 增加音频转发开关（默认启用）
+### Version 1.6.0
+- 基于scrcpy v2.1.1(x64)
+### Version 1.5.1
+- 基于scrcpy v1.25(x64)
+### Version 1.5.0
+- 基于scrcpy v1.21(x64)
+- 优化了代码
+### Version 1.4.1
+- 修复了一些bug
+- 增加了程序入口处的异常捕获 便于定位问题
+### Version 1.4.0
+- 基于scrcpy v1.19
+- 增加虚拟按键（常用功能，记忆启动时位置和大小）
+- 优化了代码
+### Version 1.3.1
+- 修复了一些bug
+### Version 1.3.0
+- 基于scrcpy v1.18
+- 增加了一些设置项
+- 修复了一些bug
+### Version 1.2.0
+- 基于scrcpy v1.17
+- 修复了一些bug
+### Version 1.1.0
+- 基于scrcpy v1.16
+- 增加了设置端口号功能
+### Version 1.0.0
+- 基于scrcpy v1.14
+- 初始版本
+</details>
