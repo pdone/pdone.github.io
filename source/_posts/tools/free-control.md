@@ -1,7 +1,6 @@
 ---
 title: Free Control 用电脑控制手机 - 开源
 date: 2020-09-15
-update: 2021-09-14
 tags: [.NET,OpenSource]
 categories: Tools
 sticky: 99
@@ -17,11 +16,9 @@ sticky: 99
 - 运行环境 `.NET Framework 4.7.2`
 ## 界面
 
-![启动界面](/img/article/free-control/1.6.1_1.png)
+![启动界面](/img/article/free-control/1.6.5_1.png)
 
-![设置界面](/img/article/free-control/1.6.1_2.png)
-
-![截图功能](/img/article/free-control/v1.4.0_4.png)
+![设置界面](/img/article/free-control/1.6.5_2.png)
 
 ![功能演示](/img/article/free-control/v1.4.0_5.gif)
 
@@ -50,6 +47,14 @@ sticky: 99
 - Gboard
 
 此功能需要输入法APP适配，暂时只发现这4款，有更好用的输入法欢迎留言推荐。
+
+#### ⭐自动切换输入法功能说明
+
+由于大多数朋友日常使用的输入法不支持跨屏输入，所以增加了启动时自动切换输入法的功能，用于自动切换到非日常使用、但支持跨屏输入的输入法。
+
+在主界面中设置启动时要切换的输入法，点击启动按钮便会自动切换（确保手机上已安装对应输入法APP）。
+
+关闭窗口时，会切换回原来的输入法。
 
 ### Q2 无线访问问题
 
@@ -129,43 +134,60 @@ adb devices
 <details>
 <summary>点击查看</summary>
 
+### Version 1.6.5
+- 增加自动切换输入法功能
+- 基于scrcpy v2.2(x64)
+
 ### Version 1.6.4
 - 增加无线访问记录历史IP
 - 修复了一些bug
+
 ### Version 1.6.3
 - 增加控制器吸附scrcpy窗口
 - 增加scrcpy窗口位置记忆
+
 ### Version 1.6.2
 - 修复了一些bug
+
 ### Version 1.6.1
 - 修复了一些bug
 - 增加音频转发开关（默认启用）
+
 ### Version 1.6.0
 - 基于scrcpy v2.1.1(x64)
+
 ### Version 1.5.1
 - 基于scrcpy v1.25(x64)
+
 ### Version 1.5.0
 - 基于scrcpy v1.21(x64)
 - 优化了代码
+
 ### Version 1.4.1
 - 修复了一些bug
 - 增加了程序入口处的异常捕获 便于定位问题
+
 ### Version 1.4.0
 - 基于scrcpy v1.19
 - 增加虚拟按键（常用功能，记忆启动时位置和大小）
 - 优化了代码
+
 ### Version 1.3.1
 - 修复了一些bug
+
 ### Version 1.3.0
 - 基于scrcpy v1.18
 - 增加了一些设置项
 - 修复了一些bug
+
 ### Version 1.2.0
 - 基于scrcpy v1.17
 - 修复了一些bug
+
 ### Version 1.1.0
 - 基于scrcpy v1.16
 - 增加了设置端口号功能
+
 ### Version 1.0.0
 - 基于scrcpy v1.14
 - 初始版本
