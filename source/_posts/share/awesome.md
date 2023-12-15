@@ -6,7 +6,7 @@ categories: Share
 sticky: 99
 # hide: true
 ---
-分享一些好用的软件、服务和开源项目等。纯粹的分享与推荐，放心食用。
+分享一些好用的软件、服务和开源项目等，传递开源与分享精神。纯粹的分享与推荐，放心食用。
 <!--more-->
 
 {% note primary %}
@@ -14,15 +14,12 @@ sticky: 99
 {% endnote %}
 
 {% note info %}
-最近更新 2023.09.19
-- 新增 7z
-- 新增 VLC
+最近更新 2023.12.15
+- 新增 [MusicPlayer2（音乐播放器）](#MusicPlayer2-音乐播放器)
+- 新增 [Home Assistant（家庭自动化平台）](#Home-Assistant-家庭自动化平台)
+- 新增 [Qwerty Learner（记单词）](#Qwerty-Learner-记单词)
+- 新增 [Monaspace（开源字体）](#Monaspace)
 {% endnote %}
-
-# 宗旨
-- 传递开源与分享精神
-- 仅分享优秀项目
-- 提高生活、工作效率
 
 # 桌面应用
 桌面应用是一种在桌面操作系统上运行的应用程序，例如 Windows、macOS 和 Linux。与 Web 应用程序和移动应用程序不同，桌面应用程序通常是使用本地编程语言和工具（例如 C++、C#、Java 或 Swift）开发的，并且可以直接在计算机上运行，而无需通过浏览器或移动设备。桌面应用程序可以具有许多不同的功能，例如文本编辑器、图形设计工具、游戏、办公套件、音频/视频编辑器等。与 Web 应用程序相比，桌面应用程序通常具有更高的性能和更好的用户体验，因为它们可以直接访问计算机的资源，例如文件系统、网络和硬件设备。同时，桌面应用程序也需要更多的开发和维护工作，因为它们需要考虑不同操作系统和硬件设备的兼容性问题。
@@ -83,6 +80,15 @@ HiBit Uninstaller是卸载Windows软件的完美解决方案，使您可以使�
 <a class="btn" href="https://github.com/agalwood/Motrix" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 </span>
 
+## MusicPlayer2 - 音乐播放器
+MusicPlayer2是一款集音乐播放、歌词显示、格式转换等众多功能于一身的音频播放软件。支持歌词显示、歌词卡拉OK样式显示、歌词在线下载、歌词编辑、歌曲标签识别、专辑封面显示、专辑封面在线下载、频谱分析、音效设置、任务栏缩略图按钮、主题颜色、格式转换等功能。播放内核为BASS音频库(V2.4)。播放器支持几乎所有常见的音频格式。
+
+> MusicPlayer2 is an audio player whitch supports music collection playback, lyrics display, format conversion and many other functions. It supports lyrics display, lyrics karaoke style display, lyrics online download, lyrics editing, song tag recognition, album cover display, album cover online download, spectrum analysis, sound effect settings, taskbar thumbnail button, theme color, format conversion and other functions. The playback kernel is the Bass Audio Library (V2.4). The player supports almost all common audio formats.
+
+![](/img/article/awesome/music-player.png)
+
+<a class="btn" href="https://github.com/zhongyang219/MusicPlayer2" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+
 ## Snipaste - 截图贴图工具
 Snipaste 是一个简单但强大的贴图工具，同时也可以执行截屏、标注等功能。
 
@@ -119,7 +125,7 @@ uTools 是一个极简、插件化的现代桌面软件，通过自由选配丰�
 
 {% dplayer "url=https://res.u-tools.cn/website/v4/utools-4-video.mp4" "pic=https://res.u-tools.cn/website/v4/poster.png" "mutex=yes" "autoplay=no" %}
 
-强烈推荐的一款跨平台工具集合，虽然有会员订阅服务（主要是提供了数据备份、多端同步等功能），但无需订阅即可使用大部分功能，满足大部分用户的需要。
+非常好用的一款跨平台工具集合，虽然有会员订阅服务（主要是提供了数据备份、多端同步等功能），但无需订阅即可使用大部分功能，满足大部分用户的需要。
 
 <a class="btn" href="https://u.tools/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
 
@@ -168,7 +174,9 @@ VLC 是一款自由、开源的跨平台多媒体播放器及框架，可播放�
 # 服务应用
 服务应用是一种在后台运行的应用程序，通常在服务器或云平台上运行。与桌面应用程序和移动应用程序不同，服务应用程序通常不直接与用户交互，而是在后台执行某些任务。服务应用程序可以具有许多不同的功能，例如数据处理、文件传输、消息传递、安全认证等。服务应用程序通常使用 Web 技术（例如 RESTful API、SOAP、JSON 等）作为与其他应用程序和服务进行交互的接口。服务应用程序可以在云平台上扩展和自动扩展，以满足不断变化的需求。同时，服务应用程序也需要更多的开发和维护工作，因为它们需要考虑安全性、可伸缩性、可靠性等问题。
 
-推荐部署在云服务器上或有公网IP的NAS设备上，推荐使用常见的Linux发行版，如CentOS、Ubuntu、Debian。段末标注了推荐的部署方式（如 `docker-compose` `nginx` ），但部署方式不限于此，文中推荐的大部分服务都提供了跨平台、跨架构支持，更多部署方式请参考官方网站或GitHub。
+推荐部署在云服务器上或有公网IP的NAS设备上，推荐使用常见的Linux发行版，如CentOS、Ubuntu、Debian。
+
+推荐使用 `docker-compose` 方式部署便于维护和迁移，但部署方式不限于此，文中推荐的大部分服务都提供了跨平台、跨架构支持，更多部署方式请参考官方网站或GitHub。
 
 ## acme.sh - 自动化证书
 一个实现ACME客户端协议的纯Unix shell脚本。
@@ -206,7 +214,7 @@ AdGuard Home 是一款全网广告拦截与反跟踪软件。在您将其安装�
 
 ![](/img/article/awesome/alist.png)
 
-强烈推荐的一款存储整合服务，可以把各种存储整合在一个服务中，提供了友好的操作界面，支持超多网盘和其他存储方式、在线预览、离线下载、推送到Aira下载等，作为网上冲浪资深选手的你，如果还没用过是你的损失。`docker-compose`
+非常好用的一款存储整合服务，可以把各种存储整合在一个服务中，提供了友好的操作界面，支持超多网盘和其他存储方式、在线预览、离线下载、推送到Aira下载等。
 
 <span>
 <a class="btn" href="https://alist.nn.ci/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
@@ -219,7 +227,6 @@ aria 2是一个轻量级的多协议和多源，跨平台下载工具，在命�
 > aria2 is a lightweight multi-protocol & multi-source, cross platform download utility operated in command-line. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent and Metalink.
 
 如果没有自己的服务器，建议使用[Motrix - 下载工具](#Motrix-下载工具)简单易用。
-如果有自己的服务器，可以使用 `docker pull ghcr.io/p3terx/aria2-pro:latest` 获取镜像。`docker-compose`
 
 <a class="btn" href="https://github.com/aria2/aria2" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 
@@ -230,7 +237,7 @@ AriaNg，一个让aria2更容易使用的现代化Web前端。
 
 ![](/img/article/awesome/aria-ng.png)
 
-只是一个静态的网站，可以直接双击index.html运行，也可以托管到免费的平台中使用，如GitHub Pages、Vercel等。或者使用我托管在Netlify中的[AriaNg](https://aria.awaw.cc/)。`nginx`
+只是一个静态的网站，可以直接双击index.html运行，也可以托管到免费的平台中使用，如GitHub Pages、Vercel等。或者使用我托管在Netlify中的[AriaNg](https://aria.awaw.cc/)。
 
 <a class="btn" href="https://github.com/mayswind/AriaNg" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 
@@ -239,7 +246,7 @@ AriaNg，一个让aria2更容易使用的现代化Web前端。
 
 ![](/img/article/awesome/ddns-go.png)
 
-一般家用宽带没有固定的公网IP，但目前大部分地区运行商都提供了动态公网IPv6，此时就需要动态域名解析了。实现原理很简单，定时获取本机公网IP，调用域名服务商API将值更新上去，但是这个项目已经很完善，没必要重复造轮子，完全满足需求。`docker-compose`
+一般家用宽带没有固定的公网IP，但目前大部分地区运行商都提供了动态公网IPv6，此时就需要动态域名解析了。实现原理很简单，定时获取本机公网IP，调用域名服务商API将值更新上去，但是这个项目已经很完善，没必要重复造轮子，完全满足需求。
 
 <a class="btn" href="https://github.com/jeessy2/ddns-go" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 
@@ -250,9 +257,35 @@ AriaNg，一个让aria2更容易使用的现代化Web前端。
 
 ![](/img/article/awesome/heimdall2.png)
 
-简约大气的导航页，且可以对一些支持的应用提供扩展功能，如监控Portainer容器状态、aria2下载任务状态等。`docker-compose`
+简约大气的导航页，且可以对一些支持的应用提供扩展功能，如监控Portainer容器状态、aria2下载任务状态等。
 
 <a class="btn" href="https://github.com/linuxserver/Heimdall" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+
+## Home Assistant - 家庭自动化平台
+将本地控制和隐私放在首位的开源家庭自动化。由世界各地的社区成员和DIY爱好者组成的团体提供强力支持。
+
+> Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts.
+
+![](/img/article/awesome/home-assistant.png)
+
+目前智能家居品牌很多，大部分品牌都在搞自家生态，想使用一个APP控制家里所有设备，就需要用到Home Assistant将不同品牌智能设备接入统一管理。
+
+<span>
+<a class="btn" href="https://www.home-assistant.io/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
+<a class="btn" href="https://github.com/home-assistant" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+</span>
+
+## Qwerty Learner - 记单词
+为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件。
+
+> Words learning and English muscle memory training software designed for keyboard workers.
+
+![](/img/article/awesome/qwerty-learner.png)
+
+<span>
+<a class="btn" href="https://qwerty.kaiyi.cool/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
+<a class="btn" href="https://github.com/RealKai42/qwerty-learner" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+</span>
 
 ## RustDesk - 远程桌面
 RustDesk 是一个功能齐全的开源远程控制替代方案，可通过最少的配置实现自托管和安全性。
@@ -261,7 +294,7 @@ RustDesk 是一个功能齐全的开源远程控制替代方案，可通过最�
 
 ![](/img/article/awesome/rustdesk.png?boxshadow=none)
 
-建议使用拥有公网IP的设备自建服务器（无公网IP可以通过[Tailscale - 异地组网](#Tailscale-异地组网)后使用），我的NAS只有公网IPv6，上行带宽30Mbps，使用体验比ToDesk免费版好很多，已经逐渐放弃使用ToDesk。`docker-compose`
+建议使用拥有公网IP的设备自建服务器（无公网IP可以通过[Tailscale - 异地组网](#Tailscale-异地组网)后使用），我的NAS只有公网IPv6，上行带宽30Mbps，使用体验比ToDesk免费版好很多，已经逐渐放弃使用ToDesk。
 
 <span>
 <a class="btn" href="https://rustdesk.com/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
@@ -275,7 +308,7 @@ Tailscale是一种VPN服务，可以让您在世界任何地方安全、轻松�
 
 ![](/img/article/awesome/tailscale.png?boxshadow=none)
 
-当用手机或电脑处于无IPv6环境时，可以通过Tailscale来访问家中的NAS服务器。需要注意的是，组网的双方其中有一方的[NAT](https://www.zhihu.com/question/38729355)是Symmetric（对称型），就会打洞失败，流量会经转公共DERP服务器，速度很慢。同类型的产品还有Zerotier，个人感觉没有Tailscale好用。`docker-compose`
+当用手机或电脑处于无IPv6环境时，可以通过Tailscale来访问家中的NAS服务器。需要注意的是，组网的双方其中有一方的[NAT](https://www.zhihu.com/question/38729355)是Symmetric（对称型），就会打洞失败，流量会经转公共DERP服务器，速度很慢。同类型的产品还有Zerotier，个人感觉没有Tailscale好用。
 
 <span>
 <a class="btn" href="https://tailscale.com/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
@@ -289,11 +322,12 @@ Tailscale是一种VPN服务，可以让您在世界任何地方安全、轻松�
 
 ![](/img/article/awesome/uptime-kuma.jpg)
 
-可以用于监控并记录一些可访问服务的运行状态，如docker容器、网站等，也可以用作导航页（Heimdall平替）。除了管理页面，还可以创建允许匿名访问的状态页面（[示例 - IPv6 Only](https://u.awaw.cc/status/me)）。`docker-compose`
+可以用于监控并记录一些可访问服务的运行状态，如docker容器、网站等，也可以用作导航页（Heimdall平替）。除了管理页面，还可以创建允许匿名访问的状态页面（[示例 - IPv6 Only](https://u.awaw.cc/status/me)）。
 
 <a class="btn" href="https://github.com/louislam/uptime-kuma" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
 
 # 开源字体
+开源字体是指那些可以在版权允许的情况下免费或低成本向公众提供使用和修改的字体。这些字体的设计文件（源代码）通常是公开的，任何人在遵循相关许可协议的前提下都可以下载、使用，并在需要时进行修改和再分发。
 
 ## 阿里巴巴普惠体
 阿里巴巴普惠体是一套全球永久免费正版商用的字体家族。
@@ -314,6 +348,18 @@ Tailscale是一种VPN服务，可以让您在世界任何地方安全、轻松�
 ![](/img/article/awesome/cascadia-code3.png)
 
 <a class="btn" href="https://github.com/microsoft/cascadia-code" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+
+## Monaspace
+一个创新的代码字体超家族。
+
+> An innovative superfamily of fonts for code
+
+![](/img/article/awesome/monaspace.png)
+
+<span>
+<a class="btn" href="https://monaspace.githubnext.com/" title="访问官网"><i class='fa fa-home fa-lg'></i> 官方网站</a>
+<a class="btn" href="https://github.com/githubnext/monaspace" title="访问代码仓库"><i class='fa fa-github fa-lg'></i> GitHub</a>
+</span>
 
 ## 霞鹜文楷
 一款开源中文字体，基于 FONTWORKS 出品字体 Klee One 衍生。

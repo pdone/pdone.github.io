@@ -2,7 +2,8 @@ const css = hexo.extend.helper.get('css').bind(hexo);
 const js = hexo.extend.helper.get('js').bind(hexo);
 
 let css_custom = css('/assets/custom.css')// 自定义样式
-let css_fa = css('https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css')// 图标库
+// let css_fa = css('https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css')// 图标库
+let css_fa = css('/assets/font-awesome.min.css')// 图标库
 let css_lxgw = css('https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.min.css')// 落霞孤鹜字体
 let css_aplayer = css('https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css')// aplayer
 

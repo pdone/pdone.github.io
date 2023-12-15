@@ -67,9 +67,8 @@ img[src$="boxshadow=none"] {
         } */
 
         .tocbot-active-link {
-            font-weight: bold;
-            color: #d7e5ff;
-            text-shadow: var(--my-text-shadow);
+            font-size: 1.1rem;
+            color: #222;
         }
 
         .navbar .nav-item .nav-link:hover {
@@ -102,6 +101,10 @@ img[src$="boxshadow=none"] {
         ::selection {
             background-color: #666;
             color: #fff;
+        }
+
+        .tocbot-active-link {
+            font-size: 1.1rem;
         }
     }
 }

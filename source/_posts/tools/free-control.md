@@ -19,9 +19,9 @@ sticky: 99
 
 ## 界面
 
-![启动界面](/img/article/free-control/1.6.5_1.png)
+![启动界面](/img/article/free-control/1.6.6_1.png)
 
-![设置界面](/img/article/free-control/1.6.5_2.png)
+![设置界面](/img/article/free-control/1.6.6_2.png)
 
 ![功能演示](/img/article/free-control/v1.4.0_5.gif)
 
@@ -37,6 +37,9 @@ https://mirror.ghproxy.com/https://github.com/pdone/FreeControl/releases/latest/
 ## 代码仓库
 
 [![](https://img.shields.io/badge/github-Free_Control-blue?style=for-the-badge&logo=github)](https://github.com/pdone/FreeControl)
+
+## 更新记录
+
 [![](https://img.shields.io/badge/updete-record-fedcba?style=for-the-badge)](https://github.com/pdone/FreeControl/blob/master/FreeControl/Update.md)
 
 ## 常见问题
@@ -117,7 +120,7 @@ Android 11 及更高版本支持使用 Android 调试桥 (adb) 从工作站以�
     adb pair ipaddr:port
     ```
 
-6. 提示 `Enter pairing code: ` 时输入弹窗中的配对码，成功后会显示  `Successfully paired to ...` 。
+6. 提示 `Enter pairing code:` 时输入弹窗中的配对码，成功后会显示  `Successfully paired to ...` 。
 
 7. 使用无线调试下的 **IP 地址和端口**。
 
@@ -208,7 +211,7 @@ Android 11 及更高版本支持使用 Android 调试桥 (adb) 从工作站以�
 ## 捐赠
 如果您觉得这个项目对您有帮助，欢迎请作者喝杯咖啡。☕
 
-![](https://ghps.cc/https://github.com/pdone/static/blob/master/img/donate/zfb_wx.jpg)
+![](/img/donate/zfb_wx.jpg)
 
 ## Stargazers Over Time
 [![Stargazers over time](https://starchart.cc/pdone/FreeControl.svg)](https://starchart.cc/pdone/FreeControl)

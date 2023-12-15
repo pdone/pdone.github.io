@@ -6,7 +6,7 @@ assets_repo:
   current: ghps
 
   origin: https://raw.githubusercontent.com/pdone/static/master
-  ghproxy: https://ghproxy.com/https://raw.githubusercontent.com/pdone/static/master
+  ghproxy: https://mirror.ghproxy.com/https://raw.githubusercontent.com/pdone/static/master
   ghps: https://ghps.cc/https://raw.githubusercontent.com/pdone/static/master
   gitmirror: https://hub.gitmirror.com/https://raw.githubusercontent.com/pdone/static/master
 
@@ -46,6 +46,7 @@ skip_render:
   - "CNAME"
   - "assets/**"
   - "tools/**"
+  - "fonts/**"
 
 # Writing
 new_post_name: :title.md # File name of new posts
