@@ -29,11 +29,21 @@ img[src$="boxshadow=none"] {
     box-shadow: none !important;
 }
 
+#comments {
+    --waline-theme-color: var(--link-hover-color);
+    --waline-active-color: var(--link-hover-color);
+    --waline-color: var(--post-text-color);
+    --waline-border: 1px solid var(--sec-text-color);
+    --waline-info-color: var(--sec-text-color);
+    --waline-bgcolor: var(--board-bg-color);
+    --waline-bgcolor-light: var(--board-bg-color);
+    --waline-info-bgcolor: var(--inlinecode-bg-color);
+}
+
 @media not print {
     [data-user-color-scheme="light"] {
-        transition: background-color 1s ease-in-out !important;
-        background-attachment: fixed;
-        /* background-image: linear-gradient(to bottom, #5482b3, #b5ceff); */
+        /* background-attachment: fixed;
+        background-image: linear-gradient(to bottom, #5482b3, #b5ceff); */
         --body-bg-color: #87a7d7;
 
         --navbar-bg-color: #5482b3CC;
@@ -42,42 +52,38 @@ img[src$="boxshadow=none"] {
         --scrollbar-color: #c1dfff;
         --scrollbar-hover-color: #e5effc;
 
-        --my-hover-color: #fff;
-        --my-text-shadow: 3px 3px 5px #575863;
-        --my-text-shadow2: 1px 1px 5px #575863;
+        --my-navbar-text-color: #fff;
+        --my-navbar-text-shadow: 1px 1px 5px #575863;
 
         ::-webkit-scrollbar-track-piece {
             background-color: #87a7d7;
         }
 
-        #navbar{
-            text-shadow: var(--my-text-shadow2);
-        }
-        #subtitle{
-            text-shadow: var(--my-text-shadow);
+        #navbar {
+            text-shadow: var(--my-navbar-text-shadow);
         }
 
+        #subtitle {
+            text-shadow: var(--my-navbar-text-shadow);
+        }
+
+        /* 文章目录 */
         #toc {
             --text-color: #111;
             color: #111;
         }
-
-        /* .toc-list-item a:hover {
-            color: var(--link-hover-color);
-        } */
-
         .tocbot-active-link {
             font-size: 1.1rem;
             color: #222;
         }
 
+        /* 导航栏 */
         .navbar .nav-item .nav-link:hover {
-            color: var(--my-hover-color);
+            color: var(--my-navbar-text-color);
         }
-
         .navbar .dropdown-item:hover,
         .navbar .dropdown-item:focus {
-            color: var(--my-hover-color);
+            color: var(--my-navbar-text-color);
         }
 
         ::selection {
@@ -87,9 +93,8 @@ img[src$="boxshadow=none"] {
     }
 
     [data-user-color-scheme="dark"] {
-        transition: background-color 1s ease-in-out !important;
-        background-attachment: fixed;
-        /* background-image: linear-gradient(to bottom, #131f29, #4b5466); */
+        /* background-attachment: fixed;
+        background-image: linear-gradient(to bottom, #131f29, #4b5466); */
         --body-bg-color: #303a47;
 
         --navbar-bg-color: #131f29CC;
