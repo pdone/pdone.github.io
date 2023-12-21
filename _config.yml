@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 assets_repo:
-  current: ghps
+  current: ghproxy
 
   origin: https://raw.githubusercontent.com/pdone/static/master
   ghproxy: https://mirror.ghproxy.com/https://raw.githubusercontent.com/pdone/static/master
