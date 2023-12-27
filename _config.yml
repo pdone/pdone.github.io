@@ -3,10 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 assets_repo:
-  current: ghproxy
+  current: vercel
+
+  vercel: https://cdn.awaw.cc/raw.githubusercontent.com/pdone/static/master
 
   origin: https://raw.githubusercontent.com/pdone/static/master
   ghproxy: https://mirror.ghproxy.com/https://raw.githubusercontent.com/pdone/static/master
+  ghproxy2: https://ghproxy.net/https://raw.githubusercontent.com/pdone/static/master
   ghps: https://ghps.cc/https://raw.githubusercontent.com/pdone/static/master
   gitmirror: https://hub.gitmirror.com/https://raw.githubusercontent.com/pdone/static/master
 

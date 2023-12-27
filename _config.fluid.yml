@@ -832,7 +832,7 @@ waline:
   meta: ['nick', 'mail', 'link']
   requiredMeta: ['nick']
   lang: 'zh-CN'
-  emoji: ['https://mirror.ghproxy.com/https://raw.githubusercontent.com/walinejs/emojis/main/alus']
+  emoji: ['https://cdn.awaw.cc/raw.githubusercontent.com/walinejs/emojis/main/alus']
   dark: 'html[data-user-color-scheme="dark"]'
   wordLimit: 0
   pageSize: 10
@@ -980,8 +980,8 @@ about:
   icons:
     - { class: "fa fa-github fa-fw", link: "https://github.com/pdone", tip: "GitHub" }
     - { class: "fa fa-envelope fa-fw", link: "mailto:617941447@qq.com", tip: "Email" }
-    - { class: "fa fa-weixin fa-fw", qrcode: "https://ghproxy.com/https://raw.githubusercontent.com/pdone/static/master/img/wx-qrcode.jpg" }
-    - { class: "iconfont icon-mini-program-fill", qrcode: "https://ghproxy.com/https://raw.githubusercontent.com/pdone/static/master/img/wxapp-qrcode.jpg" }
+    - { class: "fa fa-weixin fa-fw", qrcode: "https://cdn.awaw.cc/raw.githubusercontent.com/pdone/static/master/img/wx-qrcode.jpg" }
+    - { class: "iconfont icon-mini-program-fill", qrcode: "https://cdn.awaw.cc/raw.githubusercontent.com/pdone/static/master/img/wxapp-qrcode.jpg" }
 
 
 #---------------------------
