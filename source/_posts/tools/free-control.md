@@ -30,9 +30,9 @@ sticky: 99
 
 https://github.com/pdone/FreeControl/releases/latest/download/FreeControl.exe
 
-### ghproxy
+### My Proxy
 
-https://mirror.ghproxy.com/https://github.com/pdone/FreeControl/releases/latest/download/FreeControl.exe
+https://cdn.awaw.cc/gh/pdone/FreeControl/releases/latest/download/FreeControl.exe
 
 ## 代码仓库
 

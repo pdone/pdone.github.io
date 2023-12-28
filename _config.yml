@@ -5,7 +5,7 @@
 assets_repo:
   current: vercel
 
-  vercel: https://cdn.awaw.cc/raw.githubusercontent.com/pdone/static/master
+  vercel: https://cdn.awaw.cc/raw/pdone/static/master
 
   origin: https://raw.githubusercontent.com/pdone/static/master
   ghproxy: https://mirror.ghproxy.com/https://raw.githubusercontent.com/pdone/static/master
