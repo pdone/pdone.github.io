@@ -116,7 +116,7 @@ img[src$="boxshadow=none"] {
 
 body,
 div {
-    cursor: url(//mirror.ghproxy.com/https://raw.githubusercontent.com/pdone/static/master/img/cursor/pointer.cur), default !important;
+    cursor: url(https://cdn.awaw.cc/raw/pdone/static/master/img/cursor/pointer.cur), default !important;
 }
 
 a,
@@ -125,7 +125,7 @@ img,
 p>a,
 div>i.iconfont.icon-arrowdown,
 a>div {
-    cursor: url(//mirror.ghproxy.com/https://raw.githubusercontent.com/pdone/static/master/img/cursor/link.cur), pointer !important;
+    cursor: url(https://cdn.awaw.cc/raw/pdone/static/master/img/cursor/link.cur), pointer !important;
 }
 
 @font-face {
@@ -133,10 +133,10 @@ a>div {
     font-display: swap;
     src:
 
-        url(//mirror.ghproxy.com/https://raw.githubusercontent.com/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.woff2) format('woff2'),
-        url(//mirror.ghproxy.com/https://raw.githubusercontent.com/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.woff) format('woff'),
-        url(//mirror.ghproxy.com/https://raw.githubusercontent.com/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.ttf) format('TrueType'),
-        url(//mirror.ghproxy.com/https://raw.githubusercontent.com/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.otf) format('opentype');
+        url(https://cdn.awaw.cc/raw/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.woff2) format('woff2'),
+        url(https://cdn.awaw.cc/raw/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.woff) format('woff'),
+        url(https://cdn.awaw.cc/raw/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.ttf) format('TrueType'),
+        url(https://cdn.awaw.cc/raw/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.otf) format('opentype');
 
     /* url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2) format('woff2'),
         url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff) format('woff'),

@@ -477,7 +477,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: / # https://ghproxy.com/https://raw.githubusercontent.com/pdone/static/master/img/wallpaper/1.jpg # /img/default.png
+  banner_img: / # https://cdn.awaw.cc/raw/pdone/static/master/img/wallpaper/1.jpg # /img/default.png
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -832,7 +832,7 @@ waline:
   meta: ['nick', 'mail', 'link']
   requiredMeta: ['nick']
   lang: 'zh-CN'
-  emoji: ['https://cdn.awaw.cc/raw.githubusercontent.com/walinejs/emojis/main/alus']
+  emoji: ['https://cdn.awaw.cc/raw/walinejs/emojis/main/alus']
   dark: 'html[data-user-color-scheme="dark"]'
   wordLimit: 0
   pageSize: 10
@@ -980,8 +980,8 @@ about:
   icons:
     - { class: "fa fa-github fa-fw", link: "https://github.com/pdone", tip: "GitHub" }
     - { class: "fa fa-envelope fa-fw", link: "mailto:617941447@qq.com", tip: "Email" }
-    - { class: "fa fa-weixin fa-fw", qrcode: "https://cdn.awaw.cc/raw.githubusercontent.com/pdone/static/master/img/wx-qrcode.jpg" }
-    - { class: "iconfont icon-mini-program-fill", qrcode: "https://cdn.awaw.cc/raw.githubusercontent.com/pdone/static/master/img/wxapp-qrcode.jpg" }
+    - { class: "fa fa-weixin fa-fw", qrcode: "https://cdn.awaw.cc/raw/pdone/static/master/img/wx-qrcode.jpg" }
+    - { class: "iconfont icon-mini-program-fill", qrcode: "https://cdn.awaw.cc/raw/pdone/static/master/img/wxapp-qrcode.jpg" }
 
 
 #---------------------------
