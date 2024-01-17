@@ -19,9 +19,9 @@ sticky: 99
 
 ## 界面
 
-![启动界面](/img/article/free-control/1.6.6_1.png)
+![启动界面](/img/article/free-control/1.6.8_1.png)
 
-![设置界面](/img/article/free-control/1.6.6_2.png)
+![设置界面](/img/article/free-control/1.6.8_2.png)
 
 ![功能演示](/img/article/free-control/v1.4.0_5.gif)
 
@@ -55,14 +55,6 @@ https://cdn.awaw.cc/gh/pdone/FreeControl/releases/latest/download/FreeControl.ex
 - 微信输入法
 
 此功能需要输入法APP适配，有更好用的输入法欢迎留言推荐。
-
-#### ⭐自动切换输入法功能说明
-
-由于大多数朋友日常使用的输入法不支持跨屏输入，所以增加了启动时自动切换输入法的功能，用于自动切换到非日常使用、但支持跨屏输入的输入法。
-
-在主界面中设置启动时要切换的输入法，点击启动按钮便会自动切换（确保手机上已安装对应输入法APP）。
-
-关闭窗口时，会切换回原来的输入法。
 
 ### 设备连接问题
 
