@@ -5,13 +5,33 @@ tags: [.NET,OpenSource]
 categories: Tools
 sticky: 99
 # category_bar: true
+excerpt: 基于开源项目scrcpy，提供简洁的交互界面。
 ---
+
+## FreeControl
+
+<p style="display: flex;">
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/blob/master/LICENSE">
+<img title="License" style="margin: inherit;" src="https://img.shields.io/github/license/pdone/FreeControl?style=for-the-badge&boxshadow="></a>
+
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/releases/latest">
+<img title="Latest" style="margin: inherit;" src="https://img.shields.io/github/release/pdone/FreeControl?style=for-the-badge&boxshadow="></a>
+
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/releases">
+<img title="Releases" style="margin: inherit;" src="https://img.shields.io/github/downloads/pdone/FreeControl/total?style=for-the-badge&boxshadow="></a>
+
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl">
+<img title="Stars" style="margin: inherit;" src="https://img.shields.io/github/stars/pdone/FreeControl?style=for-the-badge&boxshadow="></a>
+
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/issues">
+<img title="Issues" style="margin: inherit;" src="https://img.shields.io/github/issues/pdone/FreeControl?style=for-the-badge&boxshadow="></a>
+</p>
+
+## 介绍
 
 [ [English](https://github.com/pdone/FreeControl/blob/master/README.en.md) | [中文](https://github.com/pdone/FreeControl/blob/master/README.md) ]
 
 基于开源项目[**scrcpy**](https://github.com/Genymobile/scrcpy)，提供简洁的交互界面。
-
-<!--more-->
 
 - 编码语言 `C#`
 - 开发工具 `Visual Studio 2022`
@@ -36,11 +56,17 @@ https://cdn.awaw.cc/gh/pdone/FreeControl/releases/latest/download/FreeControl.ex
 
 ## 代码仓库
 
-[![](https://img.shields.io/badge/github-Free_Control-blue?style=for-the-badge&logo=github)](https://github.com/pdone/FreeControl)
+<p style="display: -webkit-flex;">
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl">
+<img title="点击查看" style="margin: inherit;" src="https://img.shields.io/badge/github-Free_Control-blue?style=for-the-badge"></a>
+</p>
 
 ## 更新记录
 
-[![](https://img.shields.io/badge/updete-record-fedcba?style=for-the-badge)](https://github.com/pdone/FreeControl/blob/master/FreeControl/Update.md)
+<p style="display: -webkit-flex;">
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/blob/master/FreeControl/Update.md">
+<img title="点击查看" style="margin: inherit;" src="https://img.shields.io/badge/updete-record-fedcba?style=for-the-badge"></a>
+</p>
 
 ## 常见问题
 
