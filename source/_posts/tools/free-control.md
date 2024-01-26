@@ -82,6 +82,8 @@ https://cdn.awaw.cc/gh/pdone/FreeControl/releases/latest/download/FreeControl.ex
 
 此功能需要输入法APP适配，有更好用的输入法欢迎留言推荐。
 
+> 自动切换输入法功能默认禁用。如需启用，先关闭程序，然后打开配置文件 `%AppData%\FreeControl\config.json`，将 `EnableSwitchIME` 字段值改为 `true`，保存后启动程序即可。
+
 ### 设备连接问题
 
 #### USB 连接
