@@ -231,7 +231,7 @@ Android 11 及更高版本支持使用 Android 调试桥 (adb) 从工作站以�
 ## 捐赠
 如果您觉得这个项目对您有帮助，欢迎请作者喝杯咖啡。☕
 
-![](/img/donate/zfb_wx.jpg)
+![](/img/donate/zfb_wx.png?boxshadow=none)
 
 ## Stargazers Over Time
 [![Stargazers over time](https://starchart.cc/pdone/FreeControl.svg?background=%23ffffff00&axis=%23888888&line=%2330a9de&boxshadow=none)](https://starchart.cc/pdone/FreeControl)
