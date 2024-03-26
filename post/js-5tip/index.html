@@ -1,0 +1,922 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="pdone">
+  <meta name="keywords" content="pdone,Hexo,C++,C#,developer,vue">
+  
+    <meta name="description" content="原文地址：5 Tips to Write Better Conditionals in JavaScript原文作者：Jecelyn Yeen翻译&amp;校对：pdone">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5个小技巧让你写出更好的JavaScript条件语句">
+<meta property="og:url" content="https://awaw.cc/post/js-5tip/">
+<meta property="og:site_name" content="Pdone&#39;s Blog">
+<meta property="og:description" content="原文地址：5 Tips to Write Better Conditionals in JavaScript原文作者：Jecelyn Yeen翻译&amp;校对：pdone">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-10-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-04T04:00:57.488Z">
+<meta property="article:author" content="pdone">
+<meta property="article:tag" content="JS">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>5个小技巧让你写出更好的JavaScript条件语句 - Pdone&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"awaw.cc","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/loading.svg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"def79bf7d2240517f4fcbd4d5b9fa688","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":21715279,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?def79bf7d2240517f4fcbd4d5b9fa688";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21715279.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/assets/custom.css">
+
+<link rel="stylesheet" href="/assets/font-awesome.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Pdone's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Pdone&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-folder"></i>
+                <span>Archive</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="fa fa-tags"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-wrench"></i>
+                <span>Tools</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/eat-what-today/" target="_self">
+                    <i class="fa fa-cutlery"></i>
+                    <span>今天吃什么</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/catch-the-cat/" target="_self">
+                    <i class="fa fa-github-alt"></i>
+                    <span>捉住小猫</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/pwd-generator/" target="_self">
+                    <i class="fa fa-shield"></i>
+                    <span>密码生成器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/md-editor/" target="_self">
+                    <i class="fa fa-edit"></i>
+                    <span>MD编辑器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/swing-girl/" target="_self">
+                    <i class="fa fa-pagelines"></i>
+                    <span>荡秋千</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/planet/" target="_self">
+                    <i class="fa fa-superpowers"></i>
+                    <span>星球</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://aria.awaw.cc" target="_self">
+                    <i class="fa fa-rocket"></i>
+                    <span>AriaNg</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-asterisk"></i>
+                <span>More</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/" target="_self">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/" target="_self">
+                    <i class="iconfont icon-user-fill"></i>
+                    <span>关于</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="5个小技巧让你写出更好的JavaScript条件语句"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          19 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">5个小技巧让你写出更好的JavaScript条件语句</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>原文地址：<a target="_blank" rel="noopener" href="https://scotch.io/tutorials/5-tips-to-write-better-conditionals-in-javascript#toc-1-use-array-includes-for-multiple-criteria">5 Tips to Write Better Conditionals in JavaScript</a><br>原文作者：<a target="_blank" rel="noopener" href="https://scotch.io/@jecelyn">Jecelyn Yeen</a><br>翻译&amp;校对：<a target="_blank" rel="noopener" href="https://pdoner.cn/">pdone</a></p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="1-在条件较多时使用-Array-includes"><a href="#1-在条件较多时使用-Array-includes" class="headerlink" title="1.在条件较多时使用 Array.includes"></a>1.在条件较多时使用 Array.includes</h2><p>举个栗子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// condition</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit</span>) &#123;<br>  <span class="hljs-keyword">if</span> (fruit == <span class="hljs-string">&#x27;apple&#x27;</span> || fruit == <span class="hljs-string">&#x27;strawberry&#x27;</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;red&#x27;</span>);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>乍一看，上面的例子看起来不错。 但是，如果我们有更多的红色水果，比如樱桃和蔓越莓呢？ 我们是否要用更多的<code>||</code>来扩展语句？</p>
+<p>我们可以使用<code>Array.includes</code>重写上面的条件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit</span>) &#123;<br>  <span class="hljs-comment">// extract conditions to array</span><br>  <span class="hljs-keyword">const</span> redFruits = [<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;strawberry&#x27;</span>, <span class="hljs-string">&#x27;cherry&#x27;</span>, <span class="hljs-string">&#x27;cranberries&#x27;</span>];<br><br>  <span class="hljs-keyword">if</span> (redFruits.<span class="hljs-title function_">includes</span>(fruit)) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;red&#x27;</span>);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们将<code>红色水果（条件）</code>整合到一个数组中。这样做可以让代码看起来更整洁。</p>
+<h2 id="2-减少嵌套，尽早返回"><a href="#2-减少嵌套，尽早返回" class="headerlink" title="2.减少嵌套，尽早返回"></a>2.减少嵌套，尽早返回</h2><p>让我们扩展前面的示例，增加另外两个条件：<br>——如果没有提供水果，抛出错误；<br>——如果超过10种水果，打印出水果数量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit, quantity</span>) &#123;<br>  <span class="hljs-keyword">const</span> redFruits = [<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;strawberry&#x27;</span>, <span class="hljs-string">&#x27;cherry&#x27;</span>, <span class="hljs-string">&#x27;cranberries&#x27;</span>];<br><br>  <span class="hljs-comment">// condition 1: fruit must has value</span><br>  <span class="hljs-keyword">if</span> (fruit) &#123;<br>    <span class="hljs-comment">// condition 2: must be red</span><br>    <span class="hljs-keyword">if</span> (redFruits.<span class="hljs-title function_">includes</span>(fruit)) &#123;<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;red&#x27;</span>);<br><br>      <span class="hljs-comment">// condition 3: must be big quantity</span><br>      <span class="hljs-keyword">if</span> (quantity &gt; <span class="hljs-number">10</span>) &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;big quantity&#x27;</span>);<br>      &#125;<br>    &#125;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&#x27;No fruit!&#x27;</span>);<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">// test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-literal">null</span>); <span class="hljs-comment">// error: No fruits</span><br><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;apple&#x27;</span>); <span class="hljs-comment">// print: red</span><br><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-number">20</span>); <span class="hljs-comment">// print: red, big quantity</span><br></code></pre></td></tr></table></figure>
+
+<p>看看上面的代码，我们有：<br>­——1个<code>if / else</code>语句过滤掉无效条件；<br>——3层嵌套if语句（条件1,2和3）。<br>对我而言，我遵循的规则是在发现无效条件时提前返回。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/* return early when invalid conditions found */</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit, quantity</span>) &#123;<br>  <span class="hljs-keyword">const</span> redFruits = [<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;strawberry&#x27;</span>, <span class="hljs-string">&#x27;cherry&#x27;</span>, <span class="hljs-string">&#x27;cranberries&#x27;</span>];<br><br>  <span class="hljs-comment">// condition 1: throw error early</span><br>  <span class="hljs-keyword">if</span> (!fruit) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&#x27;No fruit!&#x27;</span>);<br><br>  <span class="hljs-comment">// condition 2: must be red</span><br>  <span class="hljs-keyword">if</span> (redFruits.<span class="hljs-title function_">includes</span>(fruit)) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;red&#x27;</span>);<br><br>    <span class="hljs-comment">// condition 3: must be big quantity</span><br>    <span class="hljs-keyword">if</span> (quantity &gt; <span class="hljs-number">10</span>) &#123;<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;big quantity&#x27;</span>);<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样做的话，我们会得到一个较少层级的嵌套语句。 这种编码风格很好，特别是当你有很长的if语句时（想象你需要滚动到最底层才知道这里有一个else语句，一点都不酷）。</p>
+<p>通过反转条件并提前返回，我们可以进一步减少嵌套。 请查看下面的条件2，看看我们是如何做到的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/* return early when invalid conditions found */</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit, quantity</span>) &#123;<br>  <span class="hljs-keyword">const</span> redFruits = [<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;strawberry&#x27;</span>, <span class="hljs-string">&#x27;cherry&#x27;</span>, <span class="hljs-string">&#x27;cranberries&#x27;</span>];<br><br>  <span class="hljs-keyword">if</span> (!fruit) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&#x27;No fruit!&#x27;</span>); <span class="hljs-comment">// condition 1: throw error early</span><br>  <span class="hljs-keyword">if</span> (!redFruits.<span class="hljs-title function_">includes</span>(fruit)) <span class="hljs-keyword">return</span>; <span class="hljs-comment">// condition 2: stop when fruit is not red</span><br><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;red&#x27;</span>);<br><br>  <span class="hljs-comment">// condition 3: must be big quantity</span><br>  <span class="hljs-keyword">if</span> (quantity &gt; <span class="hljs-number">10</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;big quantity&#x27;</span>);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>通过反转条件2，我们的代码现在没有嵌套语句。 当我们有很长的逻辑时，这种技巧非常有用，我们希望在不满足条件时停止下一步的处理。</p>
+<p>但是这并不是硬性规定。问问自己，这个版本（没有嵌套）是否比前一个版本（条件2嵌套）更好、更可读？</p>
+<p>对我而言，我会保留（条件2嵌套）这个版本，因为：<br>——代码简短直接，一个if语句是代码结构更清晰；<br>——反转条件可能会引发更多的思考过程（增加认知负荷）。</p>
+<p>因此，始终追求更少的嵌套和尽早的返回，但不要过度。如果你感兴趣的话，这里有篇关于这个问题的文章以及 StackOverflow 上的讨论：</p>
+<p><a target="_blank" rel="noopener" href="http://blog.timoxley.com/post/47041269194/avoid-else-return-early">Avoid Else, Return Early</a> by Tim Oxley</p>
+<p><a target="_blank" rel="noopener" href="https://softwareengineering.stackexchange.com/questions/18454/should-i-return-from-a-function-early-or-use-an-if-statement">StackOverflow discussion</a> on if&#x2F;else coding style</p>
+<h2 id="3-使用函数默认参数和解构"><a href="#3-使用函数默认参数和解构" class="headerlink" title="3.使用函数默认参数和解构"></a>3.使用函数默认参数和解构</h2><p>我想下面的代码可能看起来很熟悉，我们总是需要检查<code>null / undefined</code>值并给参数赋予默认值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit, quantity</span>) &#123;<br>  <span class="hljs-keyword">if</span> (!fruit) <span class="hljs-keyword">return</span>;<br>  <span class="hljs-keyword">const</span> q = quantity || <span class="hljs-number">1</span>; <span class="hljs-comment">// if quantity not provided, default to one</span><br><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`We have <span class="hljs-subst">$&#123;q&#125;</span> <span class="hljs-subst">$&#123;fruit&#125;</span>!`</span>);<br>&#125;<br><br><span class="hljs-comment">//test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;banana&#x27;</span>); <span class="hljs-comment">// We have 1 banana!</span><br><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// We have 2 apple!</span><br></code></pre></td></tr></table></figure>
+
+<p>实际上，我们可以通过设置函数的默认参数来省去参数<code>q</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit, quantity = <span class="hljs-number">1</span></span>) &#123; <span class="hljs-comment">// if quantity not provided, default to one</span><br>  <span class="hljs-keyword">if</span> (!fruit) <span class="hljs-keyword">return</span>;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`We have <span class="hljs-subst">$&#123;quantity&#125;</span> <span class="hljs-subst">$&#123;fruit&#125;</span>!`</span>);<br>&#125;<br><br><span class="hljs-comment">//test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;banana&#x27;</span>); <span class="hljs-comment">// We have 1 banana!</span><br><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// We have 2 apple!</span><br></code></pre></td></tr></table></figure>
+
+<p>更简单直观不是吗？ 请注意，函数的每个参数都可以有自己的默认值。 例如，我们也可以为<code>水果</code>分配默认值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span> (fruit =<span class="hljs-string">&#x27;unknown&#x27;</span>, quantity = <span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+
+<p>如果我们的<code>水果</code>是一个<code>对象（Object）</code>怎么办？ 我们可以指定默认参数吗？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit</span>) &#123; <br>  <span class="hljs-comment">// printing fruit name if value provided</span><br>  <span class="hljs-keyword">if</span> (fruit &amp;&amp; fruit.<span class="hljs-property">name</span>)  &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-property">log</span> (fruit.<span class="hljs-property">name</span>);<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;unknown&#x27;</span>);<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">//test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; &#125;); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;); <span class="hljs-comment">// apple</span><br></code></pre></td></tr></table></figure>
+
+<p>观察上边的例子，水果的<code>name</code>属性存在时，我们会将它打印出来，否则打印<code>&#39;unknown&#39;</code>。我们可以通过默认参数和解构赋值的方法来避免写出 <code>fruit &amp;&amp; fruit.name</code> 这种条件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// destructing - get name property only</span><br><span class="hljs-comment">// assign default empty object &#123;&#125;</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">&#123;name&#125; = &#123;&#125;</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-property">log</span> (name || <span class="hljs-string">&#x27;unknown&#x27;</span>);<br>&#125;<br><br><span class="hljs-comment">//test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; &#125;); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;); <span class="hljs-comment">// apple</span><br></code></pre></td></tr></table></figure>
+
+<p>由于我们只需要来自fruit的<code>name</code>属性，我们可以使用<code>&#123;name&#125;</code>将其解构出来，然后我们可以在代码中使用<code>name</code>作为变量而不是<code>fruit.name</code>。</p>
+<p>我们还使用空对象<code>&#123;&#125;</code>作为默认值。 如果我们不这样做，你将在执行遇到错误<code>test(undefined) - Cannot destructure property name of &#39;undefined&#39; or &#39;null&#39;</code>。 因为<code>undefined</code>中没有<code>name</code>属性。</p>
+<p>如果你不介意使用第三方库，有几种方法可以减少空值检查：<br>——使用 <a target="_blank" rel="noopener" href="https://lodash.com/docs/4.17.10#get">Lodash get</a> 函数；<br>——使用 Facebook 开源的 <a target="_blank" rel="noopener" href="https://github.com/facebookincubator/idx">idx</a> 库（需搭配 Babeljs）。<br>这里有一个使用 Lodash 的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// Include lodash library, you will get _</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(__.<span class="hljs-title function_">get</span>(fruit, <span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;unknown&#x27;</span>); <span class="hljs-comment">// get property name, if not available, assign default value &#x27;unknown&#x27;</span><br>&#125;<br><br><span class="hljs-comment">//test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; &#125;); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;); <span class="hljs-comment">// apple</span><br></code></pre></td></tr></table></figure>
+
+<p>您可以<a target="_blank" rel="noopener" href="http://jsbin.com/bopovajiye/edit?js,console">点击这里</a>运行演示代码。 此外，如果您是功能编程（FP）的粉丝，您可以选择使用<a target="_blank" rel="noopener" href="https://github.com/lodash/lodash/wiki/FP-Guide">Lodash fp</a>，Lodash的功能版本（方法更改为get或getOr）。</p>
+<h2 id="4-相较Switch更偏向于使用Map-x2F-Object"><a href="#4-相较Switch更偏向于使用Map-x2F-Object" class="headerlink" title="4.相较Switch更偏向于使用Map &#x2F; Object"></a>4.相较Switch更偏向于使用Map &#x2F; Object</h2><p>让我们看看下面的例子，我们想根据颜色打印水果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">color</span>) &#123;<br>  <span class="hljs-comment">// use switch case to find fruits in color</span><br>  <span class="hljs-keyword">switch</span> (color) &#123;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;red&#x27;</span>:<br>      <span class="hljs-keyword">return</span> [<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;strawberry&#x27;</span>];<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;yellow&#x27;</span>:<br>      <span class="hljs-keyword">return</span> [<span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-string">&#x27;pineapple&#x27;</span>];<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;purple&#x27;</span>:<br>      <span class="hljs-keyword">return</span> [<span class="hljs-string">&#x27;grape&#x27;</span>, <span class="hljs-string">&#x27;plum&#x27;</span>];<br>    <span class="hljs-attr">default</span>:<br>      <span class="hljs-keyword">return</span> [];<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">//test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-literal">null</span>); <span class="hljs-comment">// []</span><br><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;yellow&#x27;</span>); <span class="hljs-comment">// [&#x27;banana&#x27;, &#x27;pineapple&#x27;]</span><br></code></pre></td></tr></table></figure>
+
+<p>上面的代码似乎没有错，但我觉得它很冗长。 使用具有更清晰语法的object literal可以实现相同的结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// use object literal to find fruits in color</span><br>  <span class="hljs-keyword">const</span> fruitColor = &#123;<br>    <span class="hljs-attr">red</span>: [<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;strawberry&#x27;</span>],<br>    <span class="hljs-attr">yellow</span>: [<span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-string">&#x27;pineapple&#x27;</span>],<br>    <span class="hljs-attr">purple</span>: [<span class="hljs-string">&#x27;grape&#x27;</span>, <span class="hljs-string">&#x27;plum&#x27;</span>]<br>  &#125;;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">color</span>) &#123;<br>  <span class="hljs-keyword">return</span> fruitColor[color] || [];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>或者，你可以使用Map来实现相同的结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// use Map to find fruits in color</span><br>  <span class="hljs-keyword">const</span> fruitColor = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>()<br>    .<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;red&#x27;</span>, [<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;strawberry&#x27;</span>])<br>    .<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;yellow&#x27;</span>, [<span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-string">&#x27;pineapple&#x27;</span>])<br>    .<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;purple&#x27;</span>, [<span class="hljs-string">&#x27;grape&#x27;</span>, <span class="hljs-string">&#x27;plum&#x27;</span>]);<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">color</span>) &#123;<br>  <span class="hljs-keyword">return</span> fruitColor.<span class="hljs-title function_">get</span>(color) || [];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Map是ES2015引入的对象类型，允许你存储键值对。</p>
+<p>我们应该禁止使用switch语句吗？ 不要局限于此。 就个人而言，我尽可能使用object literal，但我不会设置硬性规则来阻止使用Switch，视使用场景而定。</p>
+<p>Todd Motto有一篇文章深入研究switch语句与对象文字，你可以<a target="_blank" rel="noopener" href="https://toddmotto.com/deprecating-the-switch-statement-for-object-literals/">点击这里</a>阅读。</p>
+<h3 id="TL；DR；重构方法"><a href="#TL；DR；重构方法" class="headerlink" title="TL；DR；重构方法"></a>TL；DR；重构方法</h3><p>对于上面的示例，我们实际上可以重构我们的代码以使用Array.filter实现相同的结果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"> <span class="hljs-keyword">const</span> fruits = [<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;, <br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;strawberry&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;, <br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;yellow&#x27;</span> &#125;, <br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;pineapple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;yellow&#x27;</span> &#125;, <br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;grape&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;purple&#x27;</span> &#125;, <br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;plum&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;purple&#x27;</span> &#125;<br>];<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">color</span>) &#123;<br>  <span class="hljs-comment">// use Array filter to find fruits in color</span><br><br>  <span class="hljs-keyword">return</span> fruits.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> f.<span class="hljs-property">color</span> == color);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>解决问题的方法永远不只一种。对于这个例子我们展示了四种实现方法。编程真有趣！</p>
+<h2 id="5-使用-Array-every-和-Array-some-来处理全部-x2F-部分满足条件"><a href="#5-使用-Array-every-和-Array-some-来处理全部-x2F-部分满足条件" class="headerlink" title="5.使用 Array.every 和 Array.some 来处理全部&#x2F;部分满足条件"></a>5.使用 Array.every 和 Array.some 来处理全部&#x2F;部分满足条件</h2><p>最后一个小技巧更多地是关于使用新的（也不是很新了）JavaScript 数组函数来减少代码行数。观察以下的代码，我们想要检查是否所有的水果都是红色的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fruits = [<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;,<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;yellow&#x27;</span> &#125;,<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;grape&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;purple&#x27;</span> &#125;<br>  ];<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">let</span> isAllRed = <span class="hljs-literal">true</span>;<br><br>  <span class="hljs-comment">// condition: all fruits must be red</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> f <span class="hljs-keyword">of</span> fruits) &#123;<br>    <span class="hljs-keyword">if</span> (!isAllRed) <span class="hljs-keyword">break</span>;<br>    isAllRed = (f.<span class="hljs-property">color</span> == <span class="hljs-string">&#x27;red&#x27;</span>);<br>  &#125;<br><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(isAllRed); <span class="hljs-comment">// false</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>代码太长了！ 我们可以使用<code>Array.every</code>减少行数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fruits = [<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;,<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;yellow&#x27;</span> &#125;,<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;grape&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;purple&#x27;</span> &#125;<br>  ];<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// condition: short way, all fruits must be red</span><br>  <span class="hljs-keyword">const</span> isAllRed = fruits.<span class="hljs-title function_">every</span>(<span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> f.<span class="hljs-property">color</span> == <span class="hljs-string">&#x27;red&#x27;</span>);<br><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(isAllRed); <span class="hljs-comment">// false</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>现在是不是整洁了许多？ 以类似的方式，如果我们想测试是否至少有一个水果为红色，我们可以使用Array.some用一行代码实现它。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fruits = [<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;,<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;yellow&#x27;</span> &#125;,<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;grape&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;purple&#x27;</span> &#125;<br>];<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// condition: if any fruit is red</span><br>  <span class="hljs-keyword">const</span> isAnyRed = fruits.<span class="hljs-title function_">some</span>(<span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> f.<span class="hljs-property">color</span> == <span class="hljs-string">&#x27;red&#x27;</span>);<br><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(isAnyRed); <span class="hljs-comment">// true</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>让我们一起编写可读性更高的代码。 我希望你能在本文中学到一些新东西。</p>
+<p>就这样。 快乐的编码！</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Developer/" class="category-chain-item">Developer</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/JS/" class="print-no-link">#JS</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>5个小技巧让你写出更好的JavaScript条件语句</div>
+      <div>https://awaw.cc/post/js-5tip/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>pdone</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2018年10月18日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年7月4日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/post/js-dateformat/" title="JavaScript获取时间并格式化">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JavaScript获取时间并格式化</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/openssl-csr/" title="OpenSSL生成多域名CSR">
+                        <span class="hidden-mobile">OpenSSL生成多域名CSR</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://cdn.staticfile.org/waline/2.15.8/waline.min.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/waline/2.15.8/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.awaw.cc","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.awaw.cc/raw/walinejs/emojis/main/alus"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size:0.8rem"> Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> &  <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a><br> © 2024 <a href="https://github.com/pdone" target="_blank" rel="nofollow noopener"><span>pdone</span></a> All rights reserved.</div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,876 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="pdone">
+  <meta name="keywords" content="pdone,Hexo,C++,C#,developer,vue">
+  
+    <meta name="description" content="深度操作系统是一个致力于为全球用户提供美观易用、安全可靠的Linux发行版。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度操作系统 20——崭新视界，创无止境">
+<meta property="og:url" content="https://awaw.cc/post/deepin-20/">
+<meta property="og:site_name" content="Pdone&#39;s Blog">
+<meta property="og:description" content="深度操作系统是一个致力于为全球用户提供美观易用、安全可靠的Linux发行版。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.deepin.org/wp-content/uploads/2020/09/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83.png">
+<meta property="og:image" content="https://www.deepin.org/wp-content/uploads/2020/09/%E9%80%9A%E7%9F%A5%E4%B8%AD%E5%BF%83.png">
+<meta property="og:image" content="https://www.deepin.org/wp-content/uploads/2020/09/%E5%8F%8C%E5%86%85%E6%A0%B8-1.png">
+<meta property="og:image" content="https://www.deepin.org/wp-content/uploads/2020/09/%E5%AE%89%E8%A3%85%E5%99%A8.png">
+<meta property="og:image" content="https://www.deepin.org/wp-content/uploads/2020/09/%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97.png">
+<meta property="og:image" content="https://www.deepin.org/wp-content/uploads/2020/09/%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB.png">
+<meta property="article:published_time" content="2020-09-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-10T02:49:35.498Z">
+<meta property="article:author" content="pdone">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="OS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.deepin.org/wp-content/uploads/2020/09/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>深度操作系统 20——崭新视界，创无止境 - Pdone&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"awaw.cc","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/loading.svg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"def79bf7d2240517f4fcbd4d5b9fa688","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":21715279,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?def79bf7d2240517f4fcbd4d5b9fa688";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21715279.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/assets/custom.css">
+
+<link rel="stylesheet" href="/assets/font-awesome.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Pdone's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Pdone&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-folder"></i>
+                <span>Archive</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="fa fa-tags"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-wrench"></i>
+                <span>Tools</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/eat-what-today/" target="_self">
+                    <i class="fa fa-cutlery"></i>
+                    <span>今天吃什么</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/catch-the-cat/" target="_self">
+                    <i class="fa fa-github-alt"></i>
+                    <span>捉住小猫</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/pwd-generator/" target="_self">
+                    <i class="fa fa-shield"></i>
+                    <span>密码生成器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/md-editor/" target="_self">
+                    <i class="fa fa-edit"></i>
+                    <span>MD编辑器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/swing-girl/" target="_self">
+                    <i class="fa fa-pagelines"></i>
+                    <span>荡秋千</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/planet/" target="_self">
+                    <i class="fa fa-superpowers"></i>
+                    <span>星球</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://aria.awaw.cc" target="_self">
+                    <i class="fa fa-rocket"></i>
+                    <span>AriaNg</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-asterisk"></i>
+                <span>More</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/" target="_self">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/" target="_self">
+                    <i class="iconfont icon-user-fill"></i>
+                    <span>关于</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="深度操作系统 20——崭新视界，创无止境"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          646 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">深度操作系统 20——崭新视界，创无止境</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>深度操作系统是一个致力于为全球用户提供美观易用、安全可靠的Linux发行版。</p>
+<span id="more"></span> 
+
+<p>深度操作系统 20正式版（1002）采取统一的设计风格，从桌面环境和应用进行重新设计，带来焕然一新的视觉感受。底层仓库升级到Debian 10.5，系统安装采用双内核机制（Kernel 5.4、Kernel 5.7），全面提升系统稳定性和兼容性。全新设计的启动器菜单、指纹识别、系统安全增强等，系统部分预装应用升级到最新版本，只为给你更好体验。</p>
+<h2 id="统一风格的桌面环境"><a href="#统一风格的桌面环境" class="headerlink" title="统一风格的桌面环境"></a>统一风格的桌面环境</h2><p>别出心裁的图标设计，焕然一新的图形界面，自然、平滑的动画过渡效果，更有独树一帜的圆角窗口设计，精美绝伦的多任务视图，处处精心，只为给你细腻自然的品质体验。</p>
+<p><img src="https://www.deepin.org/wp-content/uploads/2020/09/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83.png" srcset="/loading.svg" lazyload alt="支持黑白主题、透明度调节、色温调节自定义、电源电池设置等贴心功能。"></p>
+<h2 id="个性贴心的通知管理"><a href="#个性贴心的通知管理" class="headerlink" title="个性贴心的通知管理"></a>个性贴心的通知管理</h2><p>增强通知中心功能，支持设置通知时提示声音、锁屏时显示消息、仅在通知中心显示、显示消息预览，必要应用强提醒、特定应用弱提醒或不提醒，个性化你的消息通知，在不错过任何重要提醒的同时，避免不必要的打扰。</p>
+<p><img src="https://www.deepin.org/wp-content/uploads/2020/09/%E9%80%9A%E7%9F%A5%E4%B8%AD%E5%BF%83.png" srcset="/loading.svg" lazyload></p>
+<h2 id="系统支持双内核安装"><a href="#系统支持双内核安装" class="headerlink" title="系统支持双内核安装"></a>系统支持双内核安装</h2><p>系统安装界面提供双内核选项，Kernel 5.4（LTS）和Kernel 5.7（Stable）以及Safe Graphics模式，保证系统安装更多选择，提升系统整体的稳定性、兼容性，最新的内核支持更多的硬件设备。</p>
+<p><img src="https://www.deepin.org/wp-content/uploads/2020/09/%E5%8F%8C%E5%86%85%E6%A0%B8-1.png" srcset="/loading.svg" lazyload></p>
+<h2 id="更易用的新版安装器"><a href="#更易用的新版安装器" class="headerlink" title="更易用的新版安装器"></a>更易用的新版安装器</h2><p>化繁为简的设计和交互，保证更一致的操作习惯。新版的安装器界面，只需按照操作向导提示安装即可，在硬盘分区操作中，提供手动和全盘安装两种模式，并且支持全盘加密功能。</p>
+<p><img src="https://www.deepin.org/wp-content/uploads/2020/09/%E5%AE%89%E8%A3%85%E5%99%A8.png" srcset="/loading.svg" lazyload alt="注：对于N卡用户，安装器自动检测并提供安装闭源驱动选项。"></p>
+<h2 id="管理方便的应用商店"><a href="#管理方便的应用商店" class="headerlink" title="管理方便的应用商店"></a>管理方便的应用商店</h2><p>应用商店的不同类别应用，覆盖了生活、工作的主要使用场景，本次新增一键更新、应用筛选等功能，带来更便捷的应用管理体验，同时也兼容部分Wine应用，并达到原生应用的体验。</p>
+<p><img src="https://www.deepin.org/wp-content/uploads/2020/09/%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97.png" srcset="/loading.svg" lazyload></p>
+<h2 id="好用安全的指纹识别"><a href="#好用安全的指纹识别" class="headerlink" title="好用安全的指纹识别"></a>好用安全的指纹识别</h2><p>全新的指纹功能框架，提供了更细腻的引导交互和更准确的场景提示。可使用指纹进行解锁登录、验证身份和管理员权限。现已支持多款国产指纹硬件。</p>
+<p><img src="https://www.deepin.org/wp-content/uploads/2020/09/%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB.png" srcset="/loading.svg" lazyload></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.deepin.org/zh/download/">https://www.deepin.org/zh/download/</a></p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Share/" class="category-chain-item">Share</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+        <a href="/tags/OS/" class="print-no-link">#OS</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>深度操作系统 20——崭新视界，创无止境</div>
+      <div>https://awaw.cc/post/deepin-20/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>pdone</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2020年9月16日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2022年6月10日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/post/revit-category-all/" title="BuildInCategory枚举 - 完整">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">BuildInCategory枚举 - 完整</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/free-control/" title="Free Control 用电脑控制手机 - 开源">
+                        <span class="hidden-mobile">Free Control 用电脑控制手机 - 开源</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://cdn.staticfile.org/waline/2.15.8/waline.min.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/waline/2.15.8/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.awaw.cc","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.awaw.cc/raw/walinejs/emojis/main/alus"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size:0.8rem"> Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> &  <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a><br> © 2024 <a href="https://github.com/pdone" target="_blank" rel="nofollow noopener"><span>pdone</span></a> All rights reserved.</div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

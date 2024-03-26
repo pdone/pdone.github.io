@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>今天吃什么</title>
+    <meta name="keywords" content="今天吃什么" />
+    <meta name="description" content="今天吃什么" />
+    <link rel="stylesheet" href="https://cdn.awaw.cc/raw/pdone/static/master/css/eatwhat.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>
+            <div id="msg">今天吃什么，吃什么？</div>
+            <br>
+            <div style="color:#FF9733;font-weight:bold;height: 25px;" id="what"> </div>
+        </h1>
+        <input type="button" value="开始" id="start" />
+        <input type="button" value="开始" id="stop" style="display: none;">
+    </div>
+
+    <textarea rows="9" cols="53" id="list" style="display:none">
+                馄饨 拉面 烩面 热干面 刀削面 油泼面 炸酱面 炒面 重庆小面 米线 酸辣粉 土豆粉 螺狮粉 凉皮儿 麻辣烫 肉夹馍 羊肉汤 炒饭 盖浇饭 卤肉饭 烤肉饭 黄焖鸡米饭 驴肉火烧 麻辣香锅 火锅 酸菜鱼 烤串 披萨 烤鸭 汉堡 炸鸡 寿司 蟹黄包 煎饼果子 生煎 炒年糕
+    </textarea>
+
+    <script src="https://cdn.awaw.cc/raw/pdone/static/master/js/jquery-1.8.3.min.js"></script>
+
+    <script type='text/javascript'>
+        $(function () {
+            var run = 0,
+                heading = $("h1"),
+                timer;
+
+            $("#start").click(function () {
+                var list = $("#list").val().replace(/ +/g, " ").replace(/^ | $/g, "").split(" ");
+                if (!run) {
+                    $('#msg').text('今天吃什么，吃什么？');
+                    $(this).val("停止");
+                    timer = setInterval(function () {
+                        var r = Math.ceil(Math.random() * list.length),
+                            food = list[r - 1];
+                        $("#what").html(food);
+                        var rTop = Math.ceil(Math.random() * $(document).height()),
+                            rLeft = Math.ceil(Math.random() * ($(document).width() - 50)),
+                            rSize = Math.ceil(Math.random() * (37 - 14) + 14);
+                        $("<span class='temp'></span>").html(food).hide().css({
+                            "top": rTop,
+                            "left": rLeft,
+                            "color": "rgba(0,0,0,." + Math.random() + ")",
+                            "fontSize": rSize + "px"
+                        }).appendTo("body").fadeIn("slow", function () {
+                            $(this).fadeOut("slow", function () {
+                                $(this).remove();
+                            });
+                        });
+                    }, 50);
+                    run = 1;
+                } else {
+                    $('#msg').text('今天吃什么，吃这个！');
+                    $(this).val("不行，换一个");
+                    clearInterval(timer);
+                    run = 0;
+                };
+            });
+
+            document.onkeydown = function enter(e) {
+                var e = e || event;
+                if (e.keyCode == 13) $("#start").trigger("click");
+            };
+        });
+
+        $i = 0;
+        $('#start').click(function () {
+            $i++;
+            if ($i >= 10) {
+                $('#start').hide();
+                $('#stop').show();
+            }
+        })
+        $('#stop').click(function () {
+            $('#msg').text('这么作，今天别吃了！');
+            $('#start').hide();
+            $('#what').hide();
+            $(this).hide();
+        })
+    </script>
+
+</body>
+
+</html>

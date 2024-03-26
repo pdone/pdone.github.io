@@ -1,0 +1,145 @@
+/* body {
+    --body-bg-color: transparent;
+    background-attachment: fixed;
+    background-size: 400%;
+    background-image: linear-gradient(125deg, #3a6ea3, #27ae60, #2980b9, #e74c3c, #8e44ad);
+    animation: bg_move 20s ease-in-out infinite;
+}
+
+@keyframes bg_move {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+} */
+
+
+.dplayer {
+    border-radius: 8px !important;
+}
+
+img[src$="boxshadow=none"] {
+    box-shadow: none !important;
+}
+
+#comments {
+    --waline-theme-color: var(--link-hover-color);
+    --waline-active-color: var(--link-hover-color);
+    --waline-color: var(--post-text-color);
+    --waline-border: 1px solid var(--sec-text-color);
+    --waline-info-color: var(--sec-text-color);
+    --waline-bgcolor: var(--board-bg-color);
+    --waline-bgcolor-light: var(--board-bg-color);
+    --waline-info-bgcolor: var(--inlinecode-bg-color);
+}
+
+@media not print {
+    [data-user-color-scheme="light"] {
+        /* background-attachment: fixed;
+        background-image: linear-gradient(to bottom, #5482b3, #b5ceff); */
+        --body-bg-color: #87a7d7;
+
+        --navbar-bg-color: #5482b3CC;
+        --link-hover-color: #2067ed;
+
+        --scrollbar-color: #c1dfff;
+        --scrollbar-hover-color: #e5effc;
+
+        --my-navbar-text-color: #fff;
+        --my-navbar-text-shadow: 1px 1px 5px #575863;
+
+        ::-webkit-scrollbar-track-piece {
+            background-color: #87a7d7;
+        }
+
+        #navbar {
+            text-shadow: var(--my-navbar-text-shadow);
+        }
+
+        #subtitle {
+            text-shadow: var(--my-navbar-text-shadow);
+        }
+
+        /* 文章目录 */
+        #toc {
+            --text-color: #111;
+            color: #111;
+        }
+        .tocbot-active-link {
+            font-size: 1.1rem;
+            color: #222;
+        }
+
+        /* 导航栏 */
+        .navbar .nav-item .nav-link:hover {
+            color: var(--my-navbar-text-color);
+        }
+        .navbar .dropdown-item:hover,
+        .navbar .dropdown-item:focus {
+            color: var(--my-navbar-text-color);
+        }
+
+        ::selection {
+            background-color: #6d96cf;
+            color: #fff;
+        }
+    }
+
+    [data-user-color-scheme="dark"] {
+        /* background-attachment: fixed;
+        background-image: linear-gradient(to bottom, #131f29, #4b5466); */
+        --body-bg-color: #303a47;
+
+        --navbar-bg-color: #131f29CC;
+
+        ::-webkit-scrollbar-track-piece {
+            background-color: #303a47;
+        }
+
+        ::selection {
+            background-color: #666;
+            color: #fff;
+        }
+
+        .tocbot-active-link {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+body,
+div {
+    cursor: url(https://cdn.awaw.cc/raw/pdone/static/master/img/cursor/pointer.cur), default !important;
+}
+
+a,
+button,
+img,
+p>a,
+div>i.iconfont.icon-arrowdown,
+a>div {
+    cursor: url(https://cdn.awaw.cc/raw/pdone/static/master/img/cursor/link.cur), pointer !important;
+}
+
+@font-face {
+    font-family: AlibabaPuHuiTi-3-55-Regular;
+    font-display: swap;
+    src:
+
+        url(https://cdn.awaw.cc/raw/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.woff2) format('woff2'),
+        url(https://cdn.awaw.cc/raw/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.woff) format('woff'),
+        url(https://cdn.awaw.cc/raw/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.ttf) format('TrueType'),
+        url(https://cdn.awaw.cc/raw/pdone/static/master/font/AlibabaPuHuiTi-3-55-Regular.subset.otf) format('opentype');
+
+    /* url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2) format('woff2'),
+        url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff) format('woff'),
+        url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.ttf) format('TrueType'),
+        url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.otf) format('opentype'); */
+}

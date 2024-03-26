@@ -1,0 +1,900 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="pdone">
+  <meta name="keywords" content="pdone,Hexo,C++,C#,developer,vue">
+  
+    <meta name="description" content="想象 在造物主的奇妙创造中，智慧生命被孕育而生，被赋予了独特的使命。一部分智慧生命被委派为造物主的助手，肩负着神圣的使命，辅助他完成众多事务。然而，其他的智慧生命则被放置在宇宙沙盒之中，这个神秘的沙盒划分成了无数个对照组，每个对照组即如同一个平行宇宙。 尽管这些平行宇宙共享着相同的宇宙环境，但造物主巧妙地设置了一种绝妙的隔离机制，使得不同对照组之间相互孤立，有如我们所熟知的虚拟机。每个对照组的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="奇思妙想💭">
+<meta property="og:url" content="https://awaw.cc/post/whimsy/">
+<meta property="og:site_name" content="Pdone&#39;s Blog">
+<meta property="og:description" content="想象 在造物主的奇妙创造中，智慧生命被孕育而生，被赋予了独特的使命。一部分智慧生命被委派为造物主的助手，肩负着神圣的使命，辅助他完成众多事务。然而，其他的智慧生命则被放置在宇宙沙盒之中，这个神秘的沙盒划分成了无数个对照组，每个对照组即如同一个平行宇宙。 尽管这些平行宇宙共享着相同的宇宙环境，但造物主巧妙地设置了一种绝妙的隔离机制，使得不同对照组之间相互孤立，有如我们所熟知的虚拟机。每个对照组的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.awaw.cc/raw/pdone/static/master/img/article/whimsy/%E6%83%B3%E8%B1%A1%E4%B8%AD%E7%9A%84%E9%BB%91%E6%B4%9E.jpg">
+<meta property="og:image" content="https://cdn.awaw.cc/raw/pdone/static/master/img/article/whimsy/%E6%98%9F%E4%BA%91.jpg">
+<meta property="og:image" content="https://cdn.awaw.cc/raw/pdone/static/master/img/article/whimsy/%E5%9C%A8%E6%9C%88%E7%90%83%E8%A1%A8%E9%9D%A2%E7%9C%8B%E5%9C%B0%E7%90%83.jpg">
+<meta property="og:image" content="https://cdn.awaw.cc/raw/pdone/static/master/img/article/whimsy/%E8%80%81%E9%BC%A0%E4%B9%8C%E6%89%98%E9%82%A6%E5%AE%9E%E9%AA%8C1.jpg">
+<meta property="article:published_time" content="2023-08-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-19T06:13:25.323Z">
+<meta property="article:author" content="pdone">
+<meta property="article:tag" content="Whimsy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.awaw.cc/raw/pdone/static/master/img/article/whimsy/%E6%83%B3%E8%B1%A1%E4%B8%AD%E7%9A%84%E9%BB%91%E6%B4%9E.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>奇思妙想💭 - Pdone&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"awaw.cc","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/loading.svg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"def79bf7d2240517f4fcbd4d5b9fa688","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":21715279,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?def79bf7d2240517f4fcbd4d5b9fa688";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21715279.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/assets/custom.css">
+
+<link rel="stylesheet" href="/assets/font-awesome.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Pdone's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Pdone&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-folder"></i>
+                <span>Archive</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="fa fa-tags"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-wrench"></i>
+                <span>Tools</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/eat-what-today/" target="_self">
+                    <i class="fa fa-cutlery"></i>
+                    <span>今天吃什么</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/catch-the-cat/" target="_self">
+                    <i class="fa fa-github-alt"></i>
+                    <span>捉住小猫</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/pwd-generator/" target="_self">
+                    <i class="fa fa-shield"></i>
+                    <span>密码生成器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/md-editor/" target="_self">
+                    <i class="fa fa-edit"></i>
+                    <span>MD编辑器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/swing-girl/" target="_self">
+                    <i class="fa fa-pagelines"></i>
+                    <span>荡秋千</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/planet/" target="_self">
+                    <i class="fa fa-superpowers"></i>
+                    <span>星球</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://aria.awaw.cc" target="_self">
+                    <i class="fa fa-rocket"></i>
+                    <span>AriaNg</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-asterisk"></i>
+                <span>More</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/" target="_self">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/" target="_self">
+                    <i class="iconfont icon-user-fill"></i>
+                    <span>关于</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="奇思妙想💭"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          19 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">奇思妙想💭</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <span id="more"></span>
+
+<h2 id="想象"><a href="#想象" class="headerlink" title="想象"></a>想象</h2><p><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/whimsy/%E6%83%B3%E8%B1%A1%E4%B8%AD%E7%9A%84%E9%BB%91%E6%B4%9E.jpg" srcset="/loading.svg" lazyload alt="想象中的黑洞"></p>
+<p>在造物主的奇妙创造中，智慧生命被孕育而生，被赋予了独特的使命。一部分智慧生命被委派为造物主的助手，肩负着神圣的使命，辅助他完成众多事务。然而，其他的智慧生命则被放置在宇宙沙盒之中，这个神秘的沙盒划分成了无数个对照组，每个对照组即如同一个平行宇宙。</p>
+<p>尽管这些平行宇宙共享着相同的宇宙环境，但造物主巧妙地设置了一种绝妙的隔离机制，使得不同对照组之间相互孤立，有如我们所熟知的虚拟机。每个对照组的智慧生命都在自己独特的条件下发展和进化，彼此并不感知对方的存在，仿佛分居于各自的宇宙之中。</p>
+<p>造物主寄望于观察自己创造的智慧生命在多样条件下的发展轨迹。然而，为了避免智慧生命的过快发展而导致自我毁灭，他睿智地赋予了它们有限的寿命。这样一来，生命将在有限的时间内经历成长、繁荣与变化，却不至于过早迎来终结。</p>
+<p>基于这个精妙的构思，人类注定永远无法自行发现存在于其他平行宇宙中的外星生命——即使是与我们自身相似的存在。除非造物主以某种形式干预，揭示了这些神秘生命的存在。这样的干预可能是一个宏大的奇迹，或者是一连串微妙的迹象，引导我们开始怀疑我们不是宇宙中唯一的智慧生命。</p>
+<p>在这美妙而神秘的创世之旅中，我们不妨保持谦卑和好奇，探索宇宙和生命的奥秘，也许在某一刻，我们会获得关于我们自身存在意义的更深刻认知。</p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>让我们继续扩展这个设想，将其构建成一个虚构的宇宙场景。</p>
+<p><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/whimsy/%E6%98%9F%E4%BA%91.jpg" srcset="/loading.svg" lazyload alt="星云"></p>
+<p>在这个造物主创造的宇宙沙盒中，有许多平行宇宙（对照组），每个宇宙都是一个独特的实验场景。每个实验场景都有不同的初始条件和规则，从微观层面到宏观层面都存在微妙的差异，以产生各种可能性。</p>
+<p><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/whimsy/%E5%9C%A8%E6%9C%88%E7%90%83%E8%A1%A8%E9%9D%A2%E7%9C%8B%E5%9C%B0%E7%90%83.jpg" srcset="/loading.svg" lazyload alt="在月球表面看地球"></p>
+<ul>
+<li><p>宇宙的初始条件：每个宇宙都有自己独特的初始条件。有些可能具有更多的自然资源和生态平衡，而另一些可能在资源稀缺和环境恶劣的情况下开始。</p>
+</li>
+<li><p>生命的诞生：在每个宇宙中，生命以各种形式诞生。从单细胞生物到复杂的多细胞生物，从植物到动物，各种形态的生命在不同的宇宙中演化。</p>
+</li>
+<li><p>有限的寿命：造物主赋予智慧生命有限的寿命，以避免其发展过快而自我毁灭。这使得智慧生命需要理性和谨慎对待资源和科技的发展，以延续自己的文明。</p>
+</li>
+<li><p>智慧生命的出现：在某些宇宙中，智慧生命可能会逐渐出现。他们会经历进化、文明的崛起和科技的发展。不同宇宙中智慧生命的特点和文明水平可能千差万别。</p>
+</li>
+<li><p>宇宙沙盒中的对照组：这些对照组可能不仅包括类似地球的情景，也包括完全不同的星球和宇宙结构。有些对照组中可能存在比地球上更高级的生物形式，也有可能有完全不同类型的智慧生命。</p>
+</li>
+<li><p>交互与隔离：虽然这些宇宙共享相似的宇宙环境，但造物主将它们隔离开来，避免相互干扰，以保持实验的独立性。智慧生命之间并不知道其他宇宙的存在，让他们自主发展。</p>
+</li>
+<li><p>观察和干预：造物主时不时地观察不同对照组中智慧生命的进展，他们也许通过超自然手段对这些对照组进行干预，但也可能仅是静观其变。</p>
+</li>
+<li><p>生命的进化与文明：不同对照组中的智慧生命会经历不同的进化历程和文明发展。有些对照组的文明可能迅速崛起，创造出强大的科技和社会结构，而另一些对照组可能在原始阶段停滞不前。</p>
+</li>
+<li><p>实验的结果：每个宇宙的结果都是独一无二的。有些宇宙的智慧生命可能因为资源利用不当或自相残杀而灭亡。而另一些宇宙的智慧生命可能会团结合作，探索宇宙的奥秘，并达到一个高度先进的文明。</p>
+</li>
+<li><p>自行发现外星人的难题：基于设定中的隔离和宇宙沙盒的概念，人类在自然条件下可能难以自行发现其他对照组中的外星文明。这是因为这些对照组是相互隔离的，彼此无法直接联系。除非造物主进行干预或解除隔离，否则人类可能永远不会直接接触其他宇宙中的外星文明。</p>
+</li>
+</ul>
+<p>这样的设想，将宇宙看作一个巨大的实验室，造物主作为超自然的存在，掌控着这个宏伟的观察与实验计划。在这个设定下，人类和其他智慧生命都是宇宙中的一部分，我们的存在和发展也可能是造物主实验的一部分。</p>
+<p>同时也为我们提供了一种有趣的哲学思考，让我们思考宇宙的无限可能性以及我们作为智慧生命的存在和发展。虽然这只是一个设想，但它为我们提供了一种探索未知和宇宙奥秘的视角。</p>
+<h2 id="类比"><a href="#类比" class="headerlink" title="类比"></a>类比</h2><p>当我们将老鼠乌托邦（25号宇宙）实验的结果与上文观点相结合，可以得到一些有趣的启示和类比。</p>
+<p><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/whimsy/%E8%80%81%E9%BC%A0%E4%B9%8C%E6%89%98%E9%82%A6%E5%AE%9E%E9%AA%8C1.jpg" srcset="/loading.svg" lazyload alt="老鼠乌托邦实验"></p>
+<ul>
+<li><p>在上文设想中，造物主创造了智慧生命并观察他们在宇宙中的发展。类似地，老鼠乌托邦实验也是一个观察社会动物（老鼠）在特定条件下的发展。这两者都是通过在特定环境中设定条件和规则来探索生命的进化和行为。</p>
+</li>
+<li><p>有限的资源：在老鼠乌托邦实验中，随着人口密度的增加，资源的竞争变得更为激烈。类似地，在上文观点中，造物主给予生命有限的资源，可能是为了观察智慧生命如何在资源有限的情况下适应和发展。</p>
+</li>
+<li><p>社会结构与动力：实验中老鼠群体的社会结构出现了退化和混乱，而在上文设想中，智慧生命也可能面临类似的挑战。人类社会中也存在着资源竞争、社会不平等和文明冲突等问题，而这些因素可能影响文明的发展和社会动力。</p>
+</li>
+<li><p>行为沮丧：老鼠乌托邦实验中，高度拥挤和资源过剩的环境导致了老鼠社会的异常行为，这类似于上文观点中对于发展太快可能导致自行灭亡的担忧。这个类比可能引发我们对于人类社会中过度竞争、资源过剩和社会动态的反思。</p>
+</li>
+<li><p>自我调整和适应：在实验和上文设想中，动物和智慧生命都面临着适应环境和资源限制的挑战。在类似于乌托邦实验中，老鼠群体可能最终自我调整或消亡，而在上文设想中的智慧生命可能会逐渐适应和发展，寻找合适的平衡。</p>
+</li>
+</ul>
+<p>通过将老鼠乌托邦实验与上文观点相结合，我们可以从一个不同的角度思考社会动物和智慧生命在特定环境下的行为和进化。这样的类比提醒我们在探讨人类社会和文明发展的同时，也要关注资源的合理分配、社会结构的稳定和适应环境的能力。同时，也让我们思考造物主设立这样的实验是否旨在观察智慧生命如何面对类似挑战，以及从中获取对于宇宙和生命的更深刻理解。</p>
+<blockquote>
+<p>注：以上内容源于想象和假设。</p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Share/" class="category-chain-item">Share</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Whimsy/" class="print-no-link">#Whimsy</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>奇思妙想💭</div>
+      <div>https://awaw.cc/post/whimsy/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>pdone</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年8月4日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年9月19日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/whats-short-link/" title="短链接服务Octopus的实现与源码开放">
+                        <span class="hidden-mobile">短链接服务Octopus的实现与源码开放</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://cdn.staticfile.org/waline/2.15.8/waline.min.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/waline/2.15.8/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.awaw.cc","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.awaw.cc/raw/walinejs/emojis/main/alus"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size:0.8rem"> Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> &  <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a><br> © 2024 <a href="https://github.com/pdone" target="_blank" rel="nofollow noopener"><span>pdone</span></a> All rights reserved.</div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

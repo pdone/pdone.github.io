@@ -1,0 +1,1016 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="pdone">
+  <meta name="keywords" content="pdone,Hexo,C++,C#,developer,vue">
+  
+    <meta name="description" content="基于开源项目scrcpy，提供简洁的交互界面。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Free Control 用电脑控制手机 - 开源">
+<meta property="og:url" content="https://awaw.cc/post/free-control/">
+<meta property="og:site_name" content="Pdone&#39;s Blog">
+<meta property="og:description" content="基于开源项目scrcpy，提供简洁的交互界面。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.shields.io/github/license/pdone/FreeControl?style=for-the-badge&boxshadow=">
+<meta property="og:image" content="https://img.shields.io/github/release/pdone/FreeControl?style=for-the-badge&boxshadow=">
+<meta property="og:image" content="https://img.shields.io/github/downloads/pdone/FreeControl/total?style=for-the-badge&boxshadow=">
+<meta property="og:image" content="https://img.shields.io/github/stars/pdone/FreeControl?style=for-the-badge&boxshadow=">
+<meta property="og:image" content="https://img.shields.io/github/issues/pdone/FreeControl?style=for-the-badge&boxshadow=">
+<meta property="og:image" content="https://cdn.awaw.cc/raw/pdone/static/master/img/article/free-control/1.7.0_1.png">
+<meta property="og:image" content="https://cdn.awaw.cc/raw/pdone/static/master/img/article/free-control/1.7.0_2.png">
+<meta property="og:image" content="https://cdn.awaw.cc/raw/pdone/static/master/img/article/free-control/v1.4.0_5.gif">
+<meta property="og:image" content="https://img.shields.io/badge/github-Free_Control-blue?style=for-the-badge">
+<meta property="og:image" content="https://img.shields.io/badge/updete-record-fedcba?style=for-the-badge">
+<meta property="og:image" content="https://cdn.awaw.cc/raw/pdone/static/master/img/donate/zfb_wx.png?boxshadow=none">
+<meta property="og:image" content="https://starchart.cc/pdone/FreeControl.svg?background=%23ffffff00&axis=%23888888&line=%2330a9de&boxshadow=none">
+<meta property="article:published_time" content="2020-09-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-21T07:40:28.060Z">
+<meta property="article:author" content="pdone">
+<meta property="article:tag" content=".NET">
+<meta property="article:tag" content="OpenSource">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img.shields.io/github/license/pdone/FreeControl?style=for-the-badge&boxshadow=">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Free Control 用电脑控制手机 - 开源 - Pdone&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"awaw.cc","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/loading.svg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"def79bf7d2240517f4fcbd4d5b9fa688","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":21715279,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?def79bf7d2240517f4fcbd4d5b9fa688";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21715279.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/assets/custom.css">
+
+<link rel="stylesheet" href="/assets/font-awesome.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Pdone's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Pdone&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-folder"></i>
+                <span>Archive</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="fa fa-tags"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-wrench"></i>
+                <span>Tools</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/eat-what-today/" target="_self">
+                    <i class="fa fa-cutlery"></i>
+                    <span>今天吃什么</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/catch-the-cat/" target="_self">
+                    <i class="fa fa-github-alt"></i>
+                    <span>捉住小猫</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/pwd-generator/" target="_self">
+                    <i class="fa fa-shield"></i>
+                    <span>密码生成器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/md-editor/" target="_self">
+                    <i class="fa fa-edit"></i>
+                    <span>MD编辑器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/swing-girl/" target="_self">
+                    <i class="fa fa-pagelines"></i>
+                    <span>荡秋千</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/planet/" target="_self">
+                    <i class="fa fa-superpowers"></i>
+                    <span>星球</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://aria.awaw.cc" target="_self">
+                    <i class="fa fa-rocket"></i>
+                    <span>AriaNg</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-asterisk"></i>
+                <span>More</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/" target="_self">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/" target="_self">
+                    <i class="iconfont icon-user-fill"></i>
+                    <span>关于</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Free Control 用电脑控制手机 - 开源"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Free Control 用电脑控制手机 - 开源</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="FreeControl"><a href="#FreeControl" class="headerlink" title="FreeControl"></a>FreeControl</h2><p style="display: flex;">
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/blob/master/LICENSE">
+<img title="License" style="margin: inherit;" src="https://img.shields.io/github/license/pdone/FreeControl?style=for-the-badge&boxshadow=" srcset="/loading.svg" lazyload></a>
+
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/releases/latest">
+<img title="Latest" style="margin: inherit;" src="https://img.shields.io/github/release/pdone/FreeControl?style=for-the-badge&boxshadow=" srcset="/loading.svg" lazyload></a>
+
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/releases">
+<img title="Releases" style="margin: inherit;" src="https://img.shields.io/github/downloads/pdone/FreeControl/total?style=for-the-badge&boxshadow=" srcset="/loading.svg" lazyload></a>
+
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl">
+<img title="Stars" style="margin: inherit;" src="https://img.shields.io/github/stars/pdone/FreeControl?style=for-the-badge&boxshadow=" srcset="/loading.svg" lazyload></a>
+
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/issues">
+<img title="Issues" style="margin: inherit;" src="https://img.shields.io/github/issues/pdone/FreeControl?style=for-the-badge&boxshadow=" srcset="/loading.svg" lazyload></a>
+</p>
+
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>[ <a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/blob/master/README.en.md">English</a> | <a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/blob/master/README.md">中文</a> ]</p>
+<p>基于开源项目<a target="_blank" rel="noopener" href="https://github.com/Genymobile/scrcpy"><strong>scrcpy</strong></a>，提供简洁的交互界面。</p>
+<ul>
+<li>编码语言 <code>C#</code></li>
+<li>开发工具 <code>Visual Studio 2022</code></li>
+<li>运行环境 <code>.NET Framework 4.7.2</code></li>
+</ul>
+<h2 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h2><p><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/free-control/1.7.0_1.png" srcset="/loading.svg" lazyload alt="启动界面"></p>
+<p><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/free-control/1.7.0_2.png" srcset="/loading.svg" lazyload alt="设置界面"></p>
+<p><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/free-control/v1.4.0_5.gif" srcset="/loading.svg" lazyload alt="功能演示"></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><h3 id="GitHub-Release"><a href="#GitHub-Release" class="headerlink" title="GitHub Release"></a>GitHub Release</h3><p><a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/releases/latest/download/FreeControl.exe">https://github.com/pdone/FreeControl/releases/latest/download/FreeControl.exe</a></p>
+<h3 id="My-Proxy"><a href="#My-Proxy" class="headerlink" title="My Proxy"></a>My Proxy</h3><p><a target="_blank" rel="noopener" href="https://cdn.awaw.cc/gh/pdone/FreeControl/releases/latest/download/FreeControl.exe">https://cdn.awaw.cc/gh/pdone/FreeControl/releases/latest/download/FreeControl.exe</a></p>
+<h2 id="代码仓库"><a href="#代码仓库" class="headerlink" title="代码仓库"></a>代码仓库</h2><p style="display: -webkit-flex;">
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl">
+<img title="点击查看" style="margin: inherit;" src="https://img.shields.io/badge/github-Free_Control-blue?style=for-the-badge" srcset="/loading.svg" lazyload></a>
+</p>
+
+<h2 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h2><p style="display: -webkit-flex;">
+<a target="_blank" rel="noopener" href="https://github.com/pdone/FreeControl/blob/master/FreeControl/Update.md">
+<img title="点击查看" style="margin: inherit;" src="https://img.shields.io/badge/updete-record-fedcba?style=for-the-badge" srcset="/loading.svg" lazyload></a>
+</p>
+
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="输入法问题"><a href="#输入法问题" class="headerlink" title="输入法问题"></a>输入法问题</h3><p><code>v1.7.0</code> 及以后的版本中，默认启用scrcpy的 <code>UHID keyboard</code> 特性，以优化中文输入体验。</p>
+<p>如果在此过程中遇到了什么问题，可尝试打开配置文件 <code>%AppData%\FreeControl\config.json</code>，将 <code>CustomArgs</code> 的值由 <code>--keyboard=uhid</code> 改为 <code>--keyboard=sdk</code>。</p>
+<p>更多信息可参考 <a target="_blank" rel="noopener" href="https://github.com/Genymobile/scrcpy/blob/master/doc/keyboard.md">scrcpy-doc-keyboard</a>。</p>
+<details>
+<summary>已过时</summary>
+
+<p>个人测试发现，目前支持跨屏进行拼音输入的 <strong>手机输入法APP</strong> 如下：</p>
+<ul>
+<li>搜狗输入法</li>
+<li>QQ输入法</li>
+<li>谷歌拼音输入法</li>
+<li>Gboard</li>
+<li>微信输入法</li>
+</ul>
+<p>此功能需要输入法APP适配，有更好用的输入法欢迎留言推荐。</p>
+<blockquote>
+<p>自动切换输入法功能默认禁用。如需启用，先关闭程序，然后打开配置文件 <code>%AppData%\FreeControl\config.json</code>，将 <code>EnableSwitchIME</code> 字段值改为 <code>true</code>，保存后启动程序即可。</p>
+</blockquote>
+</details>
+
+<h3 id="设备连接问题"><a href="#设备连接问题" class="headerlink" title="设备连接问题"></a>设备连接问题</h3><h4 id="USB-连接"><a href="#USB-连接" class="headerlink" title="USB 连接"></a>USB 连接</h4><p>通过 USB 连接来正常使用 adb 需要保证几点：</p>
+<ol>
+<li><p>硬件状态正常。</p>
+<p>包括 Android 设备处于正常开机状态，USB 连接线和各种接口完好。</p>
+</li>
+<li><p>Android 设备的开发者选项和 USB 调试模式已开启。</p>
+<p>可以到「设置」-「开发者选项」-「Android 调试」查看。</p>
+<p>如果在设置里找不到开发者选项，那需要通过一个彩蛋来让它显示出来：在「设置」-「关于手机」连续点击「版本号」7 次。</p>
+</li>
+<li><p>设备驱动状态正常。</p>
+<p>这一点貌似在 Linux 和 Mac OS X 下不用操心，在 Windows 下有可能遇到需要安装驱动的情况，确认这一点可以右键「计算机」-「属性」，到「设备管理器」里查看相关设备上是否有黄色感叹号或问号，如果没有就说明驱动状态已经好了。否则可以下载一个手机助手类程序来安装驱动先。</p>
+</li>
+<li><p>通过 USB 线连接好电脑和设备后确认状态。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">adb devices<br></code></pre></td></tr></table></figure>
+
+<p>如果能看到</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">xxxxxx device<br></code></pre></td></tr></table></figure>
+
+<p>说明连接成功。</p>
+</li>
+</ol>
+<h4 id="无线连接（Android11-及以上）"><a href="#无线连接（Android11-及以上）" class="headerlink" title="无线连接（Android11 及以上）"></a>无线连接（Android11 及以上）</h4><p>Android 11 及更高版本支持使用 Android 调试桥 (adb) 从工作站以无线方式部署和调试应用。例如，您可以将可调试应用部署到多台远程设备，而无需通过 USB 实际连接设备。这样就可以避免常见的 USB 连接问题，例如驱动程序安装方面的问题。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.com/studio/command-line/adb?hl=zh_cn#connect-to-a-device-over-wi-fi-android-11+">官方文档</a></p>
+<p>操作步骤：</p>
+<ol>
+<li><p>更新到最新版本的 <a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/platform-tools?hl=zh_cn">SDK 平台工具</a>(至少30.0.0)。</p>
+</li>
+<li><p>将 Android 设备与要运行 adb 的电脑连接到同一个局域网，比如连到同一个 WiFi。</p>
+</li>
+<li><p>在开发者选项中启用<strong>无线调试</strong>。</p>
+</li>
+<li><p>在询问要允许在此网络上进行无线调试吗？的对话框中，点击允许。</p>
+</li>
+<li><p>选择使用配对码配对设备，使用弹窗中的 IP 地址和端口号。</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">adb pair ipaddr:port<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>提示 <code>Enter pairing code:</code> 时输入弹窗中的配对码，成功后会显示  <code>Successfully paired to ...</code> 。</p>
+</li>
+<li><p>使用无线调试下的 <strong>IP 地址和端口</strong>。</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">adb connect ipaddr:port<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>确认连接状态。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">adb devices<br></code></pre></td></tr></table></figure>
+
+<p>如果能看到</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">ipaddr:port device<br></code></pre></td></tr></table></figure>
+
+<p>说明连接成功。</p>
+</li>
+</ol>
+<h4 id="无线连接（需要借助-USB-线）"><a href="#无线连接（需要借助-USB-线）" class="headerlink" title="无线连接（需要借助 USB 线）"></a>无线连接（需要借助 USB 线）</h4><p>除了可以通过 USB 连接设备与电脑来使用 adb，也可以通过无线连接——虽然连接过程中也有需要使用 USB 的步骤，但是连接成功之后你的设备就可以在一定范围内摆脱 USB 连接线的限制啦！</p>
+<p>操作步骤：</p>
+<ol>
+<li><p>将 Android 设备与要运行 adb 的电脑连接到同一个局域网，比如连到同一个 WiFi。</p>
+</li>
+<li><p>将设备与电脑通过 USB 线连接。</p>
+<p>应确保连接成功（可运行 <code>adb devices</code> 看是否能列出该设备）。</p>
+</li>
+<li><p>让设备在 5555 端口监听 TCP&#x2F;IP 连接：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">adb tcpip 5555<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>断开 USB 连接。</p>
+</li>
+<li><p>找到设备的 IP 地址。</p>
+<p>一般能在「设置」-「关于手机」-「状态信息」-「IP地址」找到。</p>
+</li>
+<li><p>通过 IP 地址连接设备。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">adb connect &lt;device-ip-address&gt;<br></code></pre></td></tr></table></figure>
+
+<p>这里的 <code>&lt;device-ip-address&gt;</code> 就是上一步中找到的设备 IP 地址。</p>
+</li>
+<li><p>确认连接状态。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">adb devices<br></code></pre></td></tr></table></figure>
+
+<p>如果能看到</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">&lt;device-ip-address&gt;:5555 device<br></code></pre></td></tr></table></figure>
+
+<p>说明连接成功。</p>
+</li>
+</ol>
+<p>如果连接不了，请确认 Android 设备与电脑是连接到了同一个 WiFi，然后再次执行 <code>adb connect &lt;device-ip-address&gt;</code> 那一步；</p>
+<p>如果还是不行的话，通过 <code>adb kill-server</code> 重新启动 adb 然后从头再来一次试试。</p>
+<h4 id="无线连接（无需借助-USB-线）"><a href="#无线连接（无需借助-USB-线）" class="headerlink" title="无线连接（无需借助 USB 线）"></a>无线连接（无需借助 USB 线）</h4><p><strong>需要 root 权限</strong>，此处不做详细说明，有需要的朋友可<a target="_blank" rel="noopener" href="https://github.com/mzlogin/awesome-adb#%E6%97%A0%E7%BA%BF%E8%BF%9E%E6%8E%A5%E6%97%A0%E9%9C%80%E5%80%9F%E5%8A%A9-usb-%E7%BA%BF">参考此处</a>。</p>
+<h3 id="保持唤醒功能"><a href="#保持唤醒功能" class="headerlink" title="保持唤醒功能"></a>保持唤醒功能</h3><p>仅在手机充电时有效。</p>
+<h3 id="音频转发功能"><a href="#音频转发功能" class="headerlink" title="音频转发功能"></a>音频转发功能</h3><p>使用 <code>Android 11</code> 或更高版本的设备支持音频转发，并且默认情况下启用:</p>
+<ul>
+<li>对于 <code>Android 12</code> 或更高版本，它开箱即用。</li>
+<li>对于 <code>Android 11</code> ，您需要确保在启动scrcpy时设备屏幕已解锁。假的弹出窗口将短暂出现，使系统认为shell应用程序处于前台。没有这个，音频捕获将失败。</li>
+<li>对于 <code>Android 10</code> 或更早版本，无法捕获音频并自动禁用。</li>
+</ul>
+<h2 id="捐赠"><a href="#捐赠" class="headerlink" title="捐赠"></a>捐赠</h2><p>如果您觉得这个项目对您有帮助，欢迎请作者喝杯咖啡。☕</p>
+<p><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/donate/zfb_wx.png?boxshadow=none" srcset="/loading.svg" lazyload></p>
+<p>爱发电❤ <a target="_blank" rel="noopener" href="https://afdian.net/a/pdone">https://afdian.net/a/pdone</a></p>
+<h2 id="Stargazers-Over-Time"><a href="#Stargazers-Over-Time" class="headerlink" title="Stargazers Over Time"></a>Stargazers Over Time</h2><p><a target="_blank" rel="noopener" href="https://starchart.cc/pdone/FreeControl"><img src="https://starchart.cc/pdone/FreeControl.svg?background=%23ffffff00&axis=%23888888&line=%2330a9de&boxshadow=none" srcset="/loading.svg" lazyload alt="Stargazers over time"></a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Tools/" class="category-chain-item">Tools</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/NET/" class="print-no-link">#.NET</a>
+      
+        <a href="/tags/OpenSource/" class="print-no-link">#OpenSource</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Free Control 用电脑控制手机 - 开源</div>
+      <div>https://awaw.cc/post/free-control/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>pdone</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2020年9月15日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024年3月21日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/post/deepin-20/" title="深度操作系统 20——崭新视界，创无止境">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">深度操作系统 20——崭新视界，创无止境</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/net-loading/" title="WinForm加载中窗体">
+                        <span class="hidden-mobile">WinForm加载中窗体</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://cdn.staticfile.org/waline/2.15.8/waline.min.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/waline/2.15.8/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.awaw.cc","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.awaw.cc/raw/walinejs/emojis/main/alus"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size:0.8rem"> Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> &  <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a><br> © 2024 <a href="https://github.com/pdone" target="_blank" rel="nofollow noopener"><span>pdone</span></a> All rights reserved.</div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,1023 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="pdone">
+  <meta name="keywords" content="pdone,Hexo,C++,C#,developer,vue">
+  
+    <meta name="description" content="一直想实现一个私有化的短链接服务，后来发现了这个项目，避免了重复造轮子。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="短链接服务Octopus的实现与源码开放">
+<meta property="og:url" content="https://awaw.cc/post/whats-short-link/">
+<meta property="og:site_name" content="Pdone&#39;s Blog">
+<meta property="og:description" content="一直想实现一个私有化的短链接服务，后来发现了这个项目，避免了重复造轮子。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-1.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-4.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-5.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-8.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-2.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-6.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-7.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-3.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-10.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-12.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-13.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-11.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-19.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-14.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-15.gif">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-16.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-17.png">
+<meta property="og:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-18.png">
+<meta property="article:published_time" content="2023-07-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-20T09:26:03.361Z">
+<meta property="article:author" content="pdone">
+<meta property="article:tag" content="OpenSource">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="ShortLink">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-1.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>短链接服务Octopus的实现与源码开放 - Pdone&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"awaw.cc","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/loading.svg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"def79bf7d2240517f4fcbd4d5b9fa688","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":21715279,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?def79bf7d2240517f4fcbd4d5b9fa688";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21715279.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/assets/custom.css">
+
+<link rel="stylesheet" href="/assets/font-awesome.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Pdone's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Pdone&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-folder"></i>
+                <span>Archive</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="fa fa-tags"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-wrench"></i>
+                <span>Tools</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/eat-what-today/" target="_self">
+                    <i class="fa fa-cutlery"></i>
+                    <span>今天吃什么</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/catch-the-cat/" target="_self">
+                    <i class="fa fa-github-alt"></i>
+                    <span>捉住小猫</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/pwd-generator/" target="_self">
+                    <i class="fa fa-shield"></i>
+                    <span>密码生成器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/md-editor/" target="_self">
+                    <i class="fa fa-edit"></i>
+                    <span>MD编辑器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/swing-girl/" target="_self">
+                    <i class="fa fa-pagelines"></i>
+                    <span>荡秋千</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/planet/" target="_self">
+                    <i class="fa fa-superpowers"></i>
+                    <span>星球</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://aria.awaw.cc" target="_self">
+                    <i class="fa fa-rocket"></i>
+                    <span>AriaNg</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-asterisk"></i>
+                <span>More</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/" target="_self">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/" target="_self">
+                    <i class="iconfont icon-user-fill"></i>
+                    <span>关于</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="短链接服务Octopus的实现与源码开放"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          44 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">短链接服务Octopus的实现与源码开放</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>一直想实现一个私有化的短链接服务，后来发现了这个项目，避免了重复造轮子。</p>
+<span id="more"></span>
+
+<div class="note note-primary">
+            <p>本文转自 <a target="_blank" rel="noopener" href="https://github.com/zjcscut/octopus">https://github.com/zjcscut/octopus</a></p>
+          </div>
+
+<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>半年前（<code>2020-06</code>）左右，疫情触底反弹，公司的业务量不断提升，运营部门为了方便短信、模板消息推送等渠道的投放，提出了一个把长链接压缩为短链接的功能需求。当时为了快速推广，使用了一些比较知名的第三方短链压缩平台，存在一些问题：</p>
+<ul>
+<li>收费贵</li>
+<li>一些情况下，短链域名在部分第三方平台例如微信会被封杀</li>
+<li>回源数据没有办法定制处理方案，无法打通整个业务链路进行数据分析和跟踪</li>
+</ul>
+<p>基于此类问题，决定自研一个（长链接压缩为）短链接服务，当时刚好同步进行微服务拆分，内部很多微服务需要重新命名，组内的一个妹子说不如就用<code>Github</code>的吉祥物去命名<code>octopus cat</code>（章鱼猫）去命名，但是考虑到版权问题，去掉了她最喜欢的猫，剩下章鱼，以<code>octopus</code>命名：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-1.png" srcset="/loading.svg" lazyload></p>
+<p>（项目的描述还打错字了，应该是”短链接”）因为实现的功能并不复杂，初版于<code>2020-06</code>月底就发布。<code>octopus</code>的实现参考了互联网中几篇关于”短链服务实现”浏览量比较高的文章，下面从实现原理、服务实现和部署架构等方面展开谈谈。</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>短链服务的核心就是构建短链接和长链接的唯一映射关系，依赖到一个高性能、排列组合数量大而且破解难度大的映射标识生成算法。</p>
+<h3 id="构建唯一映射关系"><a href="#构建唯一映射关系" class="headerlink" title="构建唯一映射关系"></a>构建唯一映射关系</h3><p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-4.png" srcset="/loading.svg" lazyload></p>
+<p>上图是笔者收到的京东白条分期还款结果提醒短信，短信内容也包含了一个短链<code>https://3.cn/j/xxxxxxx</code>，把它拷贝到浏览器中打开，发现客户端会重定向到长链<code>https://jrmkt.jd.com/ptp/wl/vouchers.html?activityId=$&#123;activityId&#125;&amp;uep_p=$&#123;uep_p&#125;&amp;uep_template_id=$&#123;uep_template_id&#125;&amp;uep_timestamp=$&#123;uep_timestamp&#125;</code>，然后跳入一个<code>H5</code>的登录页，登录后再跳进一个白条攻略页面。这里其实一个长链其实可以压成多个短链，短链可以相同域名，也可以使用不同的域名：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-5.png" srcset="/loading.svg" lazyload></p>
+<p>访问<code>https://3.cn/j/xxxxxxx</code>短链接具体的交互流程猜测如下：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-8.png" srcset="/loading.svg" lazyload></p>
+<blockquote>
+<p>jrmkt.jd.com和3.cn查证都是doge东的域名</p>
+</blockquote>
+<p>构建唯一映射关系其实就是基于一个固定的长链接，映射到一个或者多个可以动态生成的短链接，这个唯一映射关系，要求生成的短链接满足：</p>
+<ul>
+<li>不容易被破解（使用数字例如数据库的自增主键作为唯一映射标识容易被人遍历出来进行恶意调用）</li>
+<li>不能重复（一个短链接只能对应一个长链接，当然一个长链接可以对应多个短链接）</li>
+<li>长度尽可能短，这是因为第三方推送的报文内容一般有长度限制，如果短链过长，会导致不容易传输，还会令到推送内容字数受限（试想运营商短信投放内容最大长度为<code>30</code>个字符长度，短链已经占了<code>20</code>个字符长度，剩下只有<code>10</code>个字符长度让运营同事去发挥，显然不合理）</li>
+<li>如果链接过长，生成的二维码里面的”码点”会十分密集，不利于客户端识别和传输，刚好笔者公司运营有使用二维码的场景，所以必须尽可能缩短链接的长度</li>
+</ul>
+<p>总的来说，这个唯一映射关系中的映射标识需要像<code>Hash</code>算法生成的<code>Hash</code>码那样具备高唯一性和低碰撞频率，同时具备短小易传输的特点，具体如何去生成映射唯一标识见下一节”压缩码生成算法”。</p>
+<h3 id="压缩码生成算法"><a href="#压缩码生成算法" class="headerlink" title="压缩码生成算法"></a>压缩码生成算法</h3><p>这里的”压缩码”（<code>compression_code</code>）是笔者杜撰出来的名词，在本文中它的含义是短链接<code>URL</code>的路径部分（为了节省长度，除了协议和域名部分，短链的<code>URL</code>只有第一段路径）：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-2.png" srcset="/loading.svg" lazyload></p>
+<p>其中，协议部分基本是固定为<code>https://</code>（从安全性来看不建议使用<code>http://</code>），短链域名可以购买尽可能长度短的域名如<code>t.cn</code>，不过有先见之明的资本家一般会把所有优质的短域名买下并且把价格提到很高，所以域名的长度基本也是很难控制的因素，剩下可控的就是压缩码部分。压缩码部分是可控的，但因为它是<code>URL</code>的一部分，只要确保所使用的字符不会被<code>URL</code>编码转义，那么长度是人为可控的。假设我们使用的是<code>26</code>个字母的大小写，加上<code>10</code>个数字，那么对于<code>N</code>位压缩码可以表示的最大组合数量为：</p>
+<ul>
+<li><code>N = 4</code>，组合数为<code>62 ^ 4 = 14_776_336</code>，<code>147</code>万接近<code>148</code>万</li>
+<li><code>N = 5</code>，组合数为<code>62 ^ 5 = 916_132_832</code>，<code>9.16</code>亿左右</li>
+<li><code>N = 6</code>，组合数为<code>62 ^ 6 = 56_800_235_584</code>，<code>568</code>亿左右</li>
+</ul>
+<p>一般来说，组合数越小破解的难度就越小，组合数越大，要求压缩码长度越大，所以常用的长度就是<code>4</code>、<code>5</code>和<code>6</code>，而且后期可以对失效的长链进行压缩码回收或者禁用，这三个长度对于绝大对数生产短链的应用场景都能满足。<code>octopus</code>在实现的时候选用的是<code>6</code>位长度的压缩码，无他，因为有现成的成熟的参考方案：<code>62</code>进制数刚好由字符<code>0-9 a-z A-Z</code>组成，生成压缩码的时候，只需要生成一个唯一的<code>10</code>进制数，然后再基于此<code>10</code>进制数转换为<code>62</code>进制数数即可。说到这里，看起来的方案如下：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-6.png" srcset="/loading.svg" lazyload></p>
+<p>虚线部分一般依赖一种高效而且低冲突的摘要算法，如<code>MurmurHash</code>，而第<code>(1)</code>步的实线部分就是生成一个全局唯一的<code>10</code>进制序列，常用的手法有：</p>
+<ul>
+<li>数据库自增序列（如自增主键）</li>
+<li><code>Snowflake</code>算法</li>
+<li>自研的类似<code>UUID</code>算法生成全局唯一的序列值</li>
+</ul>
+<p>考虑到之前笔者钻研过<code>Snowflake</code>算法的原理，这里简单使用<code>Snowflake</code>算法生成自增序列，使用了下面的流程进行压缩码生成和分配：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-7.png" srcset="/loading.svg" lazyload></p>
+<p>因为运用部门对短链生成的批量不大，而且短链域名只有一个，<strong>所以简单起见，一次压缩操作直接消耗掉一个压缩码，不考虑不同短链域名对同一个压缩码进行共享，也不考虑压缩码的回收问题</strong>。</p>
+<h2 id="服务实现"><a href="#服务实现" class="headerlink" title="服务实现"></a>服务实现</h2><p>短链服务的主访问入口一般<code>QPS</code>极高，因此需要想尽一切办法降低该入口的耗时，考虑可以用<code>Redis</code>做缓存承载入口的流量，基础架构选型如下：</p>
+<ul>
+<li><code>JDK1.8+</code>：生产部署使用<code>JDK11</code></li>
+<li><code>MVC</code>框架与容器：<code>spring-boot-starter-webflux</code>或者<code>spring-cloud-gateway</code>，主要是必须使用<code>Netty</code>作为底层通讯容器</li>
+<li>内部<code>RPC</code>框架：<code>Dubbo</code></li>
+<li>服务注册与发现：<code>Nacos</code></li>
+<li>可选<code>APM</code>工具：<code>Pinpoint</code></li>
+</ul>
+<p>中间件依赖（因为之前整个服务集群都上云了，低负载的服务共用了部分中间件）：</p>
+<ul>
+<li><code>MySQL8.x</code></li>
+<li><code>Redis5.x</code>普通主从或者哨兵集群</li>
+<li><code>RabbitMQ3.8.x</code>集群，使用镜像队列</li>
+</ul>
+<p>服务的设计图如下：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-3.png" srcset="/loading.svg" lazyload></p>
+<p>最新的版本考虑把黑白名单的拦截器去掉，<strong>替换成一个基于布隆过滤器现实的拦截器</strong>。服务使用了两个拦截器（虽然<code>Filter</code>翻译是过滤器，但是出于习惯，下文称为拦截器）链，容器提供的拦截器组成的拦截器链主要是负责服务安全、调用链跟踪的功能，而服务内部自定义的拦截器链主要是实现请求参数解析、<code>URL</code>转换、重定向和异步事件记录等功能。</p>
+<p>模块划分：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">- (ROOT) octopus<br>  - octopus-contract<br>  - octopus-server<br></code></pre></td></tr></table></figure>
+
+<p><code>octopus-contract</code>模块必须脱离父<code>POM</code>的管理，方便单独迭代更新。</p>
+<h3 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h3><p>一共使用了<code>5</code>个表：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-10.png" srcset="/loading.svg" lazyload></p>
+<p>具体的初始化<code>DDL</code>如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DATABASE `db_octopus` CHARSET <span class="hljs-string">&#x27;utf8mb4&#x27;</span> <span class="hljs-keyword">COLLATE</span> <span class="hljs-string">&#x27;utf8mb4_unicode_520_ci&#x27;</span>;<br><br>USE `db_octopus`;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `url_map`<br>(<br>    `id`               <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `short_url`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;短链URL&#x27;</span>,<br>    `long_url`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">768</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;长链URL&#x27;</span>,<br>    `short_url_digest` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;短链摘要&#x27;</span>,<br>    `long_url_digest`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;长链摘要&#x27;</span>,<br>    `compression_code` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `description`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">256</span>) COMMENT <span class="hljs-string">&#x27;描述&#x27;</span>,<br>    `url_status`       TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;URL状态,1:正常,2:已失效&#x27;</span>,<br>    `create_time`      DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`        DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`           <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`          TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`          <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_compression_code (`compression_code`),<br>    INDEX idx_short_url (`short_url`),<br>    INDEX idx_short_url_digest (`short_url_digest`),<br>    INDEX idx_long_url_digest (`long_url_digest`)<br>) COMMENT <span class="hljs-string">&#x27;URL映射表&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `domain_conf`<br>(<br>    `id`            <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `domain_value`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;域名&#x27;</span>,<br>    `protocol`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">8</span>)      <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;https&#x27;</span> COMMENT <span class="hljs-string">&#x27;协议,https或者http&#x27;</span>,<br>    `domain_status` TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;域名状态,1:正常,2:已失效&#x27;</span>,<br>    `create_time`   DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`     DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`       TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`       <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_domain (`domain_value`)<br>) COMMENT <span class="hljs-string">&#x27;域名配置&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `compression_code`<br>(<br>    `id`               <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `compression_code` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `code_status`      TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;压缩码状态,1:未使用,2:已使用,3:已失效&#x27;</span>,<br>    `sequence_value`   <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;序列(盐)&#x27;</span>,<br>    `strategy`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">8</span>)      <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;sequence&#x27;</span> COMMENT <span class="hljs-string">&#x27;策略,sequence或者hash&#x27;</span>,<br>    `create_time`      DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`        DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`           <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`          TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`          <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_compression_code (`compression_code`)<br>) COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `visit_statistics`<br>(<br>    `id`                            <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `create_time`                   DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`                     DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`                       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`                        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`                       TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`                       <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    `statistics_date`               <span class="hljs-type">DATE</span>            <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;1970-01-01&#x27;</span> COMMENT <span class="hljs-string">&#x27;统计日期&#x27;</span>,<br>    `pv_count`                      <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;页面流量数&#x27;</span>,<br>    `uv_count`                      <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;独立访客数&#x27;</span>,<br>    `ip_count`                      <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;独立IP数&#x27;</span>,<br>    `effective_redirection_count`   <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;有效跳转数&#x27;</span>,<br>    `ineffective_redirection_count` <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;无效跳转数&#x27;</span>,<br>    `compression_code`              <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `short_url_digest`              <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;短链摘要&#x27;</span>,<br>    `long_url_digest`               <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;长链摘要&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_date_code_digest (`statistics_date`, `compression_code`)<br>) COMMENT <span class="hljs-string">&#x27;访问数据统计&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `transform_event_record`<br>(<br>    `id`               <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `create_time`      DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`        DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`           <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`          TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`          <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    `unique_identity`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;唯一身份标识,SHA-1(客户端IP-UA)&#x27;</span>,<br>    `client_ip`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;客户端IP&#x27;</span>,<br>    `short_url`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;短链URL&#x27;</span>,<br>    `long_url`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">768</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;长链URL&#x27;</span>,<br>    `short_url_digest` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;短链摘要&#x27;</span>,<br>    `long_url_digest`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;长链摘要&#x27;</span>,<br>    `compression_code` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `record_time`      DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;记录时间戳&#x27;</span>,<br>    `user_agent`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">2048</span>) COMMENT <span class="hljs-string">&#x27;UA&#x27;</span>,<br>    `cookie_value`     <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">2048</span>) COMMENT <span class="hljs-string">&#x27;cookie&#x27;</span>,<br>    `query_param`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">2048</span>) COMMENT <span class="hljs-string">&#x27;URL参数&#x27;</span>,<br>    `province`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;省份&#x27;</span>,<br>    `city`             <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;城市&#x27;</span>,<br>    `phone_type`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>) COMMENT <span class="hljs-string">&#x27;手机型号&#x27;</span>,<br>    `browser_type`     <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>) COMMENT <span class="hljs-string">&#x27;浏览器类型&#x27;</span>,<br>    `browser_version`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>) COMMENT <span class="hljs-string">&#x27;浏览器版本号&#x27;</span>,<br>    `os_type`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;操作系统型号&#x27;</span>,<br>    `device_type`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;设备型号&#x27;</span>,<br>    `os_version`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;操作系统版本号&#x27;</span>,<br>    `transform_status` TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;转换状态,1:转换成功,2:转换失败,3:重定向成功,4:重定向失败&#x27;</span>,<br>    INDEX idx_record_time (`record_time`),<br>    INDEX idx_compression_code (`compression_code`),<br>    INDEX idx_short_url_digest (`short_url_digest`),<br>    INDEX idx_long_url_digest (`long_url_digest`),<br>    INDEX idx_unique_identity (`unique_identity`)<br>) COMMENT <span class="hljs-string">&#x27;转换事件记录&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<h3 id="压缩码生成模块实现"><a href="#压缩码生成模块实现" class="headerlink" title="压缩码生成模块实现"></a>压缩码生成模块实现</h3><p>压缩码生成的方法比较简单：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> SequenceGenerator sequenceGenerator;    # &lt;------------- 雪花算法序列生成器<br><span class="hljs-meta">@Value(&quot;$&#123;compress.code.batch:100&#125;&quot;)</span><br><span class="hljs-keyword">private</span> Integer compressCodeBatch;<br>......<br><br><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">generateBatchCompressionCodes</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; compressCodeBatch; i++) &#123;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">sequence</span> <span class="hljs-operator">=</span> sequenceGenerator.generate();<br>        <span class="hljs-type">CompressionCode</span> <span class="hljs-variable">compressionCode</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CompressionCode</span>();<br>        compressionCode.setSequenceValue(String.valueOf(sequence));<br>        <span class="hljs-type">String</span> <span class="hljs-variable">code</span> <span class="hljs-operator">=</span> ConversionUtils.X.encode62(sequence);    # &lt;-------------- <span class="hljs-number">10</span>进制转<span class="hljs-number">62</span>进制<br>        code = code.substring(code.length() - <span class="hljs-number">6</span>);<br>        compressionCode.setCompressionCode(code);<br>        compressionCodeDao.insertSelective(compressionCode);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>总是批量生成可用的压缩码，查询的时候只需要查出当前未被使用的第一个压缩码即可。</p>
+<h3 id="容器拦截器链实现"><a href="#容器拦截器链实现" class="headerlink" title="容器拦截器链实现"></a>容器拦截器链实现</h3><p>容器的拦截器需要实现<code>org.springframework.web.server.WebFilter</code>（<code>WebFlux</code>的<code>Filter</code>接口），主要有四个实现（顺序如下）：</p>
+<ul>
+<li><code>MappedDiagnosticContextFilter</code>：引入<code>transmittable-thread-local</code>通过<code>MDC</code>做<code>TraceId</code>的请求上下文绑定，<code>WebFlux</code>的线程模型和常见的<code>Servlet</code>容器的线程模型不一样，这里不能直接使用<code>ThreadLocal</code>或者<code>Slf4j</code>中原有的<code>MDC</code>实现</li>
+<li><code>BlockIpFilter</code>：判断客户端请求<code>IP</code>是否命中黑名单</li>
+<li><code>AccessDomainFilter</code>：判断域名是否命中短链域名白名单（可选的，因为外部已经通过<code>NGINX</code>做了一次拦截，这个实现是可有可无的）</li>
+<li><code>ExcludeUriFilter</code>：判断当前请求的<code>URI</code>是否命中了<code>URI</code>黑名单</li>
+</ul>
+<p>这里简单展示一下<code>MappedDiagnosticContextFilter</code>的实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Order(value = Integer.MIN_VALUE)</span><br><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MappedDiagnosticContextFilter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">WebFilter</span> &#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Mono&lt;Void&gt; <span class="hljs-title function_">filter</span><span class="hljs-params">(ServerWebExchange exchange, WebFilterChain chain)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">uuid</span> <span class="hljs-operator">=</span> UUID.randomUUID().toString();<br>        MDC.put(<span class="hljs-string">&quot;TRACE_ID&quot;</span>, uuid);<br>        <span class="hljs-keyword">return</span> chain.filter(exchange).then(Mono.fromRunnable(() -&gt; MDC.remove(<span class="hljs-string">&quot;TRACE_ID&quot;</span>)));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>上面的<code>TRACE_ID</code>是配合项目的<code>logback.xml</code>中的<code>pattern</code>使用。另外需要参考<code>https://github.com/alibaba/transmittable-thread-local/blob/master/docs/requirement-scenario.md</code>中<code>logback</code>与<code>transmittable-thread-local</code>做集成的场景：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-12.png" srcset="/loading.svg" lazyload></p>
+<p>这里为了方便管理和升级版本，笔者直接把<code>logback-mdc-ttl</code>的源码实现改造好后放到项目中。</p>
+<h3 id="服务内部拦截器链实现"><a href="#服务内部拦截器链实现" class="headerlink" title="服务内部拦截器链实现"></a>服务内部拦截器链实现</h3><p>服务内部的拦截器链主要负责请求参数解析、<code>URL</code>映射转换、重定向和访问转换结果记录，顶层接口设计如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">TransformFilter</span> &#123;<br><br>    <span class="hljs-keyword">default</span> <span class="hljs-type">int</span> <span class="hljs-title function_">order</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">(TransformContext context)</span> &#123;<br><br>    &#125;<br><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">doFilter</span><span class="hljs-params">(TransformFilterChain chain,</span><br><span class="hljs-params">                  TransformContext context)</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>TransformContext</code>是一个属性承载类，本质是一个普通的<code>JavaBean</code>，设计如下：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-13.png" srcset="/loading.svg" lazyload></p>
+<p>目前内置了<code>4</code>个拦截器实现，包括：</p>
+<ul>
+<li><code>ExtractRequestHeaderTransformFilter</code>：请求头解析</li>
+<li><code>UrlTransformFilter</code>：<code>URL</code>转换</li>
+<li><code>RedirectionTransformFilter</code>：重定向处理</li>
+<li><code>TransformEventProcessTransformFilter</code>：转换事件记录</li>
+</ul>
+<p>以<code>UrlTransformFilter</code>为例子，源码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Slf4j</span><br><span class="hljs-meta">@Scope(scopeName = ConfigurableBeanFactory.SCOPE_PROTOTYPE)</span><br><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UrlTransformFilter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">TransformFilter</span> &#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UrlMapCacheManager urlMapCacheManager;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">order</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">(TransformContext context)</span> &#123;<br><br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doFilter</span><span class="hljs-params">(TransformFilterChain chain,</span><br><span class="hljs-params">                         TransformContext context)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">compressionCode</span> <span class="hljs-operator">=</span> context.getCompressionCode();<br>        <span class="hljs-type">UrlMap</span> <span class="hljs-variable">urlMap</span> <span class="hljs-operator">=</span> urlMapCacheManager.loadUrlMapCacheByCompressCode(compressionCode);<br>        context.setTransformStatus(TransformStatus.TRANSFORM_FAIL);<br>        <span class="hljs-keyword">if</span> (Objects.nonNull(urlMap)) &#123;<br>            context.setTransformStatus(TransformStatus.TRANSFORM_SUCCESS);<br>            context.setParam(TransformContext.PARAM_LONG_URL_KEY, urlMap.getLongUrl());<br>            context.setParam(TransformContext.PARAM_SHORT_URL_KEY, urlMap.getShortUrl());<br>            chain.doFilter(context);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            log.warn(<span class="hljs-string">&quot;压缩码[&#123;&#125;]不存在或异常,终止TransformFilterChain执行,并且重定向到404页面......&quot;</span>, compressionCode);<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RedirectToErrorPageException</span>(String.format(<span class="hljs-string">&quot;[c:%s]&quot;</span>, compressionCode));<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>所有的服务内拦截器的<code>scope</code>都是<code>prototype</code>，意味着每次初始化拦截器链都会重新创建对应的<code>Bean</code>。</p>
+<h3 id="主控制器实现"><a href="#主控制器实现" class="headerlink" title="主控制器实现"></a>主控制器实现</h3><p>因为<code>octopus</code>只做短链访问的入口，后台管理的功能交给另外的服务实现，此服务只有一个控制器，控制器里面只有一个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequiredArgsConstructor</span><br><span class="hljs-meta">@RestController</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OctopusController</span> &#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> UrlMapService urlMapService;<br><br>    <span class="hljs-meta">@GetMapping(path = &quot;/&#123;compressionCode&#125;&quot;)</span><br>    <span class="hljs-meta">@ResponseStatus(HttpStatus.FOUND)</span><br>    <span class="hljs-keyword">public</span> Mono&lt;Void&gt; <span class="hljs-title function_">dispatch</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable(name = &quot;compressionCode&quot;)</span> String compressionCode, ServerWebExchange exchange)</span> &#123;<br>        <span class="hljs-type">ServerHttpRequest</span> <span class="hljs-variable">request</span> <span class="hljs-operator">=</span> exchange.getRequest();<br>        <span class="hljs-type">TransformContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TransformContext</span>();<br>        context.setCompressionCode(compressionCode);<br>        context.setParam(TransformContext.PARAM_SERVER_WEB_EXCHANGE_KEY, exchange);<br>        <span class="hljs-keyword">if</span> (Objects.nonNull(request.getRemoteAddress())) &#123;<br>            context.setParam(TransformContext.PARAM_REMOTE_HOST_NAME_KEY, request.getRemoteAddress().getHostName());<br>        &#125;<br>        <span class="hljs-type">HttpHeaders</span> <span class="hljs-variable">httpHeaders</span> <span class="hljs-operator">=</span> request.getHeaders();<br>        Set&lt;String&gt; headerNames = httpHeaders.keySet();<br>        <span class="hljs-keyword">if</span> (!CollectionUtils.isEmpty(headerNames)) &#123;<br>            headerNames.forEach(headerName -&gt; &#123;<br>                <span class="hljs-type">String</span> <span class="hljs-variable">headerValue</span> <span class="hljs-operator">=</span> httpHeaders.getFirst(headerName);<br>                context.setHeader(headerName, headerValue);<br>            &#125;);<br>        &#125;<br>        <span class="hljs-comment">// 处理转换</span><br>        urlMapService.processTransform(context);<br>        <span class="hljs-comment">// 这里有一个技巧,flush用到的线程和内部逻辑处理的线程不是同一个线程,所有要用到TTL  --  和Servlet容器不一样,所以目前写的比较别扭</span><br>        <span class="hljs-keyword">return</span> Mono.fromRunnable(context.getRedirectAction());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这个主控制的分发压缩码方法只负责封装参数调用服务内部拦截器链进行后续的处理。然后添加一个全局的异常处理器，把所有的异常或者非法操作引导到一个自定义的<code>404</code>页面（甚至可以在上面挂一点广告）：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-11.png" srcset="/loading.svg" lazyload></p>
+<h3 id="Dubbo契约实现"><a href="#Dubbo契约实现" class="headerlink" title="Dubbo契约实现"></a>Dubbo契约实现</h3><p><code>octopus-contract</code>是一个完全独立的模块，甚至可以说它是一个完全独立的项目，主要作用是提供契约<code>API</code>，让其他服务引入，让<code>octopus-server</code>模块进行实现。契约接口定义如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">OctopusApi</span> &#123;<br><br>    Response&lt;CreateUrlMapResponse&gt; <span class="hljs-title function_">createUrlMap</span><span class="hljs-params">(CreateUrlMapRequest request)</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>基于<code>Dubbo</code>的实现如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@DubboService(retries = -1)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DefaultOctopusApi</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">OctopusApi</span> &#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UrlMapService urlMapService;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;default.octopus.domain&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String domain;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Response&lt;CreateUrlMapResponse&gt; <span class="hljs-title function_">createUrlMap</span><span class="hljs-params">(CreateUrlMapRequest request)</span> &#123;<br>        <span class="hljs-type">UrlMap</span> <span class="hljs-variable">urlMap</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UrlMap</span>();<br>        urlMap.setUrlStatus(UrlMapStatus.AVAILABLE.getValue());<br>        urlMap.setLongUrl(request.getLongUrl());<br>        urlMap.setDescription(request.getDescription());<br>        <span class="hljs-type">String</span> <span class="hljs-variable">shortUrl</span> <span class="hljs-operator">=</span> urlMapService.createUrlMap(domain, urlMap);<br>        <span class="hljs-keyword">return</span> Response.succeed(<span class="hljs-keyword">new</span> <span class="hljs-title class_">CreateUrlMapResponse</span>(request.getRequestId(), shortUrl));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>生产中契约模块做了比较多的特性定制，这里只举一个简单实现的例子。</p>
+<h2 id="部署架构"><a href="#部署架构" class="headerlink" title="部署架构"></a>部署架构</h2><p><code>octopus</code>服务集群单独部署，支持无限添加节点，部署架构的关键在于网络架构，内层的负载均衡使用了<code>Nginx</code>，最外层的负载均衡使用了云负载均衡，如阿里云的<code>SLB</code>或者<code>UCloud</code>的<code>ULB</code>。添加或者移除短链域名，关键在于修改<code>Nginx</code>的配置。基本的架构如下：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-19.png" srcset="/loading.svg" lazyload></p>
+<p>只要保证负载均衡池指向<code>octopus</code>集群即可，短链的域名可能动态增删，操作完之后只需要<code>nginx -s -reload</code>刷新一下<code>Nginx</code>的配置即可。</p>
+<h2 id="使用短链服务"><a href="#使用短链服务" class="headerlink" title="使用短链服务"></a>使用短链服务</h2><p>先在<code>domain_conf</code>表写入一条本地域名和端口的数据：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-14.png" srcset="/loading.svg" lazyload></p>
+<p>编写一个集成测试类，创建一个短链映射：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Slf4j</span><br><span class="hljs-meta">@SpringBootTest(classes = OctopusServerApplication.class, properties = &quot;spring.profiles.active=local&quot;)</span><br><span class="hljs-meta">@RunWith(SpringRunner.class)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UrlMapServiceTest</span> &#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UrlMapService urlMapService;<br><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createUrlMap</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">domain</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;localhost:9099&quot;</span>;<br>        <span class="hljs-type">UrlMap</span> <span class="hljs-variable">urlMap</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UrlMap</span>();<br>        urlMap.setUrlStatus(UrlMapStatus.AVAILABLE.getValue());<br>        urlMap.setLongUrl(<span class="hljs-string">&quot;https://throwx.cn/2020/08/24/canal-ha-cluster-guide&quot;</span>);<br>        urlMap.setDescription(<span class="hljs-string">&quot;测试短链&quot;</span>);<br>        <span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> urlMapService.createUrlMap(domain, urlMap);<br>        log.info(<span class="hljs-string">&quot;生成的短链:&#123;&#125;&quot;</span>, url);<br>    &#125;<br>&#125;<br><span class="hljs-comment">// 某次执行的结果如下：生成的短链:http://localhost:9099/Myt8qW</span><br></code></pre></td></tr></table></figure>
+
+<p>基于本地配置启动项目，然后访问<code>http://localhost:9099/Myt8qW</code>，效果如下：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-15.gif" srcset="/loading.svg" lazyload></p>
+<p>日志如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[2020-12-27 19:29:22,285] [INFO] cn.throwx.octopus.server.application.consumer.TransformEventConsumer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] [1c603903-e8d8-4072-aa97-6abf614b9411] - 接收到URL转换事件,内容:&#123;&quot;clientIp&quot;:&quot;192.168.211.113&quot;,&quot;compressionCode&quot;:&quot;Myt8qW&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36&quot;,&quot;cookieValue&quot;:&quot;Webstorm-734c3b68=9b8b3560-41f5-478a-93d0-b02128b1022f; __gads=ID=28121bd829638f67-2286c86e7fc400d3:T=1604132165:RT=1604132165:S=ALNI_MbsMQROv6swaC8kf4ux2suZm_GZXA; Hm_lvt_4df6907aebab752244c3ca1432b4ff57=1605930058,1607228133&quot;,&quot;timestamp&quot;:1609068562262,&quot;shortUrlString&quot;:&quot;http://localhost:9099/Myt8qW&quot;,&quot;longUrlString&quot;:&quot;https://throwx.cn/2020/08/24/canal-ha-cluster-guide&quot;,&quot;transformStatusValue&quot;:3&#125;......<br>[2020-12-27 19:29:22,353] [INFO] cn.throwx.octopus.server.application.consumer.TransformEventConsumer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] [1c603903-e8d8-4072-aa97-6abf614b9411] - 记录URL转换事件完成......<br></code></pre></td></tr></table></figure>
+
+<p>查看转换事件记录表的数据：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-16.png" srcset="/loading.svg" lazyload></p>
+<h2 id="后续功能迭代"><a href="#后续功能迭代" class="headerlink" title="后续功能迭代"></a>后续功能迭代</h2><p>前期方案有一个安全隐患：没有做压缩码的白名单，容易被基于短链域名，伪造压缩码拼接短链接的方法进行攻击。解决方案是在容器的拦截器链添加或者替换一个基于布隆过滤器实现的压缩码（短链接）白名单拦截器，这样就能在前期拦截了绝大部分恶意伪造的压缩码，让极少量命中了错误率部分的恶意压缩码流到后面的处理逻辑中进行判断。另外，可以引入<code>Caffeine</code>配合<code>Redis</code>做两级缓存，毕竟本地缓存的速度更快。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>octopus</code>初版是一个<code>4</code>小时紧急迭代出来的一个微型项目，到现在为止更新了很多次，生产上已经基本稳定。文中描述的版本是公司生产版本的移植版，精简了大量代码同时移除了一些业务耦合的设计，这里把源码开放出来，让一些有可能用到短链服务的场景提供一个可参考但尽可能不要复制的解决思路。源码仓库：</p>
+<ul>
+<li><code>Gitee</code>：<code>https://gitee.com/throwableDoge/octopus</code></li>
+<li><code>Github</code>：<code>https://github.com/zjcscut/octopus</code></li>
+</ul>
+<p>代码都在<code>main</code>分支。</p>
+<h2 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h2><p>最近鸽了很长一段时间，原因是年底比较多业务功能迭代，内部的一个标签服务重构花了大量时间。笔者一直在摸索着通过”分片”、”异步”等等思想，在时间可控的前提下，对小数据量（百万和千万级别）前提下，通过常用的关系型数据库、缓存、消息队列等非大数据平台架构替代实现《用户画像方法论与工程化解决方案》里面提到的解决方案。</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-17.png" srcset="/loading.svg" lazyload></p>
+<p>标签服务内部的代号是”千寻”，取自于辛弃疾《青玉案元夕》中的”众里寻他千百度”，项目名来自于宫崎骏的动漫《千与千寻》的女主千寻（千寻罗马音是<code>chihiro</code>）：</p>
+<p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-18.png" srcset="/loading.svg" lazyload></p>
+<p>待后面项目上线一段时间稳定后，应该会抽时间写一个系列谈谈怎么不用大数据那套体系，提供用户画像的工程化解决方案。</p>
+<p>（本文完 c-10-d e-a-20201227）</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Developer/" class="category-chain-item">Developer</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/OpenSource/" class="print-no-link">#OpenSource</a>
+      
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
+      
+        <a href="/tags/ShortLink/" class="print-no-link">#ShortLink</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>短链接服务Octopus的实现与源码开放</div>
+      <div>https://awaw.cc/post/whats-short-link/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>pdone</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月20日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年7月20日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/post/whimsy/" title="奇思妙想💭">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">奇思妙想💭</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/awesome/" title="🌈Awesome Software / Service">
+                        <span class="hidden-mobile">🌈Awesome Software / Service</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://cdn.staticfile.org/waline/2.15.8/waline.min.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/waline/2.15.8/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.awaw.cc","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.awaw.cc/raw/walinejs/emojis/main/alus"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size:0.8rem"> Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> &  <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a><br> © 2024 <a href="https://github.com/pdone" target="_blank" rel="nofollow noopener"><span>pdone</span></a> All rights reserved.</div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

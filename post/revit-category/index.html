@@ -1,0 +1,3956 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="pdone">
+  <meta name="keywords" content="pdone,Hexo,C++,C#,developer,vue">
+  
+    <meta name="description" content="Revit二次开发中经常用到BuildInCategory过滤元素，以下是通过遍历该枚举获取的数据，其中部分类别的名称未能获取到，本文未显示Unknown部分，完整版本见 BuildInCategory枚举 - 完整。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BuildInCategory枚举">
+<meta property="og:url" content="https://awaw.cc/post/revit-category/">
+<meta property="og:site_name" content="Pdone&#39;s Blog">
+<meta property="og:description" content="Revit二次开发中经常用到BuildInCategory过滤元素，以下是通过遍历该枚举获取的数据，其中部分类别的名称未能获取到，本文未显示Unknown部分，完整版本见 BuildInCategory枚举 - 完整。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-01T10:30:00.000Z">
+<meta property="article:modified_time" content="2023-07-04T05:04:04.499Z">
+<meta property="article:author" content="pdone">
+<meta property="article:tag" content=".NET">
+<meta property="article:tag" content="Revit">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>BuildInCategory枚举 - Pdone&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"awaw.cc","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/loading.svg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"def79bf7d2240517f4fcbd4d5b9fa688","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":21715279,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?def79bf7d2240517f4fcbd4d5b9fa688";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21715279.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/assets/custom.css">
+
+<link rel="stylesheet" href="/assets/font-awesome.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Pdone's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Pdone&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-folder"></i>
+                <span>Archive</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="fa fa-tags"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-wrench"></i>
+                <span>Tools</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/eat-what-today/" target="_self">
+                    <i class="fa fa-cutlery"></i>
+                    <span>今天吃什么</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/catch-the-cat/" target="_self">
+                    <i class="fa fa-github-alt"></i>
+                    <span>捉住小猫</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/pwd-generator/" target="_self">
+                    <i class="fa fa-shield"></i>
+                    <span>密码生成器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/md-editor/" target="_self">
+                    <i class="fa fa-edit"></i>
+                    <span>MD编辑器</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/swing-girl/" target="_self">
+                    <i class="fa fa-pagelines"></i>
+                    <span>荡秋千</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tools/planet/" target="_self">
+                    <i class="fa fa-superpowers"></i>
+                    <span>星球</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://aria.awaw.cc" target="_self">
+                    <i class="fa fa-rocket"></i>
+                    <span>AriaNg</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-asterisk"></i>
+                <span>More</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/" target="_self">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/" target="_self">
+                    <i class="iconfont icon-user-fill"></i>
+                    <span>关于</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="BuildInCategory枚举"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          27 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">BuildInCategory枚举</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>Revit二次开发中经常用到<strong>BuildInCategory</strong>过滤元素，以下是通过遍历该枚举获取的数据，其中部分类别的名称未能获取到，本文未显示<strong>Unknown</strong>部分，完整版本见 <a href="/post/revit-category-all/">BuildInCategory枚举 - 完整</a>。</p>
+<span id="more"></span>
+<table>
+<thead>
+<tr>
+<th>中文名称</th>
+<th>名称</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>分析链接</td>
+<td>OST_LinksAnalytical</td>
+<td>-2009657</td>
+</tr>
+<tr>
+<td>分析楼板基础标记</td>
+<td>OST_FoundationSlabAnalyticalTags</td>
+<td>-2009656</td>
+</tr>
+<tr>
+<td>分析条形基础标记</td>
+<td>OST_WallFoundationAnalyticalTags</td>
+<td>-2009655</td>
+</tr>
+<tr>
+<td>分析独立基础标记</td>
+<td>OST_IsolatedFoundationAnalyticalTags</td>
+<td>-2009654</td>
+</tr>
+<tr>
+<td>分析墙标记</td>
+<td>OST_WallAnalyticalTags</td>
+<td>-2009653</td>
+</tr>
+<tr>
+<td>分析楼层标记</td>
+<td>OST_FloorAnalyticalTags</td>
+<td>-2009652</td>
+</tr>
+<tr>
+<td>分析柱标记</td>
+<td>OST_ColumnAnalyticalTags</td>
+<td>-2009651</td>
+</tr>
+<tr>
+<td>分析支撑标记</td>
+<td>OST_BraceAnalyticalTags</td>
+<td>-2009650</td>
+</tr>
+<tr>
+<td>分析梁标记</td>
+<td>OST_BeamAnalyticalTags</td>
+<td>-2009649</td>
+</tr>
+<tr>
+<td>分析节点</td>
+<td>OST_AnalyticalNodes</td>
+<td>-2009645</td>
+</tr>
+<tr>
+<td>分析基础底板</td>
+<td>OST_FoundationSlabAnalytical</td>
+<td>-2009643</td>
+</tr>
+<tr>
+<td>分析条形基础</td>
+<td>OST_WallFoundationAnalytical</td>
+<td>-2009642</td>
+</tr>
+<tr>
+<td>分析独立基础</td>
+<td>OST_IsolatedFoundationAnalytical</td>
+<td>-2009641</td>
+</tr>
+<tr>
+<td>分析墙</td>
+<td>OST_WallAnalytical</td>
+<td>-2009640</td>
+</tr>
+<tr>
+<td>分析楼层</td>
+<td>OST_FloorAnalytical</td>
+<td>-2009639</td>
+</tr>
+<tr>
+<td>顶部线段</td>
+<td>OST_ColumnEndSegment</td>
+<td>-2009638</td>
+</tr>
+<tr>
+<td>基准线段</td>
+<td>OST_ColumnStartSegment</td>
+<td>-2009637</td>
+</tr>
+<tr>
+<td>分析柱</td>
+<td>OST_ColumnAnalytical</td>
+<td>-2009636</td>
+</tr>
+<tr>
+<td>末端线段</td>
+<td>OST_BraceEndSegment</td>
+<td>-2009635</td>
+</tr>
+<tr>
+<td>起点线段</td>
+<td>OST_BraceStartSegment</td>
+<td>-2009634</td>
+</tr>
+<tr>
+<td>分析支撑</td>
+<td>OST_BraceAnalytical</td>
+<td>-2009633</td>
+</tr>
+<tr>
+<td>末端线段</td>
+<td>OST_BeamEndSegment</td>
+<td>-2009632</td>
+</tr>
+<tr>
+<td>起点线段</td>
+<td>OST_BeamStartSegment</td>
+<td>-2009631</td>
+</tr>
+<tr>
+<td>分析梁</td>
+<td>OST_BeamAnalytical</td>
+<td>-2009630</td>
+</tr>
+<tr>
+<td>棍状符号</td>
+<td>OST_StructuralTrussStickSymbols</td>
+<td>-2009608</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_MassHiddenLines</td>
+<td>-2009532</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_CurtaSystemHiddenLines</td>
+<td>-2009531</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_EntourageHiddenLines</td>
+<td>-2009529</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_PlantingHiddenLines</td>
+<td>-2009528</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_SpecialityEquipmentHiddenLines</td>
+<td>-2009527</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_TopographyHiddenLines</td>
+<td>-2009526</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_SiteHiddenLines</td>
+<td>-2009524</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_RoadsHiddenLines</td>
+<td>-2009523</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_ParkingHiddenLines</td>
+<td>-2009522</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_PlumbingFixturesHiddenLines</td>
+<td>-2009521</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_MechanicalEquipmentHiddenLines</td>
+<td>-2009520</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_LightingFixturesHiddenLines</td>
+<td>-2009519</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_FurnitureSystemsHiddenLines</td>
+<td>-2009518</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_ElectricalFixturesHiddenLines</td>
+<td>-2009517</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_ElectricalEquipmentHiddenLines</td>
+<td>-2009516</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_CaseworkHiddenLines</td>
+<td>-2009515</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_DetailComponentsHiddenLines</td>
+<td>-2009514</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_ShaftOpeningHiddenLines</td>
+<td>-2009513</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_GenericModelHiddenLines</td>
+<td>-2009512</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_CurtainWallMullionsHiddenLines</td>
+<td>-2009511</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_CurtainWallPanelsHiddenLines</td>
+<td>-2009510</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_RampsHiddenLines</td>
+<td>-2009509</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_StairsRailingHiddenLines</td>
+<td>-2009508</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_StairsHiddenLines</td>
+<td>-2009507</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_ColumnsHiddenLines</td>
+<td>-2009506</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_FurnitureHiddenLines</td>
+<td>-2009505</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_LinesHiddenLines</td>
+<td>-2009504</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_CeilingsHiddenLines</td>
+<td>-2009503</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_RoofsHiddenLines</td>
+<td>-2009502</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_DoorsHiddenLines</td>
+<td>-2009501</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_WindowsHiddenLines</td>
+<td>-2009500</td>
+</tr>
+<tr>
+<td>轮廓标记</td>
+<td>OST_StructConnectionProfilesTags</td>
+<td>-2009064</td>
+</tr>
+<tr>
+<td>孔标记</td>
+<td>OST_StructConnectionHoleTags</td>
+<td>-2009063</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_CouplerHiddenLines</td>
+<td>-2009062</td>
+</tr>
+<tr>
+<td>结构钢筋接头标记</td>
+<td>OST_CouplerTags</td>
+<td>-2009061</td>
+</tr>
+<tr>
+<td>结构钢筋接头</td>
+<td>OST_Coupler</td>
+<td>-2009060</td>
+</tr>
+<tr>
+<td>焊接标记</td>
+<td>OST_StructConnectionWeldTags</td>
+<td>-2009059</td>
+</tr>
+<tr>
+<td>剪力钉标记</td>
+<td>OST_StructConnectionShearStudTags</td>
+<td>-2009058</td>
+</tr>
+<tr>
+<td>锚固件标记</td>
+<td>OST_StructConnectionAnchorTags</td>
+<td>-2009057</td>
+</tr>
+<tr>
+<td>螺栓标记</td>
+<td>OST_StructConnectionBoltTags</td>
+<td>-2009056</td>
+</tr>
+<tr>
+<td>板标记</td>
+<td>OST_StructConnectionPlateTags</td>
+<td>-2009055</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_RebarHiddenLines</td>
+<td>-2009050</td>
+</tr>
+<tr>
+<td>修改器</td>
+<td>OST_StructConnectionModifiers</td>
+<td>-2009047</td>
+</tr>
+<tr>
+<td>焊缝</td>
+<td>OST_StructConnectionWelds</td>
+<td>-2009046</td>
+</tr>
+<tr>
+<td>孔</td>
+<td>OST_StructConnectionHoles</td>
+<td>-2009045</td>
+</tr>
+<tr>
+<td>剪力钉</td>
+<td>OST_StructConnectionShearStuds</td>
+<td>-2009044</td>
+</tr>
+<tr>
+<td>其他</td>
+<td>OST_StructConnectionOthers</td>
+<td>-2009042</td>
+</tr>
+<tr>
+<td>螺栓</td>
+<td>OST_StructConnectionBolts</td>
+<td>-2009041</td>
+</tr>
+<tr>
+<td>结构连接标记</td>
+<td>OST_StructConnectionTags</td>
+<td>-2009040</td>
+</tr>
+<tr>
+<td>锚固件</td>
+<td>OST_StructConnectionAnchors</td>
+<td>-2009039</td>
+</tr>
+<tr>
+<td>平板</td>
+<td>OST_StructConnectionPlates</td>
+<td>-2009038</td>
+</tr>
+<tr>
+<td>轮廓</td>
+<td>OST_StructConnectionProfiles</td>
+<td>-2009037</td>
+</tr>
+<tr>
+<td>参照</td>
+<td>OST_StructConnectionReference</td>
+<td>-2009036</td>
+</tr>
+<tr>
+<td>符号</td>
+<td>OST_StructConnectionSymbol</td>
+<td>-2009033</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_StructConnectionHiddenLines</td>
+<td>-2009032</td>
+</tr>
+<tr>
+<td>结构连接</td>
+<td>OST_StructConnections</td>
+<td>-2009030</td>
+</tr>
+<tr>
+<td>边界</td>
+<td>OST_FabricAreaBoundary</td>
+<td>-2009029</td>
+</tr>
+<tr>
+<td>结构钢筋网符号</td>
+<td>OST_FabricReinSpanSymbol</td>
+<td>-2009028</td>
+</tr>
+<tr>
+<td>钢筋网</td>
+<td>OST_FabricReinforcementWire</td>
+<td>-2009027</td>
+</tr>
+<tr>
+<td>边界</td>
+<td>OST_FabricReinforcementBoundary</td>
+<td>-2009026</td>
+</tr>
+<tr>
+<td>钢筋集切换</td>
+<td>OST_RebarSetToggle</td>
+<td>-2009025</td>
+</tr>
+<tr>
+<td>结构钢筋网标记</td>
+<td>OST_FabricReinforcementTags</td>
+<td>-2009022</td>
+</tr>
+<tr>
+<td>结构区域钢筋标记</td>
+<td>OST_AreaReinTags</td>
+<td>-2009021</td>
+</tr>
+<tr>
+<td>结构钢筋标记</td>
+<td>OST_RebarTags</td>
+<td>-2009020</td>
+</tr>
+<tr>
+<td>&lt;钢筋网片&gt;</td>
+<td>OST_FabricAreaSketchSheetsLines</td>
+<td>-2009019</td>
+</tr>
+<tr>
+<td>&lt;钢筋网外围&gt;</td>
+<td>OST_FabricAreaSketchEnvelopeLines</td>
+<td>-2009018</td>
+</tr>
+<tr>
+<td>结构钢筋网区域</td>
+<td>OST_FabricAreas</td>
+<td>-2009017</td>
+</tr>
+<tr>
+<td>结构钢筋网</td>
+<td>OST_FabricReinforcement</td>
+<td>-2009016</td>
+</tr>
+<tr>
+<td>钢筋保护层参照</td>
+<td>OST_RebarCover</td>
+<td>-2009015</td>
+</tr>
+<tr>
+<td>钢筋形状</td>
+<td>OST_RebarShape</td>
+<td>-2009013</td>
+</tr>
+<tr>
+<td>边界</td>
+<td>OST_PathReinBoundary</td>
+<td>-2009012</td>
+</tr>
+<tr>
+<td>结构路径钢筋标记</td>
+<td>OST_PathReinTags</td>
+<td>-2009011</td>
+</tr>
+<tr>
+<td>结构路径钢筋符号</td>
+<td>OST_PathReinSpanSymbol</td>
+<td>-2009010</td>
+</tr>
+<tr>
+<td>结构路径钢筋</td>
+<td>OST_PathRein</td>
+<td>-2009009</td>
+</tr>
+<tr>
+<td>边界</td>
+<td>OST_AreaReinBoundary</td>
+<td>-2009006</td>
+</tr>
+<tr>
+<td>结构区域钢筋符号</td>
+<td>OST_AreaReinSpanSymbol</td>
+<td>-2009005</td>
+</tr>
+<tr>
+<td>结构区域钢筋</td>
+<td>OST_AreaRein</td>
+<td>-2009003</td>
+</tr>
+<tr>
+<td>结构钢筋</td>
+<td>OST_Rebar</td>
+<td>-2009000</td>
+</tr>
+<tr>
+<td>隔热层</td>
+<td>OST_FabricationPipeworkInsulation</td>
+<td>-2008221</td>
+</tr>
+<tr>
+<td>内衬</td>
+<td>OST_FabricationDuctworkLining</td>
+<td>-2008220</td>
+</tr>
+<tr>
+<td>降</td>
+<td>OST_FabricationContainmentDrop</td>
+<td>-2008219</td>
+</tr>
+<tr>
+<td>升</td>
+<td>OST_FabricationContainmentRise</td>
+<td>-2008218</td>
+</tr>
+<tr>
+<td>降</td>
+<td>OST_FabricationPipeworkDrop</td>
+<td>-2008217</td>
+</tr>
+<tr>
+<td>升</td>
+<td>OST_FabricationPipeworkRise</td>
+<td>-2008216</td>
+</tr>
+<tr>
+<td>符号</td>
+<td>OST_FabricationContainmentSymbology</td>
+<td>-2008215</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_FabricationContainmentCenterLine</td>
+<td>-2008214</td>
+</tr>
+<tr>
+<td>MEP 预制保护层标记</td>
+<td>OST_FabricationContainmentTags</td>
+<td>-2008213</td>
+</tr>
+<tr>
+<td>MEP 预制保护层</td>
+<td>OST_FabricationContainment</td>
+<td>-2008212</td>
+</tr>
+<tr>
+<td>符号</td>
+<td>OST_FabricationPipeworkSymbology</td>
+<td>-2008211</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_FabricationPipeworkCenterLine</td>
+<td>-2008210</td>
+</tr>
+<tr>
+<td>MEP 预制管道标记</td>
+<td>OST_FabricationPipeworkTags</td>
+<td>-2008209</td>
+</tr>
+<tr>
+<td>MEP 预制管道</td>
+<td>OST_FabricationPipework</td>
+<td>-2008208</td>
+</tr>
+<tr>
+<td>符号</td>
+<td>OST_FabricationDuctworkSymbology</td>
+<td>-2008207</td>
+</tr>
+<tr>
+<td>降</td>
+<td>OST_FabricationDuctworkDrop</td>
+<td>-2008206</td>
+</tr>
+<tr>
+<td>升</td>
+<td>OST_FabricationDuctworkRise</td>
+<td>-2008205</td>
+</tr>
+<tr>
+<td>MEP 预制支架标记</td>
+<td>OST_FabricationHangerTags</td>
+<td>-2008204</td>
+</tr>
+<tr>
+<td>MEP 预制支架</td>
+<td>OST_FabricationHangers</td>
+<td>-2008203</td>
+</tr>
+<tr>
+<td>隔热层</td>
+<td>OST_FabricationDuctworkInsulation</td>
+<td>-2008198</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_FabricationDuctworkCenterLine</td>
+<td>-2008196</td>
+</tr>
+<tr>
+<td>MEP 预制管网标记</td>
+<td>OST_FabricationDuctworkTags</td>
+<td>-2008194</td>
+</tr>
+<tr>
+<td>MEP 预制管网</td>
+<td>OST_FabricationDuctwork</td>
+<td>-2008193</td>
+</tr>
+<tr>
+<td>着色</td>
+<td>OST_gbXML_Shade</td>
+<td>-2008187</td>
+</tr>
+<tr>
+<td>分析表面</td>
+<td>OST_AnalyticSurfaces</td>
+<td>-2008186</td>
+</tr>
+<tr>
+<td>分析空间</td>
+<td>OST_AnalyticSpaces</td>
+<td>-2008185</td>
+</tr>
+<tr>
+<td>空气洞口</td>
+<td>OST_gbXML_OpeningAir</td>
+<td>-2008184</td>
+</tr>
+<tr>
+<td>非推拉门</td>
+<td>OST_gbXML_NonSlidingDoor</td>
+<td>-2008183</td>
+</tr>
+<tr>
+<td>推拉门</td>
+<td>OST_gbXML_SlidingDoor</td>
+<td>-2008182</td>
+</tr>
+<tr>
+<td>可操作天窗</td>
+<td>OST_gbXML_OperableSkylight</td>
+<td>-2008181</td>
+</tr>
+<tr>
+<td>固定天窗</td>
+<td>OST_gbXML_FixedSkylight</td>
+<td>-2008180</td>
+</tr>
+<tr>
+<td>可操作窗口</td>
+<td>OST_gbXML_OperableWindow</td>
+<td>-2008179</td>
+</tr>
+<tr>
+<td>固定窗</td>
+<td>OST_gbXML_FixedWindow</td>
+<td>-2008178</td>
+</tr>
+<tr>
+<td>地下天花板</td>
+<td>OST_gbXML_UndergroundCeiling</td>
+<td>-2008177</td>
+</tr>
+<tr>
+<td>地下板</td>
+<td>OST_gbXML_UndergroundSlab</td>
+<td>-2008176</td>
+</tr>
+<tr>
+<td>地下墙</td>
+<td>OST_gbXML_UndergroundWall</td>
+<td>-2008175</td>
+</tr>
+<tr>
+<td>空气曲面</td>
+<td>OST_gbXML_SurfaceAir</td>
+<td>-2008174</td>
+</tr>
+<tr>
+<td>天花板</td>
+<td>OST_gbXML_Ceiling</td>
+<td>-2008173</td>
+</tr>
+<tr>
+<td>内部楼板</td>
+<td>OST_gbXML_InteriorFloor</td>
+<td>-2008172</td>
+</tr>
+<tr>
+<td>内墙</td>
+<td>OST_gbXML_InteriorWall</td>
+<td>-2008171</td>
+</tr>
+<tr>
+<td>平整表面上的板</td>
+<td>OST_gbXML_SlabOnGrade</td>
+<td>-2008170</td>
+</tr>
+<tr>
+<td>活动楼板</td>
+<td>OST_gbXML_RaisedFloor</td>
+<td>-2008169</td>
+</tr>
+<tr>
+<td>屋顶</td>
+<td>OST_gbXML_Roof</td>
+<td>-2008168</td>
+</tr>
+<tr>
+<td>外墙</td>
+<td>OST_gbXML_ExteriorWall</td>
+<td>-2008167</td>
+</tr>
+<tr>
+<td>管段</td>
+<td>OST_PipeSegments</td>
+<td>-2008163</td>
+</tr>
+<tr>
+<td>管道占位符</td>
+<td>OST_PlaceHolderPipes</td>
+<td>-2008161</td>
+</tr>
+<tr>
+<td>风管占位符</td>
+<td>OST_PlaceHolderDucts</td>
+<td>-2008160</td>
+</tr>
+<tr>
+<td>参照线</td>
+<td>OST_PipingSystem_Reference_Visibility</td>
+<td>-2008159</td>
+</tr>
+<tr>
+<td>参照线</td>
+<td>OST_DuctSystem_Reference_Visibility</td>
+<td>-2008157</td>
+</tr>
+<tr>
+<td>管道隔热层标记</td>
+<td>OST_PipeInsulationsTags</td>
+<td>-2008155</td>
+</tr>
+<tr>
+<td>风管内衬标记</td>
+<td>OST_DuctLiningsTags</td>
+<td>-2008154</td>
+</tr>
+<tr>
+<td>风管隔热层标记</td>
+<td>OST_DuctInsulationsTags</td>
+<td>-2008153</td>
+</tr>
+<tr>
+<td>电气备件&#x2F;空间电路</td>
+<td>OST_ElectricalInternalCircuits</td>
+<td>-2008152</td>
+</tr>
+<tr>
+<td>配电盘明细表图形</td>
+<td>OST_PanelScheduleGraphics</td>
+<td>-2008151</td>
+</tr>
+<tr>
+<td>电缆桥架管路</td>
+<td>OST_CableTrayRun</td>
+<td>-2008150</td>
+</tr>
+<tr>
+<td>线管管路</td>
+<td>OST_ConduitRun</td>
+<td>-2008149</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_ConduitFittingCenterLine</td>
+<td>-2008141</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_CableTrayFittingCenterLine</td>
+<td>-2008140</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_ConduitCenterLine</td>
+<td>-2008139</td>
+</tr>
+<tr>
+<td>降</td>
+<td>OST_ConduitDrop</td>
+<td>-2008138</td>
+</tr>
+<tr>
+<td>升</td>
+<td>OST_ConduitRiseDrop</td>
+<td>-2008137</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_CableTrayCenterLine</td>
+<td>-2008136</td>
+</tr>
+<tr>
+<td>降</td>
+<td>OST_CableTrayDrop</td>
+<td>-2008135</td>
+</tr>
+<tr>
+<td>升</td>
+<td>OST_CableTrayRiseDrop</td>
+<td>-2008134</td>
+</tr>
+<tr>
+<td>线管标记</td>
+<td>OST_ConduitTags</td>
+<td>-2008133</td>
+</tr>
+<tr>
+<td>线管</td>
+<td>OST_Conduit</td>
+<td>-2008132</td>
+</tr>
+<tr>
+<td>电缆桥架标记</td>
+<td>OST_CableTrayTags</td>
+<td>-2008131</td>
+</tr>
+<tr>
+<td>电缆桥架</td>
+<td>OST_CableTray</td>
+<td>-2008130</td>
+</tr>
+<tr>
+<td>线管配件标记</td>
+<td>OST_ConduitFittingTags</td>
+<td>-2008129</td>
+</tr>
+<tr>
+<td>线管配件</td>
+<td>OST_ConduitFitting</td>
+<td>-2008128</td>
+</tr>
+<tr>
+<td>电缆桥架配件标记</td>
+<td>OST_CableTrayFittingTags</td>
+<td>-2008127</td>
+</tr>
+<tr>
+<td>电缆桥架配件</td>
+<td>OST_CableTrayFitting</td>
+<td>-2008126</td>
+</tr>
+<tr>
+<td>布管系统配置</td>
+<td>OST_RoutingPreferences</td>
+<td>-2008125</td>
+</tr>
+<tr>
+<td>风管内衬</td>
+<td>OST_DuctLinings</td>
+<td>-2008124</td>
+</tr>
+<tr>
+<td>风管隔热层</td>
+<td>OST_DuctInsulations</td>
+<td>-2008123</td>
+</tr>
+<tr>
+<td>管道隔热层</td>
+<td>OST_PipeInsulations</td>
+<td>-2008122</td>
+</tr>
+<tr>
+<td>参照线</td>
+<td>OST_HVAC_Zones_Reference_Visibility</td>
+<td>-2008118</td>
+</tr>
+<tr>
+<td>内部填充</td>
+<td>OST_HVAC_Zones_InteriorFill_Visibility</td>
+<td>-2008117</td>
+</tr>
+<tr>
+<td>颜色填充</td>
+<td>OST_HVAC_Zones_ColorFill</td>
+<td>-2008116</td>
+</tr>
+<tr>
+<td>分区标记</td>
+<td>OST_ZoneTags</td>
+<td>-2008115</td>
+</tr>
+<tr>
+<td>边界</td>
+<td>OST_HVAC_Zones_Boundary</td>
+<td>-2008108</td>
+</tr>
+<tr>
+<td>HVAC 区</td>
+<td>OST_HVAC_Zones</td>
+<td>-2008107</td>
+</tr>
+<tr>
+<td>开关系统</td>
+<td>OST_SwitchSystem</td>
+<td>-2008101</td>
+</tr>
+<tr>
+<td>喷头标记</td>
+<td>OST_SprinklerTags</td>
+<td>-2008100</td>
+</tr>
+<tr>
+<td>喷头</td>
+<td>OST_Sprinklers</td>
+<td>-2008099</td>
+</tr>
+<tr>
+<td>洞口</td>
+<td>OST_GbXML_Opening</td>
+<td>-2008095</td>
+</tr>
+<tr>
+<td>地下</td>
+<td>OST_GbXML_SType_Underground</td>
+<td>-2008094</td>
+</tr>
+<tr>
+<td>着色</td>
+<td>OST_GbXML_SType_Shade</td>
+<td>-2008093</td>
+</tr>
+<tr>
+<td>外部</td>
+<td>OST_GbXML_SType_Exterior</td>
+<td>-2008092</td>
+</tr>
+<tr>
+<td>内部</td>
+<td>OST_GbXML_SType_Interior</td>
+<td>-2008091</td>
+</tr>
+<tr>
+<td>分析表面</td>
+<td>OST_GbXMLFaces</td>
+<td>-2008090</td>
+</tr>
+<tr>
+<td>回路方向</td>
+<td>OST_WireHomeRunArrows</td>
+<td>-2008089</td>
+</tr>
+<tr>
+<td>灯具标记</td>
+<td>OST_LightingDeviceTags</td>
+<td>-2008088</td>
+</tr>
+<tr>
+<td>灯具</td>
+<td>OST_LightingDevices</td>
+<td>-2008087</td>
+</tr>
+<tr>
+<td>火警设备标记</td>
+<td>OST_FireAlarmDeviceTags</td>
+<td>-2008086</td>
+</tr>
+<tr>
+<td>火警设备</td>
+<td>OST_FireAlarmDevices</td>
+<td>-2008085</td>
+</tr>
+<tr>
+<td>数据设备标记</td>
+<td>OST_DataDeviceTags</td>
+<td>-2008084</td>
+</tr>
+<tr>
+<td>数据设备</td>
+<td>OST_DataDevices</td>
+<td>-2008083</td>
+</tr>
+<tr>
+<td>通讯设备标记</td>
+<td>OST_CommunicationDeviceTags</td>
+<td>-2008082</td>
+</tr>
+<tr>
+<td>通讯设备</td>
+<td>OST_CommunicationDevices</td>
+<td>-2008081</td>
+</tr>
+<tr>
+<td>安全设备标记</td>
+<td>OST_SecurityDeviceTags</td>
+<td>-2008080</td>
+</tr>
+<tr>
+<td>安全设备</td>
+<td>OST_SecurityDevices</td>
+<td>-2008079</td>
+</tr>
+<tr>
+<td>护理呼叫设备标记</td>
+<td>OST_NurseCallDeviceTags</td>
+<td>-2008078</td>
+</tr>
+<tr>
+<td>护理呼叫设备</td>
+<td>OST_NurseCallDevices</td>
+<td>-2008077</td>
+</tr>
+<tr>
+<td>电话设备标记</td>
+<td>OST_TelephoneDeviceTags</td>
+<td>-2008076</td>
+</tr>
+<tr>
+<td>电话设备</td>
+<td>OST_TelephoneDevices</td>
+<td>-2008075</td>
+</tr>
+<tr>
+<td>导线记号</td>
+<td>OST_WireTickMarks</td>
+<td>-2008074</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_PipeFittingCenterLine</td>
+<td>-2008072</td>
+</tr>
+<tr>
+<td>降</td>
+<td>OST_PipeCurvesDrop</td>
+<td>-2008069</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_DuctFittingCenterLine</td>
+<td>-2008066</td>
+</tr>
+<tr>
+<td>降</td>
+<td>OST_DuctCurvesDrop</td>
+<td>-2008062</td>
+</tr>
+<tr>
+<td>风管管件标记</td>
+<td>OST_DuctFittingTags</td>
+<td>-2008061</td>
+</tr>
+<tr>
+<td>管件标记</td>
+<td>OST_PipeFittingTags</td>
+<td>-2008060</td>
+</tr>
+<tr>
+<td>管道颜色填充</td>
+<td>OST_PipeColorFills</td>
+<td>-2008059</td>
+</tr>
+<tr>
+<td>管道颜色填充图例</td>
+<td>OST_PipeColorFillLegends</td>
+<td>-2008058</td>
+</tr>
+<tr>
+<td>导线标记</td>
+<td>OST_WireTags</td>
+<td>-2008057</td>
+</tr>
+<tr>
+<td>管道附件标记</td>
+<td>OST_PipeAccessoryTags</td>
+<td>-2008056</td>
+</tr>
+<tr>
+<td>管道附件</td>
+<td>OST_PipeAccessory</td>
+<td>-2008055</td>
+</tr>
+<tr>
+<td>升</td>
+<td>OST_PipeCurvesRiseDrop</td>
+<td>-2008054</td>
+</tr>
+<tr>
+<td>填充图案</td>
+<td>OST_FlexPipeCurvesPattern</td>
+<td>-2008053</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_FlexPipeCurvesCenterLine</td>
+<td>-2008051</td>
+</tr>
+<tr>
+<td>软管</td>
+<td>OST_FlexPipeCurves</td>
+<td>-2008050</td>
+</tr>
+<tr>
+<td>管件</td>
+<td>OST_PipeFitting</td>
+<td>-2008049</td>
+</tr>
+<tr>
+<td>软管标记</td>
+<td>OST_FlexPipeTags</td>
+<td>-2008048</td>
+</tr>
+<tr>
+<td>管道标记</td>
+<td>OST_PipeTags</td>
+<td>-2008047</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_PipeCurvesCenterLine</td>
+<td>-2008045</td>
+</tr>
+<tr>
+<td>管道</td>
+<td>OST_PipeCurves</td>
+<td>-2008044</td>
+</tr>
+<tr>
+<td>管道系统</td>
+<td>OST_PipingSystem</td>
+<td>-2008043</td>
+</tr>
+<tr>
+<td>导线</td>
+<td>OST_Wire</td>
+<td>-2008039</td>
+</tr>
+<tr>
+<td>电路</td>
+<td>OST_ElectricalCircuit</td>
+<td>-2008037</td>
+</tr>
+<tr>
+<td>升</td>
+<td>OST_DuctCurvesRiseDrop</td>
+<td>-2008036</td>
+</tr>
+<tr>
+<td>填充图案</td>
+<td>OST_FlexDuctCurvesPattern</td>
+<td>-2008023</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_FlexDuctCurvesCenterLine</td>
+<td>-2008021</td>
+</tr>
+<tr>
+<td>软风管</td>
+<td>OST_FlexDuctCurves</td>
+<td>-2008020</td>
+</tr>
+<tr>
+<td>风管附件标记</td>
+<td>OST_DuctAccessoryTags</td>
+<td>-2008017</td>
+</tr>
+<tr>
+<td>风管附件</td>
+<td>OST_DuctAccessory</td>
+<td>-2008016</td>
+</tr>
+<tr>
+<td>风管系统</td>
+<td>OST_DuctSystem</td>
+<td>-2008015</td>
+</tr>
+<tr>
+<td>风道末端标记</td>
+<td>OST_DuctTerminalTags</td>
+<td>-2008014</td>
+</tr>
+<tr>
+<td>风道末端</td>
+<td>OST_DuctTerminal</td>
+<td>-2008013</td>
+</tr>
+<tr>
+<td>风管管件</td>
+<td>OST_DuctFitting</td>
+<td>-2008010</td>
+</tr>
+<tr>
+<td>风管颜色填充</td>
+<td>OST_DuctColorFills</td>
+<td>-2008005</td>
+</tr>
+<tr>
+<td>软风管标记</td>
+<td>OST_FlexDuctTags</td>
+<td>-2008004</td>
+</tr>
+<tr>
+<td>风管标记</td>
+<td>OST_DuctTags</td>
+<td>-2008003</td>
+</tr>
+<tr>
+<td>中心线</td>
+<td>OST_DuctCurvesCenterLine</td>
+<td>-2008001</td>
+</tr>
+<tr>
+<td>风管</td>
+<td>OST_DuctCurves</td>
+<td>-2008000</td>
+</tr>
+<tr>
+<td>风管颜色填充图例</td>
+<td>OST_DuctColorFillLegends</td>
+<td>-2007004</td>
+</tr>
+<tr>
+<td>桥梁支座</td>
+<td>OST_BridgeBearings</td>
+<td>-2006138</td>
+</tr>
+<tr>
+<td>桥梁大梁</td>
+<td>OST_BridgeGirders</td>
+<td>-2006137</td>
+</tr>
+<tr>
+<td>桥梁基础</td>
+<td>OST_BridgeFoundations</td>
+<td>-2006136</td>
+</tr>
+<tr>
+<td>桥面</td>
+<td>OST_BridgeDecks</td>
+<td>-2006135</td>
+</tr>
+<tr>
+<td>桥拱</td>
+<td>OST_BridgeArches</td>
+<td>-2006134</td>
+</tr>
+<tr>
+<td>桥梁缆索</td>
+<td>OST_BridgeCables</td>
+<td>-2006133</td>
+</tr>
+<tr>
+<td>桥塔</td>
+<td>OST_BridgeTowers</td>
+<td>-2006132</td>
+</tr>
+<tr>
+<td>桥墩</td>
+<td>OST_BridgePiers</td>
+<td>-2006131</td>
+</tr>
+<tr>
+<td>桥台</td>
+<td>OST_BridgeAbutments</td>
+<td>-2006130</td>
+</tr>
+<tr>
+<td>平面视图中的支撑符号</td>
+<td>OST_StructuralBracePlanReps</td>
+<td>-2006110</td>
+</tr>
+<tr>
+<td>连接符号</td>
+<td>OST_StructConnectionSymbols</td>
+<td>-2006100</td>
+</tr>
+<tr>
+<td>结构注释</td>
+<td>OST_StructuralAnnotations</td>
+<td>-2006090</td>
+</tr>
+<tr>
+<td>云线批注标记</td>
+<td>OST_RevisionCloudTags</td>
+<td>-2006080</td>
+</tr>
+<tr>
+<td>云线批注</td>
+<td>OST_RevisionClouds</td>
+<td>-2006060</td>
+</tr>
+<tr>
+<td>立面标记</td>
+<td>OST_ElevationMarks</td>
+<td>-2006045</td>
+</tr>
+<tr>
+<td>轴网标头</td>
+<td>OST_GridHeads</td>
+<td>-2006040</td>
+</tr>
+<tr>
+<td>标高标头</td>
+<td>OST_LevelHeads</td>
+<td>-2006020</td>
+</tr>
+<tr>
+<td>范围框</td>
+<td>OST_VolumeOfInterest</td>
+<td>-2006000</td>
+</tr>
+<tr>
+<td>边界条件</td>
+<td>OST_BoundaryConditions</td>
+<td>-2005301</td>
+</tr>
+<tr>
+<td>内部面荷载标记</td>
+<td>OST_InternalAreaLoadTags</td>
+<td>-2005255</td>
+</tr>
+<tr>
+<td>内部线荷载标记</td>
+<td>OST_InternalLineLoadTags</td>
+<td>-2005254</td>
+</tr>
+<tr>
+<td>内部点荷载标记</td>
+<td>OST_InternalPointLoadTags</td>
+<td>-2005253</td>
+</tr>
+<tr>
+<td>面荷载标记</td>
+<td>OST_AreaLoadTags</td>
+<td>-2005252</td>
+</tr>
+<tr>
+<td>线荷载标记</td>
+<td>OST_LineLoadTags</td>
+<td>-2005251</td>
+</tr>
+<tr>
+<td>点荷载标记</td>
+<td>OST_PointLoadTags</td>
+<td>-2005250</td>
+</tr>
+<tr>
+<td>地震荷载</td>
+<td>OST_LoadCasesSeismic</td>
+<td>-2005218</td>
+</tr>
+<tr>
+<td>温度荷载</td>
+<td>OST_LoadCasesTemperature</td>
+<td>-2005217</td>
+</tr>
+<tr>
+<td>偶然荷载</td>
+<td>OST_LoadCasesAccidental</td>
+<td>-2005216</td>
+</tr>
+<tr>
+<td>屋顶活荷载</td>
+<td>OST_LoadCasesRoofLive</td>
+<td>-2005215</td>
+</tr>
+<tr>
+<td>雪荷载</td>
+<td>OST_LoadCasesSnow</td>
+<td>-2005214</td>
+</tr>
+<tr>
+<td>风荷载</td>
+<td>OST_LoadCasesWind</td>
+<td>-2005213</td>
+</tr>
+<tr>
+<td>活荷载</td>
+<td>OST_LoadCasesLive</td>
+<td>-2005212</td>
+</tr>
+<tr>
+<td>恒荷载</td>
+<td>OST_LoadCasesDead</td>
+<td>-2005211</td>
+</tr>
+<tr>
+<td>结构荷载工况</td>
+<td>OST_LoadCases</td>
+<td>-2005210</td>
+</tr>
+<tr>
+<td>内部面荷载</td>
+<td>OST_InternalAreaLoads</td>
+<td>-2005207</td>
+</tr>
+<tr>
+<td>内部线荷载</td>
+<td>OST_InternalLineLoads</td>
+<td>-2005206</td>
+</tr>
+<tr>
+<td>内部点荷载</td>
+<td>OST_InternalPointLoads</td>
+<td>-2005205</td>
+</tr>
+<tr>
+<td>结构内部荷载</td>
+<td>OST_InternalLoads</td>
+<td>-2005204</td>
+</tr>
+<tr>
+<td>面荷载</td>
+<td>OST_AreaLoads</td>
+<td>-2005203</td>
+</tr>
+<tr>
+<td>线荷载</td>
+<td>OST_LineLoads</td>
+<td>-2005202</td>
+</tr>
+<tr>
+<td>点荷载</td>
+<td>OST_PointLoads</td>
+<td>-2005201</td>
+</tr>
+<tr>
+<td>结构荷载</td>
+<td>OST_Loads</td>
+<td>-2005200</td>
+</tr>
+<tr>
+<td>结构梁系统标记</td>
+<td>OST_BeamSystemTags</td>
+<td>-2005130</td>
+</tr>
+<tr>
+<td>基础跨方向符号</td>
+<td>OST_FootingSpanDirectionSymbol</td>
+<td>-2005111</td>
+</tr>
+<tr>
+<td>跨方向符号</td>
+<td>OST_SpanDirectionSymbol</td>
+<td>-2005110</td>
+</tr>
+<tr>
+<td>高程点符号</td>
+<td>OST_SpotElevSymbols</td>
+<td>-2005100</td>
+</tr>
+<tr>
+<td>结构桁架标记</td>
+<td>OST_TrussTags</td>
+<td>-2005030</td>
+</tr>
+<tr>
+<td>注释记号标记</td>
+<td>OST_KeynoteTags</td>
+<td>-2005029</td>
+</tr>
+<tr>
+<td>详图项目标记</td>
+<td>OST_DetailComponentTags</td>
+<td>-2005028</td>
+</tr>
+<tr>
+<td>材质标记</td>
+<td>OST_MaterialTags</td>
+<td>-2005027</td>
+</tr>
+<tr>
+<td>楼板标记</td>
+<td>OST_FloorTags</td>
+<td>-2005026</td>
+</tr>
+<tr>
+<td>幕墙系统标记</td>
+<td>OST_CurtaSystemTags</td>
+<td>-2005025</td>
+</tr>
+<tr>
+<td>楼梯标记</td>
+<td>OST_StairsTags</td>
+<td>-2005023</td>
+</tr>
+<tr>
+<td>多类别标记</td>
+<td>OST_MultiCategoryTags</td>
+<td>-2005022</td>
+</tr>
+<tr>
+<td>植物标记</td>
+<td>OST_PlantingTags</td>
+<td>-2005021</td>
+</tr>
+<tr>
+<td>面积标记</td>
+<td>OST_AreaTags</td>
+<td>-2005020</td>
+</tr>
+<tr>
+<td>结构基础标记</td>
+<td>OST_StructuralFoundationTags</td>
+<td>-2005019</td>
+</tr>
+<tr>
+<td>结构柱标记</td>
+<td>OST_StructuralColumnTags</td>
+<td>-2005018</td>
+</tr>
+<tr>
+<td>停车场标记</td>
+<td>OST_ParkingTags</td>
+<td>-2005017</td>
+</tr>
+<tr>
+<td>场地标记</td>
+<td>OST_SiteTags</td>
+<td>-2005016</td>
+</tr>
+<tr>
+<td>结构框架标记</td>
+<td>OST_StructuralFramingTags</td>
+<td>-2005015</td>
+</tr>
+<tr>
+<td>专用设备标记</td>
+<td>OST_SpecialityEquipmentTags</td>
+<td>-2005014</td>
+</tr>
+<tr>
+<td>常规模型标记</td>
+<td>OST_GenericModelTags</td>
+<td>-2005013</td>
+</tr>
+<tr>
+<td>幕墙嵌板标记</td>
+<td>OST_CurtainWallPanelTags</td>
+<td>-2005012</td>
+</tr>
+<tr>
+<td>墙标记</td>
+<td>OST_WallTags</td>
+<td>-2005011</td>
+</tr>
+<tr>
+<td>卫浴装置标记</td>
+<td>OST_PlumbingFixtureTags</td>
+<td>-2005010</td>
+</tr>
+<tr>
+<td>机电设备标记</td>
+<td>OST_MechanicalEquipmentTags</td>
+<td>-2005009</td>
+</tr>
+<tr>
+<td>照明设备标记</td>
+<td>OST_LightingFixtureTags</td>
+<td>-2005008</td>
+</tr>
+<tr>
+<td>家具系统标记</td>
+<td>OST_FurnitureSystemTags</td>
+<td>-2005007</td>
+</tr>
+<tr>
+<td>家具标记</td>
+<td>OST_FurnitureTags</td>
+<td>-2005006</td>
+</tr>
+<tr>
+<td>电气装置标记</td>
+<td>OST_ElectricalFixtureTags</td>
+<td>-2005004</td>
+</tr>
+<tr>
+<td>电气设备标记</td>
+<td>OST_ElectricalEquipmentTags</td>
+<td>-2005003</td>
+</tr>
+<tr>
+<td>天花板标记</td>
+<td>OST_CeilingTags</td>
+<td>-2005002</td>
+</tr>
+<tr>
+<td>橱柜标记</td>
+<td>OST_CaseworkTags</td>
+<td>-2005001</td>
+</tr>
+<tr>
+<td>颜色填充</td>
+<td>OST_MEPSpaceColorFill</td>
+<td>-2003605</td>
+</tr>
+<tr>
+<td>参照</td>
+<td>OST_MEPSpaceReferenceVisibility</td>
+<td>-2003602</td>
+</tr>
+<tr>
+<td>内墙</td>
+<td>OST_MEPSpaceInteriorFillVisibility</td>
+<td>-2003601</td>
+</tr>
+<tr>
+<td>空间</td>
+<td>OST_MEPSpaces</td>
+<td>-2003600</td>
+</tr>
+<tr>
+<td>体量着色</td>
+<td>OST_MassShade</td>
+<td>-2003418</td>
+</tr>
+<tr>
+<td>体量洞口</td>
+<td>OST_MassOpening</td>
+<td>-2003417</td>
+</tr>
+<tr>
+<td>体量天窗</td>
+<td>OST_MassSkylights</td>
+<td>-2003416</td>
+</tr>
+<tr>
+<td>体量玻璃</td>
+<td>OST_MassGlazing</td>
+<td>-2003415</td>
+</tr>
+<tr>
+<td>体量屋顶</td>
+<td>OST_MassRoof</td>
+<td>-2003414</td>
+</tr>
+<tr>
+<td>体量外墙</td>
+<td>OST_MassExteriorWall</td>
+<td>-2003413</td>
+</tr>
+<tr>
+<td>体量内墙</td>
+<td>OST_MassInteriorWall</td>
+<td>-2003412</td>
+</tr>
+<tr>
+<td>体量分区</td>
+<td>OST_MassZone</td>
+<td>-2003411</td>
+</tr>
+<tr>
+<td>体量楼层标记</td>
+<td>OST_MassAreaFaceTags</td>
+<td>-2003410</td>
+</tr>
+<tr>
+<td>体量标记</td>
+<td>OST_MassTags</td>
+<td>-2003405</td>
+</tr>
+<tr>
+<td>形式</td>
+<td>OST_MassForm</td>
+<td>-2003404</td>
+</tr>
+<tr>
+<td>体量楼层</td>
+<td>OST_MassFloor</td>
+<td>-2003403</td>
+</tr>
+<tr>
+<td>体量</td>
+<td>OST_Mass</td>
+<td>-2003400</td>
+</tr>
+<tr>
+<td>图案填充</td>
+<td>OST_DividedSurface_PatternFill</td>
+<td>-2003327</td>
+</tr>
+<tr>
+<td>填充图案线</td>
+<td>OST_DividedSurface_PatternLines</td>
+<td>-2003326</td>
+</tr>
+<tr>
+<td>网格线</td>
+<td>OST_DividedSurface_Gridlines</td>
+<td>-2003325</td>
+</tr>
+<tr>
+<td>节点</td>
+<td>OST_DividedSurface_Nodes</td>
+<td>-2003324</td>
+</tr>
+<tr>
+<td>向下箭头</td>
+<td>OST_RampsDownArrow</td>
+<td>-2003308</td>
+</tr>
+<tr>
+<td>向上箭头</td>
+<td>OST_RampsUpArrow</td>
+<td>-2003307</td>
+</tr>
+<tr>
+<td>文字(向下)</td>
+<td>OST_RampsDownText</td>
+<td>-2003306</td>
+</tr>
+<tr>
+<td>文字(向上)</td>
+<td>OST_RampsUpText</td>
+<td>-2003305</td>
+</tr>
+<tr>
+<td>超出截面线的梯边梁</td>
+<td>OST_RampsStringerAboveCut</td>
+<td>-2003304</td>
+</tr>
+<tr>
+<td>梯边梁</td>
+<td>OST_RampsStringer</td>
+<td>-2003303</td>
+</tr>
+<tr>
+<td>坡道超出截面线</td>
+<td>OST_RampsAboveCut</td>
+<td>-2003302</td>
+</tr>
+<tr>
+<td>面积</td>
+<td>OST_Areas</td>
+<td>-2003200</td>
+</tr>
+<tr>
+<td>项目信息</td>
+<td>OST_ProjectInformation</td>
+<td>-2003101</td>
+</tr>
+<tr>
+<td>图纸</td>
+<td>OST_Sheets</td>
+<td>-2003100</td>
+</tr>
+<tr>
+<td>详图项目</td>
+<td>OST_DetailComponents</td>
+<td>-2002000</td>
+</tr>
+<tr>
+<td>屋檐底板</td>
+<td>OST_RoofSoffit</td>
+<td>-2001393</td>
+</tr>
+<tr>
+<td>楼板边缘</td>
+<td>OST_EdgeSlab</td>
+<td>-2001392</td>
+</tr>
+<tr>
+<td>檐沟</td>
+<td>OST_Gutter</td>
+<td>-2001391</td>
+</tr>
+<tr>
+<td>封檐板</td>
+<td>OST_Fascia</td>
+<td>-2001390</td>
+</tr>
+<tr>
+<td>环境</td>
+<td>OST_Entourage</td>
+<td>-2001370</td>
+</tr>
+<tr>
+<td>植物</td>
+<td>OST_Planting</td>
+<td>-2001360</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_StructuralStiffenerHiddenLines</td>
+<td>-2001358</td>
+</tr>
+<tr>
+<td>定位线</td>
+<td>OST_StructuralColumnLocationLine</td>
+<td>-2001357</td>
+</tr>
+<tr>
+<td>定位线</td>
+<td>OST_StructuralFramingLocationLine</td>
+<td>-2001356</td>
+</tr>
+<tr>
+<td>结构加强板标记</td>
+<td>OST_StructuralStiffenerTags</td>
+<td>-2001355</td>
+</tr>
+<tr>
+<td>结构加强板</td>
+<td>OST_StructuralStiffener</td>
+<td>-2001354</td>
+</tr>
+<tr>
+<td>RVT 链接</td>
+<td>OST_RvtLinks</td>
+<td>-2001352</td>
+</tr>
+<tr>
+<td>专用设备</td>
+<td>OST_SpecialityEquipment</td>
+<td>-2001350</td>
+</tr>
+<tr>
+<td>刚性链接</td>
+<td>OST_ColumnAnalyticalRigidLinks</td>
+<td>-2001344</td>
+</tr>
+<tr>
+<td>次等高线</td>
+<td>OST_SecondaryTopographyContours</td>
+<td>-2001343</td>
+</tr>
+<tr>
+<td>主等高线</td>
+<td>OST_TopographyContours</td>
+<td>-2001342</td>
+</tr>
+<tr>
+<td>三角形边缘</td>
+<td>OST_TopographySurface</td>
+<td>-2001341</td>
+</tr>
+<tr>
+<td>地形</td>
+<td>OST_Topography</td>
+<td>-2001340</td>
+</tr>
+<tr>
+<td>地形链接</td>
+<td>OST_TopographyLink</td>
+<td>-2001339</td>
+</tr>
+<tr>
+<td>结构桁架</td>
+<td>OST_StructuralTruss</td>
+<td>-2001336</td>
+</tr>
+<tr>
+<td>棍状符号</td>
+<td>OST_StructuralColumnStickSymbols</td>
+<td>-2001335</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_HiddenStructuralColumnLines</td>
+<td>-2001334</td>
+</tr>
+<tr>
+<td>刚性链接</td>
+<td>OST_AnalyticalRigidLinks</td>
+<td>-2001333</td>
+</tr>
+<tr>
+<td>结构柱</td>
+<td>OST_StructuralColumns</td>
+<td>-2001330</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_HiddenStructuralFramingLines</td>
+<td>-2001329</td>
+</tr>
+<tr>
+<td>结构梁系统</td>
+<td>OST_StructuralFramingSystem</td>
+<td>-2001327</td>
+</tr>
+<tr>
+<td>结构框架</td>
+<td>OST_StructuralFraming</td>
+<td>-2001320</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_HiddenStructuralFoundationLines</td>
+<td>-2001302</td>
+</tr>
+<tr>
+<td>结构基础</td>
+<td>OST_StructuralFoundation</td>
+<td>-2001300</td>
+</tr>
+<tr>
+<td>测量点</td>
+<td>OST_SharedBasePoint</td>
+<td>-2001272</td>
+</tr>
+<tr>
+<td>项目基点</td>
+<td>OST_ProjectBasePoint</td>
+<td>-2001271</td>
+</tr>
+<tr>
+<td>建筑红线线段标记</td>
+<td>OST_SitePropertyLineSegmentTags</td>
+<td>-2001269</td>
+</tr>
+<tr>
+<td>建筑红线线段</td>
+<td>OST_SitePropertyLineSegment</td>
+<td>-2001268</td>
+</tr>
+<tr>
+<td>属性标记</td>
+<td>OST_SitePropertyTags</td>
+<td>-2001267</td>
+</tr>
+<tr>
+<td>边界点</td>
+<td>OST_SitePointBoundary</td>
+<td>-2001266</td>
+</tr>
+<tr>
+<td>建筑红线</td>
+<td>OST_SiteProperty</td>
+<td>-2001265</td>
+</tr>
+<tr>
+<td>建筑地坪</td>
+<td>OST_BuildingPad</td>
+<td>-2001263</td>
+</tr>
+<tr>
+<td>内部点</td>
+<td>OST_SitePoint</td>
+<td>-2001262</td>
+</tr>
+<tr>
+<td>场地</td>
+<td>OST_Site</td>
+<td>-2001260</td>
+</tr>
+<tr>
+<td>道路</td>
+<td>OST_Roads</td>
+<td>-2001220</td>
+</tr>
+<tr>
+<td>停车场</td>
+<td>OST_Parking</td>
+<td>-2001180</td>
+</tr>
+<tr>
+<td>卫浴装置</td>
+<td>OST_PlumbingFixtures</td>
+<td>-2001160</td>
+</tr>
+<tr>
+<td>机械设备</td>
+<td>OST_MechanicalEquipment</td>
+<td>-2001140</td>
+</tr>
+<tr>
+<td>光源</td>
+<td>OST_LightingFixtureSource</td>
+<td>-2001121</td>
+</tr>
+<tr>
+<td>照明设备</td>
+<td>OST_LightingFixtures</td>
+<td>-2001120</td>
+</tr>
+<tr>
+<td>家具系统</td>
+<td>OST_FurnitureSystems</td>
+<td>-2001100</td>
+</tr>
+<tr>
+<td>电气装置</td>
+<td>OST_ElectricalFixtures</td>
+<td>-2001060</td>
+</tr>
+<tr>
+<td>电气设备</td>
+<td>OST_ElectricalEquipment</td>
+<td>-2001040</td>
+</tr>
+<tr>
+<td>橱柜</td>
+<td>OST_Casework</td>
+<td>-2001000</td>
+</tr>
+<tr>
+<td>竖井洞口</td>
+<td>OST_ShaftOpening</td>
+<td>-2000996</td>
+</tr>
+<tr>
+<td>水力分离符号</td>
+<td>OST_PipeHydronicSeparationSymbols</td>
+<td>-2000988</td>
+</tr>
+<tr>
+<td>机械设备集边界线</td>
+<td>OST_MechanicalEquipmentSetBoundaryLines</td>
+<td>-2000987</td>
+</tr>
+<tr>
+<td>机械设备集标记</td>
+<td>OST_MechanicalEquipmentSetTags</td>
+<td>-2000986</td>
+</tr>
+<tr>
+<td>机械设备集</td>
+<td>OST_MechanicalEquipmentSet</td>
+<td>-2000985</td>
+</tr>
+<tr>
+<td>连接线符号</td>
+<td>OST_AnalyticalPipeConnectionLineSymbol</td>
+<td>-2000984</td>
+</tr>
+<tr>
+<td>分析管道连接</td>
+<td>OST_AnalyticalPipeConnections</td>
+<td>-2000983</td>
+</tr>
+<tr>
+<td>局部坐标系</td>
+<td>OST_FndSlabLocalCoordSys</td>
+<td>-2000976</td>
+</tr>
+<tr>
+<td>局部坐标系</td>
+<td>OST_FloorLocalCoordSys</td>
+<td>-2000975</td>
+</tr>
+<tr>
+<td>局部坐标系</td>
+<td>OST_WallLocalCoordSys</td>
+<td>-2000974</td>
+</tr>
+<tr>
+<td>局部坐标系</td>
+<td>OST_BraceLocalCoordSys</td>
+<td>-2000973</td>
+</tr>
+<tr>
+<td>局部坐标系</td>
+<td>OST_ColumnLocalCoordSys</td>
+<td>-2000972</td>
+</tr>
+<tr>
+<td>局部坐标系</td>
+<td>OST_BeamLocalCoordSys</td>
+<td>-2000971</td>
+</tr>
+<tr>
+<td>多钢筋注释</td>
+<td>OST_MultiReferenceAnnotations</td>
+<td>-2000970</td>
+</tr>
+<tr>
+<td>分析节点标记</td>
+<td>OST_NodeAnalyticalTags</td>
+<td>-2000956</td>
+</tr>
+<tr>
+<td>分析链接标记</td>
+<td>OST_LinkAnalyticalTags</td>
+<td>-2000955</td>
+</tr>
+<tr>
+<td>支撑</td>
+<td>OST_StairsSupports</td>
+<td>-2000952</td>
+</tr>
+<tr>
+<td>&lt;高于&gt; 扶手</td>
+<td>OST_RailingHandRailAboveCut</td>
+<td>-2000951</td>
+</tr>
+<tr>
+<td>&lt;高于&gt; 顶部扶栏</td>
+<td>OST_RailingTopRailAboveCut</td>
+<td>-2000950</td>
+</tr>
+<tr>
+<td>终端</td>
+<td>OST_RailingTermination</td>
+<td>-2000949</td>
+</tr>
+<tr>
+<td>支座</td>
+<td>OST_RailingSupport</td>
+<td>-2000948</td>
+</tr>
+<tr>
+<td>扶手</td>
+<td>OST_RailingHandRail</td>
+<td>-2000947</td>
+</tr>
+<tr>
+<td>顶部扶栏</td>
+<td>OST_RailingTopRail</td>
+<td>-2000946</td>
+</tr>
+<tr>
+<td>楼梯踏板&#x2F;踢面数</td>
+<td>OST_StairsTriserNumbers</td>
+<td>-2000944</td>
+</tr>
+<tr>
+<td>楼梯支撑标记</td>
+<td>OST_StairsSupportTags</td>
+<td>-2000942</td>
+</tr>
+<tr>
+<td>楼梯平台标记</td>
+<td>OST_StairsLandingTags</td>
+<td>-2000941</td>
+</tr>
+<tr>
+<td>楼梯梯段标记</td>
+<td>OST_StairsRunTags</td>
+<td>-2000940</td>
+</tr>
+<tr>
+<td>&lt;高于&gt; 向上箭头</td>
+<td>OST_StairsPathsAboveCut</td>
+<td>-2000939</td>
+</tr>
+<tr>
+<td>楼梯路径</td>
+<td>OST_StairsPaths</td>
+<td>-2000938</td>
+</tr>
+<tr>
+<td>&lt;高于&gt; 踢面线</td>
+<td>OST_StairsRiserLinesAboveCut</td>
+<td>-2000937</td>
+</tr>
+<tr>
+<td>踢面线</td>
+<td>OST_StairsRiserLines</td>
+<td>-2000936</td>
+</tr>
+<tr>
+<td>&lt;高于&gt; 轮廓</td>
+<td>OST_StairsOutlinesAboveCut</td>
+<td>-2000935</td>
+</tr>
+<tr>
+<td>轮廓</td>
+<td>OST_StairsOutlines</td>
+<td>-2000934</td>
+</tr>
+<tr>
+<td>&lt;高于&gt; 楼梯前缘线</td>
+<td>OST_StairsNosingLinesAboveCut</td>
+<td>-2000933</td>
+</tr>
+<tr>
+<td>楼梯前缘线</td>
+<td>OST_StairsNosingLines</td>
+<td>-2000932</td>
+</tr>
+<tr>
+<td>&lt;高于&gt; 剪切标记</td>
+<td>OST_StairsCutMarksAboveCut</td>
+<td>-2000931</td>
+</tr>
+<tr>
+<td>剪切标记</td>
+<td>OST_StairsCutMarks</td>
+<td>-2000930</td>
+</tr>
+<tr>
+<td>踢面&#x2F;踏板</td>
+<td>OST_StairsTrisers</td>
+<td>-2000921</td>
+</tr>
+<tr>
+<td>平台</td>
+<td>OST_StairsLandings</td>
+<td>-2000920</td>
+</tr>
+<tr>
+<td>梯段</td>
+<td>OST_StairsRuns</td>
+<td>-2000919</td>
+</tr>
+<tr>
+<td>线</td>
+<td>OST_AdaptivePoints_Lines</td>
+<td>-2000903</td>
+</tr>
+<tr>
+<td>平面</td>
+<td>OST_AdaptivePoints_Planes</td>
+<td>-2000902</td>
+</tr>
+<tr>
+<td>点</td>
+<td>OST_AdaptivePoints_Points</td>
+<td>-2000901</td>
+</tr>
+<tr>
+<td>自适应点</td>
+<td>OST_AdaptivePoints</td>
+<td>-2000900</td>
+</tr>
+<tr>
+<td>&lt;空间分隔&gt;</td>
+<td>OST_MEPSpaceSeparationLines</td>
+<td>-2000831</td>
+</tr>
+<tr>
+<td>线</td>
+<td>OST_ReferencePoints_Lines</td>
+<td>-2000713</td>
+</tr>
+<tr>
+<td>平面</td>
+<td>OST_ReferencePoints_Planes</td>
+<td>-2000712</td>
+</tr>
+<tr>
+<td>点</td>
+<td>OST_ReferencePoints_Points</td>
+<td>-2000711</td>
+</tr>
+<tr>
+<td>参照点</td>
+<td>OST_ReferencePoints</td>
+<td>-2000710</td>
+</tr>
+<tr>
+<td>材质</td>
+<td>OST_Materials</td>
+<td>-2000700</td>
+</tr>
+<tr>
+<td>截面填充图案</td>
+<td>OST_CeilingsCutPattern</td>
+<td>-2000617</td>
+</tr>
+<tr>
+<td>公共边</td>
+<td>OST_CeilingsDefault</td>
+<td>-2000616</td>
+</tr>
+<tr>
+<td>面层 2 [5]</td>
+<td>OST_CeilingsFinish2</td>
+<td>-2000615</td>
+</tr>
+<tr>
+<td>面层 1 [4]</td>
+<td>OST_CeilingsFinish1</td>
+<td>-2000614</td>
+</tr>
+<tr>
+<td>衬底 [2]</td>
+<td>OST_CeilingsSubstrate</td>
+<td>-2000613</td>
+</tr>
+<tr>
+<td>保温层&#x2F;空气层 [3]</td>
+<td>OST_CeilingsInsulation</td>
+<td>-2000612</td>
+</tr>
+<tr>
+<td>结构 [1]</td>
+<td>OST_CeilingsStructure</td>
+<td>-2000611</td>
+</tr>
+<tr>
+<td>涂膜层</td>
+<td>OST_CeilingsMembrane</td>
+<td>-2000610</td>
+</tr>
+<tr>
+<td>内部边缘</td>
+<td>OST_FloorsInteriorEdges</td>
+<td>-2000609</td>
+</tr>
+<tr>
+<td>截面填充图案</td>
+<td>OST_FloorsCutPattern</td>
+<td>-2000608</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_HiddenFloorLines</td>
+<td>-2000607</td>
+</tr>
+<tr>
+<td>公共边</td>
+<td>OST_FloorsDefault</td>
+<td>-2000606</td>
+</tr>
+<tr>
+<td>面层 2 [5]</td>
+<td>OST_FloorsFinish2</td>
+<td>-2000605</td>
+</tr>
+<tr>
+<td>面层 1 [4]</td>
+<td>OST_FloorsFinish1</td>
+<td>-2000604</td>
+</tr>
+<tr>
+<td>衬底 [2]</td>
+<td>OST_FloorsSubstrate</td>
+<td>-2000603</td>
+</tr>
+<tr>
+<td>保温层&#x2F;空气层 [3]</td>
+<td>OST_FloorsInsulation</td>
+<td>-2000602</td>
+</tr>
+<tr>
+<td>结构 [1]</td>
+<td>OST_FloorsStructure</td>
+<td>-2000601</td>
+</tr>
+<tr>
+<td>涂膜层</td>
+<td>OST_FloorsMembrane</td>
+<td>-2000600</td>
+</tr>
+<tr>
+<td>内部边缘</td>
+<td>OST_RoofsInteriorEdges</td>
+<td>-2000598</td>
+</tr>
+<tr>
+<td>截面填充图案</td>
+<td>OST_RoofsCutPattern</td>
+<td>-2000597</td>
+</tr>
+<tr>
+<td>公共边</td>
+<td>OST_RoofsDefault</td>
+<td>-2000596</td>
+</tr>
+<tr>
+<td>面层 2 [5]</td>
+<td>OST_RoofsFinish2</td>
+<td>-2000595</td>
+</tr>
+<tr>
+<td>面层 1 [4]</td>
+<td>OST_RoofsFinish1</td>
+<td>-2000594</td>
+</tr>
+<tr>
+<td>衬底 [2]</td>
+<td>OST_RoofsSubstrate</td>
+<td>-2000593</td>
+</tr>
+<tr>
+<td>保温层&#x2F;空气层 [3]</td>
+<td>OST_RoofsInsulation</td>
+<td>-2000592</td>
+</tr>
+<tr>
+<td>结构 [1]</td>
+<td>OST_RoofsStructure</td>
+<td>-2000591</td>
+</tr>
+<tr>
+<td>涂膜层</td>
+<td>OST_RoofsMembrane</td>
+<td>-2000590</td>
+</tr>
+<tr>
+<td>截面填充图案</td>
+<td>OST_WallsCutPattern</td>
+<td>-2000588</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_HiddenWallLines</td>
+<td>-2000587</td>
+</tr>
+<tr>
+<td>公共边</td>
+<td>OST_WallsDefault</td>
+<td>-2000586</td>
+</tr>
+<tr>
+<td>面层 2 [5]</td>
+<td>OST_WallsFinish2</td>
+<td>-2000585</td>
+</tr>
+<tr>
+<td>面层 1 [4]</td>
+<td>OST_WallsFinish1</td>
+<td>-2000584</td>
+</tr>
+<tr>
+<td>衬底 [2]</td>
+<td>OST_WallsSubstrate</td>
+<td>-2000583</td>
+</tr>
+<tr>
+<td>保温层&#x2F;空气层 [3]</td>
+<td>OST_WallsInsulation</td>
+<td>-2000582</td>
+</tr>
+<tr>
+<td>结构 [1]</td>
+<td>OST_WallsStructure</td>
+<td>-2000581</td>
+</tr>
+<tr>
+<td>涂膜层</td>
+<td>OST_WallsMembrane</td>
+<td>-2000580</td>
+</tr>
+<tr>
+<td>明细表</td>
+<td>OST_Schedules</td>
+<td>-2000573</td>
+</tr>
+<tr>
+<td>明细表图形</td>
+<td>OST_ScheduleGraphics</td>
+<td>-2000570</td>
+</tr>
+<tr>
+<td>光栅图像</td>
+<td>OST_RasterImages</td>
+<td>-2000560</td>
+</tr>
+<tr>
+<td>颜色填充</td>
+<td>OST_RoomColorFill</td>
+<td>-2000551</td>
+</tr>
+<tr>
+<td>颜色填充图例</td>
+<td>OST_ColorFillLegends</td>
+<td>-2000550</td>
+</tr>
+<tr>
+<td>注释裁剪边界</td>
+<td>OST_AnnotationCropSpecial</td>
+<td>-2000549</td>
+</tr>
+<tr>
+<td>裁剪边界</td>
+<td>OST_CropBoundarySpecial</td>
+<td>-2000548</td>
+</tr>
+<tr>
+<td>注释裁剪边界</td>
+<td>OST_AnnotationCrop</td>
+<td>-2000547</td>
+</tr>
+<tr>
+<td>详图索引引线</td>
+<td>OST_CalloutLeaderLine</td>
+<td>-2000544</td>
+</tr>
+<tr>
+<td>表面填充图案</td>
+<td>OST_CeilingsSurfacePattern</td>
+<td>-2000543</td>
+</tr>
+<tr>
+<td>表面填充图案</td>
+<td>OST_RoofsSurfacePattern</td>
+<td>-2000542</td>
+</tr>
+<tr>
+<td>表面填充图案</td>
+<td>OST_FloorsSurfacePattern</td>
+<td>-2000541</td>
+</tr>
+<tr>
+<td>表面填充图案</td>
+<td>OST_WallsSurfacePattern</td>
+<td>-2000540</td>
+</tr>
+<tr>
+<td>详图索引边界</td>
+<td>OST_CalloutBoundary</td>
+<td>-2000539</td>
+</tr>
+<tr>
+<td>详图索引标头</td>
+<td>OST_CalloutHeads</td>
+<td>-2000538</td>
+</tr>
+<tr>
+<td>详图索引</td>
+<td>OST_Callouts</td>
+<td>-2000537</td>
+</tr>
+<tr>
+<td>裁剪边界</td>
+<td>OST_CropBoundary</td>
+<td>-2000536</td>
+</tr>
+<tr>
+<td>立面</td>
+<td>OST_Elev</td>
+<td>-2000535</td>
+</tr>
+<tr>
+<td>参照平面</td>
+<td>OST_CLines</td>
+<td>-2000530</td>
+</tr>
+<tr>
+<td>视图标题</td>
+<td>OST_ViewportLabel</td>
+<td>-2000515</td>
+</tr>
+<tr>
+<td>视口</td>
+<td>OST_Viewports</td>
+<td>-2000510</td>
+</tr>
+<tr>
+<td>相机</td>
+<td>OST_Camera_Lines</td>
+<td>-2000501</td>
+</tr>
+<tr>
+<td>空间标记</td>
+<td>OST_MEPSpaceTags</td>
+<td>-2000485</td>
+</tr>
+<tr>
+<td>房间标记</td>
+<td>OST_RoomTags</td>
+<td>-2000480</td>
+</tr>
+<tr>
+<td>门标记</td>
+<td>OST_DoorTags</td>
+<td>-2000460</td>
+</tr>
+<tr>
+<td>窗标记</td>
+<td>OST_WindowTags</td>
+<td>-2000450</td>
+</tr>
+<tr>
+<td>宽线</td>
+<td>OST_SectionHeadWideLines</td>
+<td>-2000404</td>
+</tr>
+<tr>
+<td>中粗线</td>
+<td>OST_SectionHeadMediumLines</td>
+<td>-2000403</td>
+</tr>
+<tr>
+<td>细线</td>
+<td>OST_SectionHeadThinLines</td>
+<td>-2000401</td>
+</tr>
+<tr>
+<td>剖面标头</td>
+<td>OST_SectionHeads</td>
+<td>-2000400</td>
+</tr>
+<tr>
+<td>等高线标签</td>
+<td>OST_ContourLabels</td>
+<td>-2000350</td>
+</tr>
+<tr>
+<td>幕墙系统</td>
+<td>OST_CurtaSystem</td>
+<td>-2000340</td>
+</tr>
+<tr>
+<td>幕墙系统网格</td>
+<td>OST_CurtainGridsCurtaSystem</td>
+<td>-2000323</td>
+</tr>
+<tr>
+<td>幕墙网格</td>
+<td>OST_CurtainGridsWall</td>
+<td>-2000321</td>
+</tr>
+<tr>
+<td>幕墙屋顶网格</td>
+<td>OST_CurtainGridsRoof</td>
+<td>-2000320</td>
+</tr>
+<tr>
+<td>分析显示样式</td>
+<td>OST_AnalysisDisplayStyle</td>
+<td>-2000304</td>
+</tr>
+<tr>
+<td>分析结果</td>
+<td>OST_AnalysisResults</td>
+<td>-2000303</td>
+</tr>
+<tr>
+<td>渲染区域</td>
+<td>OST_RenderRegions</td>
+<td>-2000302</td>
+</tr>
+<tr>
+<td>剖面框</td>
+<td>OST_SectionBox</td>
+<td>-2000301</td>
+</tr>
+<tr>
+<td>文字注释</td>
+<td>OST_TextNotes</td>
+<td>-2000300</td>
+</tr>
+<tr>
+<td>&lt;中心线&gt;</td>
+<td>OST_CenterLines</td>
+<td>-2000288</td>
+</tr>
+<tr>
+<td>&lt;超出&gt;</td>
+<td>OST_LinesBeyond</td>
+<td>-2000287</td>
+</tr>
+<tr>
+<td>&lt;隐藏&gt;</td>
+<td>OST_HiddenLines</td>
+<td>-2000286</td>
+</tr>
+<tr>
+<td>&lt;已拆除&gt;</td>
+<td>OST_DemolishedLines</td>
+<td>-2000285</td>
+</tr>
+<tr>
+<td>&lt;架空线&gt;</td>
+<td>OST_OverheadLines</td>
+<td>-2000284</td>
+</tr>
+<tr>
+<td>宽线</td>
+<td>OST_TitleBlockWideLines</td>
+<td>-2000283</td>
+</tr>
+<tr>
+<td>中粗线</td>
+<td>OST_TitleBlockMediumLines</td>
+<td>-2000282</td>
+</tr>
+<tr>
+<td>细线</td>
+<td>OST_TitleBlockThinLines</td>
+<td>-2000281</td>
+</tr>
+<tr>
+<td>图框</td>
+<td>OST_TitleBlocks</td>
+<td>-2000280</td>
+</tr>
+<tr>
+<td>视图</td>
+<td>OST_Views</td>
+<td>-2000279</td>
+</tr>
+<tr>
+<td>隐藏线</td>
+<td>OST_PartHiddenLines</td>
+<td>-2000271</td>
+</tr>
+<tr>
+<td>零件标记</td>
+<td>OST_PartTags</td>
+<td>-2000270</td>
+</tr>
+<tr>
+<td>组成部分</td>
+<td>OST_Parts</td>
+<td>-2000269</td>
+</tr>
+<tr>
+<td>部件标记</td>
+<td>OST_AssemblyTags</td>
+<td>-2000268</td>
+</tr>
+<tr>
+<td>部件</td>
+<td>OST_Assemblies</td>
+<td>-2000267</td>
+</tr>
+<tr>
+<td>屋顶标记</td>
+<td>OST_RoofTags</td>
+<td>-2000266</td>
+</tr>
+<tr>
+<td>高程点坡度</td>
+<td>OST_SpotSlopes</td>
+<td>-2000265</td>
+</tr>
+<tr>
+<td>高程点坐标</td>
+<td>OST_SpotCoordinates</td>
+<td>-2000264</td>
+</tr>
+<tr>
+<td>高程点</td>
+<td>OST_SpotElevations</td>
+<td>-2000263</td>
+</tr>
+<tr>
+<td>自动绘制尺寸标注</td>
+<td>OST_WeakDims</td>
+<td>-2000261</td>
+</tr>
+<tr>
+<td>尺寸标注</td>
+<td>OST_Dimensions</td>
+<td>-2000260</td>
+</tr>
+<tr>
+<td>标高</td>
+<td>OST_Levels</td>
+<td>-2000240</td>
+</tr>
+<tr>
+<td>位移路径</td>
+<td>OST_DisplacementPath</td>
+<td>-2000223</td>
+</tr>
+<tr>
+<td>多段轴网</td>
+<td>OST_GridChains</td>
+<td>-2000221</td>
+</tr>
+<tr>
+<td>轴网</td>
+<td>OST_Grids</td>
+<td>-2000220</td>
+</tr>
+<tr>
+<td>断开剖面线</td>
+<td>OST_BrokenSectionLine</td>
+<td>-2000202</td>
+</tr>
+<tr>
+<td>剖面线</td>
+<td>OST_SectionLine</td>
+<td>-2000201</td>
+</tr>
+<tr>
+<td>剖面</td>
+<td>OST_Sections</td>
+<td>-2000200</td>
+</tr>
+<tr>
+<td>视图参照</td>
+<td>OST_ReferenceViewer</td>
+<td>-2000198</td>
+</tr>
+<tr>
+<td>视图参照</td>
+<td>OST_ReferenceViewerSymbol</td>
+<td>-2000197</td>
+</tr>
+<tr>
+<td>在族中导入</td>
+<td>OST_ImportObjectStyles</td>
+<td>-2000196</td>
+</tr>
+<tr>
+<td>遮罩区域</td>
+<td>OST_MaskingRegion</td>
+<td>-2000194</td>
+</tr>
+<tr>
+<td>拼接线</td>
+<td>OST_Matchline</td>
+<td>-2000193</td>
+</tr>
+<tr>
+<td>平面区域</td>
+<td>OST_PlanRegion</td>
+<td>-2000191</td>
+</tr>
+<tr>
+<td>填充区域</td>
+<td>OST_FilledRegion</td>
+<td>-2000190</td>
+</tr>
+<tr>
+<td>墙饰条</td>
+<td>OST_Cornices</td>
+<td>-2000181</td>
+</tr>
+<tr>
+<td>坡道</td>
+<td>OST_Ramps</td>
+<td>-2000180</td>
+</tr>
+<tr>
+<td>幕墙网格</td>
+<td>OST_CurtainGrids</td>
+<td>-2000173</td>
+</tr>
+<tr>
+<td>幕墙竖梃</td>
+<td>OST_CurtainWallMullions</td>
+<td>-2000171</td>
+</tr>
+<tr>
+<td>幕墙嵌板</td>
+<td>OST_CurtainWallPanels</td>
+<td>-2000170</td>
+</tr>
+<tr>
+<td>颜色填充</td>
+<td>OST_AreaColorFill</td>
+<td>-2000165</td>
+</tr>
+<tr>
+<td>参照</td>
+<td>OST_AreaReferenceVisibility</td>
+<td>-2000164</td>
+</tr>
+<tr>
+<td>内部填充</td>
+<td>OST_AreaInteriorFillVisibility</td>
+<td>-2000163</td>
+</tr>
+<tr>
+<td>参照</td>
+<td>OST_RoomReferenceVisibility</td>
+<td>-2000162</td>
+</tr>
+<tr>
+<td>内部填充</td>
+<td>OST_RoomInteriorFillVisibility</td>
+<td>-2000161</td>
+</tr>
+<tr>
+<td>房间</td>
+<td>OST_Rooms</td>
+<td>-2000160</td>
+</tr>
+<tr>
+<td>常规模型</td>
+<td>OST_GenericModel</td>
+<td>-2000151</td>
+</tr>
+<tr>
+<td>常规注释</td>
+<td>OST_GenericAnnotation</td>
+<td>-2000150</td>
+</tr>
+<tr>
+<td>栏杆扶手标记</td>
+<td>OST_StairsRailingTags</td>
+<td>-2000133</td>
+</tr>
+<tr>
+<td>&lt;高于&gt; 栏杆扶手截面线</td>
+<td>OST_StairsRailingAboveCut</td>
+<td>-2000132</td>
+</tr>
+<tr>
+<td>向下箭头</td>
+<td>OST_StairsDownArrows</td>
+<td>-2000131</td>
+</tr>
+<tr>
+<td>向上箭头</td>
+<td>OST_StairsUpArrows</td>
+<td>-2000130</td>
+</tr>
+<tr>
+<td>文字(向下)</td>
+<td>OST_StairsDownText</td>
+<td>-2000129</td>
+</tr>
+<tr>
+<td>扶栏</td>
+<td>OST_StairsRailingRail</td>
+<td>-2000128</td>
+</tr>
+<tr>
+<td>栏杆</td>
+<td>OST_StairsRailingBaluster</td>
+<td>-2000127</td>
+</tr>
+<tr>
+<td>栏杆扶手</td>
+<td>OST_StairsRailing</td>
+<td>-2000126</td>
+</tr>
+<tr>
+<td>文字(向上)</td>
+<td>OST_StairsUpText</td>
+<td>-2000125</td>
+</tr>
+<tr>
+<td>&lt;高于&gt; 支撑</td>
+<td>OST_StairsSupportsAboveCut</td>
+<td>-2000124</td>
+</tr>
+<tr>
+<td>支撑</td>
+<td>OST_StairsStringerCarriage</td>
+<td>-2000123</td>
+</tr>
+<tr>
+<td>楼梯</td>
+<td>OST_Stairs</td>
+<td>-2000120</td>
+</tr>
+<tr>
+<td>导向轴网</td>
+<td>OST_GuideGrid</td>
+<td>-2000107</td>
+</tr>
+<tr>
+<td>柱</td>
+<td>OST_Columns</td>
+<td>-2000100</td>
+</tr>
+<tr>
+<td>模型组</td>
+<td>OST_IOSModelGroups</td>
+<td>-2000095</td>
+</tr>
+<tr>
+<td>参照线</td>
+<td>OST_ReferenceLines</td>
+<td>-2000083</td>
+</tr>
+<tr>
+<td>家具</td>
+<td>OST_Furniture</td>
+<td>-2000080</td>
+</tr>
+<tr>
+<td>&lt;面积边界&gt;</td>
+<td>OST_AreaSchemeLines</td>
+<td>-2000079</td>
+</tr>
+<tr>
+<td>线</td>
+<td>OST_GenericLines</td>
+<td>-2000078</td>
+</tr>
+<tr>
+<td>隔热层线</td>
+<td>OST_InsulationLines</td>
+<td>-2000077</td>
+</tr>
+<tr>
+<td>&lt;房间分隔&gt;</td>
+<td>OST_RoomSeparationLines</td>
+<td>-2000066</td>
+</tr>
+<tr>
+<td>旋转轴</td>
+<td>OST_AxisOfRotation</td>
+<td>-2000065</td>
+</tr>
+<tr>
+<td>线</td>
+<td>OST_Lines</td>
+<td>-2000051</td>
+</tr>
+<tr>
+<td>&lt;草图&gt;</td>
+<td>OST_SketchLines</td>
+<td>-2000045</td>
+</tr>
+<tr>
+<td>宽线</td>
+<td>OST_CurvesWideLines</td>
+<td>-2000044</td>
+</tr>
+<tr>
+<td>中粗线</td>
+<td>OST_CurvesMediumLines</td>
+<td>-2000043</td>
+</tr>
+<tr>
+<td>细线</td>
+<td>OST_CurvesThinLines</td>
+<td>-2000042</td>
+</tr>
+<tr>
+<td>天花板</td>
+<td>OST_Ceilings</td>
+<td>-2000038</td>
+</tr>
+<tr>
+<td>屋顶</td>
+<td>OST_Roofs</td>
+<td>-2000035</td>
+</tr>
+<tr>
+<td>楼板</td>
+<td>OST_Floors</td>
+<td>-2000032</td>
+</tr>
+<tr>
+<td>玻璃</td>
+<td>OST_DoorsGlassProjection</td>
+<td>-2000031</td>
+</tr>
+<tr>
+<td>框架&#x2F;竖梃</td>
+<td>OST_DoorsFrameMullionProjection</td>
+<td>-2000029</td>
+</tr>
+<tr>
+<td>洞口</td>
+<td>OST_DoorsOpeningProjection</td>
+<td>-2000027</td>
+</tr>
+<tr>
+<td>嵌板</td>
+<td>OST_DoorsPanelProjection</td>
+<td>-2000025</td>
+</tr>
+<tr>
+<td>门</td>
+<td>OST_Doors</td>
+<td>-2000023</td>
+</tr>
+<tr>
+<td>洞口</td>
+<td>OST_WindowsOpeningProjection</td>
+<td>-2000022</td>
+</tr>
+<tr>
+<td>窗台&#x2F;盖板</td>
+<td>OST_WindowsSillHeadProjection</td>
+<td>-2000020</td>
+</tr>
+<tr>
+<td>框架&#x2F;竖梃</td>
+<td>OST_WindowsFrameMullionProjection</td>
+<td>-2000018</td>
+</tr>
+<tr>
+<td>玻璃</td>
+<td>OST_WindowsGlassProjection</td>
+<td>-2000016</td>
+</tr>
+<tr>
+<td>窗</td>
+<td>OST_Windows</td>
+<td>-2000014</td>
+</tr>
+<tr>
+<td>墙</td>
+<td>OST_Walls</td>
+<td>-2000011</td>
+</tr>
+</tbody></table>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Developer/" class="category-chain-item">Developer</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/NET/" class="print-no-link">#.NET</a>
+      
+        <a href="/tags/Revit/" class="print-no-link">#Revit</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>BuildInCategory枚举</div>
+      <div>https://awaw.cc/post/revit-category/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>pdone</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2020年12月1日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年7月4日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/post/md-codeblock-lang/" title="Markdown代码块支持的语言">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Markdown代码块支持的语言</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/revit-category-all/" title="BuildInCategory枚举 - 完整">
+                        <span class="hidden-mobile">BuildInCategory枚举 - 完整</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://cdn.staticfile.org/waline/2.15.8/waline.min.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/waline/2.15.8/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.awaw.cc","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.awaw.cc/raw/walinejs/emojis/main/alus"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size:0.8rem"> Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> &  <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a><br> © 2024 <a href="https://github.com/pdone" target="_blank" rel="nofollow noopener"><span>pdone</span></a> All rights reserved.</div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

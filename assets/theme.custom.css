@@ -1,0 +1,115 @@
+/* .aplayer-list-title,
+.aplayer-title {
+    color: #666
+}
+
+.aplayer-body,
+.aplayer-miniswitcher {
+    border-radius: 0 5px 5px 0 !important
+}
+
+ul.list-v>li.header {
+    width: 130px !important;
+    height: 130px !important
+}
+
+ul.list-v>li.header>img {
+    width: 100%;
+    height: 100%
+}
+
+.l_main .article .prev-next>a p.content {
+    font-size: .875rem;
+    margin: 0 .5rem;
+    text-align: justify;
+    word-break: break-all;
+    display: none
+}
+
+video {
+    max-height: 580px !important
+}
+
+body {
+    background: #181c27 url(https://cdn.jsdelivr.net/gh/pdone/static@latest/img/bg_dark.jpg);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1
+}*/
+
+/* @font-face {
+    font-family: 'Luckiest Guy';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Luckiest Guy Regular'), local('LuckiestGuy-Regular'), url(https://fonts.gstatic.com/s/luckiestguy/v11/_gP_1RrxsjcxVyin9l9n_j2hTd52.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+} */
+
+:root {
+    --stroke: #ccc;
+    --text: #666;
+    --bg: #dadada;
+    --duration: 550ms;
+    --easing: cubic-bezier(0.68, -0.55, 0.265, 1.55)
+}
+
+.pd_content {
+    position: absolute;
+    width: 46%;
+    top: 35%;
+    cursor: pointer;
+    user-select: none
+}
+
+.pd_content>h1,
+.pd_content>h2 {
+    position: absolute;
+    color: var(--text);
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+    line-height: 1;
+    -webkit-text-stroke-color: var(--stroke)
+}
+
+.pd_content>h1 {
+    top: 50px;
+    font-size: 3.75rem;
+    -webkit-text-stroke-width: 3px;
+    letter-spacing: 4px
+}
+
+.pd_content>h2 {
+    top: 170px;
+    font-size: 2.187rem;
+    -webkit-text-stroke-width: 2px;
+    letter-spacing: 2px
+}
+
+.pd_content>h1 span.capital {
+    font-size: 5.312rem
+}
+
+.pd_content>h2 span.capital {
+    font-size: 3.125rem
+}
+
+.pd_content>h1 span,
+.pd_content>h2 span {
+    display: inline-block;
+    opacity: 0;
+    transition: all var(--duration) ease 750ms;
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px)
+}
+
+.pd_content>h1 span.animate-in,
+.pd_content>h2 span.animate-in {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0)
+}
