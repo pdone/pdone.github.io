@@ -39,9 +39,9 @@ excerpt: 基于开源项目scrcpy，提供简洁的交互界面。
 
 ## 界面
 
-![启动界面](/img/article/free-control/1.6.8_1.png)
+![启动界面](/img/article/free-control/1.7.0_1.png)
 
-![设置界面](/img/article/free-control/1.6.8_2.png)
+![设置界面](/img/article/free-control/1.7.0_2.png)
 
 ![功能演示](/img/article/free-control/v1.4.0_5.gif)
 
@@ -72,6 +72,15 @@ https://cdn.awaw.cc/gh/pdone/FreeControl/releases/latest/download/FreeControl.ex
 
 ### 输入法问题
 
+`v1.7.0` 及以后的版本中，默认启用scrcpy的 `UHID keyboard` 特性，以优化中文输入体验。
+
+如果在此过程中遇到了什么问题，可尝试打开配置文件 `%AppData%\FreeControl\config.json`，将 `CustomArgs` 的值由 `--keyboard=uhid` 改为 `--keyboard=sdk`。
+
+更多信息可参考 [scrcpy-doc-keyboard](https://github.com/Genymobile/scrcpy/blob/master/doc/keyboard.md)。
+
+<details>
+<summary>已过时</summary>
+
 个人测试发现，目前支持跨屏进行拼音输入的 **手机输入法APP** 如下：
 
 - 搜狗输入法
@@ -83,6 +92,8 @@ https://cdn.awaw.cc/gh/pdone/FreeControl/releases/latest/download/FreeControl.ex
 此功能需要输入法APP适配，有更好用的输入法欢迎留言推荐。
 
 > 自动切换输入法功能默认禁用。如需启用，先关闭程序，然后打开配置文件 `%AppData%\FreeControl\config.json`，将 `EnableSwitchIME` 字段值改为 `true`，保存后启动程序即可。
+
+</details>
 
 ### 设备连接问题
 
@@ -232,6 +243,8 @@ Android 11 及更高版本支持使用 Android 调试桥 (adb) 从工作站以�
 如果您觉得这个项目对您有帮助，欢迎请作者喝杯咖啡。☕
 
 ![](/img/donate/zfb_wx.png?boxshadow=none)
+
+爱发电❤ https://afdian.net/a/pdone
 
 ## Stargazers Over Time
 [![Stargazers over time](https://starchart.cc/pdone/FreeControl.svg?background=%23ffffff00&axis=%23888888&line=%2330a9de&boxshadow=none)](https://starchart.cc/pdone/FreeControl)
