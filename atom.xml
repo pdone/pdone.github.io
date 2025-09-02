@@ -226,9 +226,9 @@
     
     <category term=".NET" scheme="https://awaw.cc/tags/NET/"/>
     
-    <category term="OpenSource" scheme="https://awaw.cc/tags/OpenSource/"/>
-    
     <category term="QRCode" scheme="https://awaw.cc/tags/QRCode/"/>
+    
+    <category term="OpenSource" scheme="https://awaw.cc/tags/OpenSource/"/>
     
   </entry>
   
@@ -318,9 +318,9 @@
     <category term="Developer" scheme="https://awaw.cc/categories/Developer/"/>
     
     
-    <category term="SQL" scheme="https://awaw.cc/tags/SQL/"/>
-    
     <category term="Database" scheme="https://awaw.cc/tags/Database/"/>
+    
+    <category term="SQL" scheme="https://awaw.cc/tags/SQL/"/>
     
   </entry>
   
