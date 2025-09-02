@@ -56,9 +56,9 @@
     <category term="Share" scheme="https://awaw.cc/categories/Share/"/>
     
     
-    <category term="OS" scheme="https://awaw.cc/tags/OS/"/>
-    
     <category term="Win" scheme="https://awaw.cc/tags/Win/"/>
+    
+    <category term="OS" scheme="https://awaw.cc/tags/OS/"/>
     
   </entry>
   
@@ -318,9 +318,9 @@
     <category term="Developer" scheme="https://awaw.cc/categories/Developer/"/>
     
     
-    <category term="Database" scheme="https://awaw.cc/tags/Database/"/>
-    
     <category term="SQL" scheme="https://awaw.cc/tags/SQL/"/>
+    
+    <category term="Database" scheme="https://awaw.cc/tags/Database/"/>
     
   </entry>
   
@@ -410,9 +410,9 @@
     <category term="Share" scheme="https://awaw.cc/categories/Share/"/>
     
     
-    <category term="Linux" scheme="https://awaw.cc/tags/Linux/"/>
-    
     <category term="OS" scheme="https://awaw.cc/tags/OS/"/>
+    
+    <category term="Linux" scheme="https://awaw.cc/tags/Linux/"/>
     
   </entry>
   
