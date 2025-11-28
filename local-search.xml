@@ -342,9 +342,9 @@
     
     <tags>
       
-      <tag>SQL</tag>
-      
       <tag>Database</tag>
+      
+      <tag>SQL</tag>
       
     </tags>
     
@@ -621,6 +621,33 @@
   
   
   <entry>
+    <title>年轻人的第二台PC诞生</title>
+    <link href="/post/my-second-pc/"/>
+    <url>/post/my-second-pc/</url>
+    
+    <content type="html"><![CDATA[<p>博主的第一台主机是17年6月份大学毕业时组的一套，当时资金有限，主机花了2600元，服役了一年半，由于性能不能满足 <s>游戏</s> 工作的需要，所以就在19年春节前又配了一套。</p><span id="more"></span><p>旧的主机虽然已经用了一年半，但毕竟是挤牙膏挤多了的性价比神U G4560和10系显卡1050ti，家用办公中画质玩玩3A大作还是够用的，于是就春节搬回家，把家里N年前的主机给替换了。其实在春节前都已经配齐开始使用了，但一直没时间更新博客，趁着这周末有空就来补上笔记。</p><h2 id="配置清单"><a href="#配置清单" class="headerlink" title="配置清单"></a>配置清单</h2><ul><li>固态硬盘 英特尔 760P 256G  359</li><li>显卡 铭瑄 GTX1060 6G  1489</li><li>内存 金士顿 骇客神条2666 8G *2 679</li><li>处理器 AMD Ryzen5 2600X</li><li>主板 微星 B450M MORTAR  1999</li><li>机箱 先马 平头哥 149</li><li>电源 先马 全模组500W 349</li></ul><blockquote><p>配置清单合计5024元，显示器、键盘、鼠标、PCIE无线网卡、音箱以及两块1TB机械硬盘都使用上台主机的，故不算入总价中。</p></blockquote><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/1.jpg" alt="先放桌子上点亮"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/2.jpg" alt="点亮成功"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/3.jpg" alt="装系统"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/4.jpg" alt="放入机箱"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/5.jpg" alt="粗糙的背线"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/6.jpg" alt="安装完成"></div></div></div><h2 id="娱乐大师跑分"><a href="#娱乐大师跑分" class="headerlink" title="娱乐大师跑分"></a>娱乐大师跑分</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/8.png" alt="跑分"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/9.png" alt="配置"></div></div></div><h2 id="灯效"><a href="#灯效" class="headerlink" title="灯效"></a>灯效</h2><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"video":{"url":"https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/video.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
+    
+    
+    <categories>
+      
+      <category>Share</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>PC</tag>
+      
+      <tag>DIY</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>微星B450M MORTAR主板PCI_E3接口无法识别硬件解决方法</title>
     <link href="/post/msi-b450m-mortar/"/>
     <url>/post/msi-b450m-mortar/</url>
@@ -642,33 +669,6 @@
       <tag>主板</tag>
       
       <tag>PCI_E</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>年轻人的第二台PC诞生</title>
-    <link href="/post/my-second-pc/"/>
-    <url>/post/my-second-pc/</url>
-    
-    <content type="html"><![CDATA[<p>博主的第一台主机是17年6月份大学毕业时组的一套，当时资金有限，主机花了2600元，服役了一年半，由于性能不能满足 <s>游戏</s> 工作的需要，所以就在19年春节前又配了一套。</p><span id="more"></span><p>旧的主机虽然已经用了一年半，但毕竟是挤牙膏挤多了的性价比神U G4560和10系显卡1050ti，家用办公中画质玩玩3A大作还是够用的，于是就春节搬回家，把家里N年前的主机给替换了。其实在春节前都已经配齐开始使用了，但一直没时间更新博客，趁着这周末有空就来补上笔记。</p><h2 id="配置清单"><a href="#配置清单" class="headerlink" title="配置清单"></a>配置清单</h2><ul><li>固态硬盘 英特尔 760P 256G  359</li><li>显卡 铭瑄 GTX1060 6G  1489</li><li>内存 金士顿 骇客神条2666 8G *2 679</li><li>处理器 AMD Ryzen5 2600X</li><li>主板 微星 B450M MORTAR  1999</li><li>机箱 先马 平头哥 149</li><li>电源 先马 全模组500W 349</li></ul><blockquote><p>配置清单合计5024元，显示器、键盘、鼠标、PCIE无线网卡、音箱以及两块1TB机械硬盘都使用上台主机的，故不算入总价中。</p></blockquote><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/1.jpg" alt="先放桌子上点亮"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/2.jpg" alt="点亮成功"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/3.jpg" alt="装系统"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/4.jpg" alt="放入机箱"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/5.jpg" alt="粗糙的背线"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/6.jpg" alt="安装完成"></div></div></div><h2 id="娱乐大师跑分"><a href="#娱乐大师跑分" class="headerlink" title="娱乐大师跑分"></a>娱乐大师跑分</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/8.png" alt="跑分"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/9.png" alt="配置"></div></div></div><h2 id="灯效"><a href="#灯效" class="headerlink" title="灯效"></a>灯效</h2><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"video":{"url":"https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/video.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
-    
-    
-    <categories>
-      
-      <category>Share</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>PC</tag>
-      
-      <tag>DIY</tag>
       
     </tags>
     
@@ -776,9 +776,9 @@
     
     <tags>
       
-      <tag>SQL</tag>
-      
       <tag>Database</tag>
+      
+      <tag>SQL</tag>
       
     </tags>
     

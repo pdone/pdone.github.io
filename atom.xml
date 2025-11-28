@@ -318,9 +318,9 @@
     <category term="Developer" scheme="https://awaw.cc/categories/Developer/"/>
     
     
-    <category term="SQL" scheme="https://awaw.cc/tags/SQL/"/>
-    
     <category term="Database" scheme="https://awaw.cc/tags/Database/"/>
+    
+    <category term="SQL" scheme="https://awaw.cc/tags/SQL/"/>
     
   </entry>
   
