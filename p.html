@@ -94,7 +94,8 @@
 
                 var content = getQueryParam('c') ?? getQueryParam('content');
                 if (content) {
-                    document.getElementById('content').textContent = content;
+                    // 将换行符替换为 <br>
+                    document.getElementById('content').innerHTML = content.replace(/\r?\n/g, '<br>');
                     document.getElementById('extend').textContent = "";
                 }
                 
