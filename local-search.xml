@@ -47,9 +47,9 @@
     
     <tags>
       
-      <tag>OS</tag>
-      
       <tag>Win</tag>
+      
+      <tag>OS</tag>
       
     </tags>
     
@@ -141,33 +141,6 @@
   
   
   <entry>
-    <title>桥梁设计学习笔记</title>
-    <link href="/post/learn-bridge-design/"/>
-    <url>/post/learn-bridge-design/</url>
-    
-    <content type="html"><![CDATA[<h2 id="桥梁定义"><a href="#桥梁定义" class="headerlink" title="桥梁定义"></a>桥梁定义</h2><p>桥梁是道路路线遇到江河湖泊、山谷深沟以及其他线路（铁路或公路）等障碍时，为了保持道路的连续性而专门建造的人工构造物。桥梁既要保证桥上的交通运行，也要保证桥下水流的宣泄、船只的通航或车辆的通行。</p><span id="more"></span><h2 id="桥梁基本组成"><a href="#桥梁基本组成" class="headerlink" title="桥梁基本组成"></a>桥梁基本组成</h2><h3 id="上部结构"><a href="#上部结构" class="headerlink" title="上部结构"></a>上部结构</h3><h4 id="桥跨结构"><a href="#桥跨结构" class="headerlink" title="桥跨结构"></a>桥跨结构</h4><p>线路跨越障碍（如江河、山谷或其他线路等）的结构物。</p><h3 id="下部结构"><a href="#下部结构" class="headerlink" title="下部结构"></a>下部结构</h3><h4 id="桥墩"><a href="#桥墩" class="headerlink" title="桥墩"></a>桥墩</h4><p>是在河中或岸上支承桥跨结构的结构物。</p><ul><li>轻型桥墩——盖梁、系梁、立柱</li><li>重力式桥墩——墩帽、墩身</li></ul><h4 id="桥台"><a href="#桥台" class="headerlink" title="桥台"></a>桥台</h4><p>设在桥的两端；一边与路堤相接，以防止路堤滑塌；另一边则支承桥跨结构的端部。为保护桥台和路堤填土，桥台两侧常做锥形护坡、挡土墙等防护工程。</p><h4 id="墩台基础"><a href="#墩台基础" class="headerlink" title="墩台基础"></a>墩台基础</h4><p>是保证桥梁墩台安全并将荷载传至地基的结构。</p><ul><li>扩大基础</li><li>桩基础承台</li><li>桩柱式</li></ul><h3 id="支座系统"><a href="#支座系统" class="headerlink" title="支座系统"></a>支座系统</h3><p>在桥跨结构与桥墩或桥台的支承处所设置的传力装置。它不仅要传递很大的荷载，并且还要保证桥跨结构能产生一定的变位。</p><ul><li>橡胶支座</li><li>支座垫石</li></ul><h3 id="附属设施"><a href="#附属设施" class="headerlink" title="附属设施"></a>附属设施</h3><h4 id="桥面铺装"><a href="#桥面铺装" class="headerlink" title="桥面铺装"></a>桥面铺装</h4><p>或称行车道铺装，铺装的平整性、耐磨性、不翘曲、不渗水是保证行车舒适的关键。</p><h4 id="排水防水"><a href="#排水防水" class="headerlink" title="排水防水"></a>排水防水</h4><p>应能迅速排除桥面积水，并使渗水的可能性降至最小限度。</p><h4 id="栏杆"><a href="#栏杆" class="headerlink" title="栏杆"></a>栏杆</h4><p>既是保证安全的构造措施，又是有利于观赏的最佳装饰件。</p><h4 id="伸缩缝"><a href="#伸缩缝" class="headerlink" title="伸缩缝"></a>伸缩缝</h4><p>桥跨上部结构之间或桥跨上部结构与桥台端墙之间所设的缝隙，以保证结构在各种因素作用下的变位。为使行车顺适、不顺簸，桥面上要设置伸缩缝构造。</p><h4 id="灯光照明"><a href="#灯光照明" class="headerlink" title="灯光照明"></a>灯光照明</h4><h2 id="桥梁分类"><a href="#桥梁分类" class="headerlink" title="桥梁分类"></a>桥梁分类</h2><h3 id="按使用性质分类"><a href="#按使用性质分类" class="headerlink" title="按使用性质分类"></a>按使用性质分类</h3><p>公路桥、铁路桥、公铁两用桥、城市道路桥（含立交桥）、人行桥、机耕桥、管线桥、渡槽桥。</p><h3 id="按桥身结构材料分类"><a href="#按桥身结构材料分类" class="headerlink" title="按桥身结构材料分类"></a>按桥身结构材料分类</h3><p>木桥、圬工桥（砖、石、砼砌块桥）、钢筋砼桥、预应力砼桥、钢桥。</p><h3 id="按单孔跨径、多孔跨径总长分类"><a href="#按单孔跨径、多孔跨径总长分类" class="headerlink" title="按单孔跨径、多孔跨径总长分类"></a>按单孔跨径、多孔跨径总长分类</h3><table><thead><tr><th align="center">分类</th><th align="center">多孔跨径总长L（m）</th><th align="center">单孔跨径L<sub>k</sub>（m）</th></tr></thead><tbody><tr><td align="center">特大桥</td><td align="center">L &gt; 1000</td><td align="center">L<sub>k</sub> &gt; 150</td></tr><tr><td align="center">大桥</td><td align="center">100 ≤ L ≤ 1000</td><td align="center">40 ≤ L<sub>k</sub> &lt; 150</td></tr><tr><td align="center">中桥</td><td align="center">30 &lt; L &lt; 100</td><td align="center">20 ≤ L<sub>k</sub> &lt; 40</td></tr><tr><td align="center">小桥</td><td align="center">8 ≤ L ≤ 30</td><td align="center">5 ≤ L<sub>k</sub> &lt; 20</td></tr><tr><td align="center">涵洞</td><td align="center">L &lt; 8</td><td align="center">L<sub>k</sub> &lt; 5</td></tr></tbody></table><h3 id="按桥跨结构分类"><a href="#按桥跨结构分类" class="headerlink" title="按桥跨结构分类"></a>按桥跨结构分类</h3><p>梁式桥（简支梁、连续梁、伸臂梁）、桁架桥、拱桥、刚构桥、悬索桥、斜拉桥等。此外，还有浮桥、漫水桥、活动桥等。</p><h2 id="桥梁类型和受力特点"><a href="#桥梁类型和受力特点" class="headerlink" title="桥梁类型和受力特点"></a>桥梁类型和受力特点</h2><table><thead><tr><th align="center">类型</th><th align="left">受力特点</th><th align="left">建造材料</th></tr></thead><tbody><tr><td align="center">梁式桥</td><td align="left">竖向荷载作用下无水平反力，梁内产生的弯矩最大</td><td align="left">抗弯能力强（钢、木、钢筋砼、预应力钢筋砼）</td></tr><tr><td align="center">拱式桥</td><td align="left">主要承重结构是拱圈或拱助，在竖向荷载作用下，墩台承受水平推力，承重结构以受压为主</td><td align="left">抗压能力强的圬工材料（砖、石、砼）和钢筋砼</td></tr><tr><td align="center">刚架桥</td><td align="left">梁和柱的连接处具有很大的刚性，在竖向荷载作用下，梁部主要受弯，在柱脚处也具有水平反力，受力状态介于梁桥和拱桥之间</td><td align="left">施工比较困难，用普通钢筋砼修建，梁柱刚结处易产生裂缝</td></tr><tr><td align="center">悬索桥</td><td align="left">以悬索为主要承重结构，结构自重较轻，构造简单、受力明确，能以较小的建筑高度经济合理地修建大跨度桥</td><td align="left">结构自重轻，刚度差，在车辆荷载和风荷载作用下有较大的变形和振动</td></tr><tr><td align="center">组合体系桥</td><td align="left">由几个不同体系的结构组合而成，常见的有：连续刚构，梁、拱组合等；斜拉桥也是组合体系桥的一种</td><td align="left">——</td></tr></tbody></table><h2 id="梁式桥"><a href="#梁式桥" class="headerlink" title="梁式桥"></a>梁式桥</h2><h3 id="梁式桥分类"><a href="#梁式桥分类" class="headerlink" title="梁式桥分类"></a>梁式桥分类</h3><ul><li>简支梁桥</li><li>悬臂梁桥</li><li>等截面连续梁桥</li><li>变截面连续梁桥</li><li>连续刚构</li></ul><h3 id="梁截面"><a href="#梁截面" class="headerlink" title="梁截面"></a>梁截面</h3><ul><li>实心板梁</li><li>空心板梁</li><li>T梁——底板、梁肋、翼缘板</li><li>箱梁——底板、腹板、顶板、翼缘板</li></ul><h2 id="拱式桥"><a href="#拱式桥" class="headerlink" title="拱式桥"></a>拱式桥</h2><p>与梁式桥主要承受弯曲力不同，拱桥要承受的是沿圈传递的轴向压力。该压力即是桥墩桥台在竖向移动荷作用下所产生的水平推力。</p><h3 id="拱式桥分类"><a href="#拱式桥分类" class="headerlink" title="拱式桥分类"></a>拱式桥分类</h3><ul><li>三铰拱</li><li>两铰拱</li><li>无铰拱</li><li>系杆拱</li></ul><h3 id="承载方式"><a href="#承载方式" class="headerlink" title="承载方式"></a>承载方式</h3><ul><li>上承式拱</li><li>中承式拱</li><li>下承式拱</li></ul><h2 id="刚架桥"><a href="#刚架桥" class="headerlink" title="刚架桥"></a>刚架桥</h2><p>刚架桥是梁和柱（或竖墙）整体结合的桥梁结构。竖向荷载作用下，梁部主要受弯，柱脚处有水平推力，力状态介于梁式桥和拱桥之间。</p><h3 id="刚架桥分类"><a href="#刚架桥分类" class="headerlink" title="刚架桥分类"></a>刚架桥分类</h3><ul><li>T型刚架桥</li><li>连续刚架桥</li><li>斜腿刚架桥</li></ul><h2 id="斜拉桥"><a href="#斜拉桥" class="headerlink" title="斜拉桥"></a>斜拉桥</h2><p>斜拉桥由主梁、塔柱和斜拉索3种基本构件组成，用高强钢材制成的斜拉索将主梁多点吊起，将主梁承受的荷载传至塔柱，再由塔柱基础传给地基。斜拉桥是主梁（桥面体系）受压、受弯，斜拉索（支承体系）受拉的结构。</p><h3 id="索型"><a href="#索型" class="headerlink" title="索型"></a>索型</h3><ul><li>辐射性</li><li>竖琴型</li><li>扇形</li></ul><h2 id="桥梁常用术语"><a href="#桥梁常用术语" class="headerlink" title="桥梁常用术语"></a>桥梁常用术语</h2><h3 id="横隔板"><a href="#横隔板" class="headerlink" title="横隔板"></a>横隔板</h3><p>横隔板是为保持截面形状、增强横向刚度而在梁之间设置的构件。位于桥梁端部的横隔板称为端隔板，位于中部的横隔板称为中隔板。</p><h3 id="湿接缝、湿接头"><a href="#湿接缝、湿接头" class="headerlink" title="湿接缝、湿接头"></a>湿接缝、湿接头</h3><h3 id="净跨径"><a href="#净跨径" class="headerlink" title="净跨径"></a>净跨径</h3><p>相邻两个桥墩（或桥台）之间的净距。对于拱式桥是每孔拱跨两个拱脚截面最低点之间的水平距离。</p><h3 id="计算跨径"><a href="#计算跨径" class="headerlink" title="计算跨径"></a>计算跨径</h3><p>对于具有支座的桥梁，是指桥跨结构相邻两个支座中心之间的距离；对于拱式桥，是指两相邻拱脚截面形心点之间的水平距离，即拱轴线两端点之间的水平距离。</p><h3 id="标准跨径"><a href="#标准跨径" class="headerlink" title="标准跨径"></a>标准跨径</h3><p>相邻两个桥墩中心线的距离。</p><h3 id="拱轴线"><a href="#拱轴线" class="headerlink" title="拱轴线"></a>拱轴线</h3><p>拱圈各截面形心点的连线。</p><h3 id="桥梁高度"><a href="#桥梁高度" class="headerlink" title="桥梁高度"></a>桥梁高度</h3><p>指桥面与低水位之间的高差，或指桥面与桥下线路路面之间的距离，简称桥高。</p><h3 id="桥下净空高度"><a href="#桥下净空高度" class="headerlink" title="桥下净空高度"></a>桥下净空高度</h3><p>设计洪水位、计算通航水位或桥下线路路面至桥跨结构最下缘之间的距离。</p><h3 id="建筑高度"><a href="#建筑高度" class="headerlink" title="建筑高度"></a>建筑高度</h3><p>桥上行车路面（或轨顶）标高至桥跨结构最下缘之间的距离。</p><h3 id="容许建筑高度"><a href="#容许建筑高度" class="headerlink" title="容许建筑高度"></a>容许建筑高度</h3><p>公路或铁路定线中所确定的桥面或轨顶标高，对通航净空顶部标高之差。</p><h3 id="净矢高"><a href="#净矢高" class="headerlink" title="净矢高"></a>净矢高</h3><p>从拱顶截面下缘至相邻两拱脚截面下缘最低点之连线的垂直距离。</p><h3 id="计算矢高"><a href="#计算矢高" class="headerlink" title="计算矢高"></a>计算矢高</h3><p>从拱顶截面形心至相两拱脚截面形心之连线的垂直距离。</p><h3 id="矢跨比"><a href="#矢跨比" class="headerlink" title="矢跨比"></a>矢跨比</h3><p>计算矢高与计算跨径之比，也称拱矢度，它是反映拱桥受力特性的一个重要指标。</p><h3 id="涵洞"><a href="#涵洞" class="headerlink" title="涵洞"></a>涵洞</h3><p>用来宣泄路堤下水流的构造物。通常在建造涵洞处路堤不中断。凡是多孔跨径全长不到8m和单孔跨径不到5m的泄水结构物，均称为涵洞。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Share</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Note</tag>
-      
-      <tag>BridgeDesign</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>道路勘测设计学习笔记</title>
     <link href="/post/learn-road-design/"/>
     <url>/post/learn-road-design/</url>
@@ -187,6 +160,33 @@
       <tag>Note</tag>
       
       <tag>RoadDesign</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>桥梁设计学习笔记</title>
+    <link href="/post/learn-bridge-design/"/>
+    <url>/post/learn-bridge-design/</url>
+    
+    <content type="html"><![CDATA[<h2 id="桥梁定义"><a href="#桥梁定义" class="headerlink" title="桥梁定义"></a>桥梁定义</h2><p>桥梁是道路路线遇到江河湖泊、山谷深沟以及其他线路（铁路或公路）等障碍时，为了保持道路的连续性而专门建造的人工构造物。桥梁既要保证桥上的交通运行，也要保证桥下水流的宣泄、船只的通航或车辆的通行。</p><span id="more"></span><h2 id="桥梁基本组成"><a href="#桥梁基本组成" class="headerlink" title="桥梁基本组成"></a>桥梁基本组成</h2><h3 id="上部结构"><a href="#上部结构" class="headerlink" title="上部结构"></a>上部结构</h3><h4 id="桥跨结构"><a href="#桥跨结构" class="headerlink" title="桥跨结构"></a>桥跨结构</h4><p>线路跨越障碍（如江河、山谷或其他线路等）的结构物。</p><h3 id="下部结构"><a href="#下部结构" class="headerlink" title="下部结构"></a>下部结构</h3><h4 id="桥墩"><a href="#桥墩" class="headerlink" title="桥墩"></a>桥墩</h4><p>是在河中或岸上支承桥跨结构的结构物。</p><ul><li>轻型桥墩——盖梁、系梁、立柱</li><li>重力式桥墩——墩帽、墩身</li></ul><h4 id="桥台"><a href="#桥台" class="headerlink" title="桥台"></a>桥台</h4><p>设在桥的两端；一边与路堤相接，以防止路堤滑塌；另一边则支承桥跨结构的端部。为保护桥台和路堤填土，桥台两侧常做锥形护坡、挡土墙等防护工程。</p><h4 id="墩台基础"><a href="#墩台基础" class="headerlink" title="墩台基础"></a>墩台基础</h4><p>是保证桥梁墩台安全并将荷载传至地基的结构。</p><ul><li>扩大基础</li><li>桩基础承台</li><li>桩柱式</li></ul><h3 id="支座系统"><a href="#支座系统" class="headerlink" title="支座系统"></a>支座系统</h3><p>在桥跨结构与桥墩或桥台的支承处所设置的传力装置。它不仅要传递很大的荷载，并且还要保证桥跨结构能产生一定的变位。</p><ul><li>橡胶支座</li><li>支座垫石</li></ul><h3 id="附属设施"><a href="#附属设施" class="headerlink" title="附属设施"></a>附属设施</h3><h4 id="桥面铺装"><a href="#桥面铺装" class="headerlink" title="桥面铺装"></a>桥面铺装</h4><p>或称行车道铺装，铺装的平整性、耐磨性、不翘曲、不渗水是保证行车舒适的关键。</p><h4 id="排水防水"><a href="#排水防水" class="headerlink" title="排水防水"></a>排水防水</h4><p>应能迅速排除桥面积水，并使渗水的可能性降至最小限度。</p><h4 id="栏杆"><a href="#栏杆" class="headerlink" title="栏杆"></a>栏杆</h4><p>既是保证安全的构造措施，又是有利于观赏的最佳装饰件。</p><h4 id="伸缩缝"><a href="#伸缩缝" class="headerlink" title="伸缩缝"></a>伸缩缝</h4><p>桥跨上部结构之间或桥跨上部结构与桥台端墙之间所设的缝隙，以保证结构在各种因素作用下的变位。为使行车顺适、不顺簸，桥面上要设置伸缩缝构造。</p><h4 id="灯光照明"><a href="#灯光照明" class="headerlink" title="灯光照明"></a>灯光照明</h4><h2 id="桥梁分类"><a href="#桥梁分类" class="headerlink" title="桥梁分类"></a>桥梁分类</h2><h3 id="按使用性质分类"><a href="#按使用性质分类" class="headerlink" title="按使用性质分类"></a>按使用性质分类</h3><p>公路桥、铁路桥、公铁两用桥、城市道路桥（含立交桥）、人行桥、机耕桥、管线桥、渡槽桥。</p><h3 id="按桥身结构材料分类"><a href="#按桥身结构材料分类" class="headerlink" title="按桥身结构材料分类"></a>按桥身结构材料分类</h3><p>木桥、圬工桥（砖、石、砼砌块桥）、钢筋砼桥、预应力砼桥、钢桥。</p><h3 id="按单孔跨径、多孔跨径总长分类"><a href="#按单孔跨径、多孔跨径总长分类" class="headerlink" title="按单孔跨径、多孔跨径总长分类"></a>按单孔跨径、多孔跨径总长分类</h3><table><thead><tr><th align="center">分类</th><th align="center">多孔跨径总长L（m）</th><th align="center">单孔跨径L<sub>k</sub>（m）</th></tr></thead><tbody><tr><td align="center">特大桥</td><td align="center">L &gt; 1000</td><td align="center">L<sub>k</sub> &gt; 150</td></tr><tr><td align="center">大桥</td><td align="center">100 ≤ L ≤ 1000</td><td align="center">40 ≤ L<sub>k</sub> &lt; 150</td></tr><tr><td align="center">中桥</td><td align="center">30 &lt; L &lt; 100</td><td align="center">20 ≤ L<sub>k</sub> &lt; 40</td></tr><tr><td align="center">小桥</td><td align="center">8 ≤ L ≤ 30</td><td align="center">5 ≤ L<sub>k</sub> &lt; 20</td></tr><tr><td align="center">涵洞</td><td align="center">L &lt; 8</td><td align="center">L<sub>k</sub> &lt; 5</td></tr></tbody></table><h3 id="按桥跨结构分类"><a href="#按桥跨结构分类" class="headerlink" title="按桥跨结构分类"></a>按桥跨结构分类</h3><p>梁式桥（简支梁、连续梁、伸臂梁）、桁架桥、拱桥、刚构桥、悬索桥、斜拉桥等。此外，还有浮桥、漫水桥、活动桥等。</p><h2 id="桥梁类型和受力特点"><a href="#桥梁类型和受力特点" class="headerlink" title="桥梁类型和受力特点"></a>桥梁类型和受力特点</h2><table><thead><tr><th align="center">类型</th><th align="left">受力特点</th><th align="left">建造材料</th></tr></thead><tbody><tr><td align="center">梁式桥</td><td align="left">竖向荷载作用下无水平反力，梁内产生的弯矩最大</td><td align="left">抗弯能力强（钢、木、钢筋砼、预应力钢筋砼）</td></tr><tr><td align="center">拱式桥</td><td align="left">主要承重结构是拱圈或拱助，在竖向荷载作用下，墩台承受水平推力，承重结构以受压为主</td><td align="left">抗压能力强的圬工材料（砖、石、砼）和钢筋砼</td></tr><tr><td align="center">刚架桥</td><td align="left">梁和柱的连接处具有很大的刚性，在竖向荷载作用下，梁部主要受弯，在柱脚处也具有水平反力，受力状态介于梁桥和拱桥之间</td><td align="left">施工比较困难，用普通钢筋砼修建，梁柱刚结处易产生裂缝</td></tr><tr><td align="center">悬索桥</td><td align="left">以悬索为主要承重结构，结构自重较轻，构造简单、受力明确，能以较小的建筑高度经济合理地修建大跨度桥</td><td align="left">结构自重轻，刚度差，在车辆荷载和风荷载作用下有较大的变形和振动</td></tr><tr><td align="center">组合体系桥</td><td align="left">由几个不同体系的结构组合而成，常见的有：连续刚构，梁、拱组合等；斜拉桥也是组合体系桥的一种</td><td align="left">——</td></tr></tbody></table><h2 id="梁式桥"><a href="#梁式桥" class="headerlink" title="梁式桥"></a>梁式桥</h2><h3 id="梁式桥分类"><a href="#梁式桥分类" class="headerlink" title="梁式桥分类"></a>梁式桥分类</h3><ul><li>简支梁桥</li><li>悬臂梁桥</li><li>等截面连续梁桥</li><li>变截面连续梁桥</li><li>连续刚构</li></ul><h3 id="梁截面"><a href="#梁截面" class="headerlink" title="梁截面"></a>梁截面</h3><ul><li>实心板梁</li><li>空心板梁</li><li>T梁——底板、梁肋、翼缘板</li><li>箱梁——底板、腹板、顶板、翼缘板</li></ul><h2 id="拱式桥"><a href="#拱式桥" class="headerlink" title="拱式桥"></a>拱式桥</h2><p>与梁式桥主要承受弯曲力不同，拱桥要承受的是沿圈传递的轴向压力。该压力即是桥墩桥台在竖向移动荷作用下所产生的水平推力。</p><h3 id="拱式桥分类"><a href="#拱式桥分类" class="headerlink" title="拱式桥分类"></a>拱式桥分类</h3><ul><li>三铰拱</li><li>两铰拱</li><li>无铰拱</li><li>系杆拱</li></ul><h3 id="承载方式"><a href="#承载方式" class="headerlink" title="承载方式"></a>承载方式</h3><ul><li>上承式拱</li><li>中承式拱</li><li>下承式拱</li></ul><h2 id="刚架桥"><a href="#刚架桥" class="headerlink" title="刚架桥"></a>刚架桥</h2><p>刚架桥是梁和柱（或竖墙）整体结合的桥梁结构。竖向荷载作用下，梁部主要受弯，柱脚处有水平推力，力状态介于梁式桥和拱桥之间。</p><h3 id="刚架桥分类"><a href="#刚架桥分类" class="headerlink" title="刚架桥分类"></a>刚架桥分类</h3><ul><li>T型刚架桥</li><li>连续刚架桥</li><li>斜腿刚架桥</li></ul><h2 id="斜拉桥"><a href="#斜拉桥" class="headerlink" title="斜拉桥"></a>斜拉桥</h2><p>斜拉桥由主梁、塔柱和斜拉索3种基本构件组成，用高强钢材制成的斜拉索将主梁多点吊起，将主梁承受的荷载传至塔柱，再由塔柱基础传给地基。斜拉桥是主梁（桥面体系）受压、受弯，斜拉索（支承体系）受拉的结构。</p><h3 id="索型"><a href="#索型" class="headerlink" title="索型"></a>索型</h3><ul><li>辐射性</li><li>竖琴型</li><li>扇形</li></ul><h2 id="桥梁常用术语"><a href="#桥梁常用术语" class="headerlink" title="桥梁常用术语"></a>桥梁常用术语</h2><h3 id="横隔板"><a href="#横隔板" class="headerlink" title="横隔板"></a>横隔板</h3><p>横隔板是为保持截面形状、增强横向刚度而在梁之间设置的构件。位于桥梁端部的横隔板称为端隔板，位于中部的横隔板称为中隔板。</p><h3 id="湿接缝、湿接头"><a href="#湿接缝、湿接头" class="headerlink" title="湿接缝、湿接头"></a>湿接缝、湿接头</h3><h3 id="净跨径"><a href="#净跨径" class="headerlink" title="净跨径"></a>净跨径</h3><p>相邻两个桥墩（或桥台）之间的净距。对于拱式桥是每孔拱跨两个拱脚截面最低点之间的水平距离。</p><h3 id="计算跨径"><a href="#计算跨径" class="headerlink" title="计算跨径"></a>计算跨径</h3><p>对于具有支座的桥梁，是指桥跨结构相邻两个支座中心之间的距离；对于拱式桥，是指两相邻拱脚截面形心点之间的水平距离，即拱轴线两端点之间的水平距离。</p><h3 id="标准跨径"><a href="#标准跨径" class="headerlink" title="标准跨径"></a>标准跨径</h3><p>相邻两个桥墩中心线的距离。</p><h3 id="拱轴线"><a href="#拱轴线" class="headerlink" title="拱轴线"></a>拱轴线</h3><p>拱圈各截面形心点的连线。</p><h3 id="桥梁高度"><a href="#桥梁高度" class="headerlink" title="桥梁高度"></a>桥梁高度</h3><p>指桥面与低水位之间的高差，或指桥面与桥下线路路面之间的距离，简称桥高。</p><h3 id="桥下净空高度"><a href="#桥下净空高度" class="headerlink" title="桥下净空高度"></a>桥下净空高度</h3><p>设计洪水位、计算通航水位或桥下线路路面至桥跨结构最下缘之间的距离。</p><h3 id="建筑高度"><a href="#建筑高度" class="headerlink" title="建筑高度"></a>建筑高度</h3><p>桥上行车路面（或轨顶）标高至桥跨结构最下缘之间的距离。</p><h3 id="容许建筑高度"><a href="#容许建筑高度" class="headerlink" title="容许建筑高度"></a>容许建筑高度</h3><p>公路或铁路定线中所确定的桥面或轨顶标高，对通航净空顶部标高之差。</p><h3 id="净矢高"><a href="#净矢高" class="headerlink" title="净矢高"></a>净矢高</h3><p>从拱顶截面下缘至相邻两拱脚截面下缘最低点之连线的垂直距离。</p><h3 id="计算矢高"><a href="#计算矢高" class="headerlink" title="计算矢高"></a>计算矢高</h3><p>从拱顶截面形心至相两拱脚截面形心之连线的垂直距离。</p><h3 id="矢跨比"><a href="#矢跨比" class="headerlink" title="矢跨比"></a>矢跨比</h3><p>计算矢高与计算跨径之比，也称拱矢度，它是反映拱桥受力特性的一个重要指标。</p><h3 id="涵洞"><a href="#涵洞" class="headerlink" title="涵洞"></a>涵洞</h3><p>用来宣泄路堤下水流的构造物。通常在建造涵洞处路堤不中断。凡是多孔跨径全长不到8m和单孔跨径不到5m的泄水结构物，均称为涵洞。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Share</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Note</tag>
+      
+      <tag>BridgeDesign</tag>
       
     </tags>
     
@@ -342,9 +342,9 @@
     
     <tags>
       
-      <tag>Database</tag>
-      
       <tag>SQL</tag>
+      
+      <tag>Database</tag>
       
     </tags>
     
@@ -450,9 +450,9 @@
     
     <tags>
       
-      <tag>Linux</tag>
-      
       <tag>OS</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
@@ -621,33 +621,6 @@
   
   
   <entry>
-    <title>年轻人的第二台PC诞生</title>
-    <link href="/post/my-second-pc/"/>
-    <url>/post/my-second-pc/</url>
-    
-    <content type="html"><![CDATA[<p>博主的第一台主机是17年6月份大学毕业时组的一套，当时资金有限，主机花了2600元，服役了一年半，由于性能不能满足 <s>游戏</s> 工作的需要，所以就在19年春节前又配了一套。</p><span id="more"></span><p>旧的主机虽然已经用了一年半，但毕竟是挤牙膏挤多了的性价比神U G4560和10系显卡1050ti，家用办公中画质玩玩3A大作还是够用的，于是就春节搬回家，把家里N年前的主机给替换了。其实在春节前都已经配齐开始使用了，但一直没时间更新博客，趁着这周末有空就来补上笔记。</p><h2 id="配置清单"><a href="#配置清单" class="headerlink" title="配置清单"></a>配置清单</h2><ul><li>固态硬盘 英特尔 760P 256G  359</li><li>显卡 铭瑄 GTX1060 6G  1489</li><li>内存 金士顿 骇客神条2666 8G *2 679</li><li>处理器 AMD Ryzen5 2600X</li><li>主板 微星 B450M MORTAR  1999</li><li>机箱 先马 平头哥 149</li><li>电源 先马 全模组500W 349</li></ul><blockquote><p>配置清单合计5024元，显示器、键盘、鼠标、PCIE无线网卡、音箱以及两块1TB机械硬盘都使用上台主机的，故不算入总价中。</p></blockquote><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/1.jpg" alt="先放桌子上点亮"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/2.jpg" alt="点亮成功"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/3.jpg" alt="装系统"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/4.jpg" alt="放入机箱"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/5.jpg" alt="粗糙的背线"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/6.jpg" alt="安装完成"></div></div></div><h2 id="娱乐大师跑分"><a href="#娱乐大师跑分" class="headerlink" title="娱乐大师跑分"></a>娱乐大师跑分</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/8.png" alt="跑分"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/9.png" alt="配置"></div></div></div><h2 id="灯效"><a href="#灯效" class="headerlink" title="灯效"></a>灯效</h2><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"video":{"url":"https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/video.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
-    
-    
-    <categories>
-      
-      <category>Share</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>PC</tag>
-      
-      <tag>DIY</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>微星B450M MORTAR主板PCI_E3接口无法识别硬件解决方法</title>
     <link href="/post/msi-b450m-mortar/"/>
     <url>/post/msi-b450m-mortar/</url>
@@ -669,6 +642,33 @@
       <tag>主板</tag>
       
       <tag>PCI_E</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>年轻人的第二台PC诞生</title>
+    <link href="/post/my-second-pc/"/>
+    <url>/post/my-second-pc/</url>
+    
+    <content type="html"><![CDATA[<p>博主的第一台主机是17年6月份大学毕业时组的一套，当时资金有限，主机花了2600元，服役了一年半，由于性能不能满足 <s>游戏</s> 工作的需要，所以就在19年春节前又配了一套。</p><span id="more"></span><p>旧的主机虽然已经用了一年半，但毕竟是挤牙膏挤多了的性价比神U G4560和10系显卡1050ti，家用办公中画质玩玩3A大作还是够用的，于是就春节搬回家，把家里N年前的主机给替换了。其实在春节前都已经配齐开始使用了，但一直没时间更新博客，趁着这周末有空就来补上笔记。</p><h2 id="配置清单"><a href="#配置清单" class="headerlink" title="配置清单"></a>配置清单</h2><ul><li>固态硬盘 英特尔 760P 256G  359</li><li>显卡 铭瑄 GTX1060 6G  1489</li><li>内存 金士顿 骇客神条2666 8G *2 679</li><li>处理器 AMD Ryzen5 2600X</li><li>主板 微星 B450M MORTAR  1999</li><li>机箱 先马 平头哥 149</li><li>电源 先马 全模组500W 349</li></ul><blockquote><p>配置清单合计5024元，显示器、键盘、鼠标、PCIE无线网卡、音箱以及两块1TB机械硬盘都使用上台主机的，故不算入总价中。</p></blockquote><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/1.jpg" alt="先放桌子上点亮"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/2.jpg" alt="点亮成功"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/3.jpg" alt="装系统"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/4.jpg" alt="放入机箱"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/5.jpg" alt="粗糙的背线"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/6.jpg" alt="安装完成"></div></div></div><h2 id="娱乐大师跑分"><a href="#娱乐大师跑分" class="headerlink" title="娱乐大师跑分"></a>娱乐大师跑分</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/8.png" alt="跑分"></div><div class="group-image-wrap"><img src="https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/9.png" alt="配置"></div></div></div><h2 id="灯效"><a href="#灯效" class="headerlink" title="灯效"></a>灯效</h2><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"video":{"url":"https://cdn.awaw.cc/raw/pdone/static/master/img/article/my-second-pc/video.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
+    
+    
+    <categories>
+      
+      <category>Share</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>PC</tag>
+      
+      <tag>DIY</tag>
       
     </tags>
     
@@ -776,9 +776,9 @@
     
     <tags>
       
-      <tag>Database</tag>
-      
       <tag>SQL</tag>
+      
+      <tag>Database</tag>
       
     </tags>
     
