@@ -33,9 +33,9 @@
     <category term="Share" scheme="https://awaw.cc/categories/Share/"/>
     
     
-    <category term="Music" scheme="https://awaw.cc/tags/Music/"/>
-    
     <category term="OpenSource" scheme="https://awaw.cc/tags/OpenSource/"/>
+    
+    <category term="Music" scheme="https://awaw.cc/tags/Music/"/>
     
   </entry>
   
@@ -318,9 +318,9 @@
     <category term="Developer" scheme="https://awaw.cc/categories/Developer/"/>
     
     
-    <category term="SQL" scheme="https://awaw.cc/tags/SQL/"/>
-    
     <category term="Database" scheme="https://awaw.cc/tags/Database/"/>
+    
+    <category term="SQL" scheme="https://awaw.cc/tags/SQL/"/>
     
   </entry>
   
