@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #cccccc;
+    /* 文本颜色 */
+    background-color: #222222;
+    /* 暗色背景 */
+    transition: background-color 0.3s;
+    /* 平滑过渡背景色变化 */
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #333333;
+    /* 容器背景色 */
+    padding: 20px;
+    border-radius: 8px;
+    /* 圆角边框 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 盒子阴影 */
+}
+
+h1 {
+    color: #ffffff;
+    /* 标题颜色 */
+}
+
+p {
+    line-height: 1.6;
+    /* 行高 */
+}
+
+
+
+/* 暗色模式媒体查询 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #222222;
+        color: #cccccc;
+    }
+
+    .container {
+        background-color: #333333;
+    }
+
+    h1 {
+        color: #ffffff;
+    }
+
+    p {
+        color: #cccccc;
+    }
+
+    #extend {
+        opacity: 0.6;
+        font-style: italic;
+    }
+}

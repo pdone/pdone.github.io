@@ -6,68 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#333333"> <!-- 暗色模式主题颜色 -->
     <title>文本数据展示</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #cccccc;
-            /* 文本颜色 */
-            background-color: #222222;
-            /* 暗色背景 */
-            transition: background-color 0.3s;
-            /* 平滑过渡背景色变化 */
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #333333;
-            /* 容器背景色 */
-            padding: 20px;
-            border-radius: 8px;
-            /* 圆角边框 */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            /* 盒子阴影 */
-        }
-
-        h1 {
-            color: #ffffff;
-            /* 标题颜色 */
-        }
-
-        p {
-            line-height: 1.6;
-            /* 行高 */
-        }
-
-
-
-        /* 暗色模式媒体查询 */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #222222;
-                color: #cccccc;
-            }
-
-            .container {
-                background-color: #333333;
-            }
-
-            h1 {
-                color: #ffffff;
-            }
-
-            p {
-                color: #cccccc;
-            }
-
-            #extend {
-                opacity: 0.6;
-                font-style: italic;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -76,39 +15,7 @@
         <p id="content">内容数据 QueryParam: [c] or [content]</p>
         <p id="extend">扩展数据 QueryParam: [e] or [extend]</p>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // 获取URL的查询参数
-            function getQueryParam(param) {
-                var queryParams = new URLSearchParams(window.location.search);
-                return queryParams.get(param);
-            }
-
-            // 根据查询参数获取数据
-            function displayData() {
-                var title = getQueryParam('t') ?? getQueryParam('title');
-                if (title) {
-                    document.getElementById('title').textContent = title;
-                    document.title = title;
-                }
-
-                var content = getQueryParam('c') ?? getQueryParam('content');
-                if (content) {
-                    // 将换行符替换为 <br>
-                    document.getElementById('content').innerHTML = content.replace(/\r?\n/g, '<br>');
-                    document.getElementById('extend').textContent = "";
-                }
-                
-                var extend = getQueryParam('e') ?? getQueryParam('extend');
-                if (extend) {
-                    document.getElementById('extend').textContent = extend;
-                }
-            }
-
-            // 调用函数以显示数据
-            displayData();
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
