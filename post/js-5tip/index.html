@@ -74,7 +74,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"awaw.cc","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/loading.svg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"def79bf7d2240517f4fcbd4d5b9fa688","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"awaw.cc","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/loading.svg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":"def79bf7d2240517f4fcbd4d5b9fa688","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -85,37 +85,13 @@
   <script  src="/js/color-schema.js" ></script>
   
 
-  
-    <!-- Baidu Analytics -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?def79bf7d2240517f4fcbd4d5b9fa688";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
-      }
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
-
 
   
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="/assets/custom.css">
 
 <link rel="stylesheet" href="/assets/font-awesome.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Pdone's Blog" type="application/atom+xml">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="Pdone's Blog" type="application/atom+xml">
 </head>
 
 
@@ -138,7 +114,7 @@
       <div class="animated-icon"><span></span><span></span><span></span></div>
     </button>
 
-    <!-- Collapsible content -->
+    <!-- Collapsible content (desktop) -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto text-center">
         
@@ -422,10 +398,381 @@
   </div>
 </nav>
 
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>Home</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            
+            <div class="col-12 mobile-grid-group-header">
+              <i class="fa fa-folder"></i>
+              <span>Archive</span>
+            </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/archives/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/categories/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tags/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-tags"></i>
+                    <span>标签</span>
+                  </div>
+                </a>
+              </div>
+            
+          
+        
+          
+          
+          
+          
+            
+            <div class="col-12 mobile-grid-group-header">
+              <i class="fa fa-wrench"></i>
+              <span>Tools</span>
+            </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/eat-what-today/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-cutlery"></i>
+                    <span>今天吃什么</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/catch-the-cat/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-github-alt"></i>
+                    <span>捉住小猫</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/pwd-generator/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-shield"></i>
+                    <span>密码生成器</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/md-editor/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-edit"></i>
+                    <span>MD编辑器</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/swing-girl/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-pagelines"></i>
+                    <span>荡秋千</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/planet/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-superpowers"></i>
+                    <span>星球</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://aria.awaw.cc" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-rocket"></i>
+                    <span>AriaNg</span>
+                  </div>
+                </a>
+              </div>
+            
+          
+        
+          
+          
+          
+          
+            
+            <div class="col-12 mobile-grid-group-header">
+              <i class="fa fa-superpowers"></i>
+              <span>AI</span>
+            </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://chatgpt.com" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>ChatGPT</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://yiyan.baidu.com" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>文心一言</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://tongyi.aliyun.com/qianwen" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>通义千问</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://yuanbao.tencent.com" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>腾讯元宝</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://chat.deepseek.com" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>DeepSeek</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://kimi.moonshot.cn" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>Kimi</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://chatglm.cn/main/guest?lang=zh" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>智谱清言</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://gemini.google.com/app" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>Gemini</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://lobechat.com/chat" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>LobeChat</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://www.doubao.com/chat" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>豆包</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://ai.dangbei.com/chat" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>当贝AI</span>
+                  </div>
+                </a>
+              </div>
+            
+          
+        
+          
+          
+          
+          
+            
+            <div class="col-12 mobile-grid-group-header">
+              <i class="fa fa-asterisk"></i>
+              <span>More</span>
+            </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/links/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/about/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-user-fill"></i>
+                    <span>关于</span>
+                  </div>
+                </a>
+              </div>
+            
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/') no-repeat center center; background-size: cover;">
+     style="background: url('/null') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
       <div class="banner-text text-center fade-in-up">
@@ -447,7 +794,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          8.2k 字
         
       </span>
     
@@ -458,7 +805,7 @@
         
         
         
-          19 分钟
+          69 分钟
         
       </span>
     
@@ -484,6 +831,8 @@
     </div>
   </div>
 </div>
+
+
 
 </div>
 
@@ -543,7 +892,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit, quantity = <span class="hljs-number">1</span></span>) &#123; <span class="hljs-comment">// if quantity not provided, default to one</span><br>  <span class="hljs-keyword">if</span> (!fruit) <span class="hljs-keyword">return</span>;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`We have <span class="hljs-subst">$&#123;quantity&#125;</span> <span class="hljs-subst">$&#123;fruit&#125;</span>!`</span>);<br>&#125;<br><br><span class="hljs-comment">//test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;banana&#x27;</span>); <span class="hljs-comment">// We have 1 banana!</span><br><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// We have 2 apple!</span><br></code></pre></td></tr></table></figure>
 
 <p>更简单直观不是吗？ 请注意，函数的每个参数都可以有自己的默认值。 例如，我们也可以为<code>水果</code>分配默认值：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span> (fruit =<span class="hljs-string">&#x27;unknown&#x27;</span>, quantity = <span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span> (<span class="hljs-params">fruit =<span class="hljs-string">&#x27;unknown&#x27;</span>, quantity = <span class="hljs-number">1</span></span>)<br></code></pre></td></tr></table></figure>
 
 <p>如果我们的<code>水果</code>是一个<code>对象（Object）</code>怎么办？ 我们可以指定默认参数吗？</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit</span>) &#123; <br>  <span class="hljs-comment">// printing fruit name if value provided</span><br>  <span class="hljs-keyword">if</span> (fruit &amp;&amp; fruit.<span class="hljs-property">name</span>)  &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-property">log</span> (fruit.<span class="hljs-property">name</span>);<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;unknown&#x27;</span>);<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">//test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; &#125;); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;); <span class="hljs-comment">// apple</span><br></code></pre></td></tr></table></figure>
@@ -551,13 +900,13 @@
 <p>观察上边的例子，水果的<code>name</code>属性存在时，我们会将它打印出来，否则打印<code>&#39;unknown&#39;</code>。我们可以通过默认参数和解构赋值的方法来避免写出 <code>fruit &amp;&amp; fruit.name</code> 这种条件。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// destructing - get name property only</span><br><span class="hljs-comment">// assign default empty object &#123;&#125;</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">&#123;name&#125; = &#123;&#125;</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-property">log</span> (name || <span class="hljs-string">&#x27;unknown&#x27;</span>);<br>&#125;<br><br><span class="hljs-comment">//test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; &#125;); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;); <span class="hljs-comment">// apple</span><br></code></pre></td></tr></table></figure>
 
-<p>由于我们只需要来自fruit的<code>name</code>属性，我们可以使用<code>&#123;name&#125;</code>将其解构出来，然后我们可以在代码中使用<code>name</code>作为变量而不是<code>fruit.name</code>。</p>
-<p>我们还使用空对象<code>&#123;&#125;</code>作为默认值。 如果我们不这样做，你将在执行遇到错误<code>test(undefined) - Cannot destructure property name of &#39;undefined&#39; or &#39;null&#39;</code>。 因为<code>undefined</code>中没有<code>name</code>属性。</p>
+<p>由于我们只需要来自fruit的<code>name</code>属性，我们可以使用<code>{name}</code>将其解构出来，然后我们可以在代码中使用<code>name</code>作为变量而不是<code>fruit.name</code>。</p>
+<p>我们还使用空对象<code>{}</code>作为默认值。 如果我们不这样做，你将在执行遇到错误<code>test(undefined) - Cannot destructure property name of &#39;undefined&#39; or &#39;null&#39;</code>。 因为<code>undefined</code>中没有<code>name</code>属性。</p>
 <p>如果你不介意使用第三方库，有几种方法可以减少空值检查：<br>——使用 <a target="_blank" rel="noopener" href="https://lodash.com/docs/4.17.10#get">Lodash get</a> 函数；<br>——使用 Facebook 开源的 <a target="_blank" rel="noopener" href="https://github.com/facebookincubator/idx">idx</a> 库（需搭配 Babeljs）。<br>这里有一个使用 Lodash 的例子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// Include lodash library, you will get _</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">fruit</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(__.<span class="hljs-title function_">get</span>(fruit, <span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;unknown&#x27;</span>); <span class="hljs-comment">// get property name, if not available, assign default value &#x27;unknown&#x27;</span><br>&#125;<br><br><span class="hljs-comment">//test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; &#125;); <span class="hljs-comment">// unknown</span><br><span class="hljs-title function_">test</span>(&#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;); <span class="hljs-comment">// apple</span><br></code></pre></td></tr></table></figure>
 
 <p>您可以<a target="_blank" rel="noopener" href="http://jsbin.com/bopovajiye/edit?js,console">点击这里</a>运行演示代码。 此外，如果您是功能编程（FP）的粉丝，您可以选择使用<a target="_blank" rel="noopener" href="https://github.com/lodash/lodash/wiki/FP-Guide">Lodash fp</a>，Lodash的功能版本（方法更改为get或getOr）。</p>
-<h2 id="4-相较Switch更偏向于使用Map-x2F-Object"><a href="#4-相较Switch更偏向于使用Map-x2F-Object" class="headerlink" title="4.相较Switch更偏向于使用Map &#x2F; Object"></a>4.相较Switch更偏向于使用Map &#x2F; Object</h2><p>让我们看看下面的例子，我们想根据颜色打印水果：</p>
+<h2 id="4-相较Switch更偏向于使用Map-Object"><a href="#4-相较Switch更偏向于使用Map-Object" class="headerlink" title="4.相较Switch更偏向于使用Map &#x2F; Object"></a>4.相较Switch更偏向于使用Map &#x2F; Object</h2><p>让我们看看下面的例子，我们想根据颜色打印水果：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">color</span>) &#123;<br>  <span class="hljs-comment">// use switch case to find fruits in color</span><br>  <span class="hljs-keyword">switch</span> (color) &#123;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;red&#x27;</span>:<br>      <span class="hljs-keyword">return</span> [<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;strawberry&#x27;</span>];<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;yellow&#x27;</span>:<br>      <span class="hljs-keyword">return</span> [<span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-string">&#x27;pineapple&#x27;</span>];<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;purple&#x27;</span>:<br>      <span class="hljs-keyword">return</span> [<span class="hljs-string">&#x27;grape&#x27;</span>, <span class="hljs-string">&#x27;plum&#x27;</span>];<br>    <span class="hljs-attr">default</span>:<br>      <span class="hljs-keyword">return</span> [];<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">//test results</span><br><span class="hljs-title function_">test</span>(<span class="hljs-literal">null</span>); <span class="hljs-comment">// []</span><br><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;yellow&#x27;</span>); <span class="hljs-comment">// [&#x27;banana&#x27;, &#x27;pineapple&#x27;]</span><br></code></pre></td></tr></table></figure>
 
 <p>上面的代码似乎没有错，但我觉得它很冗长。 使用具有更清晰语法的object literal可以实现相同的结果：</p>
@@ -573,7 +922,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"> <span class="hljs-keyword">const</span> fruits = [<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;, <br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;strawberry&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;, <br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;yellow&#x27;</span> &#125;, <br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;pineapple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;yellow&#x27;</span> &#125;, <br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;grape&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;purple&#x27;</span> &#125;, <br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;plum&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;purple&#x27;</span> &#125;<br>];<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">color</span>) &#123;<br>  <span class="hljs-comment">// use Array filter to find fruits in color</span><br><br>  <span class="hljs-keyword">return</span> fruits.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> f.<span class="hljs-property">color</span> == color);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>解决问题的方法永远不只一种。对于这个例子我们展示了四种实现方法。编程真有趣！</p>
-<h2 id="5-使用-Array-every-和-Array-some-来处理全部-x2F-部分满足条件"><a href="#5-使用-Array-every-和-Array-some-来处理全部-x2F-部分满足条件" class="headerlink" title="5.使用 Array.every 和 Array.some 来处理全部&#x2F;部分满足条件"></a>5.使用 Array.every 和 Array.some 来处理全部&#x2F;部分满足条件</h2><p>最后一个小技巧更多地是关于使用新的（也不是很新了）JavaScript 数组函数来减少代码行数。观察以下的代码，我们想要检查是否所有的水果都是红色的：</p>
+<h2 id="5-使用-Array-every-和-Array-some-来处理全部-部分满足条件"><a href="#5-使用-Array-every-和-Array-some-来处理全部-部分满足条件" class="headerlink" title="5.使用 Array.every 和 Array.some 来处理全部&#x2F;部分满足条件"></a>5.使用 Array.every 和 Array.some 来处理全部&#x2F;部分满足条件</h2><p>最后一个小技巧更多地是关于使用新的（也不是很新了）JavaScript 数组函数来减少代码行数。观察以下的代码，我们想要检查是否所有的水果都是红色的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fruits = [<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;,<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;yellow&#x27;</span> &#125;,<br>    &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;grape&#x27;</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;purple&#x27;</span> &#125;<br>  ];<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">let</span> isAllRed = <span class="hljs-literal">true</span>;<br><br>  <span class="hljs-comment">// condition: all fruits must be red</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> f <span class="hljs-keyword">of</span> fruits) &#123;<br>    <span class="hljs-keyword">if</span> (!isAllRed) <span class="hljs-keyword">break</span>;<br>    isAllRed = (f.<span class="hljs-property">color</span> == <span class="hljs-string">&#x27;red&#x27;</span>);<br>  &#125;<br><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(isAllRed); <span class="hljs-comment">// false</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>代码太长了！ 我们可以使用<code>Array.every</code>减少行数：</p>
@@ -718,10 +1067,10 @@
     <article id="comments" lazyload>
       
   <div id="waline"></div>
-  <script type="text/javascript">
+  <script type="module">
     Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createCssLink('https://cdn.staticfile.org/waline/2.15.8/waline.css')
-      Fluid.utils.createScript('https://cdn.staticfile.org/waline/2.15.8/waline.js', function() {
+      Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.css')
+      import('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.js').then(({ init }) => {
         var options = Object.assign(
           {"serverURL":"https://waline.awaw.cc","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.awaw.cc/raw/walinejs/emojis/main/alus"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
           {
@@ -729,7 +1078,7 @@
             path: window.location.pathname
           }
         )
-        Waline.init(options);
+        init(options);
         Fluid.utils.waitElementVisible('#waline .vcontent', () => {
           var imgSelector = '#waline .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
@@ -899,7 +1248,63 @@
     var boardCtn = jQuery('#board-ctn');
     var boardTop = boardCtn.offset().top;
 
-    window.tocbot.init(Object.assign({
+    function isExpandAllEnabled() {
+      return CONFIG.toc && CONFIG.toc.expand_all === true;
+    }
+    function expandAllToc() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
+    }
+    function updateTocToggle($li, $childList) {
+      var $toggle = $li.children('.toc-toggle');
+      if ($toggle.length === 0) { return; }
+      var collapsed = $childList.hasClass('tocbot-is-collapsed');
+      $toggle
+        .toggleClass('toc-toggle-collapsed', collapsed)
+        .toggleClass('toc-toggle-expanded', !collapsed);
+    }
+    function bindTocToggle() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .toc-list-item').each(function() {
+        var $li = jQuery(this);
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) {
+          if ($li.children('.toc-toggle').length === 0) {
+            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
+          }
+          return;
+        }
+
+        if ($li.children('.toc-toggle').length === 0) {
+          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
+        }
+        updateTocToggle($li, $childList);
+      });
+      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $li = jQuery(this).parent('.toc-list-item');
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) { return; }
+        $childList.toggleClass('tocbot-is-collapsed');
+        updateTocToggle($li, $childList);
+      });
+      if (!window.__tocToggleObserver) {
+        window.__tocToggleObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
+            var $list = jQuery(mutation.target);
+            var $li = $list.parent('.toc-list-item');
+            if ($li.length === 0) { return; }
+            updateTocToggle($li, $list);
+          });
+        });
+        jQuery('#toc-body ol').each(function() {
+          window.__tocToggleObserver.observe(this, { attributes: true });
+        });
+      }
+    }
+    var tocConfig = Object.assign({
       tocSelector     : '#toc-body',
       contentSelector : '.markdown-body',
       linkClass       : 'tocbot-link',
@@ -910,10 +1315,16 @@
       scrollSmooth    : true,
       includeTitleTags: true,
       headingsOffset  : -boardTop,
-    }, CONFIG.toc));
+    }, CONFIG.toc);
+    if (isExpandAllEnabled()) {
+      tocConfig.collapseDepth = 6;
+    }
+    window.tocbot.init(tocConfig);
     if (toc.find('.toc-list-item').length > 0) {
       toc.css('visibility', 'visible');
     }
+    expandAllToc();
+    bindTocToggle();
 
     Fluid.events.registerRefreshCallback(function() {
       if ('tocbot' in window) {
@@ -925,6 +1336,8 @@
         if (toc.find('.toc-list-item').length > 0) {
           toc.css('visibility', 'visible');
         }
+        expandAllToc();
+        bindTocToggle();
       }
     });
   });
@@ -1002,5 +1415,15 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-</body>
+<!-- hexo injector body_end start -->
+<script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.abbr.min.js" defer></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a864f4af9f5edebadeb6044213eb4aa";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo injector body_end end --></body>
 </html>

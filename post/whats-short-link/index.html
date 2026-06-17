@@ -47,8 +47,8 @@
 <meta property="article:published_time" content="2023-07-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-20T09:26:03.361Z">
 <meta property="article:author" content="pdone">
-<meta property="article:tag" content="OpenSource">
 <meta property="article:tag" content="Java">
+<meta property="article:tag" content="OpenSource">
 <meta property="article:tag" content="ShortLink">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-1.png">
@@ -95,7 +95,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"awaw.cc","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/loading.svg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"def79bf7d2240517f4fcbd4d5b9fa688","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"awaw.cc","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/loading.svg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":"def79bf7d2240517f4fcbd4d5b9fa688","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -106,37 +106,13 @@
   <script  src="/js/color-schema.js" ></script>
   
 
-  
-    <!-- Baidu Analytics -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?def79bf7d2240517f4fcbd4d5b9fa688";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
-      }
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
-
 
   
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="/assets/custom.css">
 
 <link rel="stylesheet" href="/assets/font-awesome.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Pdone's Blog" type="application/atom+xml">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="Pdone's Blog" type="application/atom+xml">
 </head>
 
 
@@ -159,7 +135,7 @@
       <div class="animated-icon"><span></span><span></span><span></span></div>
     </button>
 
-    <!-- Collapsible content -->
+    <!-- Collapsible content (desktop) -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto text-center">
         
@@ -443,10 +419,381 @@
   </div>
 </nav>
 
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>Home</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            
+            <div class="col-12 mobile-grid-group-header">
+              <i class="fa fa-folder"></i>
+              <span>Archive</span>
+            </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/archives/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/categories/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tags/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-tags"></i>
+                    <span>标签</span>
+                  </div>
+                </a>
+              </div>
+            
+          
+        
+          
+          
+          
+          
+            
+            <div class="col-12 mobile-grid-group-header">
+              <i class="fa fa-wrench"></i>
+              <span>Tools</span>
+            </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/eat-what-today/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-cutlery"></i>
+                    <span>今天吃什么</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/catch-the-cat/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-github-alt"></i>
+                    <span>捉住小猫</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/pwd-generator/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-shield"></i>
+                    <span>密码生成器</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/md-editor/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-edit"></i>
+                    <span>MD编辑器</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/swing-girl/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-pagelines"></i>
+                    <span>荡秋千</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/tools/planet/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-superpowers"></i>
+                    <span>星球</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://aria.awaw.cc" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="fa fa-rocket"></i>
+                    <span>AriaNg</span>
+                  </div>
+                </a>
+              </div>
+            
+          
+        
+          
+          
+          
+          
+            
+            <div class="col-12 mobile-grid-group-header">
+              <i class="fa fa-superpowers"></i>
+              <span>AI</span>
+            </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://chatgpt.com" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>ChatGPT</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://yiyan.baidu.com" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>文心一言</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://tongyi.aliyun.com/qianwen" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>通义千问</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://yuanbao.tencent.com" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>腾讯元宝</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://chat.deepseek.com" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>DeepSeek</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://kimi.moonshot.cn" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>Kimi</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://chatglm.cn/main/guest?lang=zh" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>智谱清言</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://gemini.google.com/app" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>Gemini</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://lobechat.com/chat" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>LobeChat</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://www.doubao.com/chat" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>豆包</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="https://ai.dangbei.com/chat" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>当贝AI</span>
+                  </div>
+                </a>
+              </div>
+            
+          
+        
+          
+          
+          
+          
+            
+            <div class="col-12 mobile-grid-group-header">
+              <i class="fa fa-asterisk"></i>
+              <span>More</span>
+            </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/links/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </div>
+                </a>
+              </div>
+            
+              
+              
+              
+              <div class="col-4 mobile-grid-cell">
+                <a href="/about/" target="_self">
+                  <div class="mobile-grid-item">
+                    <i class="iconfont icon-user-fill"></i>
+                    <span>关于</span>
+                  </div>
+                </a>
+              </div>
+            
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/') no-repeat center center; background-size: cover;">
+     style="background: url('/null') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
       <div class="banner-text text-center fade-in-up">
@@ -468,7 +815,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.2k 字
+          18k 字
         
       </span>
     
@@ -479,7 +826,7 @@
         
         
         
-          44 分钟
+          150 分钟
         
       </span>
     
@@ -505,6 +852,8 @@
     </div>
   </div>
 </div>
+
+
 
 </div>
 
@@ -534,7 +883,7 @@
 <span id="more"></span>
 
 <div class="note note-primary">
-            <p>本文转自 <a target="_blank" rel="noopener" href="https://github.com/zjcscut/octopus">https://github.com/zjcscut/octopus</a></p>
+            <p>本文转自 <a target="_blank" rel="noopener" href="https://github.com/zjcscut/octopus">https://github.com/zjcscut/octopus</a></p> 
           </div>
 
 <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>半年前（<code>2020-06</code>）左右，疫情触底反弹，公司的业务量不断提升，运营部门为了方便短信、模板消息推送等渠道的投放，提出了一个把长链接压缩为短链接的功能需求。当时为了快速推广，使用了一些比较知名的第三方短链压缩平台，存在一些问题：</p>
@@ -606,7 +955,7 @@
 <h3 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h3><p>一共使用了<code>5</code>个表：</p>
 <p><img src="https://throwable-blog-1256189093.cos.ap-guangzhou.myqcloud.com/202012/o-c-g-w-10.png" srcset="/loading.svg" lazyload></p>
 <p>具体的初始化<code>DDL</code>如下：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DATABASE `db_octopus` CHARSET <span class="hljs-string">&#x27;utf8mb4&#x27;</span> <span class="hljs-keyword">COLLATE</span> <span class="hljs-string">&#x27;utf8mb4_unicode_520_ci&#x27;</span>;<br><br>USE `db_octopus`;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `url_map`<br>(<br>    `id`               <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `short_url`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;短链URL&#x27;</span>,<br>    `long_url`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">768</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;长链URL&#x27;</span>,<br>    `short_url_digest` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;短链摘要&#x27;</span>,<br>    `long_url_digest`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;长链摘要&#x27;</span>,<br>    `compression_code` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `description`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">256</span>) COMMENT <span class="hljs-string">&#x27;描述&#x27;</span>,<br>    `url_status`       TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;URL状态,1:正常,2:已失效&#x27;</span>,<br>    `create_time`      DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`        DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`           <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`          TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`          <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_compression_code (`compression_code`),<br>    INDEX idx_short_url (`short_url`),<br>    INDEX idx_short_url_digest (`short_url_digest`),<br>    INDEX idx_long_url_digest (`long_url_digest`)<br>) COMMENT <span class="hljs-string">&#x27;URL映射表&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `domain_conf`<br>(<br>    `id`            <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `domain_value`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;域名&#x27;</span>,<br>    `protocol`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">8</span>)      <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;https&#x27;</span> COMMENT <span class="hljs-string">&#x27;协议,https或者http&#x27;</span>,<br>    `domain_status` TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;域名状态,1:正常,2:已失效&#x27;</span>,<br>    `create_time`   DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`     DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`       TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`       <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_domain (`domain_value`)<br>) COMMENT <span class="hljs-string">&#x27;域名配置&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `compression_code`<br>(<br>    `id`               <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `compression_code` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `code_status`      TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;压缩码状态,1:未使用,2:已使用,3:已失效&#x27;</span>,<br>    `sequence_value`   <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;序列(盐)&#x27;</span>,<br>    `strategy`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">8</span>)      <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;sequence&#x27;</span> COMMENT <span class="hljs-string">&#x27;策略,sequence或者hash&#x27;</span>,<br>    `create_time`      DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`        DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`           <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`          TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`          <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_compression_code (`compression_code`)<br>) COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `visit_statistics`<br>(<br>    `id`                            <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `create_time`                   DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`                     DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`                       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`                        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`                       TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`                       <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    `statistics_date`               <span class="hljs-type">DATE</span>            <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;1970-01-01&#x27;</span> COMMENT <span class="hljs-string">&#x27;统计日期&#x27;</span>,<br>    `pv_count`                      <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;页面流量数&#x27;</span>,<br>    `uv_count`                      <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;独立访客数&#x27;</span>,<br>    `ip_count`                      <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;独立IP数&#x27;</span>,<br>    `effective_redirection_count`   <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;有效跳转数&#x27;</span>,<br>    `ineffective_redirection_count` <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;无效跳转数&#x27;</span>,<br>    `compression_code`              <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `short_url_digest`              <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;短链摘要&#x27;</span>,<br>    `long_url_digest`               <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;长链摘要&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_date_code_digest (`statistics_date`, `compression_code`)<br>) COMMENT <span class="hljs-string">&#x27;访问数据统计&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `transform_event_record`<br>(<br>    `id`               <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `create_time`      DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`        DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`           <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`          TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`          <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    `unique_identity`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;唯一身份标识,SHA-1(客户端IP-UA)&#x27;</span>,<br>    `client_ip`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;客户端IP&#x27;</span>,<br>    `short_url`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;短链URL&#x27;</span>,<br>    `long_url`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">768</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;长链URL&#x27;</span>,<br>    `short_url_digest` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;短链摘要&#x27;</span>,<br>    `long_url_digest`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;长链摘要&#x27;</span>,<br>    `compression_code` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `record_time`      DATETIME        <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;记录时间戳&#x27;</span>,<br>    `user_agent`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">2048</span>) COMMENT <span class="hljs-string">&#x27;UA&#x27;</span>,<br>    `cookie_value`     <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">2048</span>) COMMENT <span class="hljs-string">&#x27;cookie&#x27;</span>,<br>    `query_param`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">2048</span>) COMMENT <span class="hljs-string">&#x27;URL参数&#x27;</span>,<br>    `province`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;省份&#x27;</span>,<br>    `city`             <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;城市&#x27;</span>,<br>    `phone_type`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>) COMMENT <span class="hljs-string">&#x27;手机型号&#x27;</span>,<br>    `browser_type`     <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>) COMMENT <span class="hljs-string">&#x27;浏览器类型&#x27;</span>,<br>    `browser_version`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>) COMMENT <span class="hljs-string">&#x27;浏览器版本号&#x27;</span>,<br>    `os_type`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;操作系统型号&#x27;</span>,<br>    `device_type`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;设备型号&#x27;</span>,<br>    `os_version`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;操作系统版本号&#x27;</span>,<br>    `transform_status` TINYINT         <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;转换状态,1:转换成功,2:转换失败,3:重定向成功,4:重定向失败&#x27;</span>,<br>    INDEX idx_record_time (`record_time`),<br>    INDEX idx_compression_code (`compression_code`),<br>    INDEX idx_short_url_digest (`short_url_digest`),<br>    INDEX idx_long_url_digest (`long_url_digest`),<br>    INDEX idx_unique_identity (`unique_identity`)<br>) COMMENT <span class="hljs-string">&#x27;转换事件记录&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DATABASE `db_octopus` CHARSET <span class="hljs-string">&#x27;utf8mb4&#x27;</span> <span class="hljs-keyword">COLLATE</span> <span class="hljs-string">&#x27;utf8mb4_unicode_520_ci&#x27;</span>;<br><br>USE `db_octopus`;<br><br><span class="hljs-keyword">CREATE TABLE</span> `url_map`<br>(<br>    `id`               <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">PRIMARY KEY</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `short_url`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;短链URL&#x27;</span>,<br>    `long_url`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">768</span>)    <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;长链URL&#x27;</span>,<br>    `short_url_digest` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;短链摘要&#x27;</span>,<br>    `long_url_digest`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;长链摘要&#x27;</span>,<br>    `compression_code` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `description`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">256</span>) COMMENT <span class="hljs-string">&#x27;描述&#x27;</span>,<br>    `url_status`       TINYINT         <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;URL状态,1:正常,2:已失效&#x27;</span>,<br>    `create_time`      DATETIME        <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`        DATETIME        <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`           <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`          TINYINT         <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`          <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_compression_code (`compression_code`),<br>    INDEX idx_short_url (`short_url`),<br>    INDEX idx_short_url_digest (`short_url_digest`),<br>    INDEX idx_long_url_digest (`long_url_digest`)<br>) COMMENT <span class="hljs-string">&#x27;URL映射表&#x27;</span>;<br><br><span class="hljs-keyword">CREATE TABLE</span> `domain_conf`<br>(<br>    `id`            <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">PRIMARY KEY</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `domain_value`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;域名&#x27;</span>,<br>    `protocol`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">8</span>)      <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;https&#x27;</span> COMMENT <span class="hljs-string">&#x27;协议,https或者http&#x27;</span>,<br>    `domain_status` TINYINT         <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;域名状态,1:正常,2:已失效&#x27;</span>,<br>    `create_time`   DATETIME        <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`     DATETIME        <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`       TINYINT         <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`       <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_domain (`domain_value`)<br>) COMMENT <span class="hljs-string">&#x27;域名配置&#x27;</span>;<br><br><span class="hljs-keyword">CREATE TABLE</span> `compression_code`<br>(<br>    `id`               <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">PRIMARY KEY</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `compression_code` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `code_status`      TINYINT         <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;压缩码状态,1:未使用,2:已使用,3:已失效&#x27;</span>,<br>    `sequence_value`   <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>)     <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;序列(盐)&#x27;</span>,<br>    `strategy`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">8</span>)      <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;sequence&#x27;</span> COMMENT <span class="hljs-string">&#x27;策略,sequence或者hash&#x27;</span>,<br>    `create_time`      DATETIME        <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`        DATETIME        <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`           <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`          TINYINT         <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`          <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_compression_code (`compression_code`)<br>) COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>;<br><br><span class="hljs-keyword">CREATE TABLE</span> `visit_statistics`<br>(<br>    `id`                            <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">PRIMARY KEY</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `create_time`                   DATETIME        <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`                     DATETIME        <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`                       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`                        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`                       TINYINT         <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`                       <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    `statistics_date`               <span class="hljs-type">DATE</span>            <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;1970-01-01&#x27;</span> COMMENT <span class="hljs-string">&#x27;统计日期&#x27;</span>,<br>    `pv_count`                      <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;页面流量数&#x27;</span>,<br>    `uv_count`                      <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;独立访客数&#x27;</span>,<br>    `ip_count`                      <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;独立IP数&#x27;</span>,<br>    `effective_redirection_count`   <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;有效跳转数&#x27;</span>,<br>    `ineffective_redirection_count` <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;无效跳转数&#x27;</span>,<br>    `compression_code`              <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `short_url_digest`              <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;短链摘要&#x27;</span>,<br>    `long_url_digest`               <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;长链摘要&#x27;</span>,<br>    <span class="hljs-keyword">UNIQUE</span> uniq_date_code_digest (`statistics_date`, `compression_code`)<br>) COMMENT <span class="hljs-string">&#x27;访问数据统计&#x27;</span>;<br><br><span class="hljs-keyword">CREATE TABLE</span> `transform_event_record`<br>(<br>    `id`               <span class="hljs-type">BIGINT</span> UNSIGNED <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">PRIMARY KEY</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    `create_time`      DATETIME        <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;创建时间&#x27;</span>,<br>    `edit_time`        DATETIME        <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">&#x27;更新时间&#x27;</span>,<br>    `creator`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;创建者&#x27;</span>,<br>    `editor`           <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;admin&#x27;</span> COMMENT <span class="hljs-string">&#x27;更新者&#x27;</span>,<br>    `deleted`          TINYINT         <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;软删除标识&#x27;</span>,<br>    `version`          <span class="hljs-type">BIGINT</span>          <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">&#x27;版本号&#x27;</span>,<br>    `unique_identity`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;唯一身份标识,SHA-1(客户端IP-UA)&#x27;</span>,<br>    `client_ip`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>)     <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;客户端IP&#x27;</span>,<br>    `short_url`        <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>)     <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;短链URL&#x27;</span>,<br>    `long_url`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">768</span>)    <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;长链URL&#x27;</span>,<br>    `short_url_digest` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;短链摘要&#x27;</span>,<br>    `long_url_digest`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>)    <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;长链摘要&#x27;</span>,<br>    `compression_code` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>)     <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;压缩码&#x27;</span>,<br>    `record_time`      DATETIME        <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">&#x27;记录时间戳&#x27;</span>,<br>    `user_agent`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">2048</span>) COMMENT <span class="hljs-string">&#x27;UA&#x27;</span>,<br>    `cookie_value`     <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">2048</span>) COMMENT <span class="hljs-string">&#x27;cookie&#x27;</span>,<br>    `query_param`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">2048</span>) COMMENT <span class="hljs-string">&#x27;URL参数&#x27;</span>,<br>    `province`         <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;省份&#x27;</span>,<br>    `city`             <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;城市&#x27;</span>,<br>    `phone_type`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>) COMMENT <span class="hljs-string">&#x27;手机型号&#x27;</span>,<br>    `browser_type`     <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>) COMMENT <span class="hljs-string">&#x27;浏览器类型&#x27;</span>,<br>    `browser_version`  <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">128</span>) COMMENT <span class="hljs-string">&#x27;浏览器版本号&#x27;</span>,<br>    `os_type`          <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;操作系统型号&#x27;</span>,<br>    `device_type`      <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;设备型号&#x27;</span>,<br>    `os_version`       <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) COMMENT <span class="hljs-string">&#x27;操作系统版本号&#x27;</span>,<br>    `transform_status` TINYINT         <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span> COMMENT <span class="hljs-string">&#x27;转换状态,1:转换成功,2:转换失败,3:重定向成功,4:重定向失败&#x27;</span>,<br>    INDEX idx_record_time (`record_time`),<br>    INDEX idx_compression_code (`compression_code`),<br>    INDEX idx_short_url_digest (`short_url_digest`),<br>    INDEX idx_long_url_digest (`long_url_digest`),<br>    INDEX idx_unique_identity (`unique_identity`)<br>) COMMENT <span class="hljs-string">&#x27;转换事件记录&#x27;</span>;<br></code></pre></td></tr></table></figure>
 
 <h3 id="压缩码生成模块实现"><a href="#压缩码生成模块实现" class="headerlink" title="压缩码生成模块实现"></a>压缩码生成模块实现</h3><p>压缩码生成的方法比较简单：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> SequenceGenerator sequenceGenerator;    # &lt;------------- 雪花算法序列生成器<br><span class="hljs-meta">@Value(&quot;$&#123;compress.code.batch:100&#125;&quot;)</span><br><span class="hljs-keyword">private</span> Integer compressCodeBatch;<br>......<br><br><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">generateBatchCompressionCodes</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; compressCodeBatch; i++) &#123;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">sequence</span> <span class="hljs-operator">=</span> sequenceGenerator.generate();<br>        <span class="hljs-type">CompressionCode</span> <span class="hljs-variable">compressionCode</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CompressionCode</span>();<br>        compressionCode.setSequenceValue(String.valueOf(sequence));<br>        <span class="hljs-type">String</span> <span class="hljs-variable">code</span> <span class="hljs-operator">=</span> ConversionUtils.X.encode62(sequence);    # &lt;-------------- <span class="hljs-number">10</span>进制转<span class="hljs-number">62</span>进制<br>        code = code.substring(code.length() - <span class="hljs-number">6</span>);<br>        compressionCode.setCompressionCode(code);<br>        compressionCodeDao.insertSelective(compressionCode);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -819,10 +1168,10 @@
     <article id="comments" lazyload>
       
   <div id="waline"></div>
-  <script type="text/javascript">
+  <script type="module">
     Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createCssLink('https://cdn.staticfile.org/waline/2.15.8/waline.css')
-      Fluid.utils.createScript('https://cdn.staticfile.org/waline/2.15.8/waline.js', function() {
+      Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.css')
+      import('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.js').then(({ init }) => {
         var options = Object.assign(
           {"serverURL":"https://waline.awaw.cc","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.awaw.cc/raw/walinejs/emojis/main/alus"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
           {
@@ -830,7 +1179,7 @@
             path: window.location.pathname
           }
         )
-        Waline.init(options);
+        init(options);
         Fluid.utils.waitElementVisible('#waline .vcontent', () => {
           var imgSelector = '#waline .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
@@ -1000,7 +1349,63 @@
     var boardCtn = jQuery('#board-ctn');
     var boardTop = boardCtn.offset().top;
 
-    window.tocbot.init(Object.assign({
+    function isExpandAllEnabled() {
+      return CONFIG.toc && CONFIG.toc.expand_all === true;
+    }
+    function expandAllToc() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
+    }
+    function updateTocToggle($li, $childList) {
+      var $toggle = $li.children('.toc-toggle');
+      if ($toggle.length === 0) { return; }
+      var collapsed = $childList.hasClass('tocbot-is-collapsed');
+      $toggle
+        .toggleClass('toc-toggle-collapsed', collapsed)
+        .toggleClass('toc-toggle-expanded', !collapsed);
+    }
+    function bindTocToggle() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .toc-list-item').each(function() {
+        var $li = jQuery(this);
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) {
+          if ($li.children('.toc-toggle').length === 0) {
+            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
+          }
+          return;
+        }
+
+        if ($li.children('.toc-toggle').length === 0) {
+          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
+        }
+        updateTocToggle($li, $childList);
+      });
+      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $li = jQuery(this).parent('.toc-list-item');
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) { return; }
+        $childList.toggleClass('tocbot-is-collapsed');
+        updateTocToggle($li, $childList);
+      });
+      if (!window.__tocToggleObserver) {
+        window.__tocToggleObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
+            var $list = jQuery(mutation.target);
+            var $li = $list.parent('.toc-list-item');
+            if ($li.length === 0) { return; }
+            updateTocToggle($li, $list);
+          });
+        });
+        jQuery('#toc-body ol').each(function() {
+          window.__tocToggleObserver.observe(this, { attributes: true });
+        });
+      }
+    }
+    var tocConfig = Object.assign({
       tocSelector     : '#toc-body',
       contentSelector : '.markdown-body',
       linkClass       : 'tocbot-link',
@@ -1011,10 +1416,16 @@
       scrollSmooth    : true,
       includeTitleTags: true,
       headingsOffset  : -boardTop,
-    }, CONFIG.toc));
+    }, CONFIG.toc);
+    if (isExpandAllEnabled()) {
+      tocConfig.collapseDepth = 6;
+    }
+    window.tocbot.init(tocConfig);
     if (toc.find('.toc-list-item').length > 0) {
       toc.css('visibility', 'visible');
     }
+    expandAllToc();
+    bindTocToggle();
 
     Fluid.events.registerRefreshCallback(function() {
       if ('tocbot' in window) {
@@ -1026,6 +1437,8 @@
         if (toc.find('.toc-list-item').length > 0) {
           toc.css('visibility', 'visible');
         }
+        expandAllToc();
+        bindTocToggle();
       }
     });
   });
@@ -1103,5 +1516,15 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-</body>
+<!-- hexo injector body_end start -->
+<script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.abbr.min.js" defer></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a864f4af9f5edebadeb6044213eb4aa";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo injector body_end end --></body>
 </html>
