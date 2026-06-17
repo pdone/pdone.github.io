@@ -114,6 +114,66 @@ img[src$="boxshadow=none"] {
     }
 }
 
+/* AI工具图标样式 */
+.ai-icon {
+    display: inline-block !important;
+    width: 1.2em !important;
+    height: 1.2em !important;
+    vertical-align: middle !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    margin-right: 4px !important;
+}
+
+.ai-icon-Claude {
+    background-image: url('/img/Claude.png') !important;
+}
+
+.ai-icon-ChatGPT {
+    background-image: url('/img/ChatGPT.png') !important;
+}
+
+.ai-icon-Gemini {
+    background-image: url('/img/Gemini.png') !important;
+}
+
+.ai-icon-Grok {
+    background-image: url('/img/Grok.png') !important;
+}
+
+.ai-icon-DeepSeek {
+    background-image: url('/img/DeepSeek.png') !important;
+}
+
+.ai-icon-Kimi {
+    background-image: url('/img/Kimi.ico') !important;
+}
+
+.ai-icon-智谱清言 {
+    background-image: url('/img/智谱清言.ico') !important;
+}
+
+.ai-icon-MiniMax {
+    background-image: url('/img/MiniMax.png') !important;
+}
+
+.ai-icon-通义千问 {
+    background-image: url('/img/通义千问.png') !important;
+}
+
+.ai-icon-腾讯元宝 {
+    background-image: url('/img/腾讯元宝.png') !important;
+}
+
+.ai-icon-文心一言 {
+    background-image: url('/img/文心一言.ico') !important;
+}
+
+.ai-icon-豆包 {
+    background-image: url('/img/豆包.png') !important;
+}
+
 body,
 div {
     cursor: url(https://cdn.awaw.cc/raw/pdone/static/master/img/cursor/pointer.cur), default !important;
