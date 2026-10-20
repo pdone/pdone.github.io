@@ -1030,13 +1030,13 @@
   <div id="waline"></div>
   <script type="module">
     Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.css')
-      import('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.js').then(({ init }) => {
+      Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/@waline/client@3.16.1/dist/waline.css')
+      import('https://cdn.jsdelivr.net/npm/@waline/client@3.16.1/dist/waline.js').then(({ init }) => {
         var options = Object.assign(
-          {"serverURL":"https://waline.awaw.cc","path":"window.location.pathname.replace(/\\/$/, '')","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.awaw.cc/raw/walinejs/emojis/main/alus"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {"serverURL":"https://waline.awaw.cc","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.awaw.cc/raw/walinejs/emojis/main/alus"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
           {
             el: '#waline',
-            path: window.location.pathname.replace(/\/$/, &#39;&#39;)
+            path: window.location.pathname
           }
         )
         init(options);
