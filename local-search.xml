@@ -20,8 +20,6 @@
     
     <tags>
       
-      <tag>OpenSource</tag>
-      
       <tag>Tauri</tag>
       
       <tag>Rust</tag>
@@ -29,6 +27,8 @@
       <tag>Svelte</tag>
       
       <tag>Android</tag>
+      
+      <tag>OpenSource</tag>
       
     </tags>
     
@@ -300,9 +300,9 @@
     
     <tags>
       
-      <tag>.NET</tag>
-      
       <tag>OpenSource</tag>
+      
+      <tag>.NET</tag>
       
       <tag>QRCode</tag>
       
@@ -404,9 +404,9 @@
     
     <tags>
       
-      <tag>Database</tag>
-      
       <tag>SQL</tag>
+      
+      <tag>Database</tag>
       
     </tags>
     
@@ -539,9 +539,9 @@
     
     <tags>
       
-      <tag>.NET</tag>
-      
       <tag>OpenSource</tag>
+      
+      <tag>.NET</tag>
       
     </tags>
     
@@ -838,9 +838,9 @@
     
     <tags>
       
-      <tag>Database</tag>
-      
       <tag>SQL</tag>
+      
+      <tag>Database</tag>
       
     </tags>
     

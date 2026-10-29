@@ -203,3 +203,9 @@ a>div {
         url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.ttf) format('TrueType'),
         url(//puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.otf) format('opentype'); */
 }
+
+/* 禁用 banner 头图壁纸：主题在 banner_img 为空时会渲染 url('/null') 导致 404，
+   此处覆盖内联样式移除背景图，同时保留标题区与打字机副标题 */
+#banner {
+    background-image: none !important;
+}
